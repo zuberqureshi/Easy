@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "978092792291",
+    "project_id": "earn-money-final-apk",
+    "storage_bucket": "earn-money-final-apk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978092792291:android:ea831650a3d60d51afa8d6",
+        "android_client_info": {
+          "package_name": "com.easyearn.cash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "978092792291-q516pofd6upmdlisfkgea3j1rpr6lrsg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChupaBwTEv6bc0zm1QZYv1Qw515V3Ie9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "978092792291-q516pofd6upmdlisfkgea3j1rpr6lrsg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

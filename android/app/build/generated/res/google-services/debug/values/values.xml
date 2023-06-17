@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">978092792291-q516pofd6upmdlisfkgea3j1rpr6lrsg.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">978092792291</string>
+    <string name="google_api_key" translatable="false">AIzaSyChupaBwTEv6bc0zm1QZYv1Qw515V3Ie9U</string>
+    <string name="google_app_id" translatable="false">1:978092792291:android:ea831650a3d60d51afa8d6</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyChupaBwTEv6bc0zm1QZYv1Qw515V3Ie9U</string>
+    <string name="google_storage_bucket" translatable="false">earn-money-final-apk.appspot.com</string>
+    <string name="project_id" translatable="false">earn-money-final-apk</string>
+</resources>

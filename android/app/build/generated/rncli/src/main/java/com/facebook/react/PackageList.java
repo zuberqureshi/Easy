@@ -11,7 +11,36 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-
+// @react-native-async-storage/async-storage
+import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
+// @react-native-community/netinfo
+import com.reactnativecommunity.netinfo.NetInfoPackage;
+// @react-native-firebase/app
+import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
+// @react-native-firebase/crashlytics
+import io.invertase.firebase.crashlytics.ReactNativeFirebaseCrashlyticsPackage;
+// @react-native-firebase/messaging
+import io.invertase.firebase.messaging.ReactNativeFirebaseMessagingPackage;
+// lottie-react-native
+import com.airbnb.android.react.lottie.LottiePackage;
+// react-native-device-info
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
+// react-native-encrypted-storage
+import com.emeraldsanto.encryptedstorage.RNEncryptedStoragePackage;
+// react-native-gesture-handler
+import com.swmansion.gesturehandler.RNGestureHandlerPackage;
+// react-native-linear-gradient
+import com.BV.LinearGradient.LinearGradientPackage;
+// react-native-reanimated
+import com.swmansion.reanimated.ReanimatedPackage;
+// react-native-safe-area-context
+import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
+// react-native-screens
+import com.swmansion.rnscreens.RNScreensPackage;
+// react-native-vector-icons
+import com.oblador.vectoricons.VectorIconsPackage;
+// react-native-webview
+import com.reactnativecommunity.webview.RNCWebViewPackage;
 
 public class PackageList {
   private Application application;
@@ -56,7 +85,22 @@ public class PackageList {
 
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
-      new MainReactPackage(mConfig)
+      new MainReactPackage(mConfig),
+      new AsyncStoragePackage(),
+      new NetInfoPackage(),
+      new ReactNativeFirebaseAppPackage(),
+      new ReactNativeFirebaseCrashlyticsPackage(),
+      new ReactNativeFirebaseMessagingPackage(),
+      new LottiePackage(),
+      new RNDeviceInfo(),
+      new RNEncryptedStoragePackage(),
+      new RNGestureHandlerPackage(),
+      new LinearGradientPackage(),
+      new ReanimatedPackage(),
+      new SafeAreaContextPackage(),
+      new RNScreensPackage(),
+      new VectorIconsPackage(),
+      new RNCWebViewPackage()
     ));
   }
 }
