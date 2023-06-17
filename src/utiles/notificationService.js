@@ -1,5 +1,6 @@
 import messaging from '@react-native-firebase/messaging';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import EncryptedStorage from 'react-native-encrypted-storage';
 import {PermissionsAndroid} from 'react-native';
 
 
@@ -19,7 +20,7 @@ PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS); /
 }
 
 const getFCMToken = async()=>{
-    let fcmToken = await AsyncStorage.getItem('fcmToken')
+    let fcmToken = await EncryptedStorage.getItem('fcmToken')
      console.log(fcmToken,"Fcm old token")
 
      if(!fcmToken){
@@ -29,7 +30,7 @@ const getFCMToken = async()=>{
 
             if(fcmToken){
                 console.log(fcmToken,"new generate fcm token")
-                await AsyncStorage.setItem('fcmToken',fcmToken)
+                await EncryptedStorage.setItem('fcmToken',fcmToken)
             }
             
         } catch (error) {
