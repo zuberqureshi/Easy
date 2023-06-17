@@ -35,6 +35,7 @@
     "react-native-snap-carousel": "^3.9.1",
     "react-native-vector-icons": "^9.2.0",
     "react-native-webview": "^13.2.2",
+    "react-native-wheel-of-fortune": "^1.5.4",
     "react-native-youtube-iframe": "^2.2.2",
     "yup": "^1.2.0"
   },

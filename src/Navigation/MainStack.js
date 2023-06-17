@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 // import Referral from '../screens/Referral/index';
 import Home from '../screens/Home/index';
-// import Spiner from '../screens/SpinerWheel/index'
+import Spiner from '../screens/SpinerWheel/index'
 // import Quiz from '../screens/Quiz/index';
 // import Offer from '../screens/Offer/index'
 // import Wallet from '../screens/Wallet/index';
@@ -21,14 +21,14 @@ const MainStack = () => {
       {/* <HomeStack.Screen name="Login" component={Login}/> */}
 
       <HomeStack.Screen name="Home" component={Home} options={{headerShown:true}}/>
-{/*       
-      <HomeStack.Screen name='Referral' component={Referral} options={{headerShown:true}} />
+      
+      {/* <HomeStack.Screen name='Referral' component={Referral} options={{headerShown:true}} /> */}
       <HomeStack.Screen name='SpinerWheel' component={Spiner} options={{headerShown:true}} />
-      <HomeStack.Screen name='Quiz' component={Quiz} options={{headerShown:true}} />
+      {/* <HomeStack.Screen name='Quiz' component={Quiz} options={{headerShown:true}} />
       <HomeStack.Screen name='Offer' component={Offer} options={{headerShown:true}} />
       <HomeStack.Screen name='Wallet' component={Wallet} options={{headerShown:true}} />
-      <HomeStack.Screen name='Contact' component={Contact} options={{headerShown:true}} /> */}
-      {/* <HomeStack.Screen name='Login' component={Login} /> */}
+      <HomeStack.Screen name='Contact' component={Contact} options={{headerShown:true}} />
+      <HomeStack.Screen name='Login' component={Login} /> */}
     </HomeStack.Navigator>
   )
 }
