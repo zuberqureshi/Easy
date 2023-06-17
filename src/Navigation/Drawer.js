@@ -27,9 +27,6 @@ useEffect(() => {
    <Drawer.Screen name="HomeStack" component={HomeStack} />
      {/* <Drawer.Screen name='Profile' component={Profile} options={{headerShown:true}} />
     <Drawer.Screen name='EditProfile' component={EditProfile} options={{headerShown:true}}/> */}
-   
-
-
   </Drawer.Navigator>
   )
 }
