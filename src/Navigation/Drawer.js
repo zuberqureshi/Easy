@@ -7,7 +7,7 @@ import CustomDrawer from '../components/customDrawer/DrawerCustom'
 // import EditProfile from '../screens/EditProfile/index'
 import Splash from '../screens/Splash/index'
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
-
+import Login from '../screens/Login/index';
 const Drawer = createDrawerNavigator();
 const DrawerStack = () => {
   
@@ -24,6 +24,7 @@ useEffect(() => {
       width:Dimensions.get('window').width / 1.65,
     }, }}>
    {splashShow?<Drawer.Screen name="Splash" component={Splash}/>:null}
+<Drawer.Screen name='Login' component={Login} />
    <Drawer.Screen name="HomeStack" component={HomeStack} />
      {/* <Drawer.Screen name='Profile' component={Profile} options={{headerShown:true}} />
     <Drawer.Screen name='EditProfile' component={EditProfile} options={{headerShown:true}}/> */}

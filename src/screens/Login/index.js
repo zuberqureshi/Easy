@@ -18,18 +18,18 @@ const Login = () => {
 useEffect(() => {
 
   
-  const body = {
-    email: 'zugmai.com',
-    name: 'ui',
-  };
+  // const body = {
+  //   email: 'zugmai.com',
+  //   name: 'ui',
+  // };
 
-  CallApi('login', 'POST', body).then(async r => {
-          console.log('token in login.js :', r);
+  // CallApi('login', 'POST', body).then(async r => {
+  //         console.log('token in login.js :', r);
 
-  });
+  // });
 
 
-  GoogleSignin.configure({webClientId:'569725203093-pqiqgie0kcphck4bgecrc23n2ol2ng31.apps.googleusercontent.com'});
+  GoogleSignin.configure({webClientId:'978092792291-q516pofd6upmdlisfkgea3j1rpr6lrsg.apps.googleusercontent.com'});
   
 }, [])
 
@@ -40,66 +40,58 @@ const signIn = async () => {
     await GoogleSignin.hasPlayServices();
     GoogleSignin.signOut()
     const usrInfo = await GoogleSignin.signIn();
+        setUserInfo(usrInfo)
     console.log("gooogle data",usrInfo.user.email)
-    const bodydata ={
-      email: usrInfo.user.email,
-      name: usrInfo.user.name
-    }
-
-    CallApi('settings', 'GET').then(async r => {
-        console.log('api res',r)
-    })
-
-    // await EncryptedStorage.setItem('userDetails',JSON.stringify(usrInfo))
-
-   
-    //  navigation.navigate('HomeStack')
 
   } catch (error) {
     if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+      console.log('SIGN_IN_CANCELLED',error)
       // user cancelled the login flow
     } else if (error.code === statusCodes.IN_PROGRESS) {
+      console.log('IN_PROGRESS',error)
       // operation (e.g. sign in) is in progress already
     } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+      console.log('PLAY_SERVICES_NOT_AVAILABLE',error)
       // play services not available or outdated
     } else {
       // some other error happened
     }
+    console.log('Google error ',error)
   }
 };
 
-  function handleLogin() {
-    if (inputData.Email === '') {
-      setModal({isVisible: true, text: "Email can't be empty"});
-      return;
-    }
-    if (inputData.Password === '') {
-      setModal({isVisible: true, text: "Password can't be empty"});
-      return;
-    }
+  // function handleLogin() {
+  //   if (inputData.Email === '') {
+  //     setModal({isVisible: true, text: "Email can't be empty"});
+  //     return;
+  //   }
+  //   if (inputData.Password === '') {
+  //     setModal({isVisible: true, text: "Password can't be empty"});
+  //     return;
+  //   }
 
-    const body = {
-      uid: inputData.Email,
-      password: inputData.Password,
-    };
+  //   const body = {
+  //     uid: inputData.Email,
+  //     password: inputData.Password,
+  //   };
 
-    CallApi('users/login', 'POST', body).then(async r => {
-      if (r.message) {
-        setModal({isVisible: true, text: r.message});
-        setStatus('Input');
-        return;
-      } else {
-        setStatus('Loaded');
-        // Alert.alert(r.token);
-        setToken(r.token);
-        navigation.navigate('Home');
-        // const token = await getToken();
-        // console.log('token in login.js :', token);
-        // getToken().then(res => console.log(res));
-      }
-    });
-    setStatus('Loading');
-  }
+  //   CallApi('users/login', 'POST', body).then(async r => {
+  //     if (r.message) {
+  //       setModal({isVisible: true, text: r.message});
+  //       setStatus('Input');
+  //       return;
+  //     } else {
+  //       setStatus('Loaded');
+  //       // Alert.alert(r.token);
+  //       setToken(r.token);
+  //       navigation.navigate('Home');
+  //       // const token = await getToken();
+  //       // console.log('token in login.js :', token);
+  //       // getToken().then(res => console.log(res));
+  //     }
+  //   });
+  //   setStatus('Loading');
+  // }
 
 
   return (
