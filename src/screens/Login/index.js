@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { responsiveHeight,responsiveWidth,responsiveFontSize} from "react-native-responsive-dimensions";
 import LinearGradient from 'react-native-linear-gradient';
 import { GoogleSignin,statusCodes } from '@react-native-google-signin/google-signin';
-import CallApi, {setToken} from '../../utiles/network';
+import CallApi, {setToken ,CallApiJson } from '../../utiles/network';
 import EncryptedStorage from 'react-native-encrypted-storage';
 import { useNavigation } from "@react-navigation/native";
 
@@ -41,8 +41,18 @@ const signIn = async () => {
     GoogleSignin.signOut()
     const usrInfo = await GoogleSignin.signIn();
         setUserInfo(usrInfo)
-    console.log("gooogle data",usrInfo.user.email)
+        console.log("gooogle data",usrInfo.user.email , 'userLogin')
 
+        const body = {
+            email: usrInfo.user.email,
+            name: usrInfo.user.name,
+          };
+        
+        const userLogin =  await CallApiJson('login', 'POST', body);
+     console.log("gooogle data",usrInfo.user.email , 'userLogin',userLogin.data)
+            const ds = await setToken(  userLogin.data );
+            console.log("gooogle data",ds , 'datasettoken');
+            navigation.navigate('HomeStack');
   } catch (error) {
     if (error.code === statusCodes.SIGN_IN_CANCELLED) {
       console.log('SIGN_IN_CANCELLED',error)

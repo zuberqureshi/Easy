@@ -38,8 +38,9 @@ function CallApiJson(endpoint, method = 'GET', body = null, token = null) {
     Object.keys(obj)
       .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k]))
       .join('&');
+
   body = body ? JSON.stringify(body) : null;
-   
+   console.log( 'networkbody', body)
    return new Promise(resolve => {
     let headres = {
       'Accept': 'application/json',
@@ -69,7 +70,7 @@ function CallApiJson(endpoint, method = 'GET', body = null, token = null) {
 
 async function setToken(token) {
   console.log('saving token :', token);
-  return EncryptedStorage.setItem('token', token)
+  return EncryptedStorage.setItem('token', JSON.stringify(token) )
     .then(() => 'success')
     .catch(e => 'error');
 }
@@ -78,6 +79,15 @@ async function getToken() {
   console.log('retreiving token :', token);
   return token;
 }
+
+
+async function removeToken() {
+  const token = await EncryptedStorage.removeItem('token');
+  console.log('retreiving token :', token);
+  return token;
+}
+
+
 export default CallApi  ;
  
-export {setToken, getToken , CallApiJson};
+export {setToken, getToken , removeToken ,CallApiJson};

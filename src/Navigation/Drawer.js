@@ -8,12 +8,27 @@ import CustomDrawer from '../components/customDrawer/DrawerCustom'
 import Splash from '../screens/Splash/index'
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import Login from '../screens/Login/index';
+import CallApi, {setToken ,CallApiJson,getToken } from '../utiles/network';
+
 const Drawer = createDrawerNavigator();
 const DrawerStack = () => {
   
+  console.log( 'DrawerStack');
+
   const [splashShow, setSplashShow] = useState(true)
+  const [userLoggedIn, setUserLogged] = useState(false)
+
+  const getUserInfo = async ()=>{
+    const ds = await getToken(  );
+    if( ds){
+      setUserLogged(true);
+    }
+    console.log("get Token in drawer  ",ds , '');
+  }
 
 useEffect(() => {
+  getUserInfo();
+
  setTimeout(() => {
   setSplashShow(false)
  }, 4000);
@@ -24,7 +39,7 @@ useEffect(() => {
       width:Dimensions.get('window').width / 1.65,
     }, }}>
    {splashShow?<Drawer.Screen name="Splash" component={Splash}/>:null}
-<Drawer.Screen name='Login' component={Login} />
+   { !userLoggedIn && <Drawer.Screen name='Login' component={Login} />   }
    <Drawer.Screen name="HomeStack" component={HomeStack} />
      {/* <Drawer.Screen name='Profile' component={Profile} options={{headerShown:true}} />
     <Drawer.Screen name='EditProfile' component={EditProfile} options={{headerShown:true}}/> */}

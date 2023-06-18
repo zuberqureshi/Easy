@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 
 import Icon from 'react-native-vector-icons/Ionicons';
+import  { removeToken } from '../../utiles/network';
 
 import { useNavigation } from "@react-navigation/native";
 import styles from './style'
@@ -14,6 +15,14 @@ const CustomDrawer = () => {
   const navigation = useNavigation();
   const commanImg = 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   const home = '../../assets/home.png'
+
+  const userLogout = async ()=>{
+    const ds = await removeToken(  );
+   
+    console.log("Dataremovedtoken  ",ds , '');
+  }
+
+
 
   const listArray = [
     { icon: 'home', title: 'Home' },
@@ -60,6 +69,8 @@ const CustomDrawer = () => {
     return (<Item
       onPress={() => {
         setSelectedId(item.title)
+        if( item.title==='Sign out' ) { userLogout(); navigation.navigate('Login') }  
+        else
         navigation.navigate(item.title)
       }}
       title={item.title}
