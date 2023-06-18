@@ -1,4 +1,4 @@
-import { View,Alert, Text, Button, Pressable, SafeAreaView, ScrollView, Image,TouchableOpacity,Modal,TouchableHighlight } from 'react-native'
+import { View,Alert, Text, Button, Pressable, SafeAreaView, ScrollView, Image,TouchableOpacity,Modal,TouchableHighlight,ToastAndroid } from 'react-native'
 import React from 'react'
 import { useLayoutEffect,useState,useEffect,useRef } from "react";
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -26,7 +26,11 @@ const Home = () => {
   const [inputData, setInputData] = useState({Email: '', Password: ''});
 
   const navigation = useNavigation();
+
  
+ 
+  
+
 
   function handleLogin() {
     if (inputData.Email === '') {
@@ -244,7 +248,7 @@ CallApi('userlist', 'POST', body).then(async r => {
                     <Image style={styles.gameZoneSingleImg} source={require('../../assets/q2.png')} />
                     <Text style={styles.gameZoneImgText}>Math Quiz</Text>
                   </View>
-                  <TouchableOpacity onPress={ ()=>{navigation.navigate('Login')} }>
+                  <TouchableOpacity >
                   <View style={styles.gameZoneSingleImgView}>
                     <Image style={styles.gameZoneSingleImg} source={require('../../assets/q3.png')} />
                     <Text style={styles.gameZoneImgText}>GK Quiz</Text>
