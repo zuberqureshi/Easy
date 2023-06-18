@@ -37,6 +37,7 @@
     "react-native-webview": "^13.2.2",
     "react-native-wheel-of-fortune": "^1.5.4",
     "react-native-youtube-iframe": "^2.2.2",
+    "react-native-svg": "^12.3.0",
     "yup": "^1.2.0"
   },
   "devDependencies": {

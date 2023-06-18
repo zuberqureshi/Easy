@@ -45,6 +45,8 @@ import com.swmansion.rnscreens.RNScreensPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 // react-native-webview
 import com.reactnativecommunity.webview.RNCWebViewPackage;
+// react-native-svg
+import com.horcrux.svg.SvgPackage;
 
 public class PackageList {
   private Application application;
@@ -106,7 +108,8 @@ public class PackageList {
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new VectorIconsPackage(),
-      new RNCWebViewPackage()
+      new RNCWebViewPackage(),
+      new SvgPackage()
     ));
   }
 }

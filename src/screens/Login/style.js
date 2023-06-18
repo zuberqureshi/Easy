@@ -54,6 +54,7 @@ export const styles = StyleSheet.create({
         buttonText:{
             color:'#fff',
             fontWeight:'bold',
+            marginRight:responsiveWidth(2.5),
            
            
 
