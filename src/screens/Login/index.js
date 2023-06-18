@@ -1,4 +1,4 @@
-import { View, Text,SafeAreaView,StyleSheet,TextInput, TouchableOpacity,Image } from 'react-native'
+import { View, Text,SafeAreaView,StyleSheet,TextInput, TouchableOpacity,Image,ActivityIndicator } from 'react-native'
 import React,{useState,useEffect} from 'react'
 import { styles } from './style'
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 const Login = () => {
   
   const [userInfo, setUserInfo] = useState(null)
-
+const [activityIndicator, setActivityIndicator] = useState(false)
   const navigation = useNavigation();
   
 useEffect(() => {
@@ -36,6 +36,7 @@ useEffect(() => {
 // console.log('login info',userInfo)
 
 const signIn = async () => {
+  setActivityIndicator(true)
   try {
     await GoogleSignin.hasPlayServices();
     GoogleSignin.signOut()
@@ -52,6 +53,7 @@ const signIn = async () => {
      console.log("gooogle data",usrInfo.user.email , 'userLogin',userLogin.data)
             const ds = await setToken(  userLogin.data );
             console.log("gooogle data",ds , 'datasettoken');
+            setActivityIndicator(false)
             navigation.navigate('HomeStack');
   } catch (error) {
     if (error.code === statusCodes.SIGN_IN_CANCELLED) {
@@ -117,7 +119,7 @@ const signIn = async () => {
         <Text style={styles.textLogin}>Login to your account</Text>
         <View style={styles.inputMain}>
             <Icon name="user-alt" size={responsiveWidth(4.5)} color="#3566ac" />
-        <TextInput 
+        <TextInput cd
         style={styles.inputText}
         placeholder="Email"
       
@@ -141,9 +143,9 @@ const signIn = async () => {
 
           
           <View style={{flexDirection:'row',alignItems:'center'}}>
-          <Icon style={{position:'absolute',left:responsiveWidth(-26)}} name="google-plus-g" size={responsiveWidth(5.5)} color="#fff" />
+          <Icon style={{position:'absolute',left:responsiveWidth(-23)}} name="google-plus-g" size={responsiveWidth(5.5)} color="#fff" />
             <Text  style={styles.buttonText}>LOGIN</Text>
-            
+            <ActivityIndicator animating={activityIndicator} size="small" color="#fff" />
           </View>
         
         </LinearGradient>
