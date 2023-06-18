@@ -1,4 +1,4 @@
-import { View, Text,SafeAreaView,StyleSheet,TextInput, TouchableOpacity,Image,ActivityIndicator } from 'react-native'
+import { View, Text,SafeAreaView,StyleSheet,TextInput, TouchableOpacity,Image,ActivityIndicator,ToastAndroid } from 'react-native'
 import React,{useState,useEffect} from 'react'
 import { styles } from './style'
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -7,14 +7,15 @@ import LinearGradient from 'react-native-linear-gradient';
 import { GoogleSignin,statusCodes } from '@react-native-google-signin/google-signin';
 import CallApi, {setToken ,CallApiJson } from '../../utiles/network';
 import EncryptedStorage from 'react-native-encrypted-storage';
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation,useIsFocused } from "@react-navigation/native";
 
 const Login = () => {
-  
+  const isFocused = useIsFocused()
   const [userInfo, setUserInfo] = useState(null)
 const [activityIndicator, setActivityIndicator] = useState(false)
+const [loginButton, setLoginButton] = useState(false)
   const navigation = useNavigation();
-  
+  console.log("loginbutton",loginButton)
 useEffect(() => {
 
   
@@ -33,10 +34,19 @@ useEffect(() => {
   
 }, [])
 
+const showToast = (msg) => {
+  ToastAndroid.show(`${msg} !`, ToastAndroid.SHORT);
+};
+
+
+
+
+
 // console.log('login info',userInfo)
 
 const signIn = async () => {
   setActivityIndicator(true)
+  setLoginButton(true)
   try {
     await GoogleSignin.hasPlayServices();
     GoogleSignin.signOut()
@@ -50,11 +60,23 @@ const signIn = async () => {
           };
         
         const userLogin =  await CallApiJson('login', 'POST', body);
-     console.log("gooogle data",usrInfo.user.email , 'userLogin',userLogin.data)
+     console.log("gooogle data",usrInfo.user.email , 'userLogin',userLogin)
+   
+     if(userLogin.error === true){
+       console.log("eeror msg",userLogin.error)
+       showToast(userLogin.msg)
+       setActivityIndicator(false)
+       setLoginButton(false)
+     }
+        else{
             const ds = await setToken(  userLogin.data );
             console.log("gooogle data",ds , 'datasettoken');
             setActivityIndicator(false)
+            setLoginButton(false)
+
             navigation.navigate('HomeStack');
+          }
+            
   } catch (error) {
     if (error.code === statusCodes.SIGN_IN_CANCELLED) {
       console.log('SIGN_IN_CANCELLED',error)
@@ -137,7 +159,7 @@ const signIn = async () => {
         <Text style={styles.textWlcm}>Welcome</Text>
         <Text style={styles.textLogin}>Create your Account & {"\n"}        Start Earning</Text>
     
-        <TouchableOpacity onPress={()=>{signIn()}}>
+   <TouchableOpacity disabled={loginButton} onPress={()=>{{ signIn()}}}>
         <LinearGradient colors={['#1f4c86', '#0a203e']} style={styles.inputMain}
            start={{x: 0, y: 0}} end={{x: 1, y: 0}}>
 
@@ -149,7 +171,7 @@ const signIn = async () => {
           </View>
         
         </LinearGradient>
-        </TouchableOpacity>
+        </TouchableOpacity> 
 
 <View style={{marginTop:responsiveWidth(3.5)}}>
 <Text style={{color:'#fff',fontSize:responsiveFontSize(1.7),fontFamily:'Poppins-Light',alignSelf:'center'}}>Whatsapp us for more information</Text>
