@@ -1,19 +1,24 @@
 import { View, Text, Image, FlatList, StyleSheet, Touchable, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import  { removeToken } from '../../utiles/network';
 
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useIsFocused } from "@react-navigation/native";
 import styles from './style'
+import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 
 const CustomDrawer = () => {
 
   const [selectedId, setSelectedId] = useState(null);
+  const [userName, setUserName] = useState()
+  const [userCoin, setUserCoin] = useState()
 
   const navigation = useNavigation();
-  
+  const isFocused = useIsFocused()
+
+
   const commanImg = 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   const home = '../../assets/home.png'
 
@@ -23,6 +28,54 @@ const CustomDrawer = () => {
     console.log("Dataremovedtoken  ",ds , '');
   }
 
+  
+
+
+//   useEffect(() => {
+
+   
+//   setSelectedId(null)
+
+//     const set = async ()=>{
+    
+//       await getUserInfo();
+  
+//     }
+  
+//     set();
+  
+ 
+
+//     // return  ()=>{
+//     //   console.log('return')
+//     // }
+
+//   }, [])
+
+  
+//    //Get User Info
+//  const getUserInfo = async () => {
+//   console.log("getdata Callling....Custom Drwaer")
+//   const ds = await getToken();
+//   const data = await JSON.parse(ds)
+//   await setUserName(ds)
+//   await setUserCoin(data)
+
+// }
+
+// console.log("getdata after Callling.... Custom DrwaerAPi",userCoin,userName)
+
+
+//     // const getProfile = async() => {
+
+//     //   const body = {
+//     //     user_id: userInfo.id,
+//     //   };
+//     //   const dailyRewardCheckClaim = await CallApiJson('dailyrewardclaim', 'POST', body);
+
+//     // }
+
+    
 
 
   const listArray = [
@@ -88,13 +141,13 @@ const CustomDrawer = () => {
       <View style={styles.drawerTop}>
         <Image
           style={styles.drawerTopIcon}
-          source={{ uri: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' }}
+          source={ require('../../assets/man.png')}
         />
         <Text style={styles.drawerTopName}>Danish Qureshi</Text>
          
-        <View style={{flexDirection:'row',marginTop:responsiveWidth(2.5)}}>
-        <Image style={{width:responsiveWidth(6),height:responsiveHeight(3.5)}} source={require('../../assets/coin.png')} />
-        <Text style={styles.drawerTopCoin}>{`600 `}</Text>
+        <View style={{flexDirection:'row',marginTop:responsiveWidth(2.5),alignItems:'center'}}>
+        <Image style={{width:responsiveWidth(6.2),height:responsiveHeight(3)}} source={require('../../assets/rupee.png')} />
+        <Text style={styles.drawerTopCoin}>6000</Text>
         </View>
 
       </View>

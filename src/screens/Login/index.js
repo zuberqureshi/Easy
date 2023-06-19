@@ -30,6 +30,7 @@ useEffect(() => {
   // });
 
 
+
   GoogleSignin.configure({webClientId:'978092792291-q516pofd6upmdlisfkgea3j1rpr6lrsg.apps.googleusercontent.com'});
   
 }, [])
@@ -72,13 +73,12 @@ const signIn = async () => {
             
             const ds = await setToken(  userLogin.data );
             console.log("gooogle data",ds , 'datasettoken');
-            setActivityIndicator(false)
-            setLoginButton(false)
-
             navigation.navigate('HomeStack');
           }
-            
+          setActivityIndicator(false)
+            setLoginButton(false)   
   } catch (error) {
+    setActivityIndicator(false)
     if (error.code === statusCodes.SIGN_IN_CANCELLED) {
       console.log('SIGN_IN_CANCELLED',error)
       // user cancelled the login flow
@@ -91,6 +91,7 @@ const signIn = async () => {
     } else {
       // some other error happened
     }
+    showToast(error)
     console.log('Google error ',error)
   }
 };

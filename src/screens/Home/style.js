@@ -24,8 +24,18 @@ export default styles = StyleSheet.create({
         alignItems: 'center'
     },
     getFreeCoin: {
-        width: responsiveWidth(15.8),
-        height: responsiveHeight(7),
+        width: responsiveWidth(14.5),
+        height: responsiveHeight(7.1),
+        marginLeft: responsiveWidth(2.5),
+    },
+    videoIcon: {
+        width: responsiveWidth(14.5),
+        height: responsiveHeight(7.1),
+        marginLeft: responsiveWidth(2.5),
+    },
+    surveyIcon: {
+        width: responsiveWidth(14.5),
+        height: responsiveHeight(7.1),
         marginLeft: responsiveWidth(2.5),
     },
     spineMainText: {
@@ -125,7 +135,7 @@ export default styles = StyleSheet.create({
     justifyContent: 'center',
 },
 videoImg:{
-    width:responsiveHeight(29.5),
+    width:responsiveHeight(25),
     height:responsiveHeight(22),
 }
 
