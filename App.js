@@ -1,6 +1,6 @@
  
 import React,{useEffect} from 'react';
-import {  Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import crashlytics from '@react-native-firebase/crashlytics';
  
 
@@ -23,6 +23,8 @@ function App() {
  
   return (
     <>
+    
+
       <Navigation/>
       {/* { !net.isConnected?(<CheckInternet/>):  ()} */}
     </>
@@ -30,6 +32,6 @@ function App() {
   );
 }
 
- 
+
 
 export default App;

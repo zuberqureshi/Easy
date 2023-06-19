@@ -25,19 +25,29 @@ const DrawerStack = () => {
     // await setUserID(data.id)
     if( ds){
       setUserLogged(true);
-    
+      console.log("Token  Exist  ");
+
+    }else{
+      console.log("Token Not Set  ");
+
     }
      
-    console.log("get Token in drawer  ",userID, '');
 
   }
 
-useEffect(() => {
-  getUserInfo();
+  const load = ()=>{
+    getUserInfo();
 
- setTimeout(() => {
-  setSplashShow(false)
- }, 4000);
+    setTimeout(() => {
+      setSplashShow(false)
+     }, 4000);
+  }
+  
+useEffect(() => {
+
+  load()
+  console.log(" inside useeffect   ");
+
 }, []);
 
   return (

@@ -8,77 +8,62 @@ import { GoogleSignin,statusCodes } from '@react-native-google-signin/google-sig
 import CallApi, {setToken ,CallApiJson } from '../../utiles/network';
 import EncryptedStorage from 'react-native-encrypted-storage';
 import { useNavigation,useIsFocused } from "@react-navigation/native";
+import Loader from '../../components/common/loader/Loader';
 
 const Login = () => {
   const isFocused = useIsFocused()
+  
+  const [loadingStatus, setLoadingStatus] = useState(false)
   const [userInfo, setUserInfo] = useState(null)
-const [activityIndicator, setActivityIndicator] = useState(false)
-const [loginButton, setLoginButton] = useState(false)
+  const [activityIndicator, setActivityIndicator] = useState(false)
+  const [loginButton, setLoginButton] = useState(false)
   const navigation = useNavigation();
-  console.log("loginbutton",loginButton)
 useEffect(() => {
-
-  
-  // const body = {
-  //   email: 'zugmai.com',
-  //   name: 'ui',
-  // };
-
-  // CallApi('login', 'POST', body).then(async r => {
-  //         console.log('token in login.js :', r);
-
-  // });
-
-
-
   GoogleSignin.configure({webClientId:'978092792291-q516pofd6upmdlisfkgea3j1rpr6lrsg.apps.googleusercontent.com'});
-  
 }, [])
 
 const showToast = (msg) => {
   ToastAndroid.show(`${msg} !`, ToastAndroid.SHORT);
 };
 
-
-
-
-
 // console.log('login info',userInfo)
 
 const signIn = async () => {
   setActivityIndicator(true)
+  setLoadingStatus(true);
   setLoginButton(true)
   try {
     await GoogleSignin.hasPlayServices();
     GoogleSignin.signOut()
     const usrInfo = await GoogleSignin.signIn();
         setUserInfo(usrInfo)
-        console.log("gooogle data",usrInfo.user.email , 'userLogin')
-
         const body = {
             email: usrInfo.user.email,
             name: usrInfo.user.name,
           };
-        
         const userLogin =  await CallApiJson('login', 'POST', body);
-     console.log("gooogle data",usrInfo.user.email , 'userLogin',userLogin)
    
      if(userLogin.error === true){
-       console.log("eeror msg",userLogin.error)
        showToast(userLogin.msg)
        setActivityIndicator(false)
+       setLoadingStatus(false);
        setLoginButton(false)
      }
         else{
-            
             const ds = await setToken(  userLogin.data );
-            console.log("gooogle data",ds , 'datasettoken');
-            navigation.navigate('HomeStack');
-          }
+
           setActivityIndicator(false)
-            setLoginButton(false)   
+          setLoginButton(false) 
+          setLoginButton(false)
+          navigation.navigate('HomeStack');
+ 
+          }
+           
   } catch (error) {
     setActivityIndicator(false)
+    setLoadingStatus(false);
+    setLoginButton(false)   
+
     if (error.code === statusCodes.SIGN_IN_CANCELLED) {
       console.log('SIGN_IN_CANCELLED',error)
       // user cancelled the login flow
@@ -157,6 +142,7 @@ const signIn = async () => {
       
       />
         </View> */}
+        <Loader loadingStatus = {loadingStatus} />
         <Image style={{width:responsiveWidth(47),height:responsiveHeight(32),marginTop:responsiveWidth(20)}} source={require('../../assets/l1.png')} />
         <Text style={styles.textWlcm}>Welcome</Text>
         <Text style={styles.textLogin}>Create your Account & {"\n"}        Start Earning</Text>
@@ -173,13 +159,13 @@ const signIn = async () => {
           </View>
         
         </LinearGradient>
-        </TouchableOpacity> 
+    </TouchableOpacity> 
 
 <View style={{marginTop:responsiveWidth(3.5)}}>
 <Text style={{color:'#fff',fontSize:responsiveFontSize(1.7),fontFamily:'Poppins-Light',alignSelf:'center'}}>Whatsapp us for more information</Text>
 <Text style={{color:'#fff',fontSize:responsiveFontSize(1.5),fontFamily:'Poppins-Light',alignSelf:'center',textDecorationLine:'underline',fontWeight:'bold'}}>+91 7418529637</Text>
 <Text style={{color:'#fff',fontSize:responsiveFontSize(1.7),fontFamily:'Poppins-Light',alignSelf:'center'}}>Or</Text>
-<Text style={{color:'#fff',fontSize:responsiveFontSize(1.7),fontFamily:'Poppins-Light',alignSelf:'center'}}>Visit our website <Text  style={{color:'#fff',fontSize:responsiveFontSize(1.7),fontFamily:'Poppins-Light',letterSpacing:responsiveWidth(0.15),textDecorationLine:'underline',fontWeight:'bold'}}> www.earnmoney.in</Text> </Text>
+<Text style={{color:'#fff',fontSize:responsiveFontSize(1.7),fontFamily:'Poppins-Light',alignSelf:'center'}}>Email Us <Text  style={{color:'#fff',fontSize:responsiveFontSize(1.7),fontFamily:'Poppins-Light',letterSpacing:responsiveWidth(0.15),textDecorationLine:'underline',fontWeight:'bold'}}> contact@newindiagyan.online</Text> </Text>
 </View>
 
 

@@ -12,7 +12,9 @@ import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 const CustomDrawer = () => {
 
   const [selectedId, setSelectedId] = useState(null);
-  const [userName, setUserName] = useState()
+  const [userName, setUserName] = useState();
+  const [userInfo, setuserInfo] = useState({})
+
   const [userCoin, setUserCoin] = useState()
 
   const navigation = useNavigation();
@@ -24,59 +26,39 @@ const CustomDrawer = () => {
 
   const userLogout = async ()=>{
     const ds = await removeToken(  );
-   
+    setSelectedId(null);
     console.log("Dataremovedtoken  ",ds , '');
   }
 
-  
+  const getUserInfo = async ()=>{
+    const ds = await getToken(  );
+    const userParseData= await JSON.parse(ds)
+    console.log("insidecustomedrawer  userParseData  ",userParseData.id );
 
+    const body = {
+      user_id: userParseData.id,
+    };
+    const userDataApi = await CallApiJson('getprofile', 'POST', body);
+    // await setUserID(data.id)
+    if( ds){
+      setuserInfo(userDataApi.data);
+      console.log("insidecustomedrawer  userDataApi  ",userDataApi.data );
+      console.log("insidecustomedrawer  userParseDatauserInfo  ",userInfo.wallet_coins );
 
-//   useEffect(() => {
+    }else{
+      console.log("insidecustomedrawer Token Not Set  ");
 
-   
-//   setSelectedId(null)
+    }
+     
 
-//     const set = async ()=>{
-    
-//       await getUserInfo();
-  
-//     }
-  
-//     set();
-  
+  }
+
+  useEffect(() => {
+    getUserInfo()
+    console.log( 'insidecustomedrawer');
+  }, [])
+
  
-
-//     // return  ()=>{
-//     //   console.log('return')
-//     // }
-
-//   }, [])
-
-  
-//    //Get User Info
-//  const getUserInfo = async () => {
-//   console.log("getdata Callling....Custom Drwaer")
-//   const ds = await getToken();
-//   const data = await JSON.parse(ds)
-//   await setUserName(ds)
-//   await setUserCoin(data)
-
-// }
-
-// console.log("getdata after Callling.... Custom DrwaerAPi",userCoin,userName)
-
-
-//     // const getProfile = async() => {
-
-//     //   const body = {
-//     //     user_id: userInfo.id,
-//     //   };
-//     //   const dailyRewardCheckClaim = await CallApiJson('dailyrewardclaim', 'POST', body);
-
-//     // }
-
-    
-
 
   const listArray = [
     { icon: 'home', title: 'Home' },
@@ -143,11 +125,11 @@ const CustomDrawer = () => {
           style={styles.drawerTopIcon}
           source={ require('../../assets/man.png')}
         />
-        <Text style={styles.drawerTopName}>Danish Qureshi</Text>
+        <Text style={styles.drawerTopName}> {userInfo.name} </Text>
          
         <View style={{flexDirection:'row',marginTop:responsiveWidth(2.5),alignItems:'center'}}>
         <Image style={{width:responsiveWidth(6.2),height:responsiveHeight(3)}} source={require('../../assets/rupee.png')} />
-        <Text style={styles.drawerTopCoin}>6000</Text>
+        <Text style={styles.drawerTopCoin}> {  console.log('userInfoapi',userInfo) }  {userInfo.wallet_coins}</Text>
         </View>
 
       </View>

@@ -37,22 +37,16 @@ const Home = () => {
 
 
 
+  const set = async ()=>{
+    await settings();
+    await getUserInfo();
+
+  }
 
 
 
   useEffect(() => {
-
-
-    const set = async ()=>{
-      await settings();
-      await getUserInfo();
-  
-    }
-  
     set();
-  
- 
-
     return  ()=>{
       console.log('return')
     }
@@ -90,31 +84,7 @@ const Home = () => {
   //timer login
   const [counter, setCounter] = useState(0)
 
-  useEffect(() => {
-    // handleLogin();
-
-  
-    // console.log('homepage')
-    // console.log('homepage crash ')
-
-    const timer = counter > 0 && setInterval(() => {
-      setCounter(counter - 1)
-    }, 1000);
-
-    return () => {
-      clearInterval(timer)
-    }
-  }, [counter])
-
-
-  
-
-
-
-
-
-
-
+   
 
   //  Header start
   useLayoutEffect(() => {
@@ -357,6 +327,33 @@ const Home = () => {
 </TouchableOpacity>
 {/* Get Free Coins Video-End */}
 
+
+
+
+
+          </View>
+
+
+          {/* Spine-Start*/}
+          <View style={{ flex: 0.20, marginTop: responsiveWidth(4) }}>
+            <Text style={styles.spineMainText}>Spine Wheel</Text>
+
+
+
+            <View style={{ alignItems: 'center', marginTop: responsiveWidth(6) }}>
+              <TouchableOpacity onPress={() => { navigation.navigate('SpinerWheel') }}  >
+
+
+                <View style={styles.spineImgView}>
+
+                  <Image style={styles.spineImg} source={require('../../assets/Spin4.jpg')} />
+
+                </View>
+              </TouchableOpacity>
+            </View>
+
+          </View>
+          {/* Spine-End*/}
   {/* Get Free Coins Survey-Start */}
   <TouchableOpacity onPress={()=>{surveyRewardClaim()}}>
   <View style={{ flex: 0.10 , marginTop: responsiveHeight(1.8)}}>
@@ -385,33 +382,6 @@ const Home = () => {
 </View>
 </TouchableOpacity>
 {/* Get Free Coins Survey -End */}
-
-
-
-          </View>
-
-
-          {/* Spine-Start*/}
-          <View style={{ flex: 0.20, marginTop: responsiveWidth(4) }}>
-            <Text style={styles.spineMainText}>Spine Wheel</Text>
-
-
-
-            <View style={{ alignItems: 'center', marginTop: responsiveWidth(6) }}>
-              <TouchableOpacity onPress={() => { navigation.navigate('SpinerWheel') }}  >
-
-
-                <View style={styles.spineImgView}>
-
-                  <Image style={styles.spineImg} source={require('../../assets/Spin4.jpg')} />
-
-                </View>
-              </TouchableOpacity>
-            </View>
-
-          </View>
-          {/* Spine-End*/}
-
 
           {/* Game Zone-Start*/}
           {/* <View style={{ flex: 0.20, marginTop:responsiveWidth(3.6) }}>
@@ -463,7 +433,7 @@ const Home = () => {
 
               <View style={styles.contestZoneContainer}>
 
-                <Text style={styles.contestZoneMainText}>Contest Zone</Text>
+                <Text style={styles.contestZoneMainText}> Earn Coin By  survey  </Text>
 
                 <View >
                   <Image style={styles.contestZoneImg} source={require('../../assets/contest.jpeg')} />

@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState,useEffect, useLayoutEffect } from 'react';
 import {View,Text,TouchableOpacity,ImageBackground,TextInput, Pressable, KeyboardAvoidingView,ScrollView,SafeAreaView } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
@@ -13,16 +13,42 @@ import { Formik } from 'formik';
 import { FormSchema } from '../../utiles/FormSchema';
 import styles from './style'
 
-
+import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
+import Loader from '../../components/common/loader/Loader';
 
 const EditProfileScreen = () => {
 
 
     const navigation = useNavigation();
-
-
+    const [loadingStatus, setLoadingStatus] = useState(false)
+    const [userProfileData, setuserProfileData] = useState({});
     const [image, setImage] = useState('https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
    
+    const  loadUserInfo = async () =>{
+        setLoadingStatus(true);
+
+        // const data = await JSON.parse(seting)
+       const  userdata = await getToken();
+       const userdataParsed = await JSON.parse(userdata)
+       const body = {
+        user_id: userdataParsed.id,
+      };
+
+       const profileData = await CallApiJson('getprofile', 'POST',body);
+       setuserProfileData(profileData);
+       setLoadingStatus(false);
+
+        console.log('EditProfileScreenData',profileData);
+    }
+
+  useEffect(() => {
+    console.log('insideeditprofile',userProfileData)
+
+    loadUserInfo();
+    return  ()=>{
+      console.log('return')
+    }
+  }, [])
 
 
     useLayoutEffect(() => {
@@ -59,7 +85,8 @@ const EditProfileScreen = () => {
 
     return (
          <SafeAreaView style={styles.container}>
- 
+    <Loader loadingStatus = {loadingStatus} />
+
         <KeyboardAvoidingView  behavior='height'>
   <ScrollView>
 
@@ -89,6 +116,8 @@ const EditProfileScreen = () => {
                     </TouchableOpacity>
                     <Text style={{ marginTop: responsiveWidth(2.5), fontSize: responsiveFontSize(2.15), fontWeight: 'bold' }}>
                         Profile Details
+                        { console.log('profileDataDetails',userProfileData)}
+                        { console.log('profileDataDetailscodedata',userProfileData)}
                     </Text>
                 </View>
 
@@ -110,7 +139,7 @@ const EditProfileScreen = () => {
                                 <TextInput
                                     onChangeText={handleChange('firstname')}
                                     onBlur={handleBlur('firstname')}
-                                    value={values.firstname}
+                                    value={userProfileData?.data?.name}
                                     placeholder="First Name"
                                     placeholderTextColor="#666666"
                                     autoCorrect={false}
@@ -160,7 +189,7 @@ const EditProfileScreen = () => {
                                 <TextInput
                                  onChangeText={handleChange('phone')}
                                     onBlur={handleBlur('phone')}
-                                    value={values.phone}
+                                    value={userProfileData?.data?.mobile}
                                     placeholder="Phone"
                                     placeholderTextColor="#666666"
                                     keyboardType="number-pad"
@@ -177,7 +206,7 @@ const EditProfileScreen = () => {
                                 <TextInput
                                  onChangeText={handleChange('email')}
                                     onBlur={handleBlur('email')}
-                                    value={values.email}
+                                    value={userProfileData?.data?.email}
                                     placeholder="Email"
                                     placeholderTextColor="#666666"
                                     keyboardType="email-address"

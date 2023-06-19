@@ -14,21 +14,38 @@ import IconFeather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
-
+import Loader from '../../components/common/loader/Loader';
 
 const Profile = (props) => {
  
 
+  const [userProfileData, setuserProfileData] = useState({});
+  const [loadingStatus, setLoadingStatus] = useState(false)
 
+  const  loadUserInfo = async () =>{
+    setLoadingStatus(true);
+      // const data = await JSON.parse(seting)
+     const  userdata = await getToken();
+     const userdataParsed = await JSON.parse(userdata)
+     const body = {
+      user_id: userdataParsed.id,
+    };
 
+     const profileData = await CallApiJson('getprofile', 'POST',body);
+     setLoadingStatus(false);
 
+     setuserProfileData(profileData);
+      console.log('UserProfileScreenData',profileData);
+  }
+  
+useEffect(() => {
+  console.log('userprofile',userProfileData)
 
-
-
-
-
-
-
+  loadUserInfo();
+  return  ()=>{
+    console.log('return')
+  }
+}, [])
 
   const navigation = useNavigation();
 
@@ -69,6 +86,7 @@ const Profile = (props) => {
     
     <SafeAreaView style={styles.container}>
    
+   <Loader loadingStatus = {loadingStatus} />
       <View style={styles.userInfoSection}>
         <View style={{flexDirection: 'row', marginTop: responsiveWidth(3.5)}}>
          <Image
@@ -80,7 +98,7 @@ const Profile = (props) => {
             <Title style={[styles.title, {
               marginTop:responsiveWidth(3.65),
               marginBottom: responsiveWidth(1.2),
-            }]}>Danish Qureshi</Title>
+            }]}>{userProfileData?.data?.name} </Title>
             <Caption style={styles.caption}>danishqureshi8817@</Caption>
           </View>
         </View>
