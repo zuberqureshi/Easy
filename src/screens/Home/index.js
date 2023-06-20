@@ -15,7 +15,7 @@ import YoutubePlayer from "react-native-youtube-iframe";
 import crashlytics from '@react-native-firebase/crashlytics';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import RNPollfish from 'react-native-plugin-pollfish';
-const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true) .releaseMode(true);
+const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true) .releaseMode(false);
   RNPollfish.init(builder.build());
 
 const Home = () => {
@@ -213,12 +213,9 @@ RNPollfish.isPollfishPresent((isPollfishPresent) => {
       console.log( 'show survey');
       RNPollfish.show();
     }else{
-
       Alert.alert('No Survey Available Right , Please Try After Some Time ');
     }
     
-
-
   }
 
   //Survey Reward
