@@ -10,7 +10,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Formik } from 'formik';
 
-import { FormSchema } from '../../utiles/FormSchema';
+import  FormSchema from '../../utiles/FormSchema';
 import styles from './style'
 
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
@@ -25,6 +25,7 @@ const EditProfileScreen = () => {
     const [loadingStatus, setLoadingStatus] = useState(false)
     const [userProfileData, setuserProfileData] = useState({});
     const [image, setImage] = useState('https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    // const [formikValues, setFormikValues] = useState({ name: '' ,age: '', phone: '', email: '', country: '', address: '' })
 
     const loadUserInfo = async () => {
         setLoadingStatus(true);
@@ -38,6 +39,7 @@ const EditProfileScreen = () => {
 
         const profileData = await CallApiJson('getprofile', 'POST', body);
         setuserProfileData(profileData);
+        // setFormikValues({name:'hhhg'})
         setLoadingStatus(false);
 
         console.log('EditProfileScreenData', profileData);
@@ -151,15 +153,17 @@ const EditProfileScreen = () => {
 
                             {/* use formik   */}
                             <Formik
-                                initialValues={{ name: '', age: '', phone: '', email: '', country: '', address: '' }}
-                                // validationSchema={FormSchema}
+                             enableReinitialize={true}
+                                initialValues={{ name: userProfileData?.data?.name ? userProfileData?.data?.name : "", mobile: userProfileData?.data?.mobile ? userProfileData?.data?.mobile : "", email: userProfileData?.data?.email ? userProfileData?.data?.email : "", country:userProfileData?.data?.country ? userProfileData?.data?.country : "", address: userProfileData?.data?.address ? userProfileData?.data?.address : "" }}
+                                validationSchema={FormSchema}
                                 onSubmit={(values, action) => {
 
-
-                                    updateProfile(values.country,values.address,values.name,values.phone)
+                                 
+                                    updateProfile(values.country,values.address,values.name,values.mobile)
 
                                     console.warn(values);
-                                    // action.resetForm()
+                                    action.resetForm()
+                                    loadUserInfo();
                                     
                                 }
                                 }
@@ -174,14 +178,14 @@ const EditProfileScreen = () => {
                                                 onChangeText={handleChange('name')}
                                                 onBlur={handleBlur('name')}
                                                 value={values.name}
-                                                placeholder={userProfileData?.data?.name ? `${userProfileData?.data?.name}` : 'Enter Your Name'}
+                                                placeholder={ 'Enter Your Name'}
                                                 placeholderTextColor="#666666"
                                                 autoCorrect={false}
                                                 style={[
                                                     styles.textInput
                                                 ]}
                                             />
-                                            {/* { errors.firstname && touched.firstname ? <Text style={{color:'red'}}>{errors.firstname}</Text>:null} */}
+                                            { (errors.name && touched.name) ? <Text style={{color:'red'}}>{errors.name}</Text>:null}
                                         </View>
 
 
@@ -221,10 +225,10 @@ const EditProfileScreen = () => {
                                         <View style={styles.action}>
                                             <Feather name="phone" size={responsiveWidth(5)} />
                                             <TextInput
-                                                onChangeText={handleChange('phone')}
-                                                onBlur={handleBlur('phone')}
-                                                value={values.phone}
-                                                placeholder={userProfileData?.data?.mobile ? `${userProfileData?.data?.mobile}` : 'Enter Mobile No.'}
+                                                onChangeText={handleChange('mobile')}
+                                                onBlur={handleBlur('mobile')}
+                                                value={values.mobile}
+                                                placeholder={'Enter Mobile No.'}
                                                 placeholderTextColor="#666666"
                                                 keyboardType="number-pad"
                                                 autoCorrect={false}
@@ -232,6 +236,7 @@ const EditProfileScreen = () => {
                                                     styles.textInput
                                                 ]}
                                             />
+                                                { (errors.mobile && touched.mobile) ? <Text style={{color:'red'}}>{errors.mobile}</Text>:null}
                                         </View>
 
 
@@ -241,7 +246,7 @@ const EditProfileScreen = () => {
                                                 onChangeText={handleChange('email')}
                                                 onBlur={handleBlur('email')}
                                                 value={values.email}
-                                                placeholder={userProfileData?.data?.email ? `${userProfileData?.data?.email}` : 'Enter Your Email'}
+                                                placeholder={'Enter Your Email'}
                                                 placeholderTextColor="#666666"
                                                 keyboardType="email-address"
                                                 autoCorrect={false}
@@ -260,13 +265,14 @@ const EditProfileScreen = () => {
                                                 onChangeText={handleChange('address')}
                                                 onBlur={handleBlur('address')}
                                                 value={values.address}
-                                                placeholder={userProfileData?.data?.address ? `${userProfileData?.data?.address}` : 'Enter Your Address'}
+                                                placeholder={'Enter Your Address'}
                                                 placeholderTextColor="#666666"
                                                 autoCorrect={false}
                                                 style={[
                                                     styles.textInput
                                                 ]}
                                             />
+                                                { (errors.address && touched.address) ? <Text style={{color:'red'}}>{errors.address}</Text>:null}
                                         </View>
 
 
@@ -276,7 +282,7 @@ const EditProfileScreen = () => {
                                                 onChangeText={handleChange('country')}
                                                 onBlur={handleBlur('country')}
                                                 value={values.country}
-                                                placeholder={userProfileData?.data?.country ? `${userProfileData?.data?.country}` : 'Enter Your Country'}
+                                                placeholder={'Enter Your Country'}
                                                 placeholderTextColor="#666666"
                                                 autoCorrect={false}
                                                 style={[
@@ -284,9 +290,10 @@ const EditProfileScreen = () => {
 
                                                 ]}
                                             />
+                                                { (errors.country && touched.country) ? <Text style={{color:'red'}}>{errors.country}</Text>:null}
                                         </View>
 
-                                        <TouchableOpacity style={styles.commandButton} onPress={handleSubmit}>
+                                        <TouchableOpacity disabled={!isValid} style={styles.commandButton} onPress={handleSubmit}>
                                             <Text style={styles.panelButtonTitle}>Submit</Text>
                                         </TouchableOpacity>
                                     </View>
