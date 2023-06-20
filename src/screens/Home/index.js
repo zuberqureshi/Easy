@@ -270,7 +270,7 @@ const Home = () => {
           <View style={{ flex: 0.30, marginTop: responsiveHeight(1.8) }}>
 
             {/* Get Free Coins -Start */}
-            <TouchableOpacity onPress={() => { dailyReward() }}>
+            <TouchableOpacity onPress={() => { navigation.navigate('Reward') }}>
               <View style={{ flex: 0.10, }}>
 
                 <Text style={styles.getFreeMainText}>Daily Reward: Unlock </Text>
