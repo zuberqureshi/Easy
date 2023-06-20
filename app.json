@@ -1,4 +1,8 @@
 {
   "name": "Easy Earn ",
-  "displayName": "Easy Earn  Earn "
+  "displayName": "Easy Earn  Earn ",
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-2291791121050290~7118470639"
+  }
+
 }
