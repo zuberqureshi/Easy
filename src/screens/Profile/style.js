@@ -29,14 +29,13 @@ export default styles = StyleSheet.create({
       borderBottomWidth: responsiveWidth(0.2),
       borderTopColor: '#dddddd',
       borderTopWidth: responsiveWidth(0.2),
-      flexDirection: 'row',
+     
       height: responsiveHeight(11.8),
+      alignItems:'center',
+      justifyContent:'center',
+      
     },
-    infoBox: {
-      width: '50%',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
+  
     menuWrapper: {
       marginTop: responsiveWidth(2.5),
     },

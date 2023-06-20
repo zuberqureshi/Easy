@@ -24,18 +24,18 @@ export default styles = StyleSheet.create({
         alignItems: 'center'
     },
     getFreeCoin: {
-        width: responsiveWidth(14.5),
-        height: responsiveHeight(7.1),
+        width: responsiveWidth(13.05),
+        height: responsiveHeight(6.35),
         marginLeft: responsiveWidth(2.5),
     },
     videoIcon: {
-        width: responsiveWidth(14.5),
-        height: responsiveHeight(7.1),
+        width: responsiveWidth(13.05),
+        height: responsiveHeight(6.35),
         marginLeft: responsiveWidth(2.5),
     },
     surveyIcon: {
-        width: responsiveWidth(14.5),
-        height: responsiveHeight(7.1),
+        width: responsiveWidth(13.05),
+        height: responsiveHeight(6.35),
         marginLeft: responsiveWidth(2.5),
     },
     spineMainText: {
@@ -120,6 +120,27 @@ export default styles = StyleSheet.create({
         fontSize: responsiveFontSize(2.6),
         marginLeft: responsiveWidth(2.5)
     },
+    surveyContainer: {
+        backgroundColor: '#1f4c86',
+        width: responsiveWidth(90),
+        height: responsiveHeight(23),
+        borderRadius: responsiveWidth(2.6),
+       
+    },
+    surveyText: {
+        fontSize: responsiveFontSize(2.4),
+        fontWeight: 400,
+        marginLeft: responsiveWidth(3),
+        color: '#f7feff',
+        marginVertical: responsiveWidth(2.5),
+    },
+    surveyImg: {
+        width: responsiveWidth(31),
+        height: responsiveHeight(15),
+        // marginLeft: responsiveWidth(2.5),
+        alignSelf:'center',
+    },
+ 
     videoMainText: {
         fontSize: responsiveFontSize(2.15),
         fontWeight: 600,
@@ -129,14 +150,14 @@ export default styles = StyleSheet.create({
     videoImgView:{ 
     backgroundColor: '#1f4c86',
     width: responsiveWidth(90),
-    height: responsiveHeight(23),
+    height: responsiveHeight(20),
     borderRadius: responsiveWidth(2.6),
     alignItems: 'center',
     justifyContent: 'center',
 },
 videoImg:{
-    width:responsiveHeight(25),
-    height:responsiveHeight(22),
+    width:responsiveHeight(20),
+    height:responsiveHeight(15),
 }
 
 });

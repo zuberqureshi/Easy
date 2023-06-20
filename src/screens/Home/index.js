@@ -37,7 +37,7 @@ const Home = () => {
 
 
 
-  const set = async ()=>{
+  const set = async () => {
     await settings();
     await getUserInfo();
 
@@ -47,30 +47,30 @@ const Home = () => {
 
   useEffect(() => {
     set();
-    return  ()=>{
+    return () => {
       console.log('return')
     }
   }, [])
 
-    // setting api
-    const settings = async () => {
+  // setting api
+  const settings = async () => {
 
-      const seting = await CallApiJson('settings', 'GET');
-      // const data = await JSON.parse(seting)
-       await setUserSettings(seting)
-  
-    }
-    console.log("setting Info after calling.....", userSettings)
+    const seting = await CallApiJson('settings', 'GET');
+    // const data = await JSON.parse(seting)
+    await setUserSettings(seting)
 
-   //Get User Info
- const getUserInfo = async () => {
-  console.log("getdata Callling....")
-  const ds = await getToken();
-  const data = await JSON.parse(ds)
-  await setUserInfo(data)
+  }
+  console.log("setting Info after calling.....", userSettings)
 
-}
-// console.log("getdata after Callling.... APi", userInfo)
+  //Get User Info
+  const getUserInfo = async () => {
+    console.log("getdata Callling....")
+    const ds = await getToken();
+    const data = await JSON.parse(ds)
+    await setUserInfo(data)
+
+  }
+  // console.log("getdata after Callling.... APi", userInfo)
 
 
 
@@ -84,7 +84,7 @@ const Home = () => {
   //timer login
   const [counter, setCounter] = useState(0)
 
-   
+
 
   //  Header start
   useLayoutEffect(() => {
@@ -125,7 +125,7 @@ const Home = () => {
   //  Header End
 
 
- 
+
 
   const dailyReward = async () => {
     setModalVisible(true)
@@ -143,7 +143,7 @@ const Home = () => {
   }
   // console.log('dailyreward eligiblaForDailyReward',dailyRewardButton)
 
-    //DailyRewardClaim
+  //DailyRewardClaim
   const dailyRewardClaim = async () => {
     // console.log("User data home dailyRewardClaim API", userInfo.id)
     // console.log('dailyreward eligiblaForDailyReward ',dailyRewardButton)
@@ -157,7 +157,7 @@ const Home = () => {
 
   }
 
-//Video Ad Reward
+  //Video Ad Reward
   const videoAdRewardClaim = async () => {
     // console.log("User data home video API", userInfo.id)
     // console.log('dailyreward eligiblaForDailyReward ',dailyRewardButton)
@@ -169,7 +169,7 @@ const Home = () => {
 
     // console.log('videoAdReward Calim after api ', videoAdReward.msg)
 
-   
+
 
 
   }
@@ -199,27 +199,27 @@ const Home = () => {
     //   user_id: userInfo.id,
     // };
     const youtubeVideo = await CallApiJson('youtubevideolist', 'GET');
-        //  const data = await JSON.stringify(youtubeVideo)
+    //  const data = await JSON.stringify(youtubeVideo)
     console.log('youtubeVideoId after api ', youtubeVideo.data.video_url)
-      await setVideoId(youtubeVideo)
+    await setVideoId(youtubeVideo)
   }
 
 
-   //youtube video Reward Claim Api 
-   const youtubeVideoRewardClaim = async () => {
+  //youtube video Reward Claim Api 
+  const youtubeVideoRewardClaim = async () => {
     console.log("User data home youtubeVideo Reward API", userInfo.id)
     // console.log('dailyreward eligiblaForDailyReward ',dailyRewardButton)
 
     const body = {
       user_id: userInfo.id,
     };
-    const youtubeVideoReward = await CallApiJson('youtubevideorewardclaim','POST',body);
-        //  const data = await JSON.stringify(youtubeVideo)
+    const youtubeVideoReward = await CallApiJson('youtubevideorewardclaim', 'POST', body);
+    //  const data = await JSON.stringify(youtubeVideo)
     console.log('youtubeVideo Reward after api ', youtubeVideoReward.msg)
-   
+
   }
 
-  
+
 
 
 
@@ -270,62 +270,62 @@ const Home = () => {
           <View style={{ flex: 0.30, marginTop: responsiveHeight(1.8) }}>
 
             {/* Get Free Coins -Start */}
-            <TouchableOpacity onPress={()=>{dailyReward()}}>
-            <View style={{ flex: 0.10 ,}}>
+            <TouchableOpacity onPress={() => { dailyReward() }}>
+              <View style={{ flex: 0.10, }}>
 
-              <Text style={styles.getFreeMainText}>Daily Reward: Unlock </Text>
-              <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
+                <Text style={styles.getFreeMainText}>Daily Reward: Unlock </Text>
+                <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
 
-                <View style={styles.getFreeMainContainer}>
-                  <Image style={styles.getFreeCoin} source={require('../../assets/rupee.png')} />
+                  <View style={styles.getFreeMainContainer}>
+                    <Image style={styles.getFreeCoin} source={require('../../assets/rupee.png')} />
 
-                  <View style={{ flexDirection: 'column',width:responsiveWidth(48),marginLeft:responsiveWidth(4) }}>
-                    <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Free Coins</Text>
-                    <Text style={{ color: '#fff' }}>Claim Your Daily Reward Now !</Text>
-                  </View>
-                  <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3) }}>
-                    <Text style={{ color: '#fff' }}>Get Coins</Text>
-
-                    <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5),width:responsiveWidth(6) }}>
-                      <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}>{userSettings && userSettings.data.daily_coin}</Text>
-                      <Image style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5) }} source={require('../../assets/rupee.png')} />
+                    <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5) }}>
+                      <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Free Coins</Text>
+                      <Text style={{ color: '#fff' }}>Claim Your Daily Reward Now !</Text>
                     </View>
+                    <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3) }}>
+                      <Text style={{ color: '#fff' }}>Get Coins</Text>
 
+                      <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
+                        <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}>{userSettings && userSettings.data.daily_coin}</Text>
+                        <Image style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5) }} source={require('../../assets/rupee.png')} />
+                      </View>
+
+                    </View>
                   </View>
                 </View>
               </View>
-            </View>
             </TouchableOpacity>
             {/* Get Free Coins -End */}
 
-              {/* Get Free Coins Video -Start */}
-              <TouchableOpacity onPress={()=>{videoAdRewardClaim()}}>
-              <View style={{ flex: 0.10 , marginTop: responsiveHeight(1.8)}}>
+            {/* Get Free Coins Video -Start */}
+            <TouchableOpacity onPress={() => { videoAdRewardClaim() }}>
+              <View style={{ flex: 0.10, marginTop: responsiveHeight(1.8) }}>
 
-<Text style={styles.getFreeMainText}>Daily Reward: Unlock </Text>
-<View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
+                <Text style={styles.getFreeMainText}>Daily Reward: Unlock </Text>
+                <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
 
-  <View style={styles.getFreeMainContainer}>
-    <Image style={styles.videoIcon} source={require('../../assets/play.png')} />
+                  <View style={styles.getFreeMainContainer}>
+                    <Image style={styles.videoIcon} source={require('../../assets/play.png')} />
 
-    <View style={{ flexDirection: 'column',width:responsiveWidth(48),marginLeft:responsiveWidth(4) }}>
-      <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Free Coins</Text>
-      <Text style={{ color: '#fff' }}>Claim Your Daily Reward Now !</Text>
-    </View>
-    <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3) }}>
-      <Text style={{ color: '#fff' }}>Get Coins</Text>
+                    <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5) }}>
+                      <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Free Coins</Text>
+                      <Text style={{ color: '#fff' }}>Claim Your Daily Reward Now !</Text>
+                    </View>
+                    <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3) }}>
+                      <Text style={{ color: '#fff' }}>Get Coins</Text>
 
-      <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5),width:responsiveWidth(6) }}>
-        <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}> {userSettings && userSettings.data.video_ad_coin}</Text>
-        <Image style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5) }} source={require('../../assets/rupee.png')} />
-      </View>
+                      <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
+                        <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}> {userSettings && userSettings.data.video_ad_coin}</Text>
+                        <Image style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5) }} source={require('../../assets/rupee.png')} />
+                      </View>
 
-    </View>
-  </View>
-</View>
-</View>
-</TouchableOpacity>
-{/* Get Free Coins Video-End */}
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </TouchableOpacity>
+            {/* Get Free Coins Video-End */}
 
 
 
@@ -354,8 +354,8 @@ const Home = () => {
 
           </View>
           {/* Spine-End*/}
-  {/* Get Free Coins Survey-Start */}
-  <TouchableOpacity onPress={()=>{surveyRewardClaim()}}>
+          {/* Get Free Coins Survey-Start */}
+          {/* <TouchableOpacity onPress={()=>{surveyRewardClaim()}}>
   <View style={{ flex: 0.10 , marginTop: responsiveHeight(1.8)}}>
 
 <Text style={styles.getFreeMainText}>Get Coins By Survey </Text>
@@ -364,7 +364,7 @@ const Home = () => {
   <View style={styles.getFreeMainContainer}>
     <Image style={styles.surveyIcon} source={require('../../assets/test.png')} />
 
-    <View style={{ flexDirection: 'column',width:responsiveWidth(48),marginLeft:responsiveWidth(4) }}>
+    <View style={{ flexDirection: 'column',width:responsiveWidth(48),marginLeft:responsiveWidth(4.5) }}>
       <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Free Coins</Text>
       <Text style={{ color: '#fff' }}>Claim Your Daily Reward Now !</Text>
     </View>
@@ -380,8 +380,8 @@ const Home = () => {
   </View>
 </View>
 </View>
-</TouchableOpacity>
-{/* Get Free Coins Survey -End */}
+</TouchableOpacity> */}
+          {/* Get Free Coins Survey -End */}
 
           {/* Game Zone-Start*/}
           {/* <View style={{ flex: 0.20, marginTop:responsiveWidth(3.6) }}>
@@ -429,7 +429,7 @@ const Home = () => {
           <View style={{ flex: 0.30, marginTop: responsiveWidth(3.6), marginBottom: responsiveWidth(9.75) }}>
 
 
-            <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
+            {/* <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
 
               <View style={styles.contestZoneContainer}>
 
@@ -441,14 +441,30 @@ const Home = () => {
                     <Text style={styles.contestZoneAvailableText}>Contest not available!!</Text>
                   </View>
                 </View>
+              </View>
+            </View> */}
 
+            {/* //contest Zone DisAble */}
 
+   {/* survey container - start */}
+   <TouchableOpacity onPress={()=>{surveyRewardClaim()}}>
+            <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
 
+              <View style={styles.surveyContainer}>
 
+                <Text style={styles.surveyText}> Earn Coin By survey  </Text>
 
+                <View >
+                  <Image style={styles.surveyImg} source={require('../../assets/test.png')} />
+                  <View style={{ alignItems: 'center' }}>
+                    {/* <Text style={styles.contestZoneAvailableText}>Contest not available!!</Text> */}
+                  </View>
+                </View>
 
               </View>
             </View>
+</TouchableOpacity>
+{/* survey container - end */}
 
             {/*YouTUbe Video-Start*/}
 
@@ -694,7 +710,7 @@ const Home = () => {
 
 
                   }}>
-                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(2.4), letterSpacing: responsiveFontSize(0.095) }}>{dailyRewardButton?'Reward Already Claim':'Claim Reward'}</Text>
+                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(2.4), letterSpacing: responsiveFontSize(0.095) }}>{dailyRewardButton ? 'Reward Already Claim' : 'Claim Reward'}</Text>
                 </TouchableOpacity>
                 {/* </View> */}
               </LinearGradient>

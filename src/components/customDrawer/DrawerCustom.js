@@ -125,11 +125,11 @@ const CustomDrawer = () => {
           style={styles.drawerTopIcon}
           source={ require('../../assets/man.png')}
         />
-        <Text style={styles.drawerTopName}> {userInfo.name} </Text>
+        <Text style={styles.drawerTopName}> {userInfo?.name} </Text>
          
         <View style={{flexDirection:'row',marginTop:responsiveWidth(2.5),alignItems:'center'}}>
         <Image style={{width:responsiveWidth(6.2),height:responsiveHeight(3)}} source={require('../../assets/rupee.png')} />
-        <Text style={styles.drawerTopCoin}> {  console.log('userInfoapi',userInfo) }  {userInfo.wallet_coins}</Text>
+        <Text style={styles.drawerTopCoin}> {  console.log('userInfoapi',userInfo) }  {userInfo?.wallet_coins}</Text>
         </View>
 
       </View>

@@ -99,7 +99,7 @@ useEffect(() => {
               marginTop:responsiveWidth(3.65),
               marginBottom: responsiveWidth(1.2),
             }]}>{userProfileData?.data?.name} </Title>
-            <Caption style={styles.caption}>danishqureshi8817@</Caption>
+            <Caption style={styles.caption}>{userProfileData?.data?.email.substring(0,17)}</Caption>
           </View>
         </View>
       </View>
@@ -107,30 +107,25 @@ useEffect(() => {
       <View style={styles.userInfoSection}>
         <View style={styles.row}>
           <Icon name="map-marker-radius" color="#777777" size={responsiveWidth(5)}/>
-          <Text style={{color:"#777777", marginLeft: responsiveWidth(5)}}>Gwalior, India</Text>
+          <Text style={{color:"#777777", marginLeft: responsiveWidth(5)}}>{userProfileData?.data?.address}, {userProfileData?.data?.country}</Text>
         </View>
         <View style={styles.row}>
           <Icon name="phone" color="#777777" size={responsiveWidth(5)}/>
-          <Text style={{color:"#777777", marginLeft:responsiveWidth(5) }}>+91-8817456962</Text>
+          <Text style={{color:"#777777", marginLeft:responsiveWidth(5) }}>{userProfileData?.data?.mobile}</Text>
         </View>
         <View style={styles.row}>
           <Icon name="email" color="#777777" size={responsiveWidth(5)}/>
-          <Text style={{color:"#777777", marginLeft: responsiveWidth(5)}}>danishqureshi8817@gmail.com</Text>
+          <Text style={{color:"#777777", marginLeft: responsiveWidth(5)}}>{userProfileData?.data?.email}</Text>
         </View>
       </View>
 
       <View style={styles.infoBoxWrapper}>
-          <View style={[styles.infoBox, {
-            borderRightColor: '#dddddd',
-            borderRightWidth:responsiveWidth(0.2)
-          }]}>
-            <Title>₹140.50</Title>
-            <Caption>Wallet</Caption>
+          <View style={ {flexDirection:'row',alignItems:'center',}}>
+          <Image style={{width:responsiveWidth(8),height:responsiveHeight(4),marginRight:responsiveWidth(3)}} source={require('../../assets/rupee.png')} />
+            <Title style={{marginRight:responsiveWidth(2),fontSize:responsiveFontSize(3)}}>{userProfileData?.data?.wallet_coins}</Title>
+            <Caption style={{fontSize:responsiveFontSize(2)}} >Coins</Caption>
           </View>
-          <View style={styles.infoBox}>
-            <Title>600</Title>
-            <Caption>Coins</Caption>
-          </View>
+      
       </View>
 
       <View style={styles.menuWrapper}>
@@ -142,7 +137,7 @@ useEffect(() => {
           </View>
         </TouchableRipple>
        
-        <TouchableRipple onPress={() => {}}>
+        {/* <TouchableRipple onPress={() => {}}>
           <View style={styles.menuItem}>
             <Icon name="account-check-outline" color="#1f4c86" size={responsiveWidth(6.1)}/>
             <Text style={styles.menuItemText}>Support</Text>
@@ -153,7 +148,7 @@ useEffect(() => {
             <IconFeather name="settings" color="#1f4c86" size={responsiveWidth(6.1)}/>
             <Text style={styles.menuItemText}>Settings</Text>
           </View>
-        </TouchableRipple>
+        </TouchableRipple> */}
       </View>
 
    
