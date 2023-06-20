@@ -12,6 +12,7 @@ import Wallet from '../screens/Wallet/index';
 // import Splash from '../screens/Splash/index';
 import Reward from '../screens/Reward/index'
 import Contact from '../screens/Contact/index';
+import VideoReward from '../screens/videoAdReward';
 
 const HomeStack = createNativeStackNavigator();
 const MainStack = () => {
@@ -23,6 +24,7 @@ const MainStack = () => {
 
       <HomeStack.Screen name="Home" component={Home} options={{headerShown:true}}/>
       <HomeStack.Screen name="Reward" component={Reward} options={{headerShown:true}}/>
+      <HomeStack.Screen name="VideoReward" component={VideoReward} options={{headerShown:true}}/>
       {/* <HomeStack.Screen name='Referral' component={Referral} options={{headerShown:true}} /> */}
       <HomeStack.Screen name='SpinerWheel' component={Spiner} options={{headerShown:true}} />
       {/* {/* <HomeStack.Screen name='Quiz' component={Quiz} options={{headerShown:true}} />

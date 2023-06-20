@@ -1,19 +1,25 @@
-#Tue Jun 20 10:40:26 IST 2023
+#Wed Jun 21 00:17:33 IST 2023
 path.4=14/classes.dex
 path.3=13/classes.dex
 path.2=0/classes.dex
 path.1=0/classes.dex
+path.7=0/classes2.dex
+path.6=classes3.dex
 path.5=classes2.dex
 path.0=classes.dex
-base.4=E\:\\native Project\\Easy\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
-base.3=E\:\\native Project\\Easy\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.2=E\:\\native Project\\Easy\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.1=E\:\\native Project\\Easy\\android\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
-base.0=E\:\\native Project\\Easy\\android\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.4=/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
+base.3=/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/13/classes.dex
+base.2=/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.1=/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/build/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
+base.0=/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
+renamed.7=classes8.dex
+renamed.6=classes7.dex
+base.7=/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes2.dex
 renamed.5=classes6.dex
+base.6=/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes3.dex
 renamed.4=classes5.dex
-base.5=E\:\\native Project\\Easy\\android\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.5=/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex

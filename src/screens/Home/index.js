@@ -299,7 +299,7 @@ const Home = () => {
             {/* Get Free Coins -End */}
 
             {/* Get Free Coins Video -Start */}
-            <TouchableOpacity onPress={() => { videoAdRewardClaim() }}>
+            <TouchableOpacity onPress={() => { navigation.navigate('VideoReward') }} >
               <View style={{ flex: 0.10, marginTop: responsiveHeight(1.8) }}>
 
                 <Text style={styles.getFreeMainText}>Daily Reward: Unlock </Text>

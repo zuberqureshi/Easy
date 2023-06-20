@@ -35,6 +35,8 @@ import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.emeraldsanto.encryptedstorage.RNEncryptedStoragePackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
+// react-native-google-mobile-ads
+import io.invertase.googlemobileads.ReactNativeGoogleMobileAdsPackage;
 // react-native-linear-gradient
 import com.BV.LinearGradient.LinearGradientPackage;
 // react-native-reanimated
@@ -106,6 +108,7 @@ public class PackageList {
       new RNDeviceInfo(),
       new RNEncryptedStoragePackage(),
       new RNGestureHandlerPackage(),
+      new ReactNativeGoogleMobileAdsPackage(),
       new LinearGradientPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),

@@ -3,13 +3,72 @@ import React,{ useLayoutEffect, useState, useEffect } from 'react'
 import { useNavigation, useIsFocused } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient'
+import Loader from '../../components/common/loader/Loader';
+import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
+import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
+const adUnitId =  'ca-app-pub-2291791121050290/1352844929';
+const adUnitIdrewarded =  'ca-app-pub-2291791121050290/6625314913';
 
+const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
 
 
 const Reward = () => {
 
     const navigation = useNavigation();
+    const [userInfo, setUserInfo] = useState()
+    const [loadingStatus, setLoadingStatus] = useState(true)
+
+ //Get User Info
+ const getUserInfo = async () => {
+   const ds = await getToken();
+  const data = await JSON.parse(ds)
+  await setUserInfo(data)
+
+}
+    const load = async () => {
+       await getUserInfo();
+  
+    }
+  
+
+  //DailyRewardClaim
+  const dailyRewardClaim = async () => {
+   
+    const body = {
+      user_id: userInfo.id,
+    };
+    const dailyRewardCheckClaim = await CallApiJson('dailyrewardclaim', 'POST', body); 
+     console.log(" dailyRewardClaim API", body)
+
+  }
+
+
+    useEffect(() => {
+      load();
+      const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+          rewarded.show();
+      });
+      const unsubscribeEarned = rewarded.addAdEventListener(
+        RewardedAdEventType.EARNED_REWARD,
+        reward => {
+          console.log('User earned reward of ', reward);
+          setLoadingStatus(false)
+          dailyRewardClaim();
+
+        },
+      );
+  
+      // Start loading the rewarded ad straight away
+      rewarded.load();
+  
+      // Unsubscribe from events on unmount
+      return () => {
+        unsubscribeLoaded();
+        unsubscribeEarned();
+      };
+    }, []);
+
 
   //  Header start
   useLayoutEffect(() => {
@@ -52,7 +111,18 @@ const Reward = () => {
   return (
     <View style={{ flex: 1, backgroundColor: "#0a203e", }} >
 
+<Loader loadingStatus = {loadingStatus} />
 
+    <View>
+      <BannerAd
+      unitId={adUnitId}
+      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+      requestOptions={{
+        requestNonPersonalizedAdsOnly: true,
+      }}
+    />
+      </View>
+ 
 
     <LinearGradient colors={["#0a203e", "#1f4c86"]}
       useAngle={true}
@@ -62,12 +132,15 @@ const Reward = () => {
      borderRadius: responsiveWidth(2.5),
       height: 50, 
       elevation: responsiveWidth(1.5), 
-  marginHorizontal:responsiveWidth(5),
+      marginHorizontal:responsiveWidth(5),
        borderWidth: responsiveWidth(0.2), 
        borderColor: '#1f4c86', 
-       marginTop:responsiveWidth(25)
+       marginTop:responsiveWidth(10)
+
      
       }}>
+
+        { !loadingStatus && 
       <View style={{justifyContent:'center',alignItems:'center' }} >
       <Text
                   style={{
@@ -78,7 +151,7 @@ const Reward = () => {
                     marginTop: responsiveWidth(7),
                     color: '#fff'
                   }}>
-                  Congrats
+                  Congrats 
                 </Text>
                 <Text
                   style={{
@@ -134,9 +207,32 @@ const Reward = () => {
 
 
                   }}>
-                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(2.4), letterSpacing: responsiveFontSize(0.095) }}>Back To Home</Text>
+                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}>Click Here Go To Home</Text>
                 </TouchableOpacity>
           
+ 
+
+      </View>
+
+                }
+
+      <View style={{        marginTop:responsiveWidth(15)  }}  >
+
+      <BannerAd
+      unitId={adUnitId}
+      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+      requestOptions={{
+        requestNonPersonalizedAdsOnly: true,
+      }}
+    />
+       <BannerAd
+      unitId={adUnitId}
+      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+      requestOptions={{
+        requestNonPersonalizedAdsOnly: true,
+      }}
+    />
+
       </View>
     </LinearGradient>
 
