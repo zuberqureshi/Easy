@@ -69,21 +69,18 @@ function CallApiJson(endpoint, method = 'GET', body = null, token = null) {
 
 
 async function setToken(token) {
-  console.log('saving token :', token);
-  return EncryptedStorage.setItem('token', JSON.stringify(token) )
+   return EncryptedStorage.setItem('token', JSON.stringify(token) )
     .then(() => 'success')
     .catch(e => 'error');
 }
 async function getToken() {
   const token = await EncryptedStorage.getItem('token');
-  console.log('retreiving token :', token);
-  return token;
+   return token;
 }
 
 
 async function removeToken() {
   const token = await EncryptedStorage.removeItem('token');
-  console.log('retreiving token :', token);
   return token;
 }
 

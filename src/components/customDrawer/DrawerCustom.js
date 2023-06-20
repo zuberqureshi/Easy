@@ -1,29 +1,64 @@
 import { View, Text, Image, FlatList, StyleSheet, Touchable, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import  { removeToken } from '../../utiles/network';
 
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useIsFocused } from "@react-navigation/native";
 import styles from './style'
+import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 
 const CustomDrawer = () => {
 
   const [selectedId, setSelectedId] = useState(null);
+  const [userName, setUserName] = useState();
+  const [userInfo, setuserInfo] = useState({})
+
+  const [userCoin, setUserCoin] = useState()
 
   const navigation = useNavigation();
-  
+  const isFocused = useIsFocused()
+
+
   const commanImg = 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   const home = '../../assets/home.png'
 
   const userLogout = async ()=>{
     const ds = await removeToken(  );
-   
+    setSelectedId(null);
     console.log("Dataremovedtoken  ",ds , '');
   }
 
+  const getUserInfo = async ()=>{
+    const ds = await getToken(  );
+    const userParseData= await JSON.parse(ds)
+    console.log("insidecustomedrawer  userParseData  ",userParseData.id );
 
+    const body = {
+      user_id: userParseData.id,
+    };
+    const userDataApi = await CallApiJson('getprofile', 'POST', body);
+    // await setUserID(data.id)
+    if( ds){
+      setuserInfo(userDataApi.data);
+      console.log("insidecustomedrawer  userDataApi  ",userDataApi.data );
+      console.log("insidecustomedrawer  userParseDatauserInfo  ",userInfo.wallet_coins );
+
+    }else{
+      console.log("insidecustomedrawer Token Not Set  ");
+
+    }
+     
+
+  }
+
+  useEffect(() => {
+    getUserInfo()
+    console.log( 'insidecustomedrawer');
+  }, [])
+
+ 
 
   const listArray = [
     { icon: 'home', title: 'Home' },
@@ -88,13 +123,13 @@ const CustomDrawer = () => {
       <View style={styles.drawerTop}>
         <Image
           style={styles.drawerTopIcon}
-          source={{ uri: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' }}
+          source={ require('../../assets/man.png')}
         />
-        <Text style={styles.drawerTopName}>Danish Qureshi</Text>
+        <Text style={styles.drawerTopName}> {userInfo?.name} </Text>
          
-        <View style={{flexDirection:'row',marginTop:responsiveWidth(2.5)}}>
-        <Image style={{width:responsiveWidth(6),height:responsiveHeight(3.5)}} source={require('../../assets/coin.png')} />
-        <Text style={styles.drawerTopCoin}>{`600 `}</Text>
+        <View style={{flexDirection:'row',marginTop:responsiveWidth(2.5),alignItems:'center'}}>
+        <Image style={{width:responsiveWidth(6.2),height:responsiveHeight(3)}} source={require('../../assets/rupee.png')} />
+        <Text style={styles.drawerTopCoin}> {  console.log('userInfoapi',userInfo) }  {userInfo?.wallet_coins}</Text>
         </View>
 
       </View>

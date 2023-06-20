@@ -13,6 +13,8 @@ const Splash = () => {
   setTimeout(() => {
   setAppName(true)
   }, 2000);
+
+  
  }, []);
 
   return (
