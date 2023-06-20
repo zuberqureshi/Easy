@@ -1,4 +1,4 @@
-import { View, Text,SafeAreaView,StyleSheet,TextInput, TouchableOpacity,Image,ActivityIndicator,ToastAndroid } from 'react-native'
+import { View, Text,SafeAreaView,StyleSheet,TextInput, TouchableOpacity,Image,ToastAndroid } from 'react-native'
 import React,{useState,useEffect} from 'react'
 import { styles } from './style'
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -15,7 +15,7 @@ const Login = () => {
   
   const [loadingStatus, setLoadingStatus] = useState(false)
   const [userInfo, setUserInfo] = useState(null)
-  const [activityIndicator, setActivityIndicator] = useState(false)
+
   const [loginButton, setLoginButton] = useState(false)
   const navigation = useNavigation();
 useEffect(() => {
@@ -29,7 +29,7 @@ const showToast = (msg) => {
 // console.log('login info',userInfo)
 
 const signIn = async () => {
-  setActivityIndicator(true)
+ 
   setLoadingStatus(true);
   setLoginButton(true)
   try {
@@ -45,14 +45,14 @@ const signIn = async () => {
    
      if(userLogin.error === true){
        showToast(userLogin.msg)
-       setActivityIndicator(false)
+   
        setLoadingStatus(false);
        setLoginButton(false)
      }
         else{
             const ds = await setToken(  userLogin.data );
 
-          setActivityIndicator(false)
+      
           setLoginButton(false) 
           setLoginButton(false)
           navigation.navigate('HomeStack');
@@ -60,7 +60,7 @@ const signIn = async () => {
           }
            
   } catch (error) {
-    setActivityIndicator(false)
+  
     setLoadingStatus(false);
     setLoginButton(false)   
 
@@ -155,7 +155,7 @@ const signIn = async () => {
           <View style={{flexDirection:'row',alignItems:'center'}}>
           <Icon style={{position:'absolute',left:responsiveWidth(-23)}} name="google-plus-g" size={responsiveWidth(5.5)} color="#fff" />
             <Text  style={styles.buttonText}>LOGIN</Text>
-            <ActivityIndicator animating={activityIndicator} size="small" color="#fff" />
+           
           </View>
         
         </LinearGradient>
