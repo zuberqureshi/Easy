@@ -1607,6 +1607,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable pollfish_indicator
 drawable redbox_top_border_background
 drawable rn_edit_text_material
 drawable test_custom_background
@@ -2764,6 +2765,7 @@ style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_ReactNative_AppCompat_Light
 style Theme_ReactNative_AppCompat_Light_NoActionBar_FullScreen
+style Theme_Transparent
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark

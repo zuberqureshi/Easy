@@ -421,6 +421,15 @@
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
+        <activity
+            android:name="com.pollfish.internal.PollfishOverlayActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:label="Pollfish"
+            android:theme="@style/Theme.Transparent"
+            android:windowSoftInputMode="adjustPan" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

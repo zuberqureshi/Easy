@@ -788,12 +788,29 @@
 422            android:permission="android.permission.BIND_JOB_SERVICE" />
 422-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:43:13-69
 423
-424        <meta-data
-424-->[com.google.android.gms:play-services-basement:18.2.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4f6e4068d556129f06526574ba53559d/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
-425            android:name="com.google.android.gms.version"
-425-->[com.google.android.gms:play-services-basement:18.2.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4f6e4068d556129f06526574ba53559d/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
-426            android:value="@integer/google_play_services_version" />
-426-->[com.google.android.gms:play-services-basement:18.2.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4f6e4068d556129f06526574ba53559d/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
-427    </application>
-428
-429</manifest>
+424        <activity
+424-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:13:9-20:55
+425            android:name="com.pollfish.internal.PollfishOverlayActivity"
+425-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:14:13-73
+426            android:configChanges="orientation|screenSize"
+426-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:15:13-59
+427            android:exported="false"
+427-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:16:13-37
+428            android:hardwareAccelerated="true"
+428-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:17:13-47
+429            android:label="Pollfish"
+429-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:18:13-37
+430            android:theme="@style/Theme.Transparent"
+430-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:19:13-53
+431            android:windowSoftInputMode="adjustPan" />
+431-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:20:13-52
+432
+433        <meta-data
+433-->[com.google.android.gms:play-services-basement:18.2.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4f6e4068d556129f06526574ba53559d/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
+434            android:name="com.google.android.gms.version"
+434-->[com.google.android.gms:play-services-basement:18.2.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4f6e4068d556129f06526574ba53559d/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
+435            android:value="@integer/google_play_services_version" />
+435-->[com.google.android.gms:play-services-basement:18.2.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4f6e4068d556129f06526574ba53559d/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+436    </application>
+437
+438</manifest>

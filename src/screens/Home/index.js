@@ -14,11 +14,15 @@ import LinearGradient from 'react-native-linear-gradient'
 import YoutubePlayer from "react-native-youtube-iframe";
 import crashlytics from '@react-native-firebase/crashlytics';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
+import RNPollfish from 'react-native-plugin-pollfish';
+const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true) .releaseMode(true);
+  RNPollfish.init(builder.build());
 
 const Home = () => {
 
 
   //  const isInternet = useRef(checkInternet)
+  const [polfishSurveyAvail, setpolfishSurveyAvail] = useState(false);
   const [playing, setPlaying] = useState(true);
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisibleVideo, setModalVisibleVideo] = useState(false);
@@ -34,8 +38,36 @@ const Home = () => {
   const navigation = useNavigation();
   const isFocused = useIsFocused()
 
+  RNPollfish.addEventListener(RNPollfish.PollfishSurveyReceivedListener, (event) => {
+    if (event === undefined) {
+        console.log("Pollfish Offerwall Received");
+    } else {
+      setpolfishSurveyAvail(true);
+        console.log(`Pollfish Survey Received - CPA: ${event.surveyCPA}, IR: ${event.surveyIR}, LOI: ${event.surveyLOI}, Class: ${event.surveyClass}, Reward Value: ${event.rewardValue}, Reward Name: ${event.rewardName}, Remaining Completes: ${event.remainingCompletes}`);
+    }
+});
 
+RNPollfish.addEventListener(RNPollfish.PollfishSurveyCompletedListener, (event) => {
+  console.log(`Pollfish Survey Completed - CPA: ${event.surveyCPA}, IR: ${event.surveyIR}, LOI: ${event.surveyLOI}, Class: ${event.surveyClass}, Reward Value: ${event.rewardValue}, Reward Name: ${event.rewardName}, Remaining Completes: ${event.remainingCompletes}`);
+});
 
+RNPollfish.addEventListener(RNPollfish.PollfishUserNotEligibleListener, (_) => {
+  console.log("Pollfish User Not Eligible");
+});
+
+RNPollfish.addEventListener(RNPollfish.PollfishSurveyNotAvailableListener, (_) => {
+  console.log("Pollfish Survey Not Available");
+});
+
+RNPollfish.isPollfishPresent((isPollfishPresent) => {
+  console.log(isPollfishPresent ? 'Pollfish is available' : 'Pollfish is not available');
+ 
+      if( isPollfishPresent ){
+        setpolfishSurveyAvail(true);
+
+      }
+
+});
 
   const set = async () => {
     await settings();
@@ -174,6 +206,20 @@ const Home = () => {
 
   }
 
+
+  //Survey Reward
+  const surveyCheck = async () => {
+    if(polfishSurveyAvail==true ){
+      console.log( 'show survey');
+      RNPollfish.show();
+    }else{
+
+      Alert.alert('No Survey Available Right , Please Try After Some Time ');
+    }
+    
+
+
+  }
 
   //Survey Reward
   const surveyRewardClaim = async () => {
@@ -447,7 +493,7 @@ const Home = () => {
             {/* //contest Zone DisAble */}
 
    {/* survey container - start */}
-   <TouchableOpacity onPress={()=>{surveyRewardClaim()}}>
+   <TouchableOpacity onPress={()=>{surveyCheck()}}>
             <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
 
               <View style={styles.surveyContainer}>

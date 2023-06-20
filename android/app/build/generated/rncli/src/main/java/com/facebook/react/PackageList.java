@@ -39,6 +39,8 @@ import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 import io.invertase.googlemobileads.ReactNativeGoogleMobileAdsPackage;
 // react-native-linear-gradient
 import com.BV.LinearGradient.LinearGradientPackage;
+// react-native-plugin-pollfish
+import com.pollfish.RNPollfishPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -110,6 +112,7 @@ public class PackageList {
       new RNGestureHandlerPackage(),
       new ReactNativeGoogleMobileAdsPackage(),
       new LinearGradientPackage(),
+      new RNPollfishPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
