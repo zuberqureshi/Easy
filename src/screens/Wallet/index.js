@@ -284,7 +284,7 @@ useEffect(() => {
                   angle={322}
                   angleCenter={{ x: 0.5, y: 0.5 }}
                   style={[styles.modelPaypalLinearGradientCard,{borderColor: selectedCard === 100 ? 'gold' : '#1f4c86',}]}>
-                  <Image style={{ width: responsiveWidth(8.1), height: responsiveHeight(4) }} source={require("../../assets/PayPal.png")} />
+                  <Image style={{ width: responsiveWidth(8.1), height: responsiveHeight(4),resizeMode:'contain' }} source={require("../../assets/PayPal.png")} />
                   <View style={{ width: responsiveWidth(9.5) }}>
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >100</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -302,7 +302,7 @@ useEffect(() => {
                   angle={322}
                   angleCenter={{ x: 0.5, y: 0.5 }}
                   style={[styles.modelPaypalLinearGradientCard,{borderColor: selectedCard === 500 ? 'gold' : '#1f4c86',}]}>
-                  <Image style={{ width:responsiveWidth(8.1), height: responsiveHeight(4) }} source={require("../../assets/PayPal.png")} />
+                  <Image style={{ width:responsiveWidth(8.1), height: responsiveHeight(4),resizeMode:'contain' }} source={require("../../assets/PayPal.png")} />
                   <View style={{ width: responsiveWidth(9.5)  }}>
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >500</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -320,7 +320,7 @@ useEffect(() => {
                   angle={322}
                   angleCenter={{ x: 0.5, y: 0.5 }}
                   style={[styles.modelPaypalLinearGradientCard,{borderColor: selectedCard === 1000 ? 'gold' : '#1f4c86',}]}>
-                  <Image style={{  width:responsiveWidth(8.1), height: responsiveHeight(4)  }} source={require("../../assets/PayPal.png")} />
+                  <Image style={{  width:responsiveWidth(8.1), height: responsiveHeight(4),resizeMode:'contain'  }} source={require("../../assets/PayPal.png")} />
                   <View style={{ width: responsiveWidth(9.5) }}>
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >1000</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -414,7 +414,7 @@ useEffect(() => {
                   angle={322}
                   angleCenter={{ x: 0.5, y: 0.5 }}
                   style={[styles.modelPaytmLinearGradientCard,{borderColor: selectedCard === 100 ? 'gold' : '#1f4c86',}]}>
-                  <Image style={{ width: responsiveWidth(8), height: responsiveHeight(4.8) }} source={require("../../assets/Paytm.png")} />
+                  <Image style={{ width: responsiveWidth(8), height: responsiveHeight(4.8),resizeMode:'contain' }} source={require("../../assets/Paytm.png")} />
                   <View style={{ width: responsiveWidth(9.5) }}>
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >100</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -431,7 +431,7 @@ useEffect(() => {
                   angle={322}
                   angleCenter={{ x: 0.5, y: 0.5 }}
                   style={[styles.modelPaytmLinearGradientCard,{borderColor: selectedCard === 500 ? 'gold' : '#1f4c86',}]}>
-                  <Image style={{ width: responsiveWidth(8), height: responsiveHeight(4.8)  }} source={require("../../assets/Paytm.png")} />
+                  <Image style={{ width: responsiveWidth(8), height: responsiveHeight(4.8),resizeMode:'contain'  }} source={require("../../assets/Paytm.png")} />
                   <View style={{  width: responsiveWidth(9.5) }}>
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >500</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -449,7 +449,7 @@ useEffect(() => {
                   angleCenter={{ x: 0.5, y: 0.5 }}
                   style={[styles.modelPaytmLinearGradientCard,{borderColor: selectedCard === 1000 ? 'gold' : '#1f4c86',}]}>
 
-                  <Image style={{ width: responsiveWidth(8), height: responsiveHeight(4.8) }} source={require("../../assets/Paytm.png")} />
+                  <Image style={{ width: responsiveWidth(8), height: responsiveHeight(4.8),resizeMode:'contain' }} source={require("../../assets/Paytm.png")} />
 
                   <View style={{  width: responsiveWidth(9.5)}}>
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >1000</Text>
@@ -542,7 +542,7 @@ useEffect(() => {
             </View>
             
 
-            <Image style={{ width: responsiveWidth(43.7), height: responsiveHeight(14) }} source={require("../../assets/greentick.gif")} />
+            <Image style={{ width: responsiveWidth(43.7), height: responsiveHeight(14),resizeMode:'contain' }} source={require("../../assets/greentick.gif")} />
             
 
 

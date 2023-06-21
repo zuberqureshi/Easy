@@ -26,7 +26,8 @@ balanceLinearGradientCoinText:{
 },
 balanceLinearGradientImg:{
     width:responsiveWidth(22),
-     height: responsiveHeight(8.3)
+     height: responsiveHeight(8.3),
+     resizeMode:'contain'
 },
 redeenTxt:{
     color: '#fff', 
@@ -44,7 +45,8 @@ paytmLinearGradient:{
 },
 paytmLinearGradientImg:{
     width: responsiveWidth(15.5),
-     height: responsiveHeight(7.9)
+     height: responsiveHeight(7.9),
+     paytmLinearGradientImg
 },
 paytmLinearGradientMainTxt:{
     color: '#fff', 
@@ -66,7 +68,8 @@ paypalLinearGradient:{
 },
 paypalLinearGradientImg:{
     width: responsiveWidth(13.6), 
-    height: responsiveHeight(6.5) 
+    height: responsiveHeight(6.5),
+    resizeMode:'contain'
 },
 paypalLinearGradientMainTxt:{
     color: '#fff', 

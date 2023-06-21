@@ -15,7 +15,7 @@ import YoutubePlayer from "react-native-youtube-iframe";
 import crashlytics from '@react-native-firebase/crashlytics';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import RNPollfish from 'react-native-plugin-pollfish';
-import { moderateScale, verticalScale } from 'react-native-size-matters';
+
 const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(false);
 
 
@@ -323,7 +323,7 @@ const Home = () => {
                 <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
 
                   <View style={styles.getFreeMainContainer}>
-                    <Image style={styles.getFreeCoin} source={require('../../assets/rupee.png')} />
+                    <Image  style={styles.getFreeCoin} source={require('../../assets/rupee.png')} />
 
                     <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5) }}>
                       <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Free Coins</Text>
@@ -334,7 +334,7 @@ const Home = () => {
 
                       <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
                         <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}>{userSettings && userSettings.data.daily_coin}</Text>
-                        <Image style={{ width: moderateScale(21), height: verticalScale(18.5), marginLeft: responsiveWidth(2.5) }} source={require('../../assets/rupee.png')} />
+                        <Image  style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
                       </View>
 
                     </View>
@@ -352,7 +352,7 @@ const Home = () => {
                 <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
 
                   <View style={styles.getFreeMainContainer}>
-                    <Image style={styles.videoIcon} source={require('../../assets/play.png')} />
+                    <Image  style={styles.videoIcon} source={require('../../assets/play.png')} />
 
                     <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5) }}>
                       <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Free Coins</Text>
@@ -363,7 +363,7 @@ const Home = () => {
 
                       <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
                         <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}> {userSettings && userSettings.data.video_ad_coin}</Text>
-                        <Image style={{ width: moderateScale(21.5), height: verticalScale(18.5), marginLeft: responsiveWidth(2.5) }} source={require('../../assets/rupee.png')} />
+                        <Image  style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
                       </View>
 
                     </View>
@@ -389,7 +389,7 @@ const Home = () => {
 
 
                 <Text style={{ color: '#fff' }}> 11</Text>
-                <Image style={{ width: moderateScale(17), height: verticalScale(15), marginLeft: responsiveWidth(1) }} source={require('../../assets/rupee.png')} />
+                <Image  style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(1),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
 
 
               </View>
@@ -512,16 +512,16 @@ const Home = () => {
                     <View style={{ flexDirection: 'column', marginRight: responsiveWidth(5), alignItems: 'center' }}>
                 <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
 
-                 <View style={{flexDirection:'row'}}>
+                 <View style={{flexDirection:'row',alignItems:'center'}}>
                 <Text style={{ color: '#fff' }}> 11</Text>
-                <Image style={{ width: moderateScale(17.2), height: verticalScale(15.1), marginLeft: responsiveWidth(2) }} source={require('../../assets/rupee.png')} />
+                <Image style={{width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
 </View>
 
               </View>
                   </View>
 
                   <View >
-                    <Image style={styles.surveyImg} source={require('../../assets/test.png')} />
+                    <Image  style={styles.surveyImg} source={require('../../assets/test.png')} />
                     <View style={{ alignItems: 'center' }}>
                       {/* <Text style={styles.contestZoneAvailableText}>Contest not available!!</Text> */}
                     </View>
@@ -543,7 +543,7 @@ const Home = () => {
 
 
                 <Text style={{ color: '#fff' }}> 11</Text>
-                <Image style={{ width: moderateScale(17), height: verticalScale(15), marginLeft: responsiveWidth(2.5) }} source={require('../../assets/rupee.png')} />
+                <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2.5),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
 
 
               </View>
@@ -564,7 +564,7 @@ const Home = () => {
 
                   }} >
                   <View style={styles.videoImgView}>
-                    <Image style={styles.videoImg} source={require('../../assets/youtube.png')} />
+                    <Image  style={styles.videoImg} source={require('../../assets/youtube.png')} />
                   </View>
                 </TouchableOpacity>
 
@@ -747,7 +747,7 @@ const Home = () => {
                   Come back everyday to earn{'\n'}
                   {'        '}Extra reward coins!
                 </Text>
-                <Image style={{ width: responsiveWidth(44), height: responsiveHeight(14.2), marginTop: responsiveWidth(4) }} source={require('../../assets/dailygift.png')} />
+                <Image  style={{ width: responsiveWidth(44), height: responsiveHeight(14.2), marginTop: responsiveWidth(4),resizeMode:'contain' }} source={require('../../assets/dailygift.png')} />
 
                 <Text
                   style={{
@@ -759,7 +759,7 @@ const Home = () => {
                   YOUR REWARD TODAY IS
                 </Text>
                 <View style={{ flexDirection: 'row' }} >
-                  <Image style={{ width: responsiveWidth(7.15), height: responsiveHeight(3.65), marginTop: responsiveWidth(0.5), marginRight: responsiveWidth(1) }} source={require('../../assets/coin.png')} />
+                  <Image  style={{ width: responsiveWidth(7.15), height: responsiveHeight(3.65), marginTop: responsiveWidth(0.5), marginRight: responsiveWidth(1),resizeMode:'contain' }} source={require('../../assets/coin.png')} />
                   <Text
                     style={{
                       fontSize: responsiveFontSize(1.9),
