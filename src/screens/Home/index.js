@@ -15,8 +15,11 @@ import YoutubePlayer from "react-native-youtube-iframe";
 import crashlytics from '@react-native-firebase/crashlytics';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import RNPollfish from 'react-native-plugin-pollfish';
-const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true) .releaseMode(false);
-  RNPollfish.init(builder.build());
+import { moderateScale, verticalScale } from 'react-native-size-matters';
+const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(false);
+
+
+RNPollfish.init(builder.build());
 
 const Home = () => {
 
@@ -40,34 +43,34 @@ const Home = () => {
 
   RNPollfish.addEventListener(RNPollfish.PollfishSurveyReceivedListener, (event) => {
     if (event === undefined) {
-        console.log("Pollfish Offerwall Received");
+      console.log("Pollfish Offerwall Received");
     } else {
       setpolfishSurveyAvail(true);
-        console.log(`Pollfish Survey Received - CPA: ${event.surveyCPA}, IR: ${event.surveyIR}, LOI: ${event.surveyLOI}, Class: ${event.surveyClass}, Reward Value: ${event.rewardValue}, Reward Name: ${event.rewardName}, Remaining Completes: ${event.remainingCompletes}`);
+      console.log(`Pollfish Survey Received - CPA: ${event.surveyCPA}, IR: ${event.surveyIR}, LOI: ${event.surveyLOI}, Class: ${event.surveyClass}, Reward Value: ${event.rewardValue}, Reward Name: ${event.rewardName}, Remaining Completes: ${event.remainingCompletes}`);
     }
-});
+  });
 
-RNPollfish.addEventListener(RNPollfish.PollfishSurveyCompletedListener, (event) => {
-  console.log(`Pollfish Survey Completed - CPA: ${event.surveyCPA}, IR: ${event.surveyIR}, LOI: ${event.surveyLOI}, Class: ${event.surveyClass}, Reward Value: ${event.rewardValue}, Reward Name: ${event.rewardName}, Remaining Completes: ${event.remainingCompletes}`);
-});
+  RNPollfish.addEventListener(RNPollfish.PollfishSurveyCompletedListener, (event) => {
+    console.log(`Pollfish Survey Completed - CPA: ${event.surveyCPA}, IR: ${event.surveyIR}, LOI: ${event.surveyLOI}, Class: ${event.surveyClass}, Reward Value: ${event.rewardValue}, Reward Name: ${event.rewardName}, Remaining Completes: ${event.remainingCompletes}`);
+  });
 
-RNPollfish.addEventListener(RNPollfish.PollfishUserNotEligibleListener, (_) => {
-  console.log("Pollfish User Not Eligible");
-});
+  RNPollfish.addEventListener(RNPollfish.PollfishUserNotEligibleListener, (_) => {
+    console.log("Pollfish User Not Eligible");
+  });
 
-RNPollfish.addEventListener(RNPollfish.PollfishSurveyNotAvailableListener, (_) => {
-  console.log("Pollfish Survey Not Available");
-});
+  RNPollfish.addEventListener(RNPollfish.PollfishSurveyNotAvailableListener, (_) => {
+    console.log("Pollfish Survey Not Available");
+  });
 
-RNPollfish.isPollfishPresent((isPollfishPresent) => {
-  console.log(isPollfishPresent ? 'Pollfish is available' : 'Pollfish is not available');
- 
-      if( isPollfishPresent ){
-        setpolfishSurveyAvail(true);
+  RNPollfish.isPollfishPresent((isPollfishPresent) => {
+    console.log(isPollfishPresent ? 'Pollfish is available' : 'Pollfish is not available');
 
-      }
+    if (isPollfishPresent) {
+      setpolfishSurveyAvail(true);
 
-});
+    }
+
+  });
 
   const set = async () => {
     await settings();
@@ -209,13 +212,13 @@ RNPollfish.isPollfishPresent((isPollfishPresent) => {
 
   //Survey Reward
   const surveyCheck = async () => {
-    if(polfishSurveyAvail==true ){
-      console.log( 'show survey');
+    if (polfishSurveyAvail == true) {
+      console.log('show survey');
       RNPollfish.show();
-    }else{
+    } else {
       Alert.alert('No Survey Available Right , Please Try After Some Time ');
     }
-    
+
   }
 
   //Survey Reward
@@ -331,7 +334,7 @@ RNPollfish.isPollfishPresent((isPollfishPresent) => {
 
                       <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
                         <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}>{userSettings && userSettings.data.daily_coin}</Text>
-                        <Image style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5) }} source={require('../../assets/rupee.png')} />
+                        <Image style={{ width: moderateScale(21), height: verticalScale(18.5), marginLeft: responsiveWidth(2.5) }} source={require('../../assets/rupee.png')} />
                       </View>
 
                     </View>
@@ -360,7 +363,7 @@ RNPollfish.isPollfishPresent((isPollfishPresent) => {
 
                       <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
                         <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}> {userSettings && userSettings.data.video_ad_coin}</Text>
-                        <Image style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5) }} source={require('../../assets/rupee.png')} />
+                        <Image style={{ width: moderateScale(21.5), height: verticalScale(18.5), marginLeft: responsiveWidth(2.5) }} source={require('../../assets/rupee.png')} />
                       </View>
 
                     </View>
@@ -379,8 +382,18 @@ RNPollfish.isPollfishPresent((isPollfishPresent) => {
 
           {/* Spine-Start*/}
           <View style={{ flex: 0.20, marginTop: responsiveWidth(4) }}>
-            <Text style={styles.spineMainText}>Spine Wheel</Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <Text style={styles.spineMainText}>Spine Wheel</Text>
+              <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
+                <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
 
+
+                <Text style={{ color: '#fff' }}> 11</Text>
+                <Image style={{ width: moderateScale(17), height: verticalScale(15), marginLeft: responsiveWidth(1) }} source={require('../../assets/rupee.png')} />
+
+
+              </View>
+            </View>
 
 
             <View style={{ alignItems: 'center', marginTop: responsiveWidth(6) }}>
@@ -489,37 +502,60 @@ RNPollfish.isPollfishPresent((isPollfishPresent) => {
 
             {/* //contest Zone DisAble */}
 
-   {/* survey container - start */}
-   <TouchableOpacity onPress={()=>{surveyCheck()}}>
-            <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
+            {/* survey container - start */}
+            <TouchableOpacity onPress={() => { surveyCheck() }}>
+              <View style={{ alignItems: 'center', marginTop: responsiveWidth(2) }}>
 
-              <View style={styles.surveyContainer}>
+                <View style={styles.surveyContainer}>
+                  <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2), justifyContent: 'space-between' }}>
+                    <Text style={styles.surveyText}> Earn Coin By survey  </Text>
+                    <View style={{ flexDirection: 'column', marginRight: responsiveWidth(5), alignItems: 'center' }}>
+                <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
 
-                <Text style={styles.surveyText}> Earn Coin By survey  </Text>
-
-                <View >
-                  <Image style={styles.surveyImg} source={require('../../assets/test.png')} />
-                  <View style={{ alignItems: 'center' }}>
-                    {/* <Text style={styles.contestZoneAvailableText}>Contest not available!!</Text> */}
-                  </View>
-                </View>
+                 <View style={{flexDirection:'row'}}>
+                <Text style={{ color: '#fff' }}> 11</Text>
+                <Image style={{ width: moderateScale(17.2), height: verticalScale(15.1), marginLeft: responsiveWidth(2) }} source={require('../../assets/rupee.png')} />
+</View>
 
               </View>
-            </View>
-</TouchableOpacity>
-{/* survey container - end */}
+                  </View>
+
+                  <View >
+                    <Image style={styles.surveyImg} source={require('../../assets/test.png')} />
+                    <View style={{ alignItems: 'center' }}>
+                      {/* <Text style={styles.contestZoneAvailableText}>Contest not available!!</Text> */}
+                    </View>
+                  </View>
+
+                </View>
+              </View>
+            </TouchableOpacity>
+            {/* survey container - end */}
 
             {/*YouTUbe Video-Start*/}
 
             <View style={{ marginTop: responsiveWidth(3.6) }} >
-              <Text style={styles.videoMainText}>Earn Money By Watch Video</Text>
+
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <Text style={styles.videoMainText}>Earn By Watch Video</Text>
+              <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
+                <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
+
+
+                <Text style={{ color: '#fff' }}> 11</Text>
+                <Image style={{ width: moderateScale(17), height: verticalScale(15), marginLeft: responsiveWidth(2.5) }} source={require('../../assets/rupee.png')} />
+
+
+              </View>
+              </View>
+           
               <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
 
                 <TouchableOpacity
                   onPress={() => {
                     // setModalVisibleVideo(true)
                     youtubeVideoId()
-                    navigation.navigate('Youtube',{videoId:videoId?.data?.video_url})
+                    navigation.navigate('Youtube', { videoId: videoId?.data?.video_url })
                     // setCounter(30)
                     // setTimeout(() => {
                     //   setVideoClose(true)
