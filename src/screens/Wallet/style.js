@@ -46,8 +46,8 @@ paytmLinearGradient:{
 paytmLinearGradientImg:{
     width: responsiveWidth(15.5),
      height: responsiveHeight(7.9),
-     paytmLinearGradientImg
-},
+     resizeMode:'contain'
+    },
 paytmLinearGradientMainTxt:{
     color: '#fff', 
     fontSize: responsiveFontSize(2.4)
