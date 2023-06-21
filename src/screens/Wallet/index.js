@@ -1,15 +1,17 @@
-import { View, Text, Image, TouchableOpacity, Modal, TextInput, TouchableHighlight } from 'react-native'
+import { View, Text, Image, TouchableOpacity, Modal, TextInput, TouchableHighlight,FlatList } from 'react-native'
 import React from 'react'
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState,useEffect } from "react";
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from "@react-navigation/native";
 import LinearGradient from 'react-native-linear-gradient'
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import styles from './style'
-
-
+import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
+import moment from 'moment'
 const Wallet = () => {
+  
+
 
 
   const [coin, setCoin] = useState(5660)
@@ -21,6 +23,63 @@ const Wallet = () => {
   const [modalPaytm, setModalPaytm] = useState(false);
   const [modalConfirm, setModalConfim] = useState(false);
   const navigation = useNavigation();
+
+
+  const [withdrawHistoryData, setWithdrawHistoryData] = useState({});
+ 
+
+  const  loadUserInfo = async () =>{
+   
+      // const data = await JSON.parse(seting)
+     const  userdata = await getToken();
+     const userdataParsed = await JSON.parse(userdata)
+     const body = {
+      user_id: userdataParsed.id,
+    };
+
+     const historyData = await CallApiJson('widrawrequestlist', 'POST',body);
+
+
+     setWithdrawHistoryData(historyData);
+      console.log('withdrawScreenData',historyData);
+  }
+  
+useEffect(() => {
+  console.log('withdraw',withdrawHistoryData)
+
+  loadUserInfo();
+  return  ()=>{
+    console.log('return')
+  }
+}, [])
+  
+
+  const Item = ({sno,coins,amount,status,date}) => {
+
+       
+    
+    var dateModified = moment(date).format('DD/MM/YYYY')
+
+
+    
+    return (
+    <View style={{ 
+    marginTop:responsiveWidth(2.5),
+ }} >
+ <View style={{flexDirection:'row',justifyContent:'space-between',}}>
+      <Text style={{color:'#fff',marginLeft:responsiveWidth(2),fontSize:responsiveFontSize(1.45)}} >{sno}</Text>
+      <Text style={{color:'#fff',marginLeft:responsiveWidth(13),fontSize:responsiveFontSize(1.45)}} >{coins}</Text>
+      <Text style={{color:'#fff',marginLeft:responsiveWidth(11),fontSize:responsiveFontSize(1.45)}} >{amount}</Text>
+    
+      <Text style={{color:'#fff',marginLeft:responsiveWidth(9),fontSize:responsiveFontSize(1.45)}} >{dateModified}</Text>
+      <Text style={{color:status == 'SUCCESS' ? 'green':'red',fontSize:responsiveFontSize(1.45)}} >{status}</Text>
+      </View>
+    </View>
+  )};
+
+
+
+
 
 
 
@@ -93,7 +152,7 @@ const Wallet = () => {
         </View>
       </LinearGradient>
 
-      <View style={{ flex: 0.8, marginHorizontal: responsiveWidth(5) }}>
+      <View style={{ flex: 0.7, marginHorizontal: responsiveWidth(5) }}>
         <Text style={styles.redeenTxt} >Redeem Reward Via</Text>
 
         <LinearGradient colors={["#0a203e", "#1f4c86"]}
@@ -139,10 +198,43 @@ const Wallet = () => {
           </View>
 
         </LinearGradient>
+        <Text style={[styles.redeenTxt,{marginTop:responsiveWidth(2)}]} >Withdraw History</Text>
+      
+        <LinearGradient colors={["#0a203e", "#1f4c86"]}
+          useAngle={true}
+          angle={322}
+          angleCenter={{ x: 0.5, y: 0.5 }}
+          style={{ 
+           flex:0.7,
+            borderRadius: responsiveWidth(2.45),
+      height: responsiveHeight(40), 
+      elevation: responsiveWidth(1.5), 
+     marginTop:responsiveWidth(2),
+      borderWidth: responsiveWidth(0.2),
+       borderColor: '#1f4c86',
+    }}>
+          <View style={{marginHorizontal:responsiveWidth(4),height:responsiveWidth(65)}}>
+           
+          <View  style={{ flexDirection:'row',marginTop:responsiveWidth(2.5),justifyContent:'space-between'}}>
+            <Text style={{color:'#fff',fontWeight:'bold' }}>S.No</Text>
+            <Text style={{color:'#fff',fontWeight:'bold' }}>Coins</Text>
+            <Text style={{color:'#fff',fontWeight:'bold' }}>Amount</Text>
+            <Text style={{color:'#fff',fontWeight:'bold' }}>Date</Text>
+            <Text style={{color:'#fff',fontWeight:'bold' }}>Status</Text>
+          </View>
+          <FlatList
+        data={withdrawHistoryData.data}
+        renderItem={({item}) => <Item sno={item.id} coins={item.coin} amount={item.amount} status={item.status} date={item.time}/>}
+  
+           />
+
+          </View>
+
+      </LinearGradient>
 
       </View>
 
-
+      
       {/* models */}
 
       <Modal
@@ -462,10 +554,9 @@ const Wallet = () => {
        
       </Modal>
 
-
-
-
     </View>
+
+    
 
  
   )

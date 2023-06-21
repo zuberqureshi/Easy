@@ -189,9 +189,9 @@ const Reward = () => {
                 <TouchableOpacity
                   style={{
 
-                    height: responsiveHeight(6),
+                    height: responsiveHeight(7),
                     padding: responsiveWidth(2.5),
-                    width:responsiveWidth(50),
+                    width:responsiveWidth(60),
                     borderRadius: responsiveWidth(2.5),
                     marginTop: responsiveWidth(8),
                     // marginBottom: responsiveWidth(5),
