@@ -64,9 +64,9 @@ const Youtube = ({ route }) => {
                 angle={322}
                 angleCenter={{ x: 0.5, y: 0.5 }}
                 style={{
-                    flex: 0.6,
+                    flex: 0.65,
                     borderRadius: responsiveWidth(2.5),
-                    height: 50,
+                  
                     elevation: responsiveWidth(1.5),
                     marginHorizontal: responsiveWidth(5),
                     borderWidth: responsiveWidth(0.2),
@@ -82,7 +82,7 @@ const Youtube = ({ route }) => {
                 
                 
                   
-                    <View style={{ }}>
+               
 
                         <YoutubePlayer
                             style={{}}
@@ -92,7 +92,7 @@ const Youtube = ({ route }) => {
                             videoId={videoId}
                         // onChangeState={onStateChange}
                         />
-                    </View>
+                   
 
                     <TouchableOpacity
                         style={{

@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
+import { moderateScale, verticalScale } from 'react-native-size-matters';
 
 
 export default styles = StyleSheet.create({
@@ -24,18 +25,19 @@ export default styles = StyleSheet.create({
         alignItems: 'center'
     },
     getFreeCoin: {
-        width: responsiveWidth(13.05),
-        height: responsiveHeight(6.35),
+        width: moderateScale(46),
+        height: verticalScale(40),
         marginLeft: responsiveWidth(2.5),
+       
     },
     videoIcon: {
-        width: responsiveWidth(13.05),
-        height: responsiveHeight(6.35),
+        width: moderateScale(46),
+        height: verticalScale(40),
         marginLeft: responsiveWidth(2.5),
     },
     surveyIcon: {
-        width: responsiveWidth(13.05),
-        height: responsiveHeight(6.35),
+        width: moderateScale(46),
+        height: verticalScale(40),
         marginLeft: responsiveWidth(2.5),
     },
     spineMainText: {
@@ -123,8 +125,9 @@ export default styles = StyleSheet.create({
     surveyContainer: {
         backgroundColor: '#1f4c86',
         width: responsiveWidth(90),
-        height: responsiveHeight(23),
+        height: responsiveHeight(25),
         borderRadius: responsiveWidth(2.6),
+        
        
     },
     surveyText: {
@@ -132,13 +135,14 @@ export default styles = StyleSheet.create({
         fontWeight: 400,
         marginLeft: responsiveWidth(3),
         color: '#f7feff',
-        marginVertical: responsiveWidth(2.5),
+        // marginVertical: responsiveWidth(2.5),
     },
     surveyImg: {
-        width: responsiveWidth(31),
-        height: responsiveHeight(15),
+        width: moderateScale(120),
+        height: verticalScale(105),
         // marginLeft: responsiveWidth(2.5),
         alignSelf:'center',
+        marginVertical:moderateScale(5)
     },
  
     videoMainText: {

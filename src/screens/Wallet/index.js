@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity, Modal, TextInput, TouchableHighlight,FlatList } from 'react-native'
+import { View, Text, Image, TouchableOpacity, Modal, TextInput, TouchableHighlight,FlatList,ActivityIndicator } from 'react-native'
 import React from 'react'
 import { useLayoutEffect, useState,useEffect } from "react";
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -62,19 +62,18 @@ useEffect(() => {
 
 
     
-    return (
-    <View style={{ 
-    marginTop:responsiveWidth(2.5),
- }} >
- <View style={{flexDirection:'row',justifyContent:'space-between',}}>
+    return(
+
+    <View style={{ marginTop:responsiveWidth(2.5), }} >
+    <View style={{flexDirection:'row',justifyContent:'space-between',}}>
       <Text style={{color:'#fff',marginLeft:responsiveWidth(2),fontSize:responsiveFontSize(1.45)}} >{sno}</Text>
       <Text style={{color:'#fff',marginLeft:responsiveWidth(13),fontSize:responsiveFontSize(1.45)}} >{coins}</Text>
       <Text style={{color:'#fff',marginLeft:responsiveWidth(11),fontSize:responsiveFontSize(1.45)}} >{amount}</Text>
-    
       <Text style={{color:'#fff',marginLeft:responsiveWidth(9),fontSize:responsiveFontSize(1.45)}} >{dateModified}</Text>
       <Text style={{color:status == 'SUCCESS' ? 'green':'red',fontSize:responsiveFontSize(1.45)}} >{status}</Text>
-      </View>
-    </View>
+      </View> 
+    </View> 
+    
   )};
 
 
@@ -222,11 +221,13 @@ useEffect(() => {
             <Text style={{color:'#fff',fontWeight:'bold' }}>Date</Text>
             <Text style={{color:'#fff',fontWeight:'bold' }}>Status</Text>
           </View>
+
+         
           <FlatList
         data={withdrawHistoryData.data}
-        renderItem={({item}) => <Item sno={item.id} coins={item.coin} amount={item.amount} status={item.status} date={item.time}/>}
+        renderItem={({item}) => <Item sno={item.id} coins={item.coin} amount={item.amount} status={item.status} date={item.time}/> }
   
-           />
+           /> 
 
           </View>
 
