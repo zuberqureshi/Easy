@@ -139,7 +139,7 @@ const EditProfileScreen = () => {
                                     <ImageBackground
                                         source={require('../../assets/man.png')}
                                         style={{ height: responsiveHeight(11.85), width: responsiveWidth(24.5) }}
-                                        imageStyle={{ borderRadius: responsiveWidth(3.5) }}>
+                                        imageStyle={{ borderRadius: responsiveWidth(3.5),resizeMode:'contain' }}>
 
                                     </ImageBackground>
                                 </View>

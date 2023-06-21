@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
-import { moderateScale, verticalScale } from 'react-native-size-matters';
+
 
 
 export default styles = StyleSheet.create({
@@ -25,20 +25,23 @@ export default styles = StyleSheet.create({
         alignItems: 'center'
     },
     getFreeCoin: {
-        width: moderateScale(46),
-        height: verticalScale(40),
+        width: responsiveWidth(13),
+        height: responsiveHeight(6.30),
         marginLeft: responsiveWidth(2.5),
+        resizeMode:'contain'
        
     },
     videoIcon: {
-        width: moderateScale(46),
-        height: verticalScale(40),
+        width: responsiveWidth(13),
+        height: responsiveHeight(6.30),
         marginLeft: responsiveWidth(2.5),
+        resizeMode:'contain'
     },
     surveyIcon: {
-        width: moderateScale(46),
-        height: verticalScale(40),
+        width: responsiveWidth(13),
+        height: responsiveHeight(6.30),
         marginLeft: responsiveWidth(2.5),
+        resizeMode:'contain'
     },
     spineMainText: {
         fontSize: responsiveFontSize(2.15),
@@ -61,6 +64,7 @@ export default styles = StyleSheet.create({
         height:responsiveHeight(22),
 
         borderRadius: responsiveWidth(2.6),
+        resizeMode:'contain'
        
     },
     gameZoneContainer: {
@@ -125,7 +129,7 @@ export default styles = StyleSheet.create({
     surveyContainer: {
         backgroundColor: '#1f4c86',
         width: responsiveWidth(90),
-        height: responsiveHeight(25),
+        height: responsiveHeight(23),
         borderRadius: responsiveWidth(2.6),
         
        
@@ -135,14 +139,16 @@ export default styles = StyleSheet.create({
         fontWeight: 400,
         marginLeft: responsiveWidth(3),
         color: '#f7feff',
+       
         // marginVertical: responsiveWidth(2.5),
     },
     surveyImg: {
-        width: moderateScale(120),
-        height: verticalScale(105),
+        width: responsiveWidth(31),
+        height: responsiveHeight(15),
         // marginLeft: responsiveWidth(2.5),
         alignSelf:'center',
-        marginVertical:moderateScale(5)
+        marginVertical:responsiveWidth(1.4),
+        resizeMode:'contain'
     },
  
     videoMainText: {
@@ -162,6 +168,8 @@ export default styles = StyleSheet.create({
 videoImg:{
     width:responsiveHeight(20),
     height:responsiveHeight(15),
+    resizeMode:'contain'
+  
 }
 
 });

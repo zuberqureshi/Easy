@@ -92,7 +92,7 @@ useEffect(() => {
          <Image
              source={require('../../assets/man.png')}
             // size={responsiveWidth(19.5)}
-            style={{width:responsiveWidth(19),height:responsiveHeight(9.1)}}
+            style={{width:responsiveWidth(19),height:responsiveHeight(9.1),resizeMode:'contain'}}
          />
           <View style={{marginLeft: responsiveWidth(4.85)}}>
             <Title style={[styles.title, {
@@ -121,7 +121,7 @@ useEffect(() => {
 
       <View style={styles.infoBoxWrapper}>
           <View style={ {flexDirection:'row',alignItems:'center',}}>
-          <Image style={{width:responsiveWidth(8),height:responsiveHeight(4),marginRight:responsiveWidth(3)}} source={require('../../assets/rupee.png')} />
+          <Image style={{width:responsiveWidth(8),height:responsiveHeight(4),marginRight:responsiveWidth(3),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
             <Title style={{marginRight:responsiveWidth(2),fontSize:responsiveFontSize(3)}}>{userProfileData?.data?.wallet_coins}</Title>
             <Caption style={{fontSize:responsiveFontSize(2)}} >Coins</Caption>
           </View>

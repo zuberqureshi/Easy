@@ -28,6 +28,7 @@ export default styles = StyleSheet.create({
         height:responsiveHeight(10),
         width:responsiveWidth(20),
         borderRadius:responsiveWidth(10),
+        resizeMode:'contain'
     },
     drawerTopName:{
         fontWeight:'bold',
