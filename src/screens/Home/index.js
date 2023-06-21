@@ -517,13 +517,14 @@ RNPollfish.isPollfishPresent((isPollfishPresent) => {
 
                 <TouchableOpacity
                   onPress={() => {
-                    setModalVisibleVideo(true)
+                    // setModalVisibleVideo(true)
                     youtubeVideoId()
-                    setCounter(30)
-                    setTimeout(() => {
-                      setVideoClose(true)
+                    navigation.navigate('Youtube',{videoId:videoId?.data?.video_url})
+                    // setCounter(30)
+                    // setTimeout(() => {
+                    //   setVideoClose(true)
 
-                    }, 30000)
+                    // }, 30000)
 
                   }} >
                   <View style={styles.videoImgView}>

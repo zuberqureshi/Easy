@@ -15,8 +15,8 @@ balanceLinearGradient:{
        justifyContent: 'center' 
 },
 balanceLinearGradientCoin:{
-    color: "#fff", fontSize:
-     responsiveFontSize(3.5),
+    color: "#fff", 
+    fontSize:responsiveFontSize(3.5),
      fontWeight: 500 
 },
 balanceLinearGradientCoinText:{
@@ -37,7 +37,7 @@ paytmLinearGradient:{
     borderRadius: responsiveWidth(2.45),
      height: responsiveHeight(8.3), 
      elevation: responsiveWidth(1.5),
-     marginVertical: responsiveWidth(5),
+     marginVertical: responsiveWidth(3),
       borderWidth: responsiveWidth(0.2),
        borderColor: '#1f4c86',
         justifyContent: 'center' 
@@ -59,7 +59,7 @@ paypalLinearGradient:{
      borderRadius: responsiveWidth(2.45),
       height: responsiveHeight(8.3), 
       elevation: responsiveWidth(1.5), 
-      marginVertical: responsiveWidth(5), 
+  
       borderWidth: responsiveWidth(0.2),
        borderColor: '#1f4c86',
      justifyContent: 'center' 
