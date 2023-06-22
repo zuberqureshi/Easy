@@ -34,6 +34,7 @@ const Home = () => {
   const [userInfo, setUserInfo] = useState()
   const [dailyRewardButton, setDailyRewardButton] = useState()
   const [userSettings, setUserSettings] = useState()
+  const [banner, setBanner] = useState()
 
   const [videoId, setVideoId] = useState()
 
@@ -75,6 +76,7 @@ const Home = () => {
   const set = async () => {
     await settings();
     await getUserInfo();
+    await banners();
 
   }
 
@@ -106,15 +108,24 @@ const Home = () => {
 
   }
   // console.log("getdata after Callling.... APi", userInfo)
+  
+  //Get Banners
+
+   const banners = async () => {
+    console.log("banner Callling....")
+    const banners = await CallApiJson('banner', 'GET');
+    // const data = await JSON.parse(seting)
+    console.log('banner data',banners.data)
+    await setBanner(banners.data)
+
+  }
 
 
 
 
-
-
-  const renderBanner = ({ item, index }) => {
-    return <BannerSlider data={item} />;
-  };
+  // const renderBanner = ({ item, index }) => {
+  //   return <BannerSlider data={item} />;
+  // };
 
   //timer login
   const [counter, setCounter] = useState(0)
@@ -285,8 +296,8 @@ const Home = () => {
               // ref={isCarousel}
 
               autoplay={true}
-              data={sliderData}
-              renderItem={renderBanner}
+              data={banner}
+              renderItem={( item, index ) => { return (<BannerSlider data={item} />)}}
               sliderWidth={windowWidth}
               // - responsiveWidth(6)
               itemWidth={responsiveWidth(85)}
