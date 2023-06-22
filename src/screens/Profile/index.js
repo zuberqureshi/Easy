@@ -15,7 +15,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import Loader from '../../components/common/loader/Loader';
+import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
+const adUnitId =   'ca-app-pub-2291791121050290/1352844929';
+const adUnitIdrewarded =    'ca-app-pub-2291791121050290/6625314913';
 
+const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
 const Profile = (props) => {
  
 
@@ -151,7 +155,27 @@ useEffect(() => {
         </TouchableRipple> */}
       </View>
 
-   
+      <BannerAd
+      unitId={adUnitId}
+      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+      requestOptions={{
+        requestNonPersonalizedAdsOnly: true,
+      }}
+    />
+       <BannerAd
+      unitId={adUnitId}
+      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+      requestOptions={{
+        requestNonPersonalizedAdsOnly: true,
+      }}
+    />
+       <BannerAd
+      unitId={adUnitId}
+      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+      requestOptions={{
+        requestNonPersonalizedAdsOnly: true,
+      }}
+    />
     </SafeAreaView>
    
   );
