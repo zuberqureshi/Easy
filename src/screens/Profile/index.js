@@ -111,15 +111,15 @@ useEffect(() => {
       <View style={styles.userInfoSection}>
         <View style={styles.row}>
           <Icon name="map-marker-radius" color="#777777" size={responsiveWidth(5)}/>
-          <Text style={{color:"#777777", marginLeft: responsiveWidth(5)}}>{ userProfileData?.data?.address ?`${userProfileData?.data?.address},${userProfileData?.data?.country}`:`Nill`}</Text>
+          <Text style={{color:"#777777", marginLeft: responsiveWidth(5)}}>{ userProfileData?.data?.address ?`${userProfileData?.data?.address},${userProfileData?.data?.country}`:`N/A`}</Text>
         </View>
         <View style={styles.row}>
           <Icon name="phone" color="#777777" size={responsiveWidth(5)}/>
-          <Text style={{color:"#777777", marginLeft:responsiveWidth(5) }}>{ userProfileData?.data?.mobile ?`${userProfileData?.data?.mobile}`:`Nill`}</Text>
+          <Text style={{color:"#777777", marginLeft:responsiveWidth(5) }}>{ userProfileData?.data?.mobile ?`${userProfileData?.data?.mobile}`:`N/A`}</Text>
         </View>
         <View style={styles.row}>
           <Icon name="email" color="#777777" size={responsiveWidth(5)}/>
-          <Text style={{color:"#777777", marginLeft: responsiveWidth(5)}}>{ userProfileData?.data?.email ?`${userProfileData?.data?.email}`:`Nill`}</Text>
+          <Text style={{color:"#777777", marginLeft: responsiveWidth(5)}}>{ userProfileData?.data?.email ?`${userProfileData?.data?.email}`:`N/A`}</Text>
         </View>
       </View>
 
