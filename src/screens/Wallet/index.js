@@ -11,8 +11,8 @@ import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import moment from 'moment'
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
-const adUnitId =  'ca-app-pub-2291791121050290/1352844929';
-const adUnitIdrewarded =  'ca-app-pub-2291791121050290/6625314913';
+const adUnitId =   __DEV__ ? TestIds. BANNER : 'ca-app-pub-2291791121050290/1352844929';
+const adUnitIdrewarded =    __DEV__ ? TestIds. REWARDED : 'ca-app-pub-2291791121050290/6625314913';
 
 const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
 
