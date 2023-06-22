@@ -16,7 +16,7 @@ import crashlytics from '@react-native-firebase/crashlytics';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import RNPollfish from 'react-native-plugin-pollfish';
 
-const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(false);
+const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(true);
 
 
 RNPollfish.init(builder.build());
@@ -359,21 +359,21 @@ const Home = () => {
             <TouchableOpacity onPress={() => { navigation.navigate('VideoReward') }} >
               <View style={{ flex: 0.10, marginTop: responsiveHeight(1.8) }}>
 
-                <Text style={styles.getFreeMainText}>Daily Reward: Unlock </Text>
+                <Text style={styles.getFreeMainText}>Video Reward: Unlock </Text>
                 <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
 
                   <View style={styles.getFreeMainContainer}>
                     <Image  style={styles.videoIcon} source={require('../../assets/play.png')} />
 
                     <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5) }}>
-                      <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Free Coins</Text>
-                      <Text style={{ color: '#fff' }}>Claim Your Daily Reward Now !</Text>
+                      <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}> Earn Coins </Text>
+                      <Text style={{ color: '#fff' }}> by Watching Video !</Text>
                     </View>
                     <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3) }}>
                       <Text style={{ color: '#fff' }}>Get Coins</Text>
 
                       <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
-                        <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}> {userSettings && userSettings.data.video_ad_coin}</Text>
+                        <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}> {userSettings && userSettings?.data?.video_ad_coin}</Text>
                         <Image  style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
                       </View>
 
@@ -392,14 +392,14 @@ const Home = () => {
 
 
           {/* Spine-Start*/}
-          <View style={{ flex: 0.20, marginTop: responsiveWidth(4) }}>
+          {/* <View style={{ flex: 0.20, marginTop: responsiveWidth(4) }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
               <Text style={styles.spineMainText}>Spine Wheel</Text>
               <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
                 <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
 
 
-                <Text style={{ color: '#fff' }}> 11</Text>
+                <Text style={{ color: '#fff' }}> 1 </Text>
                 <Image  style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(1),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
 
 
@@ -419,7 +419,7 @@ const Home = () => {
               </TouchableOpacity>
             </View>
 
-          </View>
+          </View> */}
           {/* Spine-End*/}
           {/* Get Free Coins Survey-Start */}
           {/* <TouchableOpacity onPress={()=>{surveyRewardClaim()}}>
@@ -519,12 +519,12 @@ const Home = () => {
 
                 <View style={styles.surveyContainer}>
                   <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2), justifyContent: 'space-between' }}>
-                    <Text style={styles.surveyText}> Earn Coin By survey  </Text>
+                    <Text style={styles.surveyText}> Earn  By survey  </Text>
                     <View style={{ flexDirection: 'column', marginRight: responsiveWidth(5), alignItems: 'center' }}>
                 <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
 
                  <View style={{flexDirection:'row',alignItems:'center'}}>
-                <Text style={{ color: '#fff' }}> 11</Text>
+                <Text style={{ color: '#fff' }}>  {userSettings && userSettings?.data?.survey_ad_coin} </Text>
                 <Image style={{width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
 </View>
 
@@ -553,7 +553,7 @@ const Home = () => {
                 <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
 
 
-                <Text style={{ color: '#fff' }}> 11</Text>
+                <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.youtube_video_coin} </Text>
                 <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2.5),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
 
 
