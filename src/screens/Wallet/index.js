@@ -71,8 +71,8 @@ useEffect(() => {
   setLoadingStatus(true)
 
    const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+    setLoadingStatus(false)
       rewarded.show();
-      console.log('RewardedAdEventType');
 
   });
   const unsubscribeEarned = rewarded.addAdEventListener(
@@ -83,13 +83,13 @@ useEffect(() => {
  
     },
   );
-  console.log('adsloading ');
-
+ 
   // Start loading the rewarded ad straight away
   rewarded.load();
 
   // Unsubscribe from events on unmount
   return () => {
+    setLoadingStatus(false)
     unsubscribeLoaded();
     unsubscribeEarned();
   };
@@ -655,22 +655,10 @@ useEffect(() => {
 
           {/* </View> */}
           </LinearGradient>
-          <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      requestOptions={{
-        requestNonPersonalizedAdsOnly: true,
-      }}
-    />
+        
 
         </View>
-          <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      requestOptions={{
-        requestNonPersonalizedAdsOnly: true,
-      }}
-    />
+        
       </Modal>
       <BannerAd
       unitId={adUnitId}
@@ -679,6 +667,7 @@ useEffect(() => {
         requestNonPersonalizedAdsOnly: true,
       }}
     />
+  
 
     </View>
 

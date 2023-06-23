@@ -14,6 +14,10 @@ import LinearGradient from 'react-native-linear-gradient'
 import YoutubePlayer from "react-native-youtube-iframe";
 import crashlytics from '@react-native-firebase/crashlytics';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
+import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
+const adUnitId =  'ca-app-pub-2291791121050290/1352844929';
+const adUnitIdrewarded =  'ca-app-pub-2291791121050290/6625314913';
+
 import RNPollfish from 'react-native-plugin-pollfish';
 
 const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(true);
@@ -815,6 +819,13 @@ const Home = () => {
       </ScrollView>
 
 
+      <BannerAd
+      unitId={adUnitId}
+      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+      requestOptions={{
+        requestNonPersonalizedAdsOnly: true,
+      }}
+    />
 
 
 

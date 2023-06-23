@@ -7,16 +7,50 @@ import Loader from '../../components/common/loader/Loader';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import YoutubePlayer from "react-native-youtube-iframe";
+import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
+const adUnitId =   'ca-app-pub-2291791121050290/1352844929';
+const adUnitIdrewarded =    'ca-app-pub-2291791121050290/6625314913';
+
+const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
 
 
 const Youtube = ({ route }) => {
 
     const { videoId } = route.params;
     const navigation = useNavigation();
+    const [loadingStatus, setLoadingStatus] = useState(false)
 
 
 
 
+
+    useEffect(() => {
+        setLoadingStatus(true)
+      
+         const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+            setLoadingStatus(false)
+            rewarded.show();
+
+      
+        });
+        const unsubscribeEarned = rewarded.addAdEventListener(
+          RewardedAdEventType.EARNED_REWARD,
+          reward => {
+             setLoadingStatus(false)
+       
+          },
+        );
+       
+        // Start loading the rewarded ad straight away
+        rewarded.load();
+      
+        // Unsubscribe from events on unmount
+        return () => {
+            setLoadingStatus(false)
+          unsubscribeLoaded();
+          unsubscribeEarned();
+        };
+      }, []);
 
 
 
@@ -58,7 +92,15 @@ const Youtube = ({ route }) => {
 
     return (
         <View style={{ flex: 1, backgroundColor: "#0a203e",}} >
+            <Loader loadingStatus = {loadingStatus} />
 
+   <BannerAd
+      unitId={adUnitId}
+      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+      requestOptions={{
+        requestNonPersonalizedAdsOnly: true,
+      }}
+    />
             <LinearGradient colors={["#0a203e", "#1f4c86"]}
                 useAngle={true}
                 angle={322}
@@ -125,8 +167,6 @@ const Youtube = ({ route }) => {
 
 
             </LinearGradient>
-
-
 
 
 

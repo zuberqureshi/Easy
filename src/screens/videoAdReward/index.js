@@ -47,6 +47,7 @@ const VideoReward = () => {
     useEffect(() => {
       load();
       const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+        setLoadingStatus(false)
           rewarded.show();
       });
       const unsubscribeEarned = rewarded.addAdEventListener(
@@ -64,6 +65,7 @@ const VideoReward = () => {
   
       // Unsubscribe from events on unmount
       return () => {
+        setLoadingStatus(false)
         unsubscribeLoaded();
         unsubscribeEarned();
       };
