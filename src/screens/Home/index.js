@@ -108,6 +108,8 @@ const Home = () => {
     console.log("getdata Callling....")
     const ds = await getToken();
     const data = await JSON.parse(ds)
+    console.log("getdata Callling....recieved by async",data)
+
     await setUserInfo(data)
 
   }

@@ -1,13 +1,10 @@
 import { View, Text, Image, FlatList, StyleSheet, Touchable, TouchableOpacity } from 'react-native'
 import React, { useState,useEffect } from 'react'
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
-
 import Icon from 'react-native-vector-icons/Ionicons';
-import  { removeToken } from '../../utiles/network';
-
 import { useNavigation, useIsFocused } from "@react-navigation/native";
 import styles from './style'
-import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
+import CallApi, { setToken, CallApiJson, getToken , removeToken} from '../../utiles/network';
 
 const CustomDrawer = () => {
 
@@ -25,10 +22,10 @@ const CustomDrawer = () => {
   const home = '../../assets/home.png'
 
   const userLogout = async ()=>{
-    const ds = await removeToken(  );
+     const ds = await removeToken();
+    navigation.navigate('Login') ;
     setSelectedId(null);
-    console.log("Dataremovedtoken  ",ds , '');
-  }
+   }
 
   const getUserInfo = async ()=>{
     const ds = await getToken(  );
@@ -105,7 +102,7 @@ const CustomDrawer = () => {
     return (<Item
       onPress={() => {
         setSelectedId(item.title)
-        if( item.title==='Sign out' ) { userLogout(); navigation.navigate('Login') }  
+        if( item.title==='Sign out' ) { userLogout();     }  
         else
         navigation.navigate(item.title)
       }}
