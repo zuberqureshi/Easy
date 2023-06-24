@@ -11,7 +11,8 @@ import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  Test
 const adUnitId =   'ca-app-pub-2291791121050290/1352844929';
 const adUnitIdrewarded =    'ca-app-pub-2291791121050290/6625314913';
 const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
-
+const delay  = 59;
+const delaySeconds  = delay*1000;
 
 const Youtube = ({ route }) => {
 
@@ -20,6 +21,9 @@ const Youtube = ({ route }) => {
     const [loadingStatus, setLoadingStatus] = useState(false)
     const [videoIdApi, setvideoIdApi] = useState()
     const [userInfo, setUserInfo] = useState()
+    const [claimButton, setclaimButton] = useState(true)
+    const [count, setCount] = useState(delay);
+
 
 //     //Get User Info
 //   const getUserInfo = async () => {
@@ -47,7 +51,7 @@ const Youtube = ({ route }) => {
         setLoadingStatus(true)
          const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
             setLoadingStatus(false)
-            rewarded.show();
+           // rewarded.show();
         });
         const unsubscribeEarned = rewarded.addAdEventListener(
           RewardedAdEventType.EARNED_REWARD,
@@ -61,6 +65,9 @@ const Youtube = ({ route }) => {
         rewarded.load();
         setLoadingStatus(false)
 
+        setTimeout(() => {
+            setclaimButton(false)
+        }, delaySeconds);
         // Unsubscribe from events on unmount
         return () => {
             setLoadingStatus(false)
@@ -70,6 +77,12 @@ const Youtube = ({ route }) => {
       }, []);
 
 
+      useEffect(() => {
+        const interval = setInterval(() => {
+          if (count > 0) setCount(count - 1);
+        }, 1000);
+        return () => clearInterval(interval);
+      }, [count]);
 
     //  Header start
     useLayoutEffect(() => {
@@ -166,11 +179,11 @@ const Youtube = ({ route }) => {
                     justifyContent:'center',
                     alignItems:'center'
                         }}
-
+                        disabled={claimButton}
                         onPress={() => {
                             navigation.navigate('Home');
                         }}>
-                        <Text  style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}>Click Here Go To Home</Text>
+                        <Text  style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}> { claimButton ? `Wait For ${count} Seconds` :' Click Here Go To Home' } </Text>
                     </TouchableOpacity>
 
                 

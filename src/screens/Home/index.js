@@ -353,11 +353,11 @@ const Home = () => {
                     <Image  style={styles.getFreeCoin} source={require('../../assets/rupee.png')} />
 
                     <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5) }}>
-                      <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Free Coins</Text>
-                      <Text style={{ color: '#fff' }}>Claim Your Daily Reward Now !</Text>
+                      <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Click Here</Text>
+                      <Text style={{ color: '#fff' }}>Claim Your Daily Reward !</Text>
                     </View>
                     <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3) }}>
-                      <Text style={{ color: '#fff' }}>Get Coins</Text>
+                      <Text style={{ color: '#fff' }}>Get Rupees</Text>
 
                       <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
                         <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}>{userSettings && userSettings.data.daily_coin}</Text>
@@ -382,11 +382,11 @@ const Home = () => {
                     <Image  style={styles.videoIcon} source={require('../../assets/play.png')} />
 
                     <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5) }}>
-                      <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}> Earn Coins </Text>
-                      <Text style={{ color: '#fff' }}> by Watching Video !</Text>
+                      <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}> Click here </Text>
+                      <Text style={{ color: '#fff' }}> Earn by Watching Video !</Text>
                     </View>
                     <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3) }}>
-                      <Text style={{ color: '#fff' }}>Get Coins</Text>
+                      <Text style={{ color: '#fff' }}>Get Rupees</Text>
 
                       <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
                         <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}> {userSettings && userSettings?.data?.video_ad_coin}</Text>
@@ -535,9 +535,9 @@ const Home = () => {
 
                 <View style={styles.surveyContainer}>
                   <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2), justifyContent: 'space-between' }}>
-                    <Text style={styles.surveyText}> Earn  By survey  </Text>
+                    <Text style={styles.surveyText}> Earn By survey  </Text>
                     <View style={{ flexDirection: 'column', marginRight: responsiveWidth(5), alignItems: 'center' }}>
-                <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
+                <Text style={{ color: '#fff', fontWeight: '500' }}>Get Rupees</Text>
 
                  <View style={{flexDirection:'row',alignItems:'center'}}>
                 <Text style={{ color: '#fff' }}>  {userSettings && userSettings?.data?.survey_ad_coin} </Text>
@@ -566,7 +566,7 @@ const Home = () => {
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
               <Text style={styles.videoMainText}>Earn By Watch Video</Text>
               <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
-                <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
+                <Text style={{ color: '#fff', fontWeight: '500' }}>Get Rupees </Text>
 
 
                 <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.youtube_video_coin} </Text>
