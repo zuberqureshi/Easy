@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity, Modal, TextInput, TouchableHighlight,FlatList,ActivityIndicator, Alert } from 'react-native'
+import { View, Text, Image, TouchableOpacity, Modal, TextInput, TouchableHighlight,FlatList,ActivityIndicator, Alert,Keyboard  } from 'react-native'
 import React from 'react'
 import { useLayoutEffect, useState,useEffect } from "react";
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -126,7 +126,8 @@ useEffect(() => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <TouchableOpacity onPress={() => navigation.openDrawer()}>
+        <TouchableOpacity onPress={() => {navigation.openDrawer()
+          Keyboard.dismiss() }}>
 
           <Icon name="menu" size={responsiveWidth(7)} color="#fff" />
         </TouchableOpacity>

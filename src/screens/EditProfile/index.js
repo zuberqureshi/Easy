@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
-import { View, Text, TouchableOpacity, ImageBackground, TextInput, Pressable, KeyboardAvoidingView, ScrollView, SafeAreaView ,ToastAndroid} from 'react-native';
+import { View, Text, TouchableOpacity, ImageBackground, TextInput, Pressable, KeyboardAvoidingView, ScrollView, SafeAreaView ,ToastAndroid,Keyboard } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 
@@ -59,7 +59,8 @@ const EditProfileScreen = () => {
     useLayoutEffect(() => {
         navigation.setOptions({
             headerLeft: () => (
-                <Pressable onPress={() => navigation.openDrawer()}>
+                <Pressable onPress={() => {navigation.openDrawer()
+                    Keyboard.dismiss() }}>
 
                     <Ionicons style={{ marginLeft: responsiveWidth(3.8) }} name="menu" size={responsiveWidth(7)} color="#fff" />
                 </Pressable>

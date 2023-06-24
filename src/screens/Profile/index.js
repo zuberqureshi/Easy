@@ -1,5 +1,5 @@
 import React,{ useLayoutEffect,useState,useEffect} from 'react';
-import {View, SafeAreaView, StyleSheet,Pressable,TouchableOpacity,Image} from 'react-native';
+import {View, SafeAreaView, StyleSheet,Pressable,TouchableOpacity,Image,Keyboard } from 'react-native';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import {
   Avatar,
@@ -56,7 +56,8 @@ useEffect(() => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <Pressable onPress={() => navigation.openDrawer()}>
+        <Pressable onPress={() => {navigation.openDrawer()
+          Keyboard.dismiss() }}>
 
           <Ionicons style={{marginLeft:responsiveWidth(3.8)}} name="menu" size={responsiveWidth(7)} color="#fff" />
         </Pressable>

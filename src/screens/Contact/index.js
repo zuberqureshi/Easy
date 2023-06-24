@@ -1,4 +1,4 @@
-import { View, Text,TouchableOpacity,ImageBackground,TextInput, Pressable, KeyboardAvoidingView,ScrollView,SafeAreaView,ToastAndroid } from 'react-native'
+import { View, Text,TouchableOpacity,ImageBackground,TextInput, Pressable, KeyboardAvoidingView,ScrollView,SafeAreaView,ToastAndroid,Keyboard } from 'react-native'
 import React from 'react'
 import { useLayoutEffect,useState,useEffect,useRef } from "react";
 
@@ -79,7 +79,8 @@ const Contact = () => {
       
       headerLeft: () => (
         
-        <TouchableOpacity onPress={() => navigation.openDrawer()}>
+        <TouchableOpacity onPress={() => {navigation.openDrawer()
+           Keyboard.dismiss() }}>
 
           <Icon name="menu" size={responsiveWidth(7)} color="#fff" />
         </TouchableOpacity>
@@ -267,6 +268,7 @@ const Contact = () => {
                             <TouchableOpacity  style={styles.commandButton} disabled={!isValid} onPress={handleSubmit}>
                                 <Text style={styles.panelButtonTitle}>Submit</Text>
                             </TouchableOpacity>
+                            <Text style={{alignSelf:'center',marginTop:responsiveWidth(0.5),textDecorationLine:'underline'}}>Please fill up the form after submit</Text>
 
                         </View>
 
