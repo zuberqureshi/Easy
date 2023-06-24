@@ -162,6 +162,15 @@
             android:value="true" />
 
         <provider
+            android:name="cl.json.RNShareFileProvider"
+            android:authorities="com.easyearn.cash.rnshare.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/share_download_paths" />
+        </provider>
+        <provider
             android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
             android:authorities="com.easyearn.cash.fileprovider"
             android:exported="false"

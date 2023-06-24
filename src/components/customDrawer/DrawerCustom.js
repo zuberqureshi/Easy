@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation, useIsFocused } from "@react-navigation/native";
 import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken , removeToken} from '../../utiles/network';
+import Share from 'react-native-share';
 
 const CustomDrawer = () => {
 
@@ -20,6 +21,27 @@ const CustomDrawer = () => {
 
   const commanImg = 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   const home = '../../assets/home.png'
+
+
+
+  const share=()=>{
+    const options={
+     message:'📣 Share the App with Your Friends! 📱💫 Spread the word about our app 💪💰',
+     url:'https://play.google.com/store/apps/details?id=com.easyearn.cash',
+    
+    }
+ 
+ 
+   Share.open(options)
+   .then((res) => {
+     console.log(res);
+   })
+   .catch((err) => {
+     err && console.log(err);
+   });
+  }
+ 
+
 
   const userLogout = async ()=>{
      const ds = await removeToken();
@@ -61,9 +83,9 @@ const CustomDrawer = () => {
     { icon: 'home', title: 'Home' },
     { icon: 'person', title: 'Profile' },
     { icon: 'wallet', title: 'Wallet' },
-    { icon: 'share-social', title: 'Referral' },
-    { icon: 'game-controller', title: 'Quiz' },
-    { icon: 'cloud-download', title: 'Offer' },
+    // { icon: 'share-social', title: 'Referral' },
+    // { icon: 'game-controller', title: 'Quiz' },
+    // { icon: 'cloud-download', title: 'Offer' },
     { icon: 'headset', title: 'Contact' },
    
 
@@ -102,7 +124,8 @@ const CustomDrawer = () => {
     return (<Item
       onPress={() => {
         setSelectedId(item.title)
-        if( item.title==='Sign out' ) { userLogout();     }  
+        if( item.title==='Sign out' ) { userLogout(); }  
+        else if(item.title==='Tell a friend' ){ share()}
         else
         navigation.navigate(item.title)
       }}
