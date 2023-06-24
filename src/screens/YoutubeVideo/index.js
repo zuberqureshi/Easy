@@ -10,7 +10,6 @@ import YoutubePlayer from "react-native-youtube-iframe";
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
 const adUnitId =   'ca-app-pub-2291791121050290/1352844929';
 const adUnitIdrewarded =    'ca-app-pub-2291791121050290/6625314913';
-
 const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
 
 
@@ -19,19 +18,36 @@ const Youtube = ({ route }) => {
     const { videoId } = route.params;
     const navigation = useNavigation();
     const [loadingStatus, setLoadingStatus] = useState(false)
+    const [videoIdApi, setvideoIdApi] = useState()
+    const [userInfo, setUserInfo] = useState()
 
+//     //Get User Info
+//   const getUserInfo = async () => {
+//      const ds = await getToken();
+//     const data = await JSON.parse(ds)   
+//      await setUserInfo(data)
 
+//   }
 
+      //youtube video ID Api 
+  const youtubeVideoId = async () => {
+     
+    const youtubeVideo = await CallApiJson('youtubevideolist', 'GET');
+    //  const data = await JSON.stringify(youtubeVideo)
+    console.log('youtubeVideoId after api ', youtubeVideo.data.video_url)
+    await setvideoIdApi(youtubeVideo.data.video_url)
+  }
+  const load =  async () => {
+    await youtubeVideoId();
 
+  }
 
     useEffect(() => {
+        youtubeVideoId();
         setLoadingStatus(true)
-      
          const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
             setLoadingStatus(false)
-            rewarded.show();
-
-      
+           // rewarded.show();
         });
         const unsubscribeEarned = rewarded.addAdEventListener(
           RewardedAdEventType.EARNED_REWARD,
@@ -43,7 +59,8 @@ const Youtube = ({ route }) => {
        
         // Start loading the rewarded ad straight away
         rewarded.load();
-      
+        setLoadingStatus(false)
+
         // Unsubscribe from events on unmount
         return () => {
             setLoadingStatus(false)
@@ -108,13 +125,11 @@ const Youtube = ({ route }) => {
                 style={{
                     flex: 0.65,
                     borderRadius: responsiveWidth(2.5),
-                  
                     elevation: responsiveWidth(1.5),
                     marginHorizontal: responsiveWidth(5),
                     borderWidth: responsiveWidth(0.2),
                     borderColor: '#1f4c86',
                     marginTop: responsiveWidth(30)
-
 
                 }}>
 
@@ -124,14 +139,14 @@ const Youtube = ({ route }) => {
                 
                 
                   
-               
+               {console.log( 'videoIdApi',videoIdApi )  }
 
                         <YoutubePlayer
                             style={{}}
                             width={responsiveWidth(85)}
                             height={responsiveHeight(23.5)}
                             play={true}
-                            videoId={videoId}
+                            videoId={videoIdApi}
                         // onChangeState={onStateChange}
                         />
                    
@@ -153,11 +168,9 @@ const Youtube = ({ route }) => {
                         }}
 
                         onPress={() => {
-
-
-
+                            navigation.navigate('Home');
                         }}>
-                        <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}>Click Here Go To Home</Text>
+                        <Text  style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}>Click Here Go To Home</Text>
                     </TouchableOpacity>
 
                 
