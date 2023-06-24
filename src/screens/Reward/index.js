@@ -18,6 +18,7 @@ const Reward = () => {
     const navigation = useNavigation();
     const [userInfo, setUserInfo] = useState()
     const [loadingStatus, setLoadingStatus] = useState(true)
+    const [userSettings, setUserSettings] = useState()
 
  //Get User Info
  const getUserInfo = async () => {
@@ -26,7 +27,17 @@ const Reward = () => {
   await setUserInfo(data)
 
 }
+
+  // setting api
+  const settings = async () => {
+
+    const seting = await CallApiJson('settings', 'GET');
+    // const data = await JSON.parse(seting)
+    await setUserSettings(seting)
+
+  }
     const load = async () => {
+       await settings();
        await getUserInfo();
   
     }
@@ -34,34 +45,39 @@ const Reward = () => {
 
   //DailyRewardClaim
   const dailyRewardClaim = async () => {
-   
+    setLoadingStatus(true)
+
     const body = {
       user_id: userInfo.id,
     };
     const dailyRewardCheckClaim = await CallApiJson('dailyrewardclaim', 'POST', body); 
-     console.log(" dailyRewardClaim API", body)
+    console.log(" dailyRewardCheckClaim", dailyRewardCheckClaim);
+    setLoadingStatus(false)
+    navigation.navigate('Home');
 
   }
 
 
     useEffect(() => {
       load();
+      setLoadingStatus(true)
+
       const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+        setLoadingStatus(false)
           rewarded.show();
+          setLoadingStatus(false)
+
       });
       const unsubscribeEarned = rewarded.addAdEventListener(
         RewardedAdEventType.EARNED_REWARD,
         reward => {
-          console.log('User earned reward of ', reward);
-          setLoadingStatus(false)
-          dailyRewardClaim();
-
+           setLoadingStatus(false)
+ 
         },
       );
   
       // Start loading the rewarded ad straight away
       rewarded.load();
-  
       // Unsubscribe from events on unmount
       return () => {
         unsubscribeLoaded();
@@ -160,8 +176,9 @@ const Reward = () => {
                     color: '#fff',
 
                   }}>
-                  Come back everyday to earn{'\n'}
-                  {'        '}Extra reward coins!
+                  Daily Reward will be Given Only one time in single Day , 
+
+                  Come Back Tommorrow and Earn Again
                 </Text>
                 <Image style={{ width: responsiveWidth(46), height: responsiveHeight(20), marginTop: responsiveWidth(4) }} source={require('../../assets/dailygift.png')} />
 
@@ -172,7 +189,7 @@ const Reward = () => {
                     color: '#fff',
 
                   }}>
-                  YOUR REWARD TODAY IS
+                  YOUR TODAY REWARD  IS
                 </Text>
                 <View style={{ flexDirection: 'row' }} >
                   <Image style={{ width: responsiveWidth(7.15), height: responsiveHeight(3.65), marginTop: responsiveWidth(0.5), marginRight: responsiveWidth(1) }} source={require('../../assets/coin.png')} />
@@ -183,7 +200,7 @@ const Reward = () => {
                       color: '#fff',
 
                     }}>
-                  500 Coins
+                  {userSettings && userSettings.data.daily_coin} Coins
                   </Text>
                 </View>
                 <TouchableOpacity
@@ -203,11 +220,11 @@ const Reward = () => {
                   }}
                 
                   onPress={() => {
-               
+                    dailyRewardClaim()
 
 
                   }}>
-                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}>Click Here Go To Home</Text>
+                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}>Claim Your Reward </Text>
                 </TouchableOpacity>
           
  
