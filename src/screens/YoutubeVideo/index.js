@@ -47,7 +47,7 @@ const Youtube = ({ route }) => {
         setLoadingStatus(true)
          const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
             setLoadingStatus(false)
-           // rewarded.show();
+            rewarded.show();
         });
         const unsubscribeEarned = rewarded.addAdEventListener(
           RewardedAdEventType.EARNED_REWARD,
