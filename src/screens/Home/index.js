@@ -4,6 +4,7 @@ import { useLayoutEffect, useState, useEffect, useRef } from "react";
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation, useIsFocused } from "@react-navigation/native";
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
+import EncryptedStorage from 'react-native-encrypted-storage';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { sliderData } from '../../components/slider/data'
 import BannerSlider from '../../components/slider/BannerSlider'
@@ -109,8 +110,17 @@ const Home = () => {
     const ds = await getToken();
     const data = await JSON.parse(ds)
     console.log("getdata Callling....recieved by async",data)
+    if( data.id ){
+     const fcmToken =  await EncryptedStorage.getItem('fcmToken');
+      const tokenSet = {
+        user_id: data.id,
+        fcm_token: fcmToken
 
-    await setUserInfo(data)
+      }
+      const seting = await CallApiJson('fcmupdate', 'POST' , tokenSet );
+
+    }
+     await setUserInfo(data)
 
   }
   // console.log("getdata after Callling.... APi", userInfo)
