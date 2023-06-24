@@ -103,7 +103,6 @@ android {
         versionCode 21
         versionName "21"
 
-
         // image picker
          vectorDrawables.useSupportLibrary = true
     }
