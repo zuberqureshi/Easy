@@ -18,6 +18,7 @@ const VideoReward = () => {
     const navigation = useNavigation();
     const [userInfo, setUserInfo] = useState()
     const [loadingStatus, setLoadingStatus] = useState(true)
+    const [buttonDisableTrue, setbuttonDisableTrue] = useState(true)
     const [userSettings, setUserSettings] = useState()
 
  //Get User Info
@@ -68,6 +69,7 @@ const VideoReward = () => {
       const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
           rewarded.show();
           setLoadingStatus(false)
+          setbuttonDisableTrue(false)
 
       });
       const unsubscribeEarned = rewarded.addAdEventListener(
@@ -221,12 +223,13 @@ const VideoReward = () => {
                     alignItems:'center'
                   }}
                 
+                  disabled={buttonDisableTrue}
                   onPress={() => {
                
                     videoAdRewardClaim()
 
                   }}>
-                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}>Claim your Reward </Text>
+                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}> { buttonDisableTrue ? 'Please Wait ' : 'Claim your Reward' }   </Text>
                 </TouchableOpacity>
           
  

@@ -1,5 +1,5 @@
 import { View, Text,SafeAreaView,StyleSheet,TextInput, TouchableOpacity,Image,ToastAndroid } from 'react-native'
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import { styles } from './style'
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { responsiveHeight,responsiveWidth,responsiveFontSize} from "react-native-responsive-dimensions";
@@ -12,10 +12,13 @@ import Loader from '../../components/common/loader/Loader';
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
 const adUnitId =  'ca-app-pub-2291791121050290/1352844929';
 const adUnitIdrewarded =  'ca-app-pub-2291791121050290/6625314913';
+import  { AuthContext } from "../../utiles/auth-context";
 
 
 const Login = () => {
   const isFocused = useIsFocused()
+
+  const authCtx = useContext(AuthContext);
   
   const [loadingStatus, setLoadingStatus] = useState(false)
   const [userInfo, setUserInfo] = useState(null)
@@ -55,7 +58,7 @@ const signIn = async () => {
      }
         else{
             const ds = await setToken(  userLogin.data );
-
+            authCtx.authenticate(ds);
         
             setLoadingStatus(false)
             setLoginButton(false)

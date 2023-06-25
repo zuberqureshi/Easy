@@ -19,6 +19,7 @@ const Reward = () => {
     const [userInfo, setUserInfo] = useState()
     const [loadingStatus, setLoadingStatus] = useState(true)
     const [userSettings, setUserSettings] = useState()
+    const [buttonDisableTrue, setbuttonDisableTrue] = useState(true)
 
  //Get User Info
  const getUserInfo = async () => {
@@ -66,6 +67,7 @@ const Reward = () => {
         setLoadingStatus(false)
           rewarded.show();
           setLoadingStatus(false)
+          setbuttonDisableTrue(false)
 
       });
       const unsubscribeEarned = rewarded.addAdEventListener(
@@ -218,13 +220,14 @@ const Reward = () => {
                     justifyContent:'center',
                     alignItems:'center'
                   }}
-                
+                  disabled={buttonDisableTrue}
+
                   onPress={() => {
                     dailyRewardClaim()
 
 
                   }}>
-                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}>Claim Your Reward </Text>
+                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}> { buttonDisableTrue ? 'Please Wait ' : 'Claim your Reward' }   </Text>
                 </TouchableOpacity>
           
  

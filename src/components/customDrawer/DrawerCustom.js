@@ -1,13 +1,16 @@
 import { View, Text, Image, FlatList, StyleSheet, Touchable, TouchableOpacity } from 'react-native'
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect,useContext } from 'react'
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation, useIsFocused } from "@react-navigation/native";
 import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken , removeToken} from '../../utiles/network';
 import Share from 'react-native-share';
+import  { AuthContext } from "../../utiles/auth-context";
 
 const CustomDrawer = () => {
+
+  const authCtx = useContext(AuthContext);
 
   const [selectedId, setSelectedId] = useState(null);
   const [userName, setUserName] = useState();
@@ -45,8 +48,10 @@ const CustomDrawer = () => {
 
   const userLogout = async ()=>{
      const ds = await removeToken();
+     authCtx.logout();
+     setSelectedId(null);
     navigation.navigate('Login') ;
-    setSelectedId(null);
+   
    }
 
   const getUserInfo = async ()=>{

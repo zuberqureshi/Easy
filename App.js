@@ -8,6 +8,7 @@ import Navigation from './src/Navigation/index'
 
 import {useNetInfo} from "@react-native-community/netinfo";
 import {requestUserPermission,notificationListener} from './src/utiles/notificationService'
+import AuthContextProvider from "./src/utiles/auth-context";
 
 
 function App() {
@@ -23,9 +24,11 @@ function App() {
  
   return (
     <>
-    
+     <AuthContextProvider>
+     <Navigation/>
+      </AuthContextProvider>
 
-      <Navigation/>
+     
       {/* { !net.isConnected?(<CheckInternet/>):  ()} */}
     </>
         
