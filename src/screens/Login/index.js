@@ -155,13 +155,13 @@ const signIn = async () => {
         <Text style={styles.textLogin}>Create your Account & {"\n"}        Start Earning</Text>
     
    <TouchableOpacity disabled={loginButton} onPress={()=>{{ signIn()}}}>
-        <LinearGradient colors={['#1f4c86', '#0a203e']} style={styles.inputMain}
+        <LinearGradient colors={['#1f4c86', '#0a203e']} style={[styles.inputMain,{width:responsiveWidth(60)}]}
            start={{x: 0, y: 0}} end={{x: 1, y: 0}}>
 
           
-          <View style={{flexDirection:'row',alignItems:'center'}}>
-          <Icon style={{position:'absolute',left:responsiveWidth(-23)}} name="google-plus-g" size={responsiveWidth(5.5)} color="#fff" />
-            <Text  style={styles.buttonText}>LOGIN</Text>
+          <View style={{flexDirection:'row',alignItems:'center',}}>
+          <Icon style={{position:'absolute',left:responsiveWidth(-11)}} name="google-plus-g" size={responsiveWidth(5.5)} color="#fff" />
+            <Text  style={styles.buttonText}>LOGIN WITH GOOGLE</Text>
             
           </View>
         
