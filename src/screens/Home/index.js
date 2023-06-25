@@ -25,6 +25,17 @@ const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', n
 
 
 RNPollfish.init(builder.build());
+import inbrain, {
+  InBrainNativeSurvey,
+  InBrainReward,
+  InBrainSurveyFilter,
+  InBrainSurveyCategory,
+  StatusBarConfig,
+  NavigationBarConfig,
+} from 'inbrain-surveys';
+const apiSecretInBrain ='Tlz6uQqRLkg5WKGFFGJZqIiReUlwIP+RYbQUOtJzbDNdr1VfLHYlbLMTVf351Q6fZdWfKXQbCRfI73Xf0VEgzw==';
+inbrain.setInBrain('c9602f14-bb94-445d-b517-952682a71e9c', apiSecretInBrain, 'z123');
+
 
 const Home = () => {
 
