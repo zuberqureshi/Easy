@@ -23,6 +23,7 @@ const Youtube = ({ route }) => {
     const [userInfo, setUserInfo] = useState()
     const [claimButton, setclaimButton] = useState(true)
     const [count, setCount] = useState(delay-30);
+    const [buttonDisableTrue, setbuttonDisableTrue] = useState(true)
 
 
 //     //Get User Info
@@ -78,7 +79,7 @@ const Youtube = ({ route }) => {
           RewardedAdEventType.EARNED_REWARD,
           reward => {
              setLoadingStatus(false)
-       
+             setbuttonDisableTrue(false)
           },
         );
        
@@ -196,7 +197,8 @@ const Youtube = ({ route }) => {
                     justifyContent:'center',
                     alignItems:'center'
                         }}
-                        disabled={claimButton}
+                        disabled={claimButton }
+                        
                         onPress={() => {
                             youtubeVideoRewardClaim()
                         }}>

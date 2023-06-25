@@ -53,6 +53,8 @@ import cl.json.RNSharePackage;
 import com.horcrux.svg.SvgPackage;
 // react-native-vector-icons
 import com.oblador.vectoricons.VectorIconsPackage;
+// react-native-version-check
+import io.xogus.reactnative.versioncheck.RNVersionCheckPackage;
 // react-native-webview
 import com.reactnativecommunity.webview.RNCWebViewPackage;
 
@@ -121,6 +123,7 @@ public class PackageList {
       new RNSharePackage(),
       new SvgPackage(),
       new VectorIconsPackage(),
+      new RNVersionCheckPackage(),
       new RNCWebViewPackage()
     ));
   }

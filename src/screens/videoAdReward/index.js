@@ -69,13 +69,14 @@ const VideoReward = () => {
       const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
           rewarded.show();
           setLoadingStatus(false)
-          setbuttonDisableTrue(false)
 
       });
       const unsubscribeEarned = rewarded.addAdEventListener(
         RewardedAdEventType.EARNED_REWARD,
         reward => {
            setLoadingStatus(false)
+           setbuttonDisableTrue(false)
+
 
         },
       );
