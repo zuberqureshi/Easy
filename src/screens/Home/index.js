@@ -369,7 +369,15 @@ const Home = () => {
               </View>
             </TouchableOpacity>
             {/* Get Free Coins -End */}
+            <BitLabsOfferWall
+      uid='USER_ID'
+      token='APP_TOKEN'
+      adId={adId}
+      onExitPressed={navigation.goBack}
+      tags={{ 'my_tag': 'new_user', 'is_premium': true }}
+      onReward={reward => console.log(`Reward this time: ${reward}`)} />
 
+      
             {/* Get Free Coins Video -Start */}
             <TouchableOpacity onPress={() => { navigation.navigate('VideoReward') }} >
               <View style={{ flex: 0.10, marginTop: responsiveHeight(1.8) }}>
