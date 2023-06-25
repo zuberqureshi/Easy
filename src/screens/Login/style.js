@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
         color:'#fff',
      
         fontSize:responsiveFontSize(2.1),
-        marginBottom:responsiveWidth(10),
+        // marginBottom:responsiveWidth(10),
         fontFamily:'Poppins-ExtraLightItalic',
        
     },
@@ -54,7 +54,7 @@ export const styles = StyleSheet.create({
         buttonText:{
             color:'#fff',
             fontWeight:'bold',
-            marginRight:responsiveWidth(2.5),
+      
            
            
 

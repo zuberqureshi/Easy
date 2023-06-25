@@ -150,18 +150,19 @@ const signIn = async () => {
       />
         </View> */}
         <Loader loadingStatus = {loadingStatus} />
-        <Image style={{width:responsiveWidth(47),height:responsiveHeight(32),marginTop:responsiveWidth(20)}} source={require('../../assets/l1.png')} />
+        <Image style={{width:responsiveWidth(60),height:responsiveHeight(32),marginTop:responsiveWidth(20),resizeMode:'contain'}} source={require('../../assets/l1.png')} />
         <Text style={styles.textWlcm}>Welcome</Text>
-        <Text style={styles.textLogin}>Create your Account & {"\n"}        Start Earning</Text>
-    
+        <Text style={styles.textLogin}>Create your Account & </Text>
+        <Text style={[styles.textLogin,{marginBottom:responsiveWidth(10),}]}>Start Earning</Text>   
+
    <TouchableOpacity disabled={loginButton} onPress={()=>{{ signIn()}}}>
         <LinearGradient colors={['#1f4c86', '#0a203e']} style={styles.inputMain}
            start={{x: 0, y: 0}} end={{x: 1, y: 0}}>
 
           
           <View style={{flexDirection:'row',alignItems:'center'}}>
-          <Icon style={{position:'absolute',left:responsiveWidth(-23)}} name="google-plus-g" size={responsiveWidth(5.5)} color="#fff" />
-            <Text  style={styles.buttonText}>LOGIN</Text>
+          <Icon style={{position:'absolute',left:responsiveWidth(-15)}} name="google-plus-g" size={responsiveWidth(5.5)} color="#fff" />
+            <Text  style={styles.buttonText}>LOGIN WITH GOOGLE</Text>
             
           </View>
         
