@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.easyearn.cash"
-    android:versionCode="22"
-    android:versionName="22" >
+    android:versionCode="23"
+    android:versionName="23" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -259,7 +259,14 @@
             android:authorities="com.easyearn.cash.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
-            android:initOrder="100" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+            android:initOrder="100" />
+
+        <activity
+            android:name="com.rapidoreach.rapidoreachsdk.RewardCenterActivity"
+            android:configChanges="keyboard|keyboardHidden|screenSize|orientation"
+            android:label="RapidoReach"
+            android:theme="@style/LibraryTheme" >
+        </activity> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
@@ -413,6 +420,14 @@
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.pollfish.internal.PollfishOverlayActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:label="Pollfish"
+            android:theme="@style/Theme.Transparent"
+            android:windowSoftInputMode="adjustPan" />
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
@@ -429,15 +444,6 @@
             android:enabled="true"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
-
-        <activity
-            android:name="com.pollfish.internal.PollfishOverlayActivity"
-            android:configChanges="orientation|screenSize"
-            android:exported="false"
-            android:hardwareAccelerated="true"
-            android:label="Pollfish"
-            android:theme="@style/Theme.Transparent"
-            android:windowSoftInputMode="adjustPan" />
 
         <meta-data
             android:name="com.google.android.gms.version"

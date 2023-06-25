@@ -2915,6 +2915,12 @@
     <item name="android:windowExitAnimation">@anim/catalyst_slide_down</item>
   </style>
     <style name="EmptyTheme"/>
+    <style name="LibraryTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:minWidth">0dip</item>
+        <item name="android:maxWidth">50dip</item>
+        <item name="android:paddingLeft">0dip</item>
+        <item name="android:paddingRight">0dip</item>
+    </style>
     <style name="MaterialAlertDialog.MaterialComponents" parent="AlertDialog.AppCompat">
     <item name="android:layout">@layout/mtrl_alert_dialog</item>
     <item name="listItemLayout">@layout/mtrl_alert_select_dialog_item</item>
@@ -2963,6 +2969,14 @@
     <item name="android:layout_gravity">center</item>
     <item name="android:textAlignment" ns2:ignore="NewApi">center</item>
   </style>
+    <style name="MomentTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:minWidth">0dip</item>
+        <item name="android:maxWidth">50dip</item>
+        <item name="android:paddingLeft">0dip</item>
+        <item name="android:paddingRight">0dip</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
     <style name="Platform.AppCompat" parent="android:Theme.Holo">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>

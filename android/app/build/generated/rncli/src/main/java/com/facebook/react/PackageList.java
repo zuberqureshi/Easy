@@ -11,6 +11,8 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
+// @rapidoreachsdk/react-native-rapidoreach
+import com.rapidoreach.RNRapidoReachPackage;
 // @react-native-async-storage/async-storage
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // @react-native-community/geolocation
@@ -100,6 +102,7 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
+      new RNRapidoReachPackage(),
       new AsyncStoragePackage(),
       new GeolocationPackage(),
       new NetInfoPackage(),

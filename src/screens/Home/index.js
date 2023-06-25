@@ -20,11 +20,10 @@ const adUnitId =  'ca-app-pub-2291791121050290/1352844929';
 const adUnitIdrewarded =  'ca-app-pub-2291791121050290/6625314913';
 
 import RNPollfish from 'react-native-plugin-pollfish';
-
 const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(true);
-
-
 RNPollfish.init(builder.build());
+
+import RapidoReach,{ RapidoReachEventEmitter } from '@rapidoreachsdk/react-native-rapidoreach';
 
 const Home = () => {
 
@@ -86,9 +85,38 @@ const Home = () => {
   }
 
 
-
+  onPressShowRewardCenter = () => {
+    RapidoReach.isSurveyAvailable((isAvailable) => {
+      // if a survey is available, show the reward center
+      if (isAvailable) {
+        RapidoReach.showRewardCenter();
+      }
+    })
+  }
+  onReward = (quantity) => {
+    console.log('reward quantity: ', quantity);
+  }
+  rapidoreachSurveyAvailable = (surveyAvailable) => {
+    if (surveyAvailable == "true") {
+      console.log('rapidoreach survey is available');
+    } else {
+      console.log('rapidoreach survey is NOT available');
+    }
+  }
   useEffect(() => {
     set();
+    RapidoReach.initWithApiKeyAndUserId('6b2dca3e90fd3636557a30971574125a', 'zu@g.com');
+    onRewardListener = RapidoReachEventEmitter.addListener(
+      'onReward',
+      onReward,
+    );
+    rapidoreachSurveyAvailableListener = RapidoReachEventEmitter.addListener(
+      'rapidoreachSurveyAvailable',
+      rapidoreachSurveyAvailable,
+    );
+    RapidoReach.setNavBarColor('#215295');
+RapidoReach.setNavBarText('Easy Earn');
+RapidoReach.setNavBarTextColor('#FFFFFF');
     return () => {
       console.log('return')
     }
@@ -243,6 +271,8 @@ const Home = () => {
       RNPollfish.show();
     } else {
       Alert.alert('No Survey Available Right , Please Try After Some Time ');
+      onPressShowRewardCenter();
+
     }
 
   }
