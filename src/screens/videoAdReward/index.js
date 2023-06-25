@@ -18,6 +18,8 @@ const VideoReward = () => {
     const navigation = useNavigation();
     const [userInfo, setUserInfo] = useState()
     const [loadingStatus, setLoadingStatus] = useState(true)
+    const [buttonDisableTrue, setbuttonDisableTrue] = useState(true)
+    const [userSettings, setUserSettings] = useState()
 
  //Get User Info
  const getUserInfo = async () => {
@@ -26,36 +28,54 @@ const VideoReward = () => {
   await setUserInfo(data)
 
 }
+
+  // setting api
+  const settings = async () => {
+    const seting = await CallApiJson('settings', 'GET');
+    // const data = await JSON.parse(seting)
+    await setUserSettings(seting)
+
+  }
     const load = async () => {
+      setLoadingStatus(true)
+      await settings();
        await getUserInfo();
+       setLoadingStatus(false)
+
   
     }
   
 
   //Video Ad Reward
   const videoAdRewardClaim = async () => {
-   
+    setLoadingStatus(true)
+
     const body = {
       user_id: userInfo.id,
     };
 
     const videoAdReward = await CallApiJson('videoadrewardclaim', 'POST', body);
-     console.log('videoAdReward Calim after api ', videoAdReward)
+     console.log('videoAdReward Calim after api ', videoAdReward);
+     setLoadingStatus(false)
+
+     navigation.navigate('Home');
   }
 
 
     useEffect(() => {
+      setLoadingStatus(true)
+
       load();
       const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-        setLoadingStatus(false)
           rewarded.show();
+          setLoadingStatus(false)
+          setbuttonDisableTrue(false)
+
       });
       const unsubscribeEarned = rewarded.addAdEventListener(
         RewardedAdEventType.EARNED_REWARD,
         reward => {
-          console.log('User earned reward of ', reward);
-          setLoadingStatus(false)
-          videoAdRewardClaim();
+           setLoadingStatus(false)
 
         },
       );
@@ -96,7 +116,7 @@ const VideoReward = () => {
 
         <View style={{ flexDirection: 'row' }}>
           <Icon onPress={() => { navigation.navigate('Wallet') }} name="wallet" size={responsiveWidth(6)} color="#fff" style={{ marginRight: responsiveWidth(5) }} />
-          <TouchableOpacity onPress={() => { navigation.navigate('Profile') }}>
+          <TouchableOpacity onPress={() => {           videoAdRewardClaim();  }}>
             <Icon name="person" size={responsiveWidth(6)} color="#fff" style={{ marginRight: responsiveWidth(3) }} />
           </TouchableOpacity>
         </View>
@@ -132,19 +152,18 @@ const VideoReward = () => {
       angleCenter={{ x: 0.5, y: 0.5 }}
       style={{  flex: 0.7,
      borderRadius: responsiveWidth(2.5),
-
+      height: 50, 
       elevation: responsiveWidth(1.5), 
       marginHorizontal:responsiveWidth(5),
        borderWidth: responsiveWidth(0.2), 
        borderColor: '#1f4c86', 
-       marginTop:responsiveWidth(10),
-    
+       marginTop:responsiveWidth(10)
 
      
       }}>
 
         { !loadingStatus && 
-      <View style={{justifyContent:'center',alignItems:'center',height:responsiveHeight(51),width:responsiveWidth(90) }} >
+      <View style={{justifyContent:'center',alignItems:'center' }} >
       <Text
                   style={{
                     fontSize: responsiveFontSize(3.55),
@@ -163,18 +182,9 @@ const VideoReward = () => {
                     color: '#fff',
 
                   }}>
-                  You Have Earned
+                  Came Back And Earn Again  !
                 </Text>
-                <Text
-                  style={{
-                    fontSize: responsiveWidth(3.8),
-                    // marginTop: responsiveWidth(1.2),
-                    color: '#fff',
-
-                  }}>
-                   Coins For Watching This Video !
-                </Text>
-                <Image style={{ width: responsiveWidth(50), height: responsiveHeight(20), marginTop: responsiveWidth(4),resizeMode:'contain' }} source={require('../../assets/dailygift.png')} />
+                <Image style={{ width: responsiveWidth(46), height: responsiveHeight(20), marginTop: responsiveWidth(4) }} source={require('../../assets/dailygift.png')} />
 
                 <Text
                   style={{
@@ -183,10 +193,10 @@ const VideoReward = () => {
                     color: '#fff',
 
                   }}>
-                  YOUR REWARD TODAY IS
+                  YOUR VIDEO REWARD  IS
                 </Text>
                 <View style={{ flexDirection: 'row' }} >
-                  <Image style={{ width: responsiveWidth(7.15), height: responsiveHeight(3.65), marginTop: responsiveWidth(0.5), marginRight: responsiveWidth(1),resizeMode:'contain' }} source={require('../../assets/coin.png')} />
+                  <Image style={{ width: responsiveWidth(7.15), height: responsiveHeight(3.65), marginTop: responsiveWidth(0.5), marginRight: responsiveWidth(1) }} source={require('../../assets/coin.png')} />
                   <Text
                     style={{
                       fontSize: responsiveFontSize(1.9),
@@ -194,7 +204,7 @@ const VideoReward = () => {
                       color: '#fff',
 
                     }}>
-                  500 Coins
+                      {userSettings && userSettings.data.video_ad_coin} Coins
                   </Text>
                 </View>
                 <TouchableOpacity
@@ -213,12 +223,13 @@ const VideoReward = () => {
                     alignItems:'center'
                   }}
                 
+                  disabled={buttonDisableTrue}
                   onPress={() => {
                
-
+                    videoAdRewardClaim()
 
                   }}>
-                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}>Click Here To Claim </Text>
+                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}> { buttonDisableTrue ? 'Please Wait ' : 'Claim your Reward' }   </Text>
                 </TouchableOpacity>
           
  

@@ -18,6 +18,8 @@ const Reward = () => {
     const navigation = useNavigation();
     const [userInfo, setUserInfo] = useState()
     const [loadingStatus, setLoadingStatus] = useState(true)
+    const [userSettings, setUserSettings] = useState()
+    const [buttonDisableTrue, setbuttonDisableTrue] = useState(true)
 
  //Get User Info
  const getUserInfo = async () => {
@@ -26,7 +28,17 @@ const Reward = () => {
   await setUserInfo(data)
 
 }
+
+  // setting api
+  const settings = async () => {
+
+    const seting = await CallApiJson('settings', 'GET');
+    // const data = await JSON.parse(seting)
+    await setUserSettings(seting)
+
+  }
     const load = async () => {
+       await settings();
        await getUserInfo();
   
     }
@@ -34,34 +46,40 @@ const Reward = () => {
 
   //DailyRewardClaim
   const dailyRewardClaim = async () => {
-   
+    setLoadingStatus(true)
+
     const body = {
       user_id: userInfo.id,
     };
     const dailyRewardCheckClaim = await CallApiJson('dailyrewardclaim', 'POST', body); 
-     console.log(" dailyRewardClaim API", body)
+    console.log(" dailyRewardCheckClaim", dailyRewardCheckClaim);
+    setLoadingStatus(false)
+    navigation.navigate('Home');
 
   }
 
 
     useEffect(() => {
       load();
+      setLoadingStatus(true)
+
       const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+        setLoadingStatus(false)
           rewarded.show();
+          setLoadingStatus(false)
+          setbuttonDisableTrue(false)
+
       });
       const unsubscribeEarned = rewarded.addAdEventListener(
         RewardedAdEventType.EARNED_REWARD,
         reward => {
-          console.log('User earned reward of ', reward);
-          setLoadingStatus(false)
-          dailyRewardClaim();
-
+           setLoadingStatus(false)
+ 
         },
       );
   
       // Start loading the rewarded ad straight away
       rewarded.load();
-  
       // Unsubscribe from events on unmount
       return () => {
         unsubscribeLoaded();
@@ -135,15 +153,13 @@ const Reward = () => {
       marginHorizontal:responsiveWidth(5),
        borderWidth: responsiveWidth(0.2), 
        borderColor: '#1f4c86', 
-       marginTop:responsiveWidth(10),
-  width:responsiveWidth(90),
-
+       marginTop:responsiveWidth(10)
 
      
       }}>
 
         { !loadingStatus && 
-      <View style={{justifyContent:'center',alignItems:'center',height:responsiveWidth(110), }} >
+      <View style={{justifyContent:'center',alignItems:'center' }} >
       <Text
                   style={{
                     fontSize: responsiveFontSize(3.55),
@@ -162,19 +178,11 @@ const Reward = () => {
                     color: '#fff',
 
                   }}>
-                  Come back everyday to earn
-                </Text>
-                <Text
-                  style={{
-                    fontSize: responsiveWidth(3.8),
-              
-                    color: '#fff',
+                  Daily Reward will be Given Only one time in single Day , 
 
-                  }}>
-                Extra reward coins!
+                  Come Back Tommorrow and Earn Again
                 </Text>
-
-                <Image style={{ width: responsiveWidth(50), height: responsiveHeight(20), marginTop: responsiveWidth(4),resizeMode:'contain' }} source={require('../../assets/dailygift.png')} />
+                <Image style={{ width: responsiveWidth(46), height: responsiveHeight(20), marginTop: responsiveWidth(4) }} source={require('../../assets/dailygift.png')} />
 
                 <Text
                   style={{
@@ -183,10 +191,10 @@ const Reward = () => {
                     color: '#fff',
 
                   }}>
-                  YOUR REWARD TODAY IS
+                  YOUR TODAY REWARD  IS
                 </Text>
                 <View style={{ flexDirection: 'row' }} >
-                  <Image style={{ width: responsiveWidth(7.15), height: responsiveHeight(3.65), marginTop: responsiveWidth(0.5), marginRight: responsiveWidth(1),resizeMode:'contain' }} source={require('../../assets/coin.png')} />
+                  <Image style={{ width: responsiveWidth(7.15), height: responsiveHeight(3.65), marginTop: responsiveWidth(0.5), marginRight: responsiveWidth(1) }} source={require('../../assets/coin.png')} />
                   <Text
                     style={{
                       fontSize: responsiveFontSize(1.9),
@@ -194,7 +202,7 @@ const Reward = () => {
                       color: '#fff',
 
                     }}>
-                  500 Coins
+                  {userSettings && userSettings.data.daily_coin} Coins
                   </Text>
                 </View>
                 <TouchableOpacity
@@ -212,13 +220,14 @@ const Reward = () => {
                     justifyContent:'center',
                     alignItems:'center'
                   }}
-                
+                  disabled={buttonDisableTrue}
+
                   onPress={() => {
-               
+                    dailyRewardClaim()
 
 
                   }}>
-                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}>Click Here Go To Home</Text>
+                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}> { buttonDisableTrue ? 'Please Wait ' : 'Claim your Reward' }   </Text>
                 </TouchableOpacity>
           
  

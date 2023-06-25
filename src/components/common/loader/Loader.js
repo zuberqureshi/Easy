@@ -9,7 +9,7 @@ function Loader(props) {
       <>
         <Spinner
             visible={props.loadingStatus}
-            textContent={'Loading...'}
+            textContent={'Loading Please Wait ...'}
             textStyle={styles.spinnerTextStyle}
           />
   

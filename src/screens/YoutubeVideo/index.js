@@ -11,7 +11,8 @@ import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  Test
 const adUnitId =   'ca-app-pub-2291791121050290/1352844929';
 const adUnitIdrewarded =    'ca-app-pub-2291791121050290/6625314913';
 const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
-
+const delay  = 90;
+const delaySeconds  = delay*1000;
 
 const Youtube = ({ route }) => {
 
@@ -20,34 +21,58 @@ const Youtube = ({ route }) => {
     const [loadingStatus, setLoadingStatus] = useState(false)
     const [videoIdApi, setvideoIdApi] = useState()
     const [userInfo, setUserInfo] = useState()
+    const [claimButton, setclaimButton] = useState(true)
+    const [count, setCount] = useState(delay-30);
+
 
 //     //Get User Info
-//   const getUserInfo = async () => {
-//      const ds = await getToken();
-//     const data = await JSON.parse(ds)   
-//      await setUserInfo(data)
+  const getUserInfo = async () => {
+     const ds = await getToken();
+    const data = await JSON.parse(ds)   
+     await setUserInfo(data)
 
-//   }
+  }
 
       //youtube video ID Api 
   const youtubeVideoId = async () => {
      
     const youtubeVideo = await CallApiJson('youtubevideolist', 'GET');
     //  const data = await JSON.stringify(youtubeVideo)
-    console.log('youtubeVideoId after api ', youtubeVideo.data.video_url)
-    await setvideoIdApi(youtubeVideo.data.video_url)
+     await setvideoIdApi(youtubeVideo.data.video_url)
   }
   const load =  async () => {
     await youtubeVideoId();
 
   }
 
+  //youtube video Reward Claim Api 
+  const youtubeVideoRewardClaim = async () => {
+    setLoadingStatus(true)
+    // console.log('dailyreward eligiblaForDailyReward ',dailyRewardButton)
+
+    const body = {
+      user_id: userInfo.id,
+    };
+    const youtubeVideoReward = await CallApiJson('youtubevideorewardclaim', 'POST', body);
+    //  const data = await JSON.stringify(youtubeVideo)
+    setLoadingStatus(false)
+
+    navigation.navigate('Home');
+
+ 
+  }
+
+
+
+
     useEffect(() => {
-        youtubeVideoId();
         setLoadingStatus(true)
+        youtubeVideoId();
+        getUserInfo();
          const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-            setLoadingStatus(false)
             rewarded.show();
+            setLoadingStatus(false)
+
         });
         const unsubscribeEarned = rewarded.addAdEventListener(
           RewardedAdEventType.EARNED_REWARD,
@@ -61,6 +86,9 @@ const Youtube = ({ route }) => {
         rewarded.load();
         setLoadingStatus(false)
 
+        setTimeout(() => {
+            setclaimButton(false)
+        }, delaySeconds);
         // Unsubscribe from events on unmount
         return () => {
             setLoadingStatus(false)
@@ -70,6 +98,12 @@ const Youtube = ({ route }) => {
       }, []);
 
 
+      useEffect(() => {
+        const interval = setInterval(() => {
+          if (count > 0) setCount(count - 1);
+        }, 1000);
+        return () => clearInterval(interval);
+      }, [count]);
 
     //  Header start
     useLayoutEffect(() => {
@@ -129,20 +163,14 @@ const Youtube = ({ route }) => {
                     marginHorizontal: responsiveWidth(5),
                     borderWidth: responsiveWidth(0.2),
                     borderColor: '#1f4c86',
-                    marginTop: responsiveWidth(30),
-                   
-                    
+                    marginTop: responsiveWidth(30)
 
                 }}>
 
-                <View style={{height:responsiveHeight(33)}} >
-            <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(6),fontWeight:'bold'}}>Earn Money By Watch Video</Text>
+                
+            <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(4),fontWeight:'bold'}}>  Watch video For 30 seconds   </Text>
                 <View style={{ justifyContent: 'center', alignItems: 'center',marginTop:responsiveWidth(10)}} >
-                
-                
-                  
-               {console.log( 'videoIdApi',videoIdApi )  }
-
+ 
                         <YoutubePlayer
                             style={{}}
                             width={responsiveWidth(85)}
@@ -168,18 +196,18 @@ const Youtube = ({ route }) => {
                     justifyContent:'center',
                     alignItems:'center'
                         }}
-
+                        disabled={claimButton}
                         onPress={() => {
-                            navigation.navigate('Home');
+                            youtubeVideoRewardClaim()
                         }}>
-                        <Text  style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}>Click Here Go To Home</Text>
+                        <Text  style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}> { claimButton ? `Wait For ${count} Seconds` :' Click Here Go To Home' } </Text>
                     </TouchableOpacity>
 
                 
 
                 </View>
 
-</View>
+
 
             </LinearGradient>
 
