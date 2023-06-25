@@ -375,6 +375,8 @@ const Home = () => {
                   </View>
                 </View>
               </View>
+              </View>
+              </View>
             </TouchableOpacity>
             {/* Get Free Coins -End */}
 
@@ -409,6 +411,7 @@ const Home = () => {
    </View>
                   </View>
                 </View>
+              </View>
               </View>
             </TouchableOpacity>
             {/* Get Free Coins Video-End */}
