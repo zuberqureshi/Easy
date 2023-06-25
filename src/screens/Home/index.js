@@ -1,4 +1,4 @@
-import { View, Alert, Text, Button, Pressable, SafeAreaView, ScrollView, Image, TouchableOpacity, Modal, TouchableHighlight, ToastAndroid } from 'react-native'
+import { View, Alert, Text, Button, Pressable, SafeAreaView, ScrollView, Image, TouchableOpacity, Modal, TouchableHighlight, ToastAndroid, BackHandler, Linking } from 'react-native'
 import React from 'react'
 import { useLayoutEffect, useState, useEffect, useRef } from "react";
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -12,6 +12,7 @@ import { windowHeight, windowWidth } from '../../utiles/Dimensions'
 import styles from './style'
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import LinearGradient from 'react-native-linear-gradient'
+import VersionCheck from 'react-native-version-check';
 import YoutubePlayer from "react-native-youtube-iframe";
 import crashlytics from '@react-native-firebase/crashlytics';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
@@ -25,6 +26,10 @@ const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', n
 
 
 RNPollfish.init(builder.build());
+ 
+// const apiSecretInBrain ='Tlz6uQqRLkg5WKGFFGJZqIiReUlwIP+RYbQUOtJzbDNdr1VfLHYlbLMTVf351Q6fZdWfKXQbCRfI73Xf0VEgzw==';
+// inbrain.setInBrain('c9602f14-bb94-445d-b517-952682a71e9c', apiSecretInBrain, 'z123');
+
 
 const Home = () => {
 
@@ -78,6 +83,15 @@ const Home = () => {
 
   });
 
+
+  // inbrain
+  // .checkSurveysAvailable()
+  // .then((available) => {
+  //   console.log('inbraincheckSurveysAvailable',available);
+  // })
+  // .catch((err) => {
+  //   console.log('inbraincheckSurveysAvailable',err);
+  // });
   const set = async () => {
     await settings();
     await getUserInfo();
@@ -86,9 +100,32 @@ const Home = () => {
   }
 
 
-
+  const checkUpdateNeeded = async () => {
+    const latestVersion = await VersionCheck.getLatestVersion();
+    const currentVersion = VersionCheck.getCurrentVersion()
+    let updateNeeded = await VersionCheck.needUpdate();
+    console.log( 'checkUpdateNeeded-latestVersion',latestVersion , 'userSettings?.data?.version_control_froce',userSettings?.data, 'currentVersion',currentVersion,'updateNeeded',updateNeeded )
+    if (    (updateNeeded.isNeeded )  ) {
+        Alert.alert('Update Required ',
+        'You Have New Updates !',
+        [ 
+          {
+            text : 'Update Now ',
+            onPress:()=>{
+              BackHandler.exitApp();
+              Linking.openURL(updateNeeded.storeUrl);
+            }
+          }
+        ],
+        { cancelable:false }
+        
+        
+        );
+    }
+}
   useEffect(() => {
     set();
+    checkUpdateNeeded()
     return () => {
       console.log('return')
     }
