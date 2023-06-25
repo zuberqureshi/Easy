@@ -107,7 +107,7 @@ const Home = () => {
     console.log( 'checkUpdateNeeded-latestVersion',latestVersion , 'userSettings?.data?.version_control_froce',userSettings?.data, 'currentVersion',currentVersion,'updateNeeded',updateNeeded )
     if (    (updateNeeded.isNeeded )  ) {
         Alert.alert('Update Required ',
-        'You Have New Updates !',
+        'Download Latest Version From PlayStore',
         [ 
           {
             text : 'Update Now ',
