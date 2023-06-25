@@ -135,13 +135,15 @@ const Reward = () => {
       marginHorizontal:responsiveWidth(5),
        borderWidth: responsiveWidth(0.2), 
        borderColor: '#1f4c86', 
-       marginTop:responsiveWidth(10)
+       marginTop:responsiveWidth(10),
+  width:responsiveWidth(90),
+
 
      
       }}>
 
         { !loadingStatus && 
-      <View style={{justifyContent:'center',alignItems:'center' }} >
+      <View style={{justifyContent:'center',alignItems:'center',height:responsiveWidth(110), }} >
       <Text
                   style={{
                     fontSize: responsiveFontSize(3.55),
@@ -160,10 +162,19 @@ const Reward = () => {
                     color: '#fff',
 
                   }}>
-                  Come back everyday to earn{'\n'}
-                  {'        '}Extra reward coins!
+                  Come back everyday to earn
                 </Text>
-                <Image style={{ width: responsiveWidth(46), height: responsiveHeight(20), marginTop: responsiveWidth(4) }} source={require('../../assets/dailygift.png')} />
+                <Text
+                  style={{
+                    fontSize: responsiveWidth(3.8),
+              
+                    color: '#fff',
+
+                  }}>
+                Extra reward coins!
+                </Text>
+
+                <Image style={{ width: responsiveWidth(50), height: responsiveHeight(20), marginTop: responsiveWidth(4),resizeMode:'contain' }} source={require('../../assets/dailygift.png')} />
 
                 <Text
                   style={{
@@ -175,7 +186,7 @@ const Reward = () => {
                   YOUR REWARD TODAY IS
                 </Text>
                 <View style={{ flexDirection: 'row' }} >
-                  <Image style={{ width: responsiveWidth(7.15), height: responsiveHeight(3.65), marginTop: responsiveWidth(0.5), marginRight: responsiveWidth(1) }} source={require('../../assets/coin.png')} />
+                  <Image style={{ width: responsiveWidth(7.15), height: responsiveHeight(3.65), marginTop: responsiveWidth(0.5), marginRight: responsiveWidth(1),resizeMode:'contain' }} source={require('../../assets/coin.png')} />
                   <Text
                     style={{
                       fontSize: responsiveFontSize(1.9),

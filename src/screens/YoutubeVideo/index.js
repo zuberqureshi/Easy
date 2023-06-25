@@ -129,11 +129,13 @@ const Youtube = ({ route }) => {
                     marginHorizontal: responsiveWidth(5),
                     borderWidth: responsiveWidth(0.2),
                     borderColor: '#1f4c86',
-                    marginTop: responsiveWidth(30)
+                    marginTop: responsiveWidth(30),
+                   
+                    
 
                 }}>
 
-                
+                <View style={{height:responsiveHeight(33)}} >
             <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(6),fontWeight:'bold'}}>Earn Money By Watch Video</Text>
                 <View style={{ justifyContent: 'center', alignItems: 'center',marginTop:responsiveWidth(10)}} >
                 
@@ -177,7 +179,7 @@ const Youtube = ({ route }) => {
 
                 </View>
 
-
+</View>
 
             </LinearGradient>
 
