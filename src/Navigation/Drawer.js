@@ -1,5 +1,5 @@
 import { View, Text,Dimensions } from 'react-native'
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import HomeStack from './MainStack'
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Profile from '../screens/Profile/index';
@@ -9,12 +9,13 @@ import Splash from '../screens/Splash/index'
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import Login from '../screens/Login/index';
 import CallApi, {setToken ,CallApiJson,getToken } from '../utiles/network';
+import  { AuthContext } from "../utiles/auth-context";
 
 const Drawer = createDrawerNavigator();
 const DrawerStack = () => {
   
   console.log( 'DrawerStack');
-
+  const authCtx = useContext(AuthContext);
   const [splashShow, setSplashShow] = useState(true)
   const [userLoggedIn, setUserLogged] = useState(false)
  const [userID, setUserID] = useState()
@@ -24,7 +25,8 @@ const DrawerStack = () => {
     const data= await JSON.parse(ds)
     // await setUserID(data.id)
     if( ds){
-      setUserLogged(true);
+      // setUserLogged(true);
+      authCtx.authenticate(ds);
       console.log("Token  Exist  ");
 
     }else{
@@ -55,7 +57,7 @@ useEffect(() => {
       width:Dimensions.get('window').width / 1.65,
     }, }}>
    {splashShow?<Drawer.Screen name="Splash" component={Splash}/>:null}
-   { !userLoggedIn && <Drawer.Screen name='Login' component={Login} />   }
+   { !authCtx.isAuthenticated && <Drawer.Screen name='Login' component={Login} />   }
    <Drawer.Screen name="HomeStack" component={HomeStack} />
      <Drawer.Screen name='Profile' component={Profile} options={{headerShown:true}} />
     <Drawer.Screen name='EditProfile' component={EditProfile} options={{headerShown:true}}/>

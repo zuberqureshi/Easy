@@ -379,11 +379,12 @@ const Home = () => {
           <View style={{ flex: 0.30, marginTop: responsiveHeight(1.8) }}>
 
             {/* Get Free Coins -Start */}
-            <TouchableOpacity onPress={() => { navigation.navigate('Reward') }}>
-              <View style={{ flex: 0.10, }}>
+            {/* navigation.navigate('Reward')  */}
+            <TouchableOpacity onPress={() => { navigation.navigate('Reward')  }}>
+              <View style={{ flex: 0.15, }}>
 
                 <Text style={styles.getFreeMainText}>Daily Reward: Unlock </Text>
-                <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
+                <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5), }}>
 
                   <View style={styles.getFreeMainContainer}>
                     <Image  style={styles.getFreeCoin} source={require('../../assets/rupee.png')} />
@@ -391,25 +392,34 @@ const Home = () => {
                     <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5) }}>
                       <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Click Here</Text>
                       <Text style={{ color: '#fff' }}>One Time Daily Coin !</Text>
+                   <View style={{height:responsiveHeight(5.8),flexDirection:'row'}}>
+                    <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5),height:responsiveWidth(7) }}>
+                      <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Free Coins</Text>
+                      <Text style={{ color: '#fff' }}>Claim Your Daily Reward Now !</Text>
                     </View>
                     <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3) }}>
                       <Text style={{ color: '#fff' }}>Get Coins </Text>
+                    <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3),width:responsiveWidth(20),height:responsiveWidth(5),marginTop:responsiveWidth(-2) }}>
+                      <Text style={{ color: '#fff' }}>Get Rupees</Text>
 
                       <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
                         <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}>{userSettings && userSettings.data.daily_coin}</Text>
                         <Image  style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
                       </View>
-
+                         
+                    </View>
                     </View>
                   </View>
                 </View>
+              </View>
+              </View>
               </View>
             </TouchableOpacity>
             {/* Get Free Coins -End */}
 
             {/* Get Free Coins Video -Start */}
             <TouchableOpacity onPress={() => { navigation.navigate('VideoReward') }} >
-              <View style={{ flex: 0.10, marginTop: responsiveHeight(1.8) }}>
+              <View style={{ flex: 0.15, marginTop: responsiveHeight(1.8) }}>
 
                 <Text style={styles.getFreeMainText}>Video Reward: EveryTime </Text>
                 <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
@@ -420,9 +430,13 @@ const Home = () => {
                     <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5) }}>
                       <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}> Click here </Text>
                       <Text style={{ color: '#fff' }}> Earn by Watching Video !</Text>
+                    <View style={{height:responsiveHeight(5.8),flexDirection:'row'}}>
+                    <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5),height:responsiveWidth(7) }}>
+                      <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}> Earn Coins </Text>
+                      <Text style={{ color: '#fff' }}> by Watching Video !</Text>
                     </View>
-                    <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3) }}>
-                      <Text style={{ color: '#fff' }}>Get Coins</Text>
+                    <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3),width:responsiveWidth(20),height:responsiveWidth(5),marginTop:responsiveWidth(-2)}}>
+                      <Text style={{ color: '#fff' }}>Get Rupees</Text>
 
                       <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
                         <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}> {userSettings && userSettings?.data?.video_ad_coin}</Text>
@@ -430,8 +444,11 @@ const Home = () => {
                       </View>
 
                     </View>
+
+   </View>
                   </View>
                 </View>
+              </View>
               </View>
             </TouchableOpacity>
             {/* Get Free Coins Video-End */}
@@ -578,7 +595,7 @@ const Home = () => {
                  <View style={{flexDirection:'row',alignItems:'center'}}>
                 <Text style={{ color: '#fff' }}>  {userSettings && userSettings?.data?.survey_ad_coin} </Text>
                 <Image style={{width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
-</View>
+                </View>
 
               </View>
                   </View>
@@ -830,7 +847,7 @@ const Home = () => {
                       color: '#fff',
 
                     }}>
-                    {userSettings && userSettings.data.daily_coin} Coins
+                    {userSettings && userSettings?.data?.daily_coin} Coins
                   </Text>
                 </View>
                 <TouchableOpacity
@@ -848,12 +865,12 @@ const Home = () => {
                   }}
                   disabled={dailyRewardButton}
                   onPress={() => {
-                    dailyRewardClaim()
+                    // dailyRewardClaim()
                     setModalVisible(!modalVisible);
 
 
                   }}>
-                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(2.4), letterSpacing: responsiveFontSize(0.095) }}>{dailyRewardButton ? 'Reward Already Claim' : 'Claim Reward'}</Text>
+                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(2.4), letterSpacing: responsiveFontSize(0.095) }}>Click Here</Text>
                 </TouchableOpacity>
                 {/* </View> */}
               </LinearGradient>

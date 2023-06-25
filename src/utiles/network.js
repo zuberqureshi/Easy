@@ -81,6 +81,7 @@ async function getToken() {
 
 async function removeToken() {
   const token = await EncryptedStorage.removeItem('token');
+      console.log("Token Removed",token)
   return token;
 }
 

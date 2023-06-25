@@ -60,7 +60,7 @@ const EditProfileScreen = () => {
         navigation.setOptions({
             headerLeft: () => (
                 <Pressable onPress={() => {navigation.openDrawer()
-                    Keyboard.dismiss() }}>
+                   Keyboard.dismiss()  }}>
 
                     <Ionicons style={{ marginLeft: responsiveWidth(3.8) }} name="menu" size={responsiveWidth(7)} color="#fff" />
                 </Pressable>
