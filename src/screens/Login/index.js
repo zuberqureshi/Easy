@@ -163,7 +163,7 @@ const signIn = async () => {
           <View style={{flexDirection:'row',alignItems:'center'}}>
           <Icon style={{position:'absolute',left:responsiveWidth(-12)}} name="google-plus-g" size={responsiveWidth(5.5)} color="#fff" />
             <Text  style={styles.buttonText}>LOGIN WITH GMAIL</Text>
-            
+            </View>
       
         
         </LinearGradient>
