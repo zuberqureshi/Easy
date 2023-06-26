@@ -125,7 +125,7 @@ const Home = () => {
 }
   useEffect(() => {
     set();
-    checkUpdateNeeded()
+    // checkUpdateNeeded()
     return () => {
       console.log('return')
     }
@@ -167,8 +167,8 @@ const Home = () => {
     console.log("banner Callling....")
     const banners = await CallApiJson('banner', 'GET');
     // const data = await JSON.parse(seting)
-    console.log('banner data',banners.data)
-    await setBanner(banners.data)
+    console.log('banner data',banners?.data)
+    await setBanner(banners?.data)
 
   }
 
@@ -376,12 +376,12 @@ const Home = () => {
           {/* Slider-End */}
 
 
-          <View style={{ flex: 0.30, marginTop: responsiveHeight(1.8) }}>
+          <View style={{ flex: 0.20, marginTop: responsiveHeight(1.8) }}>
 
             {/* Get Free Coins -Start */}
             {/* navigation.navigate('Reward')  */}
             <TouchableOpacity onPress={() => { navigation.navigate('Reward')  }}>
-              <View style={{ flex: 0.15, }}>
+              <View style={{ flex: 0.10, }}>
 
                 <Text style={styles.getFreeMainText}>Daily Reward: Unlock </Text>
                 <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5), }}>
@@ -417,7 +417,7 @@ const Home = () => {
 
             {/* Get Free Coins Video -Start */}
             <TouchableOpacity onPress={() => { navigation.navigate('VideoReward') }} >
-              <View style={{ flex: 0.15, marginTop: responsiveHeight(1.8) }}>
+              <View style={{ flex: 0.10, marginTop: responsiveHeight(1.8) }}>
 
                 <Text style={styles.getFreeMainText}>Video Reward: EveryTime </Text>
                 <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
@@ -761,7 +761,7 @@ const Home = () => {
 
           {/* Video-ModelEnd*/}
 
-          {/* Model-Start Daily Rewards  */}
+          {/* Model-Home pop-up  */}
           <Modal
             animationType="slide"
             transparent={true}
@@ -781,8 +781,8 @@ const Home = () => {
                 angle={322}
                 angleCenter={{ x: 0.5, y: 0.5 }}
                 style={{
-                  borderRadius: responsiveWidth(2.5), elevation: responsiveWidth(2.5), borderWidth: responsiveWidth(0.2), width: '90%', height: responsiveHeight(50),
-                  alignItems: 'center',
+                  borderRadius: responsiveWidth(2.5), elevation: responsiveWidth(2.5), borderWidth: responsiveWidth(0.2), width: '90%', height: responsiveHeight(45),
+                  // alignItems: 'center',
                   borderColor: '#1f4c86',
                 }}>
                 {/* <View
@@ -793,10 +793,10 @@ const Home = () => {
             borderRadius: 10,
           }}> */}
 
-                <TouchableOpacity onPress={() => { setModalVisible(!modalVisible) }} style={{ position: 'absolute', right: responsiveWidth(3.5), top: responsiveWidth(3) }}>
+                {/* <TouchableOpacity onPress={() => { setModalVisible(!modalVisible) }} style={{ position: 'absolute', right: responsiveWidth(3.5), top: responsiveWidth(3) }}>
                   <IconEntypo name="cross" size={responsiveWidth(6)} color="#fff" />
-                </TouchableOpacity>
-
+                </TouchableOpacity> */}
+    <View style={{alignItems:'center'}}>
 
                 <Text
                   style={{
@@ -807,7 +807,7 @@ const Home = () => {
                     marginTop: responsiveWidth(7),
                     color: '#fff'
                   }}>
-                  Congrats
+                 Welcome
                 </Text>
                 <Text
                   style={{
@@ -816,10 +816,19 @@ const Home = () => {
                     color: '#fff',
 
                   }}>
-                  Come back everyday to earn{'\n'}
-                  {'        '}Extra reward coins!
+                 Easy Earn App !
                 </Text>
-                <Image  style={{ width: responsiveWidth(44), height: responsiveHeight(14.2), marginTop: responsiveWidth(4),resizeMode:'contain' }} source={require('../../assets/dailygift.png')} />
+                <Text
+                  style={{
+                    fontSize: responsiveWidth(3.8),
+                    color: '#fff',
+
+                  }}>
+                 Earn daily rewards...
+                </Text>
+
+                </View>
+                {/* <Image  style={{ width: responsiveWidth(44), height: responsiveHeight(14.2), marginTop: responsiveWidth(4),resizeMode:'contain' }} source={require('../../assets/dailygift.png')} />
 
                 <Text
                   style={{
@@ -841,7 +850,16 @@ const Home = () => {
                     }}>
                     {userSettings && userSettings?.data?.daily_coin} Coins
                   </Text>
-                </View>
+                </View> */}
+         
+         <View style={{marginHorizontal:responsiveWidth(5),marginVertical:responsiveWidth(6)}}>
+          <Text style={{marginVertical:responsiveWidth(1),color:'#fff'}} > {"\u2B24" + "  "}Easy earn App earn daily rewards !</Text>
+          <Text style={{marginVertical:responsiveWidth(1),color:'#fff'}} > {"\u2B24" + "  "}Easy earn App earn daily rewards !</Text>
+          <Text style={{marginVertical:responsiveWidth(1),color:'#fff'}} > {"\u2B24" + "  "}Easy earn App earn daily rewards !</Text>
+          <Text style={{marginVertical:responsiveWidth(1),color:'#fff'}} > {"\u2B24" + "  "}Easy earn App earn daily rewards !</Text>
+         </View>
+            
+
                 <TouchableOpacity
                   style={{
 
@@ -853,22 +871,24 @@ const Home = () => {
                     marginBottom: responsiveWidth(5),
                     backgroundColor: '#0a203e',
                     color: '#fff',
-                    elevation: responsiveWidth(1.2)
+                    elevation: responsiveWidth(1.2),
+                    alignSelf:'center'
+                    
                   }}
-                  disabled={dailyRewardButton}
+                  // disabled={dailyRewardButton}
                   onPress={() => {
                     // dailyRewardClaim()
                     setModalVisible(!modalVisible);
 
 
                   }}>
-                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(2.4), letterSpacing: responsiveFontSize(0.095) }}>Click Here</Text>
+                  <Text style={{ color: '#fff', paddingHorizontal: responsiveWidth(2.4), letterSpacing: responsiveFontSize(0.095) }}>Play Now !</Text>
                 </TouchableOpacity>
                 {/* </View> */}
               </LinearGradient>
             </View>
           </Modal>
-          {/* Model-End Daily Rewards */}
+          {/* Model-Home pop-up */}
 
 
         </View>

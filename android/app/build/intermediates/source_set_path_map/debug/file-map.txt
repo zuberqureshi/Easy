@@ -62,5 +62,4 @@ com.easyearn.cash.app-packaged_res-60 /Users/zuberqureshi/Desktop/reactnativeapp
 com.easyearn.cash.app-packaged_res-61 /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-share/android/build/intermediates/packaged_res/debug
 com.easyearn.cash.app-packaged_res-62 /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-svg/android/build/intermediates/packaged_res/debug
 com.easyearn.cash.app-packaged_res-63 /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-vector-icons/android/build/intermediates/packaged_res/debug
-com.easyearn.cash.app-packaged_res-64 /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-version-check/android/build/intermediates/packaged_res/debug
-com.easyearn.cash.app-packaged_res-65 /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-webview/android/build/intermediates/packaged_res/debug
+com.easyearn.cash.app-packaged_res-64 /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-webview/android/build/intermediates/packaged_res/debug

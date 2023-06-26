@@ -229,7 +229,7 @@ const EditProfileScreen = () => {
                                                 onChangeText={handleChange('mobile')}
                                                 onBlur={handleBlur('mobile')}
                                                 value={values.mobile}
-                                                placeholder={'Enter Mobile No.'}
+                                                placeholder={'Enter Mobile Number ( Whatsapp) '}
                                                 placeholderTextColor="#666666"
                                                 keyboardType="number-pad"
                                                 autoCorrect={false}

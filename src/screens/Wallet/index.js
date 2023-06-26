@@ -35,6 +35,7 @@ const Wallet = () => {
 
   const [withdrawHistoryData, setWithdrawHistoryData] = useState({});
   const [loadingStatus, setLoadingStatus] = useState(false)
+  
 
 
   const  loadUserInfo = async () =>{
@@ -50,11 +51,11 @@ const Wallet = () => {
     const profileData = await CallApiJson('getprofile', 'POST',body);
 
      const historyData = await CallApiJson('widrawrequestlist', 'POST',body);
-     setuserProfileData(profileData);
+   await  setuserProfileData(profileData);
      setWithdrawHistoryData(historyData);
       setLoadingStatus(false);
 
-      console.log('profileData',profileData);
+      console.log('Wallet data',!!userProfileData.data.mobile);
   }
   
 useEffect(() => {
@@ -162,7 +163,7 @@ useEffect(() => {
     }
 
     if( !paytmNo  ){
-      Alert.alert('Enter Mobile Value '); return;
+      Alert.alert('Enter Your Paytm Number '); return;
     }
 
     if( selectedCard > userProfileData?.data?.wallet_coins  ){
@@ -191,6 +192,18 @@ useEffect(() => {
 
   }
 
+  const openPaytmModal = async() => {
+
+
+    if (! userProfileData.data.mobile ) {
+      Alert.alert(' Complete Your Profile First    '); return;
+
+    }else{
+      setModalPaytm(true)  
+    }
+
+
+  }
   const submitPaypal = async() => {
 
     if (paypalId.length <3) {
@@ -257,13 +270,16 @@ useEffect(() => {
 
       <View style={{ flex: 0.7, marginHorizontal: responsiveWidth(5) }}>
         <Text style={styles.redeenTxt} >Redeem Reward Via</Text>
-
+      
+        
         <LinearGradient colors={["#0a203e", "#1f4c86"]}
           useAngle={true}
           angle={322}
           angleCenter={{ x: 0.5, y: 0.5 }}
-          style={styles.paytmLinearGradient}>
-
+          style={styles.paytmLinearGradient}
+        
+           >
+        <TouchableOpacity onPress={() => { openPaytmModal() }} >
           <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
             <Image style={styles.paytmLinearGradientImg} source={require("../../assets/Paytm.png")} />
 
@@ -272,20 +288,23 @@ useEffect(() => {
               <Text style={styles.paytmLinearGradientSubTxt} >Redeem Money By Paytm</Text>
             </View>
 
-            <TouchableOpacity onPress={() => { setModalPaytm(true) }} >
+           
               <Icon name="arrow-forward-circle" size={responsiveWidth(10)} color="#1f4c86" style={{ marginRight: responsiveWidth(3) }} />
-            </TouchableOpacity>
+            
 
           </View>
-
+          </TouchableOpacity>
         </LinearGradient>
+  
 
         <LinearGradient colors={["#0a203e", "#1f4c86"]}
           useAngle={true}
           angle={322}
           angleCenter={{ x: 0.5, y: 0.5 }}
           style={styles.paypalLinearGradient}>
+         
 
+         <TouchableOpacity onPress={() => { setModalPaypal(true) }}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
             <Image style={styles.paypalLinearGradientImg} source={require("../../assets/PayPal.png")} />
 
@@ -294,13 +313,15 @@ useEffect(() => {
               <Text style={styles.paypalLinearGradientSubTxt} >Redeem Money By Paypal</Text>
             </View>
 
-            <TouchableOpacity onPress={() => { setModalPaypal(true) }}>
+            
               <Icon name="arrow-forward-circle" size={responsiveWidth(10)} color="#1f4c86" style={{ marginRight: responsiveWidth(3) }} />
-            </TouchableOpacity>
+           
 
           </View>
+          </TouchableOpacity>
 
         </LinearGradient>
+
         <Text style={[styles.redeenTxt,{marginTop:responsiveWidth(2)}]} >Withdraw History</Text>
       
         <LinearGradient colors={["#0a203e", "#1f4c86"]}
@@ -470,6 +491,7 @@ useEffect(() => {
         </View>
       </Modal>
 
+
       {/* paytm Model */}
       <Modal
         animationType="slide"
@@ -496,8 +518,9 @@ useEffect(() => {
               width: '90%',
               borderRadius: 10
             }}> */}
+            
 
-            <View style={styles.modelPaytmTextInputCintainer}>
+         <View style={styles.modelPaytmTextInputCintainer}>
               <TextInput
                 placeholder="Enter Your Paytm Number"
                 placeholderTextColor="#fff"
@@ -599,7 +622,28 @@ useEffect(() => {
                 }}>
                 <Text style={styles.modelPaypalCloseButtonText}>Close</Text>
               </TouchableOpacity>
-            </View>
+            </View> 
+            
+
+            {/* <View>
+             <View style={{alignSelf:'center',marginTop:responsiveWidth(3)}}>
+             <Text style={{color:'red',alignSelf:'center',fontSize:responsiveFontSize(2.1)}}>ALERT</Text>
+              <Text style={{color:'#fff'}}>Please Complete Your Details</Text>
+              <Text style={{color:'#fff'}}>Add Your Whatsapp Number</Text>
+              </View>
+             <TouchableOpacity
+                style={styles.modelPaypalCloseButton}
+
+                onPress={() => {
+               
+                  setModalPaytm(!modalPaytm);
+                  // // navigation.navigate('Home')
+                  // reset()
+                }}>
+                <Text style={styles.modelPaypalCloseButtonText}>Close</Text>
+              </TouchableOpacity>
+             </View> */}
+            
             </LinearGradient>
           {/* </View> */}
         </View>

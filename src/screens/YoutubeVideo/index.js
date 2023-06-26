@@ -1,5 +1,6 @@
-import { View, Text, Button, Pressable, SafeAreaView, ScrollView, Image, TouchableOpacity, Modal, TouchableHighlight, ToastAndroid, StyleSheet } from 'react-native'
+import { View, Text, Button, Pressable, SafeAreaView, ScrollView, Image, TouchableOpacity, Modal, TouchableHighlight, ToastAndroid, StyleSheet, } from 'react-native'
 import React, { useLayoutEffect, useState, useEffect } from 'react'
+import { WebView } from 'react-native-webview';
 import { useNavigation, useIsFocused } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient'
@@ -11,7 +12,7 @@ import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  Test
 const adUnitId =   'ca-app-pub-2291791121050290/1352844929';
 const adUnitIdrewarded =    'ca-app-pub-2291791121050290/6625314913';
 const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
-const delay  = 90;
+const delay  = 150;
 const delaySeconds  = delay*1000;
 
 const Youtube = ({ route }) => {
@@ -24,6 +25,7 @@ const Youtube = ({ route }) => {
     const [claimButton, setclaimButton] = useState(true)
     const [count, setCount] = useState(delay-30);
     const [buttonDisableTrue, setbuttonDisableTrue] = useState(true)
+    const [userSettings, setUserSettings] = useState()
 
 
 //     //Get User Info
@@ -33,7 +35,16 @@ const Youtube = ({ route }) => {
      await setUserInfo(data)
 
   }
+// setting api
+const settings = async () => {
 
+    const seting = await CallApiJson('settings', 'GET');
+    // const data = await JSON.parse(seting)
+    await setUserSettings(seting);
+
+
+  }
+ 
       //youtube video ID Api 
   const youtubeVideoId = async () => {
      
@@ -41,13 +52,16 @@ const Youtube = ({ route }) => {
     //  const data = await JSON.stringify(youtubeVideo)
      await setvideoIdApi(youtubeVideo.data.video_url)
   }
+  
   const load =  async () => {
     await youtubeVideoId();
+    await settings()
 
   }
 
   //youtube video Reward Claim Api 
   const youtubeVideoRewardClaim = async () => {
+
     setLoadingStatus(true)
     // console.log('dailyreward eligiblaForDailyReward ',dailyRewardButton)
 
@@ -71,7 +85,7 @@ const Youtube = ({ route }) => {
         youtubeVideoId();
         getUserInfo();
          const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-            rewarded.show();
+           rewarded.show();
             setLoadingStatus(false)
 
         });
@@ -153,24 +167,40 @@ const Youtube = ({ route }) => {
         requestNonPersonalizedAdsOnly: true,
       }}
     />
+
+
+<Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(30),fontWeight:'bold'}}>  Watch video For 60 seconds   </Text>
+
+
             <LinearGradient colors={["#0a203e", "#1f4c86"]}
                 useAngle={true}
                 angle={322}
                 angleCenter={{ x: 0.5, y: 0.5 }}
                 style={{
-                    flex: 0.65,
+                    flex: 0.50,
                     borderRadius: responsiveWidth(2.5),
                     elevation: responsiveWidth(1.5),
-                    marginHorizontal: responsiveWidth(5),
-                    borderWidth: responsiveWidth(0.2),
-                    borderColor: '#1f4c86',
-                    marginTop: responsiveWidth(30)
+                    marginHorizontal: responsiveWidth(2),
+                    // borderWidth: responsiveWidth(0.2),
+                    // borderColor: '#1f4c86',
+                    marginTop: responsiveWidth(5),
+
+                
 
                 }}>
 
+
+              <WebView
+              javaScriptEnabled={true}
+              domStorageEnabled={true}
+               source={{uri:`https://www.youtube.com/watch?v=${videoIdApi}`}}
+               style={{ width:responsiveWidth(100),alignSelf:'center',}}
+              />
+           
+
                 
-            <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(4),fontWeight:'bold'}}>  Watch video For 30 seconds   </Text>
-                <View style={{ justifyContent: 'center', alignItems: 'center',marginTop:responsiveWidth(10)}} >
+            {/* <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(4),fontWeight:'bold'}}>  Watch video For 30 seconds   </Text> */}
+                {/* <View style={{ justifyContent: 'center', alignItems: 'center',marginTop:responsiveWidth(10)}} >
  
                         <YoutubePlayer
                             style={{}}
@@ -181,6 +211,9 @@ const Youtube = ({ route }) => {
                         // onChangeState={onStateChange}
                         />
                    
+
+            
+
 
                     <TouchableOpacity
                         style={{
@@ -207,15 +240,42 @@ const Youtube = ({ route }) => {
 
                 
 
-                </View>
+                </View> */}
 
 
 
             </LinearGradient>
 
+ 
+<View style={{alignSelf:'center'}}>
+             <TouchableOpacity
+                        style={{
 
+                            height: responsiveHeight(7),
+                    padding: responsiveWidth(2.5),
+                    width:responsiveWidth(60),
+                    borderRadius: responsiveWidth(2.5),
+                    marginTop: responsiveWidth(8),
+                    // marginBottom: responsiveWidth(5),
+                    backgroundColor: '#0a203e',
+                    color: '#fff',
+                    elevation: responsiveWidth(1.2),
+                    justifyContent:'center',
+                    alignItems:'center',
+                    borderWidth:responsiveWidth(0.2),
+                    borderColor:'#1f4c86'
 
-
+                   
+                        }}
+                        disabled={claimButton }
+                        
+                        onPress={() => {
+                            youtubeVideoRewardClaim()
+                        }}>
+                        <Text  style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}> { claimButton ? `Wait For ${count} Seconds` :' Click Here Go To Home' } </Text>
+                    </TouchableOpacity>
+             
+</View>
         </View>
 
 
