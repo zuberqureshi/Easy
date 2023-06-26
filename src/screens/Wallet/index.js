@@ -51,7 +51,7 @@ const Wallet = () => {
     const profileData = await CallApiJson('getprofile', 'POST',body);
 
      const historyData = await CallApiJson('widrawrequestlist', 'POST',body);
-     setuserProfileData(profileData);
+   await  setuserProfileData(profileData);
      setWithdrawHistoryData(historyData);
       setLoadingStatus(false);
 
@@ -163,7 +163,7 @@ useEffect(() => {
     }
 
     if( !paytmNo  ){
-      Alert.alert('Enter Mobile Value '); return;
+      Alert.alert('Enter Your Paytm Number '); return;
     }
 
     if( selectedCard > userProfileData?.data?.wallet_coins  ){
@@ -195,8 +195,8 @@ useEffect(() => {
   const openPaytmModal = async() => {
 
 
-    if ( (userProfileData.data.mobile).length <9) {
-      Alert.alert('Please Fill /profile furst '); return;
+    if (! userProfileData.data.mobile ) {
+      Alert.alert(' Complete Your Profile First    '); return;
 
     }else{
       setModalPaytm(true)  

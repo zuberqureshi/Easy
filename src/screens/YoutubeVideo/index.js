@@ -12,7 +12,7 @@ import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  Test
 const adUnitId =   'ca-app-pub-2291791121050290/1352844929';
 const adUnitIdrewarded =    'ca-app-pub-2291791121050290/6625314913';
 const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
-const delay  = 90;
+const delay  = 150;
 const delaySeconds  = delay*1000;
 
 const Youtube = ({ route }) => {
@@ -25,6 +25,7 @@ const Youtube = ({ route }) => {
     const [claimButton, setclaimButton] = useState(true)
     const [count, setCount] = useState(delay-30);
     const [buttonDisableTrue, setbuttonDisableTrue] = useState(true)
+    const [userSettings, setUserSettings] = useState()
 
 
 //     //Get User Info
@@ -34,7 +35,16 @@ const Youtube = ({ route }) => {
      await setUserInfo(data)
 
   }
+// setting api
+const settings = async () => {
 
+    const seting = await CallApiJson('settings', 'GET');
+    // const data = await JSON.parse(seting)
+    await setUserSettings(seting);
+
+
+  }
+ 
       //youtube video ID Api 
   const youtubeVideoId = async () => {
      
@@ -42,13 +52,16 @@ const Youtube = ({ route }) => {
     //  const data = await JSON.stringify(youtubeVideo)
      await setvideoIdApi(youtubeVideo.data.video_url)
   }
+  
   const load =  async () => {
     await youtubeVideoId();
+    await settings()
 
   }
 
   //youtube video Reward Claim Api 
   const youtubeVideoRewardClaim = async () => {
+
     setLoadingStatus(true)
     // console.log('dailyreward eligiblaForDailyReward ',dailyRewardButton)
 
@@ -156,7 +169,7 @@ const Youtube = ({ route }) => {
     />
 
 
-<Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(30),fontWeight:'bold'}}>  Watch video For 30 seconds   </Text>
+<Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(30),fontWeight:'bold'}}>  Watch video For 60 seconds   </Text>
 
 
             <LinearGradient colors={["#0a203e", "#1f4c86"]}

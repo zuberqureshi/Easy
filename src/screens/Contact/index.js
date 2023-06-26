@@ -268,8 +268,7 @@ const Contact = () => {
                             <TouchableOpacity  style={styles.commandButton} disabled={!isValid} onPress={handleSubmit}>
                                 <Text style={styles.panelButtonTitle}>Submit</Text>
                             </TouchableOpacity>
-                            <Text style={{alignSelf:'center',marginTop:responsiveWidth(0.5),textDecorationLine:'underline'}}>Please fill up the form after submit</Text>
-
+ 
                         </View>
 
                         

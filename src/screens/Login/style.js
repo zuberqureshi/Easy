@@ -55,7 +55,7 @@ export const styles = StyleSheet.create({
             color:'#fff',
             fontWeight:'bold',
             alignSelf:'center',
-            marginLeft:responsiveWidth(8)
+            marginLeft:responsiveWidth(14)
            
            
 
