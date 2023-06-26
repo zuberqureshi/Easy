@@ -160,21 +160,20 @@ const signIn = async () => {
            start={{x: 0, y: 0}} end={{x: 1, y: 0}}>
 
           
-          
-          <Icon style={{}} name="google-plus-g" size={responsiveWidth(5.5)} color="#fff" />
-      
-            <Text  style={styles.buttonText}>LOGIN WITH GOOGLE</Text>
+          <View style={{flexDirection:'row',alignItems:'center'}}>
+          <Icon style={{position:'absolute',left:responsiveWidth(-12)}} name="google-plus-g" size={responsiveWidth(5.5)} color="#fff" />
+            <Text  style={styles.buttonText}>LOGIN WITH GMAIL</Text>
             
       
         
         </LinearGradient>
     </TouchableOpacity> 
 
-<View style={{marginTop:responsiveWidth(3.5)}}>
+{/* <View style={{marginTop:responsiveWidth(3.5)}}>
  
 <Text style={{color:'#fff',fontSize:responsiveFontSize(1.7),fontFamily:'Poppins-Light',alignSelf:'center'}}>Email Us <Text  style={{color:'#fff',fontSize:responsiveFontSize(1.7),fontFamily:'Poppins-Light',letterSpacing:responsiveWidth(0.15),textDecorationLine:'underline',fontWeight:'bold'}}> contact@newindiagyan.online</Text> </Text>
 </View>
-
+ */}
 
         {/* <LinearGradient colors={['#2a3a5a','#304577' ,'#374e91']} style={styles.inputMain}
            start={{x: 0, y: 0}} end={{x: 1, y: 0}}>

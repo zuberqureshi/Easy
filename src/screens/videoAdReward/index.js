@@ -184,6 +184,7 @@ const VideoReward = () => {
 
                   }}>
                   Came Back And Earn Again  !
+                  After 1 Video Always Wait for 30 Seconds  else You will be Blocked 
                 </Text>
                 <Image style={{ width: responsiveWidth(46), height: responsiveHeight(20), marginTop: responsiveWidth(4) }} source={require('../../assets/dailygift.png')} />
 
