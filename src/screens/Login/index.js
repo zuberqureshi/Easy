@@ -160,11 +160,12 @@ const signIn = async () => {
            start={{x: 0, y: 0}} end={{x: 1, y: 0}}>
 
           
-          <View style={{flexDirection:'row',alignItems:'center'}}>
-          <Icon style={{position:'absolute',left:responsiveWidth(-15)}} name="google-plus-g" size={responsiveWidth(5.5)} color="#fff" />
+          
+          <Icon style={{}} name="google-plus-g" size={responsiveWidth(5.5)} color="#fff" />
+      
             <Text  style={styles.buttonText}>LOGIN WITH GOOGLE</Text>
             
-          </View>
+      
         
         </LinearGradient>
     </TouchableOpacity> 

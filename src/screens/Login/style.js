@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
         alignItems:'center',
         paddingHorizontal:responsiveWidth(2),
         marginBottom:responsiveHeight(2),
-        justifyContent:'center',
+        justifyContent:'flex-start',
         shadowColor:'#000000',
         shadowOpacity: 0.6,
         elevation: 8,
@@ -54,7 +54,8 @@ export const styles = StyleSheet.create({
         buttonText:{
             color:'#fff',
             fontWeight:'bold',
-      
+            alignSelf:'center',
+            marginLeft:responsiveWidth(8)
            
            
 
