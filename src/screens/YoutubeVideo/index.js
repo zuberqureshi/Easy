@@ -193,6 +193,8 @@ const settings = async () => {
               <WebView
               javaScriptEnabled={true}
               domStorageEnabled={true}
+              scrollEnabled={false}
+              bounces={false}
                source={{uri:`https://www.youtube.com/watch?v=${videoIdApi}`}}
                style={{ width:responsiveWidth(100),alignSelf:'center',}}
               />

@@ -5,7 +5,7 @@ import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-nat
 
 export default styles = StyleSheet.create({
     slider: {
-        flex: 0.20,
+        flex: 0.10,
         marginTop: responsiveWidth(5),
       
         alignItems: 'center',
