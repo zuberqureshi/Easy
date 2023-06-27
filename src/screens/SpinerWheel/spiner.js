@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component,} from 'react';
 import {
   View,
   Text,
@@ -44,8 +44,10 @@ class Spiner extends Component {
   winPrice = () =>{
     console.warn(this.state.winnerValue)
   }
-
+  
   render() {
+    {this.props.setSpinValue(participants[this.state.winnerIndex])}
+     
     const wheelOptions = {
       rewards: participants,
       knobSize: responsiveWidth(7.5),
@@ -68,19 +70,69 @@ class Spiner extends Component {
             this.setState({winnerValue: value, winnerIndex: index});
           }}
         />
+
+
+
+  <View style={{marginTop:'60%',flexDirection:'row',alignContent:'space-between',}}>
+  <TouchableOpacity onPress={()=>{this.props.setSpinAmount(20)}} >
+      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===20?'gold':'#1f4c86',}]}>
+
+      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Left</Text> 
+        <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
+        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Coins</Text> 
+      
+      </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={()=>{this.props.setSpinAmount(50)}}>
+      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===50?'gold':'#1f4c86',}]}>
+
+      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Left</Text> 
+        <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
+        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >50 Coins</Text> 
+      
+      </View>
+      </TouchableOpacity>
+
+   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(100)}}>
+      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===100?'gold':'#1f4c86',}]}>
+
+      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Left</Text> 
+        <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
+        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >100 Coins</Text> 
+      
+      </View>
+      </TouchableOpacity>
+
+   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(150)}}>
+      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===150?'gold':'#1f4c86',}]}>
+
+      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Left</Text> 
+        <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
+        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >1500 Coins</Text> 
+      
+      </View>
+      </TouchableOpacity>
+  </View>
+
+
         {!this.state.started && (
           <View style={styles.startButtonView}>
+
+
+
             <TouchableOpacity
               onPress={() => this.buttonPress() }
               style={styles.startButton}>
               <Text style={styles.startButtonText}>Spin to win! </Text>
-              <Image style={{width:responsiveWidth(6.25),height:responsiveHeight(2.5)}} source={require('../../assets/coin.png')}/>
+              <Image style={{width:responsiveWidth(6.25),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')}/>
             </TouchableOpacity>
           </View>
         )}
         {this.state.winnerIndex != null && (
           <View style={styles.winnerView}>
             <Text style={styles.winnerText}>
+         
             {this.winPrice()}
               You win {participants[this.state.winnerIndex]}
             </Text>
@@ -114,12 +166,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     // backgroundColor:  '#0a203e',
-    marginTop:'60%'
+    marginTop:'55%'
     
   },
   startButtonView: {
     // position: 'absolute',
-    marginTop:'50%'
+    // marginTop:'20%'
   },
   startButton: {
     backgroundColor: '#1f4c86',
@@ -134,7 +186,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   winnerView: {
-    marginTop:'58%',
+    marginTop:'10%',
     // position: 'absolute',
     // justifyContent:'flex-end',
     // bottom:60,
@@ -155,5 +207,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
   },
+  coinBox:{
+    width:responsiveWidth(14),
+    backgroundColor:'#0a203e',
+    height:responsiveHeight(8),
+    marginHorizontal:responsiveWidth(2),
+    borderWidth:responsiveWidth(0.2),
+    
+  borderRadius:responsiveWidth(1),
+  alignItems:'center',
+  justifyContent:'space-evenly'
+},
+
 });
 

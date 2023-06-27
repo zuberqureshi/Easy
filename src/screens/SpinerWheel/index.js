@@ -1,17 +1,18 @@
 import { StyleSheet, Text, View,TouchableOpacity,SafeAreaView } from 'react-native'
-import React,{useLayoutEffect,useState} from 'react'
+import React,{useLayoutEffect,useState,} from 'react'
 import Spiner from './spiner'
 import { useNavigation } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/Ionicons';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
-
+import  { AuthContext } from "../../utiles/auth-context";
 
 
 const SpinerWheel = () => {
  
   const navigation = useNavigation();
 
-
+  const [spinValue, setSpinValue] = useState()
+  const [spinAmount, setSpinAmount] = useState()
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -42,18 +43,20 @@ const SpinerWheel = () => {
     });
   }, []);
 
-
+ console.log("spinner value state",spinValue)
+ console.log("spinner Amount state",spinAmount)
 
   return (
 
  
     <View style={{flex:1,backgroundColor:'#0a203e'}}>
-    <View style={{justifyContent:'center',alignItems:'center',marginTop:responsiveWidth(9.8)}}>
+    <View style={{justifyContent:'center',alignItems:'center',marginTop:responsiveWidth(7)}}>
           <Text style={{color:'#fff',fontSize:responsiveFontSize(3.55)}}>DAILY SPINNER</Text>
           <Text style={{color:'#fff',fontSize:responsiveFontSize(1.7),letterSpacing:responsiveWidth(0.37)}}>Spin Daily and get Exciting cash rewards</Text>
           <Text style={{color:'#fff',fontSize:responsiveFontSize(1.9),marginTop:responsiveWidth(2.5)}}>Win upto Rs.100 Daily</Text>
         </View>
-   <Spiner/>
+
+       <Spiner setSpinValue={setSpinValue} setSpinAmount={setSpinAmount} spinAmount={spinAmount} />
   
     </View>
    

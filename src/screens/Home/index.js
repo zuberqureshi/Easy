@@ -457,7 +457,7 @@ const Home = () => {
 
 
           {/* Spine-Start*/}
-          {/* <View style={{ flex: 0.20, marginTop: responsiveWidth(4) }}>
+          <View style={{ flex: 0.20, marginTop: responsiveWidth(4) }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
               <Text style={styles.spineMainText}>Spine Wheel</Text>
               <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
@@ -484,8 +484,10 @@ const Home = () => {
               </TouchableOpacity>
             </View>
 
-          </View> */}
+          </View>
           {/* Spine-End*/}
+
+
           {/* Get Free Coins Survey-Start */}
           {/* <TouchableOpacity onPress={()=>{surveyRewardClaim()}}>
   <View style={{ flex: 0.10 , marginTop: responsiveHeight(1.8)}}>
