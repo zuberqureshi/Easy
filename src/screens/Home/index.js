@@ -518,7 +518,7 @@ const Home = () => {
           {/* Get Free Coins Survey -End */}
 
           {/* Game Zone-Start*/}
-          {/* <View style={{ flex: 0.20, marginTop:responsiveWidth(3.6) }}>
+          <View style={{ flex: 0.20, }}>
 
             <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5)}}>
 
@@ -526,33 +526,43 @@ const Home = () => {
 
                 <Text style={styles.gameZoneMainText}>Quiz Zone</Text>
                 <View style={styles.gameZoneMainImgView}>
-
+                <TouchableOpacity onPress={()=>{navigation.navigate('Quiz',{category:'science'})}} >
                   <View style={styles.gameZoneSingleImgView}>
                     <Image style={styles.gameZoneSingleImg} source={require('../../assets/q1.png')} />
-                    <Text style={styles.gameZoneImgText}>English Quiz</Text>
+                    <Text style={styles.gameZoneImgText}>Science</Text>
                   </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Quiz',{category:'math'})}} >
                   <View style={styles.gameZoneSingleImgView}>
                     <Image style={styles.gameZoneSingleImg} source={require('../../assets/q2.png')} />
-                    <Text style={styles.gameZoneImgText}>Math Quiz</Text>
+                    <Text style={styles.gameZoneImgText}>Math</Text>
                   </View>
-                  <TouchableOpacity >
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Quiz',{category:'WORLDGK'})}} >
                   <View style={styles.gameZoneSingleImgView}>
-                    <Image style={styles.gameZoneSingleImg} source={require('../../assets/q3.png')} />
-                    <Text style={styles.gameZoneImgText}>GK Quiz</Text>
+                    <Image style={styles.gameZoneSingleImg} source={require('../../assets/gk2.png')} />
+                    <Text style={styles.gameZoneImgText}>GK</Text>
+                  </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>{navigation.navigate('Quiz',{category:'IT'})}} >
+                  <View style={styles.gameZoneSingleImgView}>
+                    <Image style={styles.gameZoneSingleImg} source={require('../../assets/it.png')} />
+                    <Text style={styles.gameZoneImgText}>IT</Text>
                   </View>
                   </TouchableOpacity>
 
-                 <TouchableOpacity onPress={ ()=>{setModalVisible(true)} }>
+
+                 {/* <TouchableOpacity onPress={ ()=>{setModalVisible(true)} }>
                  <View style={styles.gameZoneSingleImgView}>
                     <Image style={styles.gameZoneSingleImg} source={require('../../assets/q4.png')} />
                     <Text style={styles.gameZoneImgText}>Daily Reward</Text>
                   </View>
-                 </TouchableOpacity>
+                 </TouchableOpacity> */}
                 </View>
               </View>
             </View>
 
-          </View> */}
+          </View>
 
 
 

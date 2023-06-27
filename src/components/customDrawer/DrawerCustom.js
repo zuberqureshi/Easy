@@ -1,4 +1,4 @@
-import { View, Text, Image, FlatList, StyleSheet, Touchable, TouchableOpacity } from 'react-native'
+import { View, Text, Image, FlatList, StyleSheet, Touchable, TouchableOpacity,Linking } from 'react-native'
 import React, { useState,useEffect,useContext } from 'react'
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -92,11 +92,12 @@ const CustomDrawer = () => {
     // { icon: 'game-controller', title: 'Quiz' },
     // { icon: 'cloud-download', title: 'Offer' },
     { icon: 'headset', title: 'Contact' },
-   
+    { icon: 'logo-whatsapp', title: 'Whatsapp Support' },
 
   ];
 
   const bottomList = [
+    
     { icon: 'person-add', title: 'Tell a friend' },
     { icon: 'exit', title: 'Sign out' },
 
@@ -131,6 +132,20 @@ const CustomDrawer = () => {
         setSelectedId(item.title)
         if( item.title==='Sign out' ) { userLogout(); }  
         else if(item.title==='Tell a friend' ){ share()}
+        else if(item.title==='Whatsapp Support' ){
+            let url = "whatsapp://send?text=" +
+       'Welcome to Easy Earn Customer Support !' +
+          "&phone=91" +
+          7566950472;
+        Linking.openURL(url)
+          .then(data => {
+            console.log("WhatsApp Opened successfully " + data);  //<---Success
+          })
+          .catch(() => {
+            alert("Make sure WhatsApp installed on your device");  //<---Error
+          });
+         }
+        
         else
         navigation.navigate(item.title)
       }}
