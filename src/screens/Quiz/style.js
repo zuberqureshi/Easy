@@ -33,7 +33,7 @@ export default styles = StyleSheet.create({
  },
  closeBUttonText:{
     color:'#fff',
-    paddingHorizontal:responsiveWidth(2.45),
+    paddingHorizontal:responsiveWidth(2.80),
     letterSpacing:responsiveWidth(0.2)
  },
  closeBUtton:{
@@ -63,6 +63,16 @@ export default styles = StyleSheet.create({
     marginTop: responsiveWidth(5),
     color:'#fff'
   },
+  scoreTextHeading:{
+   fontSize: responsiveFontSize(2.2),
+   letterSpacing:responsiveWidth(0.35),
+   fontWeight: '800',
+   alignSelf: 'center',
+   marginTop: responsiveWidth(8),
+   color:'#fff'
+ },
+  
+
   modelLinerScore:{
      borderRadius: responsiveWidth(2.45), 
     elevation: responsiveWidth(1),

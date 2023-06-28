@@ -73,6 +73,8 @@ async function setToken(token) {
     .then(() => 'success')
     .catch(e => 'error');
 }
+
+
 async function getToken() {
   const token = await EncryptedStorage.getItem('token');
    return token;

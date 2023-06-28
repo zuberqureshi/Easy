@@ -57,8 +57,7 @@ const CustomDrawer = () => {
   const getUserInfo = async ()=>{
     const ds = await getToken(  );
     const userParseData= await JSON.parse(ds)
-    console.log("insidecustomedrawer  userParseData  ",userParseData.id );
-
+ 
     const body = {
       user_id: userParseData.id,
     };
@@ -66,12 +65,9 @@ const CustomDrawer = () => {
     // await setUserID(data.id)
     if( ds){
       setuserInfo(userDataApi.data);
-      console.log("insidecustomedrawer  userDataApi  ",userDataApi.data );
-      console.log("insidecustomedrawer  userParseDatauserInfo  ",userInfo.wallet_coins );
-
+  
     }else{
-      console.log("insidecustomedrawer Token Not Set  ");
-
+ 
     }
      
 
@@ -79,8 +75,7 @@ const CustomDrawer = () => {
 
   useEffect(() => {
     getUserInfo()
-    console.log( 'insidecustomedrawer');
-  }, [])
+   }, [])
 
  
 
@@ -169,7 +164,7 @@ const CustomDrawer = () => {
          
         <View style={{flexDirection:'row',marginTop:responsiveWidth(2.5),alignItems:'center'}}>
         <Image style={{width:responsiveWidth(6.2),height:responsiveHeight(3),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
-        <Text style={styles.drawerTopCoin}> {  console.log('userInfoapi',userInfo) }  {userInfo?.wallet_coins}</Text>
+        <Text style={styles.drawerTopCoin}>   {userInfo?.wallet_coins}</Text>
         </View>
 
       </View>

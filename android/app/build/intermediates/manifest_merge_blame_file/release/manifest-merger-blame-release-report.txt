@@ -1,8 +1,8 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.easyearn.cash"
-4    android:versionCode="26"
-5    android:versionName="26" >
+4    android:versionCode="28"
+5    android:versionName="28" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
@@ -275,7 +275,7 @@
 148-->[:react-native-google-mobile-ads] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-google-mobile-ads/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:14:9-16:70
 149            android:name="com.google.android.gms.ads.APPLICATION_ID"
 149-->[:react-native-google-mobile-ads] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-google-mobile-ads/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-69
-150            android:value="ca-app-pub-2291791121050290~7118470639" />
+150            android:value="ca-app-pub-5493577236373808~3523437024" />
 150-->[:react-native-google-mobile-ads] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-google-mobile-ads/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:16:13-67
 151        <meta-data
 151-->[:react-native-google-mobile-ads] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-google-mobile-ads/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:9-19:37

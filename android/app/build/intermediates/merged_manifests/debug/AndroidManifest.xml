@@ -150,7 +150,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2291791121050290~7118470639" />
+            android:value="ca-app-pub-5493577236373808~3523437024" />
         <meta-data
             android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT"
             android:value="false" />

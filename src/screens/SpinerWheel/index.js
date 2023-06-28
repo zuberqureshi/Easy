@@ -9,11 +9,14 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 import Loader from '../../components/common/loader/Loader';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
- import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
-const adUnitId =  'ca-app-pub-2291791121050290/1352844929';
-const adUnitIdrewarded =  'ca-app-pub-2291791121050290/6625314913';
-
-const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
+import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
+ 
+const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
+const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
+const adUnitIdIntrestial  =  'ca-app-pub-5493577236373808/6488775047';
+const interstitial = InterstitialAd.createForAdRequest(adUnitIdIntrestial, { 
+});
+const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded,{} );
 const SpinerWheel = () => {
  
   const navigation = useNavigation();
@@ -86,31 +89,41 @@ const SpinerWheel = () => {
   }
 
 
-    useEffect(() => {
-      load();
  
-      const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-        setLoadingStatus(false)
-        //  rewarded.show();
-          setLoadingStatus(false)
-
-      });
-      const unsubscribeEarned = rewarded.addAdEventListener(
-        RewardedAdEventType.EARNED_REWARD,
-        reward => {
-           setLoadingStatus(false)
- 
-        },
-      );
   
-      // Start loading the rewarded ad straight away
-      rewarded.load();
-      // Unsubscribe from events on unmount
-      return () => {
-        unsubscribeLoaded();
-        unsubscribeEarned();
-      };
-    }, []);
+  
+useEffect(() => {
+ load();
+  const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+     rewarded.show();
+
+ });
+ const unsubscribeEarned = rewarded.addAdEventListener(
+   RewardedAdEventType.EARNED_REWARD,
+   reward => {
+
+
+   },
+ );
+
+ // Start loading the rewarded ad straight away
+ rewarded.load();
+
+ const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
+   interstitial.show()
+ });
+
+// Start loading the interstitial straight away
+interstitial.load();
+
+
+ // Unsubscribe from events on unmount
+ return () => {
+   unsubscribe();
+   unsubscribeLoaded();
+   unsubscribeEarned();
+ };
+}, []);
 
   useLayoutEffect(() => {
     navigation.setOptions({

@@ -17,9 +17,10 @@ import YoutubePlayer from "react-native-youtube-iframe";
 import crashlytics from '@react-native-firebase/crashlytics';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
-const adUnitId =  'ca-app-pub-2291791121050290/1352844929';
-const adUnitIdrewarded =  'ca-app-pub-2291791121050290/6625314913';
 
+const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
+const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
+const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
 import RNPollfish from 'react-native-plugin-pollfish';
 
 const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(true);
@@ -382,7 +383,6 @@ const Home = () => {
             {/* navigation.navigate('Reward')  */}
             <TouchableOpacity onPress={() => { navigation.navigate('Reward')  }}>
               <View style={{ flex: 0.10, }}>
-
                 <Text style={styles.getFreeMainText}>Daily Reward: Unlock </Text>
                 <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5), }}>
 
@@ -393,7 +393,7 @@ const Home = () => {
                    <View style={{height:responsiveHeight(5.8),flexDirection:'row'}}>
                     <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5),height:responsiveWidth(7) }}>
                       <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Click Here </Text>
-                      <Text style={{ color: '#fff' }}>One Time Daily Coin!</Text>
+                      <Text style={{ color: '#fff' }}>To Get Daily Login Bonus!</Text>
                     </View>
                  
                     <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3),width:responsiveWidth(20),height:responsiveWidth(5),marginTop:responsiveWidth(-2) }}>
@@ -416,7 +416,7 @@ const Home = () => {
             {/* Get Free Coins -End */}
 
             {/* Get Free Coins Video -Start */}
-            <TouchableOpacity onPress={() => { navigation.navigate('VideoReward') }} >
+            {/* <TouchableOpacity onPress={() => { navigation.navigate('VideoReward') }} >
               <View style={{ flex: 0.10, marginTop: responsiveHeight(1.8) }}>
 
                 <Text style={styles.getFreeMainText}>Video Reward: EveryTime </Text>
@@ -446,7 +446,7 @@ const Home = () => {
                 </View>
               </View>
               </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             {/* Get Free Coins Video-End */}
 
 
@@ -461,10 +461,10 @@ const Home = () => {
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
               <Text style={styles.spineMainText}>Spine Wheel</Text>
               <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
-                <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
+                <Text style={{ color: '#fff', fontWeight: '500' }}>Get Up to </Text>
 
 
-                <Text style={{ color: '#fff' }}> 1 </Text>
+                <Text style={{ color: '#fff' }}> 100 </Text>
                 <Image  style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(1),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
 
 
@@ -530,7 +530,7 @@ const Home = () => {
                 <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
 
 
-                <Text style={{ color: '#fff' }}> 1 </Text>
+                <Text style={{ color: '#fff' }}> {userSettings && userSettings.data.gk_ad_coin} </Text>
                 <Image  style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(1),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
 
 
@@ -603,7 +603,7 @@ const Home = () => {
             {/* //contest Zone DisAble */}
 
             {/* survey container - start */}
-            <TouchableOpacity onPress={() => { surveyCheck() }}>
+            {/* <TouchableOpacity onPress={() => { surveyCheck() }}>
               <View style={{ alignItems: 'center', marginTop: responsiveWidth(2) }}>
 
                 <View style={styles.surveyContainer}>
@@ -623,13 +623,12 @@ const Home = () => {
                   <View >
                     <Image  style={styles.surveyImg} source={require('../../assets/test.png')} />
                     <View style={{ alignItems: 'center' }}>
-                      {/* <Text style={styles.contestZoneAvailableText}>Contest not available!!</Text> */}
                     </View>
                   </View>
 
                 </View>
               </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             {/* survey container - end */}
 
             {/*YouTUbe Video-Start*/}
@@ -637,7 +636,7 @@ const Home = () => {
             <View style={{ marginTop: responsiveWidth(3.6) }} >
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-              <Text style={styles.videoMainText}>Earn By Watch Video</Text>
+              <Text style={styles.videoMainText}> Watch Reels </Text>
               <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
                 <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin </Text>
                 <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.youtube_video_coin} </Text>

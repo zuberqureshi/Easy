@@ -3,7 +3,6 @@ import {View, Image} from 'react-native';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 export default function BannerSlider({data}) {
 
-  console.log("silder data",data)
   return (
     <View>
       <Image

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.easyearn.cash"
-    android:versionCode="26"
-    android:versionName="26" >
+    android:versionCode="28"
+    android:versionName="28" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -147,7 +147,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2291791121050290~7118470639" />
+            android:value="ca-app-pub-5493577236373808~3523437024" />
         <meta-data
             android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT"
             android:value="false" />

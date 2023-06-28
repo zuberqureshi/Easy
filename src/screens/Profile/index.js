@@ -16,9 +16,10 @@ import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import Loader from '../../components/common/loader/Loader';
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
-const adUnitId =   'ca-app-pub-2291791121050290/1352844929';
-const adUnitIdrewarded =    'ca-app-pub-2291791121050290/6625314913';
 
+const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
+const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
+const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
 const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
 const Profile = (props) => {
  

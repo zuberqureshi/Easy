@@ -282,7 +282,7 @@
 151-->[:react-native-google-mobile-ads] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-google-mobile-ads/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-16:70
 152            android:name="com.google.android.gms.ads.APPLICATION_ID"
 152-->[:react-native-google-mobile-ads] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-google-mobile-ads/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-69
-153            android:value="ca-app-pub-2291791121050290~7118470639" />
+153            android:value="ca-app-pub-5493577236373808~3523437024" />
 153-->[:react-native-google-mobile-ads] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-google-mobile-ads/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-67
 154        <meta-data
 154-->[:react-native-google-mobile-ads] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-google-mobile-ads/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:9-19:37

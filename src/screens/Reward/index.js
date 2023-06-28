@@ -1,4 +1,4 @@
-import { View, Text, Button, Pressable, SafeAreaView, ScrollView, Image, TouchableOpacity, Modal, TouchableHighlight, ToastAndroid,StyleSheet } from 'react-native'
+import { View, Text, Button, Pressable, SafeAreaView, ScrollView, Image, TouchableOpacity, Modal, TouchableHighlight, ToastAndroid,StyleSheet, Alert } from 'react-native'
 import React,{ useLayoutEffect, useState, useEffect } from 'react'
 import { useNavigation, useIsFocused } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -7,9 +7,10 @@ import Loader from '../../components/common/loader/Loader';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
-const adUnitId =  'ca-app-pub-2291791121050290/1352844929';
-const adUnitIdrewarded =  'ca-app-pub-2291791121050290/6625314913';
-
+const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
+const adUnitIdrewarded =   __DEV__ ? TestIds.REWARDED : 'ca-app-pub-5493577236373808/2741101726';
+const adUnitIdIntrestial  =   __DEV__ ? TestIds.INTERSTITIAL : 'ca-app-pub-5493577236373808/6488775047';
+const interstitial = InterstitialAd.createForAdRequest(adUnitIdIntrestial, { });
 const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
 
 
@@ -17,7 +18,7 @@ const Reward = () => {
 
     const navigation = useNavigation();
     const [userInfo, setUserInfo] = useState()
-    const [loadingStatus, setLoadingStatus] = useState(true)
+    const [loadingStatus, setLoadingStatus] = useState(false)
     const [userSettings, setUserSettings] = useState()
     const [buttonDisableTrue, setbuttonDisableTrue] = useState(true)
 
@@ -38,22 +39,27 @@ const Reward = () => {
 
   }
     const load = async () => {
+      setLoadingStatus(true)
        await settings();
        await getUserInfo();
-  
+       setLoadingStatus(false)
     }
   
 
   //DailyRewardClaim
   const dailyRewardClaim = async () => {
     setLoadingStatus(true)
-
     const body = {
       user_id: userInfo.id,
     };
     const dailyRewardCheckClaim = await CallApiJson('dailyrewardclaim', 'POST', body); 
     console.log(" dailyRewardCheckClaim", dailyRewardCheckClaim);
     setLoadingStatus(false)
+    if( dailyRewardCheckClaim.error == false){
+    Alert.alert('You Have claimed Reward');
+    }else{
+      Alert.alert( `Failed${dailyRewardCheckClaim.msg} `);
+    }
     navigation.navigate('Home');
 
   }
@@ -67,7 +73,6 @@ const Reward = () => {
         setLoadingStatus(false)
           rewarded.show();
           setLoadingStatus(false)
-
       });
       const unsubscribeEarned = rewarded.addAdEventListener(
         RewardedAdEventType.EARNED_REWARD,
@@ -81,7 +86,19 @@ const Reward = () => {
       // Start loading the rewarded ad straight away
       rewarded.load();
       // Unsubscribe from events on unmount
+
+
+    const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
+      interstitial.show()
+    });
+
+    // Start loading the interstitial straight away
+    interstitial.load();
+
+
+
       return () => {
+        unsubscribe();
         unsubscribeLoaded();
         unsubscribeEarned();
       };

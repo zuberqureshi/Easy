@@ -11,18 +11,27 @@ import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import Loader from '../../components/common/loader/Loader';
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
-const adUnitId =  'ca-app-pub-2291791121050290/1352844929';
+
+const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
+const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
+const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
+
+const interstitial = InterstitialAd.createForAdRequest(adUnitIdIntrestial, { 
+});
+const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded,{} );
+
 import  { AuthContext } from "../../utiles/auth-context";
 const Quiz = ({route}) => {
     // alert(JSON.stringify(quizdata[1].question))
 
     const authCtx = useContext(AuthContext);
-    const [loadingStatus, setLoadingStatus] = useState(true)
+    const [loadingStatus, setLoadingStatus] = useState(false)
 
 const [apiQues, setApiQues] = useState({})
     
   const  loadUserInfo = async () =>{
       // const data = await JSON.parse(seting)
+      setLoadingStatus(true)
      const  userdata = await getToken();
      const userdataParsed = await JSON.parse(userdata)
      const body = {
@@ -41,6 +50,20 @@ const [apiQues, setApiQues] = useState({})
     //  setuserProfileData(profileData);
        setLoadingStatus(false)
   }
+
+  const showAds = (currentIndex)=>{
+
+    if( currentIndex%5==0)      {
+      interstitial.addAdEventListener(AdEventType.LOADED, () => {
+        console.log('interstitialad Loaded' )
+        interstitial.show();
+    
+       });
+
+    }
+
+
+  }
   
 useEffect(() => {
   
@@ -53,6 +76,38 @@ useEffect(() => {
 }, [])
 
 
+
+useEffect(() => {
+    const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+      rewarded.show();
+ 
+  });
+  const unsubscribeEarned = rewarded.addAdEventListener(
+    RewardedAdEventType.EARNED_REWARD,
+    reward => {
+ 
+ 
+    },
+  );
+ 
+  // Start loading the rewarded ad straight away
+  rewarded.load();
+ 
+  const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
+    interstitial.show()
+  });
+ 
+ // Start loading the interstitial straight away
+ interstitial.load();
+ 
+ 
+  // Unsubscribe from events on unmount
+  return () => {
+    unsubscribe();
+    unsubscribeLoaded();
+    unsubscribeEarned();
+  };
+ }, []);
 
     const navigation = useNavigation();
     const [currentIndex, setCurrentIndex] = useState(1);
@@ -256,6 +311,7 @@ useEffect(() => {
       ): (
         <TouchableOpacity style={styles.nextButton} 
          onPress={ ()=>{
+
           if(questions[currentIndex-1].marked !== -1){
 
             if (currentIndex < questions.length) {
@@ -269,7 +325,7 @@ useEffect(() => {
             
         } } >
           
-           <Text style={{color:'#fff'}} >
+           <Text style={{color:'#fff'}}  >
               Next
            </Text>
 
@@ -278,9 +334,15 @@ useEffect(() => {
 
      
 
-
+   
       </View>
-
+      <BannerAd
+      unitId={adUnitId}
+      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+      requestOptions={{
+        requestNonPersonalizedAdsOnly: true,
+      }}
+    />
 
       <Modal
         animationType="slide"
@@ -330,7 +392,7 @@ useEffect(() => {
         </View>
       </Modal>
 
-
+    
     </View>
   
   )
