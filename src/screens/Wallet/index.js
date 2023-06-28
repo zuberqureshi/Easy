@@ -184,7 +184,7 @@ useEffect(() => {
       user_id: userProfileData?.data?.id,
       coin: selectedCard,
       sender_id:paytmNo,
-      mode:'PAYPAL'
+      mode:'PAYTM'
     };
     setLoadingStatus(true);
 
@@ -532,7 +532,7 @@ useEffect(() => {
 
          <View style={styles.modelPaytmTextInputCintainer}>
               <TextInput
-                placeholder="Enter Your Paytm Number"
+                placeholder="Enter Your UPI ID  "
                 placeholderTextColor="#fff"
                 autoCorrect={false}
                 keyboardType='number-pad'
