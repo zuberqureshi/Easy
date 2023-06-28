@@ -14,12 +14,12 @@ import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-nat
 import WheelOfFortune from 'react-native-wheel-of-fortune';
 
 const participants = [
-  'WON',
+  'WIN',
   'LOST',
-  'WON',
+  'WIN',
   'LOST',
   'LOST',
-  'WON',
+  'WIN',
   'LOST',
 ];
 class Spiner extends Component {
@@ -37,7 +37,7 @@ class Spiner extends Component {
   buttonPress = () => {
 
     if( !this.props.spinAmount ){
-      Alert.alert('Please Place Coins  ');
+      Alert.alert('Please Select Coins    ');
       return;
     }
 

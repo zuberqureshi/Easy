@@ -20,13 +20,15 @@ const SpinerWheel = () => {
 
   const [userInfo, setUserInfo] = useState()
   const [userWallet, setUserWallet] = useState(0)
-  const [loadingStatus, setLoadingStatus] = useState(true)
+  const [loadingStatus, setLoadingStatus] = useState(false)
   const [spinValue, setSpinValue] = useState()
   const [spinAmount, setSpinAmount] = useState()
  
 
  //Get User Info
  const getUserInfo = async () => {
+  setLoadingStatus(true)
+
   const ds = await getToken();
  const data = await JSON.parse(ds)
  await setUserInfo(data)
@@ -37,6 +39,8 @@ const SpinerWheel = () => {
  const seting = await CallApiJson('getprofile', 'POST',body);
  // const data = await JSON.parse(seting)
  await setUserWallet(seting.data.wallet_coins);
+ setLoadingStatus(false)
+
 
 
 }
@@ -68,15 +72,15 @@ const SpinerWheel = () => {
     console.log(" spinnerRewardClaim", dailyRewardCheckClaim);
     setLoadingStatus(false);
     if( spinValue=='WIN' ){
-    Alert.alert('Congrats You Have Won ,Winning Coins Credited From Wallet ');
+    Alert.alert('Congrats You Have Won , ');
     }else{
       Alert.alert('Sorry You Have Lost , Try Next Time ');
 
     }
-    const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-       rewarded.show();
-    });
-
+    //   rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
+    //    rewarded.show();
+    // });
+    //rewarded.show();
     navigation.navigate('Home');
 
   }
@@ -84,8 +88,7 @@ const SpinerWheel = () => {
 
     useEffect(() => {
       load();
-      setLoadingStatus(true)
-
+ 
       const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
         setLoadingStatus(false)
         //  rewarded.show();
