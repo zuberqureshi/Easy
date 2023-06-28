@@ -7,19 +7,20 @@ import {
   Button,
   TouchableOpacity,
   Image,
+  Alert,
 } from 'react-native';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 
 import WheelOfFortune from 'react-native-wheel-of-fortune';
 
 const participants = [
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
+  'WON',
+  'LOST',
+  'WON',
+  'LOST',
+  'LOST',
+  'WON',
+  'LOST',
 ];
 class Spiner extends Component {
   constructor(props) {
@@ -34,6 +35,17 @@ class Spiner extends Component {
   }
 
   buttonPress = () => {
+
+    if( !this.props.spinAmount ){
+      Alert.alert('Please Place Coins  ');
+      return;
+    }
+
+    if( this.props.userWallet< this.props.spinAmount ){
+      Alert.alert('Wallet Has not sufficent Coins , Earn or Recharge Coins   ');
+      return;
+    }
+    
     this.setState({
       started: true,
     });
@@ -45,6 +57,7 @@ class Spiner extends Component {
     console.warn(this.state.winnerValue)
   }
   
+ 
   render() {
     {this.props.setSpinValue(participants[this.state.winnerIndex])}
      
@@ -68,6 +81,8 @@ class Spiner extends Component {
           options={wheelOptions}
           getWinner={(value, index) => {
             this.setState({winnerValue: value, winnerIndex: index});
+            this.props.updateSpinnerWheelWinner(  )
+
           }}
         />
 
@@ -77,19 +92,29 @@ class Spiner extends Component {
   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(20)}} >
       <View style={[styles.coinBox,{borderColor:this.props.spinAmount===20?'gold':'#1f4c86',}]}>
 
-      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Left</Text> 
+      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Place</Text> 
         <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
-        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Coins</Text> 
+        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Get</Text> 
       
       </View>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={()=>{this.props.setSpinAmount(50)}}>
-      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===50?'gold':'#1f4c86',}]}>
+      <TouchableOpacity onPress={()=>{this.props.setSpinAmount(40)}}>
+      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===40?'gold':'#1f4c86',}]}>
 
-      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Left</Text> 
+      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >40 Place</Text> 
         <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
-        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >50 Coins</Text> 
+        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >50 Get</Text> 
+      
+      </View>
+      </TouchableOpacity>
+
+   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(60)}}>
+      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===60?'gold':'#1f4c86',}]}>
+
+      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >60 Place</Text> 
+        <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
+        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >80 Get</Text> 
       
       </View>
       </TouchableOpacity>
@@ -97,19 +122,9 @@ class Spiner extends Component {
    <TouchableOpacity onPress={()=>{this.props.setSpinAmount(100)}}>
       <View style={[styles.coinBox,{borderColor:this.props.spinAmount===100?'gold':'#1f4c86',}]}>
 
-      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Left</Text> 
+      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >100 Place</Text> 
         <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
-        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >100 Coins</Text> 
-      
-      </View>
-      </TouchableOpacity>
-
-   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(150)}}>
-      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===150?'gold':'#1f4c86',}]}>
-
-      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Left</Text> 
-        <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
-        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >1500 Coins</Text> 
+        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >150 Get</Text> 
       
       </View>
       </TouchableOpacity>
@@ -131,11 +146,11 @@ class Spiner extends Component {
         )}
         {this.state.winnerIndex != null && (
           <View style={styles.winnerView}>
-            <Text style={styles.winnerText}>
+            {/* <Text style={styles.winnerText}>
          
             {this.winPrice()}
               You win {participants[this.state.winnerIndex]}
-            </Text>
+            </Text> */}
             {/* <TouchableOpacity
               onPress={() => {
                 this.setState({winnerIndex: null});
@@ -175,7 +190,8 @@ const styles = StyleSheet.create({
   },
   startButton: {
     backgroundColor: '#1f4c86',
-    marginTop:responsiveWidth(12.1),
+    marginTop:responsiveWidth(8),
+    marginBottom:responsiveWidth(5.1),
     padding: responsiveWidth(2.5),
     borderRadius:responsiveWidth(5),
     flexDirection:'row'

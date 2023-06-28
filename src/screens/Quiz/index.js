@@ -1,4 +1,4 @@
-import { View, Text,FlatList,TouchableOpacity,onPress,Modal } from 'react-native'
+import { View, Text,FlatList,TouchableOpacity,onPress,Modal, Alert } from 'react-native'
 import React,{useRef,useState,useLayoutEffect,useEffect,useContext} from 'react'
 import {quizdata} from './QuizData'
 import {windowHeight,windowWidth} from '../../utiles/Dimensions'
@@ -17,10 +17,7 @@ const Quiz = ({route}) => {
     // alert(JSON.stringify(quizdata[1].question))
 
     const authCtx = useContext(AuthContext);
-    
     const [loadingStatus, setLoadingStatus] = useState(true)
-
-    console.log("quiz category",route.params.category)
 
 const [apiQues, setApiQues] = useState({})
     
@@ -35,11 +32,14 @@ const [apiQues, setApiQues] = useState({})
 
      const questionData = await CallApiJson('gkquestion', 'POST',body);
     //  setLoadingStatus(false);
+    if( !questionData.questions ){
+      Alert.alert('No Questions on Server , Please Try Again ');
+      return;
+    }
        await setApiQues(questionData)
        await setQuestions(questionData?.questions)
     //  setuserProfileData(profileData);
-      console.log('UserquizScreenData',questionData);
-      setLoadingStatus(false)
+       setLoadingStatus(false)
   }
   
 useEffect(() => {
@@ -47,8 +47,7 @@ useEffect(() => {
 
   loadUserInfo();
   reset()
-  console.log('UserquizScreenData effect....',apiQues?.questions)
-  return  ()=>{
+   return  ()=>{
     console.log('return')
   }
 }, [])
@@ -59,8 +58,7 @@ useEffect(() => {
     const [currentIndex, setCurrentIndex] = useState(1);
    
     const [questions, setQuestions] = useState([]);
-    console.log("shoe state quiz quetions",)
-    const listRef = useRef();
+     const listRef = useRef();
     const [modalVisible, setModalVisible] = useState(false);
     const OnSelectOption = (index, x) => {
       const tempData = questions;
