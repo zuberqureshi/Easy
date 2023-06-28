@@ -523,8 +523,20 @@ const Home = () => {
             <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5)}}>
 
               <View style={styles.gameZoneContainer}>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
 
-                <Text style={styles.gameZoneMainText}>Quiz Zone</Text>
+                <Text style={styles.gameZoneMainText}>Quiz Zone</Text> 
+                <View style={{ flexDirection: 'row', marginRight: responsiveWidth(4), alignItems: 'center' }}>
+                <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
+
+
+                <Text style={{ color: '#fff' }}> 1 </Text>
+                <Image  style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(1),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
+
+
+              </View>
+            </View>
+
                 <View style={styles.gameZoneMainImgView}>
                 <TouchableOpacity onPress={()=>{navigation.navigate('Quiz',{category:'science'})}} >
                   <View style={styles.gameZoneSingleImgView}>
