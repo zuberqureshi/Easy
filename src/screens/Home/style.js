@@ -92,11 +92,13 @@ export default styles = StyleSheet.create({
         alignItems: 'center'
     },
     gameZoneSingleImg: {
-        width: responsiveWidth(14.5),
+        width: responsiveWidth(13.5),
         height: responsiveHeight(6.5),
         marginLeft: responsiveWidth(2.5),
         marginBottom: responsiveWidth(1.2),
-        borderRadius:responsiveWidth(1.2)
+        borderRadius:responsiveWidth(1.2),
+        // resizeMode:'contain'
+
     },
     gameZoneImgText: {
         color: '#fff',

@@ -7,13 +7,13 @@ export const AuthContext = createContext({
   isAuthenticated: false,
   authenticate: (token) => {},
   logout: () => {},
-  spinValue:'',
-  sipnner:()=>{},
+  quizValue:'',
+  quiz:()=>{},
 });
 
 function AuthContextProvider({ children }) {
   const [authToken, setAuthToken] = useState();
-  const [spinValue, setspinValue] = useState()
+  const [quizValue, setQuizValue] = useState()
 
   function authenticate(token) {
     setAuthToken(token);
@@ -25,8 +25,8 @@ function AuthContextProvider({ children }) {
     // AsyncStorage.removeItem("token");
   }
    
-   function spinner(vl){
-    setspinValue(vl)
+   function quiz(vl){
+    setQuizValue(vl)
    }
 
   const value = {
@@ -34,8 +34,8 @@ function AuthContextProvider({ children }) {
     isAuthenticated: !!authToken,
     authenticate: authenticate,
     logout: logout,
-    spinner:spinner,
-    spinValue:spinValue
+    quiz:quiz,
+    quizValue:quizValue
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
