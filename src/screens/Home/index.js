@@ -126,7 +126,7 @@ const Home = () => {
 }
   useEffect(() => {
     set();
-    // checkUpdateNeeded()
+     checkUpdateNeeded()
     return () => {
       console.log('return')
     }
