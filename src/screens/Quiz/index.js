@@ -241,7 +241,7 @@ useEffect(() => {
         </TouchableOpacity>
 
 
-      {currentIndex==8 ? (
+      {currentIndex==10 ? (
         <TouchableOpacity style={styles.submitButton}  
         onPress={ ()=>{
               // setModalVisible(true)
