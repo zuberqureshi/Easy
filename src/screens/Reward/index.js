@@ -8,8 +8,8 @@ import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
 const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
-const adUnitIdrewarded =   __DEV__ ? TestIds.REWARDED : 'ca-app-pub-5493577236373808/2741101726';
-const adUnitIdIntrestial  =   __DEV__ ? TestIds.INTERSTITIAL : 'ca-app-pub-5493577236373808/6488775047';
+const adUnitIdrewarded =   'ca-app-pub-5493577236373808/2741101726';
+const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
 const interstitial = InterstitialAd.createForAdRequest(adUnitIdIntrestial, { });
 const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
 
