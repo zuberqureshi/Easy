@@ -31,7 +31,9 @@ const QuizReward = ({route}) => {
     const  quizRewardClaim = async () =>{
         // const data = await JSON.parse(seting)
         if(authCtx.quizValue < 6){
-          Alert.alert('Your Score is Less than 6 , Try again and Score  ' );
+          Alert.alert('Sorry ! Your Score is Less than 6 , Try again ' );
+          navigation.navigate('Home');
+
           return;
         }
 
@@ -186,7 +188,7 @@ marginTop:responsiveWidth(20)
                 // setModalVisible(!modalVisible);
                 quizRewardClaim();
               }}>
-              <Text style={styles.closeBUttonText}> {authCtx.quizValue < 6 ? 'Sorry ' : 'Claim Reward' }    </Text>
+              <Text style={styles.closeBUttonText}> Claim Reward   </Text>
             </TouchableOpacity>
           {/* </View> */}
           </LinearGradient>
