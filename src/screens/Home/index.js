@@ -16,18 +16,18 @@ import VersionCheck from 'react-native-version-check';
 import YoutubePlayer from "react-native-youtube-iframe";
 import crashlytics from '@react-native-firebase/crashlytics';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
-import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
+import { BannerAdSize, BannerAd, AppOpenAd, RewardedAd, RewardedAdEventType, TestIds, AdEventType, InterstitialAd } from 'react-native-google-mobile-ads';
 
-const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
-const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
-const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
+const adUnitId = 'ca-app-pub-5493577236373808/8452330072';
+const adUnitIdrewarded = 'ca-app-pub-5493577236373808/2741101726';
+const adUnitIdIntrestial = 'ca-app-pub-5493577236373808/6488775047';
 
 import RNPollfish from 'react-native-plugin-pollfish';
 const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(true);
 RNPollfish.init(builder.build());
 
-import inbrain, {InBrainNativeSurvey, InBrainSurveyFilter, InBrainSurveyCategory} from 'inbrain-surveys';
-const apiSecretInBrain ='Tlz6uQqRLkg5WKGFFGJZqIiReUlwIP+RYbQUOtJzbDNdr1VfLHYlbLMTVf351Q6fZdWfKXQbCRfI73Xf0VEgzw==';
+import inbrain, { InBrainNativeSurvey, InBrainSurveyFilter, InBrainSurveyCategory } from 'inbrain-surveys';
+const apiSecretInBrain = 'Tlz6uQqRLkg5WKGFFGJZqIiReUlwIP+RYbQUOtJzbDNdr1VfLHYlbLMTVf351Q6fZdWfKXQbCRfI73Xf0VEgzw==';
 
 const navigationBarConfig = {
   title: 'Easy Earn Survey',
@@ -116,28 +116,28 @@ const Home = () => {
     const latestVersion = await VersionCheck.getLatestVersion();
     const currentVersion = VersionCheck.getCurrentVersion()
     let updateNeeded = await VersionCheck.needUpdate();
-    console.log( 'checkUpdateNeeded-latestVersion',latestVersion , 'userSettings?.data?.version_control_froce',userSettings?.data, 'currentVersion',currentVersion,'updateNeeded',updateNeeded )
-    if (    (updateNeeded.isNeeded )  ) {
-        Alert.alert('Update Required ',
+    console.log('checkUpdateNeeded-latestVersion', latestVersion, 'userSettings?.data?.version_control_froce', userSettings?.data, 'currentVersion', currentVersion, 'updateNeeded', updateNeeded)
+    if ((updateNeeded.isNeeded)) {
+      Alert.alert('Update Required ',
         'Download Latest Version From PlayStore',
-        [ 
+        [
           {
-            text : 'Update Now ',
-            onPress:()=>{
+            text: 'Update Now ',
+            onPress: () => {
               BackHandler.exitApp();
               Linking.openURL(updateNeeded.storeUrl);
             }
           }
         ],
-        { cancelable:false }
-        
-        
-        );
+        { cancelable: false }
+
+
+      );
     }
-}
+  }
   useEffect(() => {
     set();
-     checkUpdateNeeded()
+    checkUpdateNeeded()
     return () => {
       console.log('return')
     }
@@ -151,31 +151,31 @@ const Home = () => {
     await setUserSettings(seting)
 
   }
- 
+
   //Get User Info
   const getUserInfo = async () => {
     console.log("getdata Callling....")
     const ds = await getToken();
     const data = await JSON.parse(ds)
-    console.log("getdata Callling....recieved by async",data)
-    if( data.id ){
-     const fcmToken =  await EncryptedStorage.getItem('fcmToken');
+    console.log("getdata Callling....recieved by async", data)
+    if (data.id) {
+      const fcmToken = await EncryptedStorage.getItem('fcmToken');
       const tokenSet = {
         user_id: data.id,
         fcm_token: fcmToken
 
       }
-      const seting = await CallApiJson('fcmupdate', 'POST' , tokenSet );
+      const seting = await CallApiJson('fcmupdate', 'POST', tokenSet);
 
     }
-     await setUserInfo(data)
+    await setUserInfo(data)
 
   }
   // console.log("getdata after Callling.... APi", userInfo)
-  
+
   //Get Banners
 
-   const banners = async () => {
+  const banners = async () => {
     const banners = await CallApiJson('banner', 'GET');
     // const data = await JSON.parse(seting)
     await setBanner(banners?.data)
@@ -288,12 +288,12 @@ const Home = () => {
     if (polfishSurveyAvail == true) {
       console.log('show survey');
       RNPollfish.show();
-    } 
+    }
     else {
 
 
 
-      if( userInfo.email){
+      if (userInfo.email) {
         inbrain.setInBrain('c9602f14-bb94-445d-b517-952682a71e9c', apiSecretInBrain, userInfo.email);
         inbrain.setUserID(userInfo.email)
 
@@ -302,34 +302,34 @@ const Home = () => {
         };
 
         inbrain
-        .getNativeSurveys(filter)
-        .then((nativeSurveys) => {
-          console.log('nativeSurveys',nativeSurveys);
-                inbrain.showNativeSurvey(nativeSurveys[0].id, nativeSurveys[0].surveyId )
-        .then(() => {
-          console.log('success inbrain survey ');
-        })
-        .catch((err) => {
-          console.log('show inbrain survey errro ',err);
+          .getNativeSurveys(filter)
+          .then((nativeSurveys) => {
+            console.log('nativeSurveys', nativeSurveys);
+            inbrain.showNativeSurvey(nativeSurveys[0].id, nativeSurveys[0].surveyId)
+              .then(() => {
+                console.log('success inbrain survey ');
+              })
+              .catch((err) => {
+                console.log('show inbrain survey errro ', err);
 
-          Alert.alert('No Survey Available Right,  Please Try After Some Time  '); 
-          return;
+                Alert.alert('No Survey Available Right,  Please Try After Some Time  ');
+                return;
 
-        });
-
-
-        })
-        .catch((err) => {
-          console.log('getting inbrain survey list errro ',err);
-          Alert.alert('No Survey Available Right,  Please Try After Some Time  '); 
-          return;
-        });
+              });
 
 
-       
+          })
+          .catch((err) => {
+            console.log('getting inbrain survey list errro ', err);
+            Alert.alert('No Survey Available Right,  Please Try After Some Time  ');
+            return;
+          });
 
 
-      }else{
+
+
+
+      } else {
         Alert.alert('Close The app and Start Again  ');
 
       }
@@ -402,7 +402,7 @@ const Home = () => {
 
               autoplay={true}
               data={banner}
-              renderItem={( item, index ) => { return (<BannerSlider data={item} />)}}
+              renderItem={(item, index) => { return (<BannerSlider data={item} />) }}
               sliderWidth={windowWidth}
               // - responsiveWidth(6)
               itemWidth={responsiveWidth(85)}
@@ -433,36 +433,36 @@ const Home = () => {
 
             {/* Get Free Coins -Start */}
             {/* navigation.navigate('Reward')  */}
-            <TouchableOpacity onPress={() => { navigation.navigate('Reward')  }}>
+            <TouchableOpacity onPress={() => { navigation.navigate('Reward') }}>
               <View style={{ flex: 0.10, }}>
                 <Text style={styles.getFreeMainText}>Daily Reward: Unlock </Text>
                 <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5), }}>
 
                   <View style={styles.getFreeMainContainer}>
-                    <Image  style={styles.getFreeCoin} source={require('../../assets/rupee.png')} />
+                    <Image style={styles.getFreeCoin} source={require('../../assets/rupee.png')} />
 
-                  
-                   <View style={{height:responsiveHeight(5.8),flexDirection:'row'}}>
-                    <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5),height:responsiveWidth(7) }}>
-                      <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Click Here </Text>
-                      <Text style={{ color: '#fff' }}>To Get Daily Login Bonus!</Text>
-                    </View>
-                 
-                    <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3),width:responsiveWidth(20),height:responsiveWidth(5),marginTop:responsiveWidth(-2) }}>
-                      <Text style={{ color: '#fff' }}>Get Coins</Text>
 
-                      <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
-                        <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}>{userSettings && userSettings.data.daily_coin}</Text>
-                        <Image  style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
+                    <View style={{ height: responsiveHeight(5.8), flexDirection: 'row' }}>
+                      <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5), height: responsiveWidth(7) }}>
+                        <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Click Here </Text>
+                        <Text style={{ color: '#fff' }}>To Get Daily Login Bonus!</Text>
                       </View>
-                         
+
+                      <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3), width: responsiveWidth(20), height: responsiveWidth(5), marginTop: responsiveWidth(-2) }}>
+                        <Text style={{ color: '#fff' }}>Get Coins</Text>
+
+                        <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
+                          <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}>{userSettings && userSettings.data.daily_coin}</Text>
+                          <Image style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
+                        </View>
+
+                      </View>
+
                     </View>
-                  
+
+
                   </View>
-                
-            
-              </View>
-              </View>
+                </View>
               </View>
             </TouchableOpacity>
             {/* Get Free Coins -End */}
@@ -509,7 +509,7 @@ const Home = () => {
 
 
           {/* Spine-Start*/}
-          <View style={{ flex: 0.20, marginTop: responsiveWidth(4) }}>
+          <View style={{ flex: 0.10, marginTop: responsiveWidth(4) }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
               <Text style={styles.spineMainText}>Spine Wheel</Text>
               <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
@@ -517,7 +517,7 @@ const Home = () => {
 
 
                 <Text style={{ color: '#fff' }}> 100 </Text>
-                <Image  style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(1),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
+                <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(1), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
 
 
               </View>
@@ -570,53 +570,53 @@ const Home = () => {
           {/* Get Free Coins Survey -End */}
 
           {/* Game Zone-Start*/}
-          <View style={{ flex: 0.20, }}>
+          <View style={{ flex: 0.10, }}>
 
-            <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5)}}>
+            <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
 
               <View style={styles.gameZoneContainer}>
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
 
-                <Text style={styles.gameZoneMainText}>Quiz Zone</Text> 
-                <View style={{ flexDirection: 'row', marginRight: responsiveWidth(4), alignItems: 'center' }}>
-                <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
-
-
-                <Text style={{ color: '#fff' }}> {userSettings && userSettings.data.gk_ad_coin} </Text>
-                <Image  style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(1),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
+                  <Text style={styles.gameZoneMainText}>Quiz Zone</Text>
+                  <View style={{ flexDirection: 'row', marginRight: responsiveWidth(4), alignItems: 'center' }}>
+                    <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
 
 
-              </View>
-            </View>
+                    <Text style={{ color: '#fff' }}> {userSettings && userSettings.data.gk_ad_coin} </Text>
+                    <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(1), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
+
+
+                  </View>
+                </View>
 
                 <View style={styles.gameZoneMainImgView}>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Quiz',{category:'science'})}} >
-                  <View style={styles.gameZoneSingleImgView}>
-                    <Image style={styles.gameZoneSingleImg} source={require('../../assets/q1.png')} />
-                    <Text style={styles.gameZoneImgText}>Science</Text>
-                  </View>
+                  <TouchableOpacity onPress={() => { navigation.navigate('Quiz', { category: 'science' }) }} >
+                    <View style={styles.gameZoneSingleImgView}>
+                      <Image style={styles.gameZoneSingleImg} source={require('../../assets/q1.png')} />
+                      <Text style={styles.gameZoneImgText}>Science</Text>
+                    </View>
                   </TouchableOpacity>
-                  <TouchableOpacity onPress={()=>{navigation.navigate('Quiz',{category:'math'})}} >
-                  <View style={styles.gameZoneSingleImgView}>
-                    <Image style={styles.gameZoneSingleImg} source={require('../../assets/q2.png')} />
-                    <Text style={styles.gameZoneImgText}>Math</Text>
-                  </View>
+                  <TouchableOpacity onPress={() => { navigation.navigate('Quiz', { category: 'math' }) }} >
+                    <View style={styles.gameZoneSingleImgView}>
+                      <Image style={styles.gameZoneSingleImg} source={require('../../assets/q2.png')} />
+                      <Text style={styles.gameZoneImgText}>Math</Text>
+                    </View>
                   </TouchableOpacity>
-                  <TouchableOpacity onPress={()=>{navigation.navigate('Quiz',{category:'WORLDGK'})}} >
-                  <View style={styles.gameZoneSingleImgView}>
-                    <Image style={styles.gameZoneSingleImg} source={require('../../assets/gk2.png')} />
-                    <Text style={styles.gameZoneImgText}>GK</Text>
-                  </View>
+                  <TouchableOpacity onPress={() => { navigation.navigate('Quiz', { category: 'WORLDGK' }) }} >
+                    <View style={styles.gameZoneSingleImgView}>
+                      <Image style={styles.gameZoneSingleImg} source={require('../../assets/gk2.png')} />
+                      <Text style={styles.gameZoneImgText}>GK</Text>
+                    </View>
                   </TouchableOpacity>
-                  <TouchableOpacity onPress={()=>{navigation.navigate('Quiz',{category:'IT'})}} >
-                  <View style={styles.gameZoneSingleImgView}>
-                    <Image style={styles.gameZoneSingleImg} source={require('../../assets/it.png')} />
-                    <Text style={styles.gameZoneImgText}>Coding</Text>
-                  </View>
+                  <TouchableOpacity onPress={() => { navigation.navigate('Quiz', { category: 'IT' }) }} >
+                    <View style={styles.gameZoneSingleImgView}>
+                      <Image style={styles.gameZoneSingleImg} source={require('../../assets/it.png')} />
+                      <Text style={styles.gameZoneImgText}>Coding</Text>
+                    </View>
                   </TouchableOpacity>
 
 
-                 {/* <TouchableOpacity onPress={ ()=>{setModalVisible(true)} }>
+                  {/* <TouchableOpacity onPress={ ()=>{setModalVisible(true)} }>
                  <View style={styles.gameZoneSingleImgView}>
                     <Image style={styles.gameZoneSingleImg} source={require('../../assets/q4.png')} />
                     <Text style={styles.gameZoneImgText}>Daily Reward</Text>
@@ -654,26 +654,57 @@ const Home = () => {
 
             {/* //contest Zone DisAble */}
 
+            {/*English Word Game-Start*/}
+
+            <View style={{ marginTop: responsiveWidth(1) }} >
+
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text style={styles.videoMainText}> Guess Word Game </Text>
+                <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
+                  <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin </Text>
+                  <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.english_ques} </Text>
+                  <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2.5), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
+                </View>
+              </View>
+
+              <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
+
+                <TouchableOpacity
+                  onPress={() => {
+                  
+                    navigation.navigate('EnglishGame')
+                
+                  }} >
+                  <View style={styles.videoImgView}>
+                    <Image style={{ width:responsiveHeight(25), height:responsiveHeight(22),resizeMode:'contain'}} source={require('../../assets/word.png')} />
+                  </View>
+                </TouchableOpacity>
+
+              </View>
+            </View>
+
+            {/* English Word Game-End*/}
+
             {/* survey container - start */}
             <TouchableOpacity onPress={() => { surveyCheck() }}>
-              <View style={{ alignItems: 'center', marginTop: responsiveWidth(2) }}>
+              <View style={{ alignItems: 'center', marginTop: responsiveWidth(6) }}>
 
                 <View style={styles.surveyContainer}>
                   <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2), justifyContent: 'space-between' }}>
                     <Text style={styles.surveyText}> Earn By survey  </Text>
                     <View style={{ flexDirection: 'column', marginRight: responsiveWidth(5), alignItems: 'center' }}>
-                <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin</Text>
+                      <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin</Text>
 
-                 <View style={{flexDirection:'row',alignItems:'center'}}>
-                <Text style={{ color: '#fff' }}>  {userSettings && userSettings?.data?.survey_ad_coin} </Text>
-                <Image style={{width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
-                </View>
+                      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Text style={{ color: '#fff' }}>  {userSettings && userSettings?.data?.survey_ad_coin} </Text>
+                        <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
+                      </View>
 
-              </View>
+                    </View>
                   </View>
 
                   <View >
-                    <Image  style={styles.surveyImg} source={require('../../assets/test.png')} />
+                    <Image style={styles.surveyImg} source={require('../../assets/test.png')} />
                     <View style={{ alignItems: 'center' }}>
                     </View>
                   </View>
@@ -687,15 +718,15 @@ const Home = () => {
 
             <View style={{ marginTop: responsiveWidth(3.6) }} >
 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-              <Text style={styles.videoMainText}> Watch Reels </Text>
-              <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
-                <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin </Text>
-                <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.youtube_video_coin} </Text>
-                <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2.5),resizeMode:'contain' }} source={require('../../assets/rupee.png')} />
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text style={styles.videoMainText}> Watch Reels </Text>
+                <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
+                  <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin </Text>
+                  <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.youtube_video_coin} </Text>
+                  <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2.5), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
+                </View>
               </View>
-              </View>
-           
+
               <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
 
                 <TouchableOpacity
@@ -711,7 +742,7 @@ const Home = () => {
 
                   }} >
                   <View style={styles.videoImgView}>
-                    <Image  style={styles.videoImg} source={require('../../assets/youtube.png')} />
+                    <Image style={styles.videoImg} source={require('../../assets/youtube.png')} />
                   </View>
                 </TouchableOpacity>
 
@@ -871,36 +902,36 @@ const Home = () => {
                 {/* <TouchableOpacity onPress={() => { setModalVisible(!modalVisible) }} style={{ position: 'absolute', right: responsiveWidth(3.5), top: responsiveWidth(3) }}>
                   <IconEntypo name="cross" size={responsiveWidth(6)} color="#fff" />
                 </TouchableOpacity> */}
-    <View style={{alignItems:'center'}}>
+                <View style={{ alignItems: 'center' }}>
 
-                <Text
-                  style={{
-                    fontSize: responsiveFontSize(3.55),
-                    letterSpacing: responsiveWidth(0.35),
-                    fontWeight: '600',
+                  <Text
+                    style={{
+                      fontSize: responsiveFontSize(3.55),
+                      letterSpacing: responsiveWidth(0.35),
+                      fontWeight: '600',
 
-                    marginTop: responsiveWidth(7),
-                    color: '#fff'
-                  }}>
-                 Welcome
-                </Text>
-                <Text
-                  style={{
-                    fontSize: responsiveWidth(3.8),
-                    marginTop: responsiveWidth(1.2),
-                    color: '#fff',
+                      marginTop: responsiveWidth(7),
+                      color: '#fff'
+                    }}>
+                    Welcome
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: responsiveWidth(3.8),
+                      marginTop: responsiveWidth(1.2),
+                      color: '#fff',
 
-                  }}>
-                 Easy Earn App !
-                </Text>
-                <Text
-                  style={{
-                    fontSize: responsiveWidth(3.8),
-                    color: '#fff',
+                    }}>
+                    Easy Earn App !
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: responsiveWidth(3.8),
+                      color: '#fff',
 
-                  }}>
-                 Earn daily rewards...
-                </Text>
+                    }}>
+                    Earn daily rewards...
+                  </Text>
 
                 </View>
                 {/* <Image  style={{ width: responsiveWidth(44), height: responsiveHeight(14.2), marginTop: responsiveWidth(4),resizeMode:'contain' }} source={require('../../assets/dailygift.png')} />
@@ -926,14 +957,14 @@ const Home = () => {
                     {userSettings && userSettings?.data?.daily_coin} Coins
                   </Text>
                 </View> */}
-         
-         <View style={{marginHorizontal:responsiveWidth(5),marginVertical:responsiveWidth(6)}}>
-          <Text style={{marginVertical:responsiveWidth(1),color:'#fff'}} > {"\u2B24" + "  "}Easy earn App earn daily rewards !</Text>
-          <Text style={{marginVertical:responsiveWidth(1),color:'#fff'}} > {"\u2B24" + "  "}Easy earn App earn daily rewards !</Text>
-          <Text style={{marginVertical:responsiveWidth(1),color:'#fff'}} > {"\u2B24" + "  "}Easy earn App earn daily rewards !</Text>
-          <Text style={{marginVertical:responsiveWidth(1),color:'#fff'}} > {"\u2B24" + "  "}Easy earn App earn daily rewards !</Text>
-         </View>
-            
+
+                <View style={{ marginHorizontal: responsiveWidth(5), marginVertical: responsiveWidth(6) }}>
+                  <Text style={{ marginVertical: responsiveWidth(1), color: '#fff' }} > {"\u2B24" + "  "}Easy earn App earn daily rewards !</Text>
+                  <Text style={{ marginVertical: responsiveWidth(1), color: '#fff' }} > {"\u2B24" + "  "}Easy earn App earn daily rewards !</Text>
+                  <Text style={{ marginVertical: responsiveWidth(1), color: '#fff' }} > {"\u2B24" + "  "}Easy earn App earn daily rewards !</Text>
+                  <Text style={{ marginVertical: responsiveWidth(1), color: '#fff' }} > {"\u2B24" + "  "}Easy earn App earn daily rewards !</Text>
+                </View>
+
 
                 <TouchableOpacity
                   style={{
@@ -947,8 +978,8 @@ const Home = () => {
                     backgroundColor: '#0a203e',
                     color: '#fff',
                     elevation: responsiveWidth(1.2),
-                    alignSelf:'center'
-                    
+                    alignSelf: 'center'
+
                   }}
                   // disabled={dailyRewardButton}
                   onPress={() => {
@@ -972,12 +1003,12 @@ const Home = () => {
 
 
       <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      requestOptions={{
-        requestNonPersonalizedAdsOnly: true,
-      }}
-    />
+        unitId={adUnitId}
+        size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+        requestOptions={{
+          requestNonPersonalizedAdsOnly: true,
+        }}
+      />
 
 
 
