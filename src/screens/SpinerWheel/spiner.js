@@ -18,9 +18,9 @@ const participants = [
   'LOST',
   'WIN',
   'LOST',
-  'LOST',
   'WIN',
   'LOST',
+  'WIN',
 ];
 class Spiner extends Component {
   constructor(props) {

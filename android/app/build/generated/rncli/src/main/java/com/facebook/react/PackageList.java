@@ -31,6 +31,8 @@ import com.reactnativegooglesignin.RNGoogleSigninPackage;
 import com.inbrain.InBrainSurveysPackage;
 // lottie-react-native
 import com.airbnb.android.react.lottie.LottiePackage;
+// react-native-applovin-max
+import com.applovin.reactnative.AppLovinMAXPackage;
 // react-native-device-info
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 // react-native-encrypted-storage
@@ -114,6 +116,7 @@ public class PackageList {
       new RNGoogleSigninPackage(),
       new InBrainSurveysPackage(),
       new LottiePackage(),
+      new AppLovinMAXPackage(),
       new RNDeviceInfo(),
       new RNEncryptedStoragePackage(),
       new RNGestureHandlerPackage(),

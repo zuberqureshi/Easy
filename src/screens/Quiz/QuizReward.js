@@ -9,18 +9,39 @@ import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
 import VersionCheck from 'react-native-version-check';
+import AppLovinMAX from  "react-native-applovin-max";
 
 
+//admob
 const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
 const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
 const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
-
 const interstitial = InterstitialAd.createForAdRequest(adUnitIdIntrestial, { 
 });
 const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded,{} );
+//admob
+
+//applovin
+
+AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2WdHqlug5t5IG_ZSo2D6VGE11RWPocUqk").then(configuration => {
+  // SDK is initialized, start loading ads
+}).catch(error => {
+});
+const BANNER_AD_UNIT_ID = Platform.select({
+  android: '2c0d4e4e0e0d9af8'
+ });
+ const REWARDED_AD_UNIT_ID = Platform.select({
+  android: '3365fad27fce67ed',
+ });
+ const INTERSTITIAL_AD_UNIT_ID = Platform.select({
+  android: '8fba0df7d5246704',
+ });
+//applovin
+
 
 const QuizReward = ({route}) => {
     const navigation = useNavigation();
+    const [buttonDisableTrue, setbuttonDisableTrue] = useState(false)
 
 
     const authCtx = useContext(AuthContext);
@@ -31,8 +52,8 @@ const QuizReward = ({route}) => {
 
     const  quizRewardClaim = async () =>{
         // const data = await JSON.parse(seting)
-        if(authCtx.quizValue < 6){
-          Alert.alert('Sorry ! Your Score is Less than 6 , Try again ' );
+        if(authCtx.quizValue < 5){
+          Alert.alert('Sorry ! Your Score is Less than 5 , Try again ' );
           navigation.navigate('Home');
 
           return;
@@ -54,9 +75,10 @@ const QuizReward = ({route}) => {
        const quizReward = await CallApiJson('gkRewardClaim', 'POST',body);
       //  setLoadingStatus(false);
       //  setuserProfileData(profileData);
+      setbuttonDisableTrue(true);
+
         if(quizReward.error===false){
            Alert.alert( ' You Have Won  ');
-
         } 
         navigation.navigate('Home')
 
@@ -108,6 +130,43 @@ useEffect(() => {
   };
 }, []);
 
+
+
+//applovin 
+useEffect(() => {
+
+  //intrestial
+  AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
+  const appLovinIntrestial = AppLovinMAX.addInterstitialLoadedEventListener( async () => {
+    // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
+    const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+    if (isInterstitialReady) {
+      AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+     
+    }
+  });
+  // rewarded
+  AppLovinMAX.loadRewardedAd(REWARDED_AD_UNIT_ID);
+  const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
+    const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
+if (isRewardedAdReady) {
+ AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+}
+  });
+  //rewarded
+
+
+ 
+   return () => { 
+    appLovinIntrestial();
+    appLovinRewarded();
+
+   }
+
+}, []);
+//applovin 
+
+
     //header
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -145,9 +204,7 @@ useEffect(() => {
    <BannerAd
       unitId={adUnitId}
       size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      requestOptions={{
-        requestNonPersonalizedAdsOnly: true,
-      }}
+    
     />
     <View style={{}}>
      <LinearGradient colors={["#0a203e", "#1f4c86"]}
@@ -188,6 +245,8 @@ marginTop:responsiveWidth(20)
             </Text>
             <TouchableOpacity
               style={styles.closeBUtton}
+              disabled={ buttonDisableTrue }
+
               onPress={() => {
                 // setModalVisible(!modalVisible);
                 quizRewardClaim();
@@ -200,9 +259,7 @@ marginTop:responsiveWidth(20)
           <BannerAd
       unitId={adUnitId}
       size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      requestOptions={{
-        requestNonPersonalizedAdsOnly: true,
-      }}
+      
     />
 
     </View>

@@ -27,6 +27,36 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"共有"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g>と共有"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"折りたたむ"</string>
+    <string name="applovin_agree_message">アプリを利用するために「次へ」をクリックしてください。</string>
+    <string name="applovin_alt_privacy_policy_text"/>
+    <string name="applovin_continue_button_text">次へ</string>
+    <string name="applovin_gdpr_advertising_partners_screen_message">プライバシーポリシーで説明されているように、お客様の同意を得て、このデータを次のパートナーと共有し、パーソナライズド広告またはコンテンツを提供できるようにする場合があります。</string>
+    <string name="applovin_gdpr_advertising_partners_screen_title">パーソナライズド広告とコンテンツ</string>
+    <string name="applovin_gdpr_analytics_partners_screen_message">プライバシーポリシーで説明されているように、お客様の同意を得て、パフォーマンス測定とプロダクトおよびサービスの改善を支援するために、このデータを次のパートナーと共有する場合があります。</string>
+    <string name="applovin_gdpr_analytics_partners_screen_title">パフォーマンス測定とプロダクト開発</string>
+    <string name="applovin_gdpr_are_you_sure_screen_message">当社または当社のパートナーが、プライバシーポリシーに記載されているように、パーソナライズド広告やコンテンツ、およびその他の目的でこのデータを利用できるようにします。\n\n\u2022 より関連性の高いエクスペリエンス、パーソナライズド広告、コンテンツを提供します\n\n\u2022 プロダクトの改善と開発をサポートします\n\n\u2022 アプリ内のプロモーションに参加できるようになります</string>
+    <string name="applovin_gdpr_are_you_sure_screen_title">確認しましたか？</string>
+    <string name="applovin_gdpr_back_button_text">戻る</string>
+    <string name="applovin_gdpr_learn_more_screen_bullet_1">アプリを無料で提供することができます！</string>
+    <string name="applovin_gdpr_learn_more_screen_bullet_2">パーソナライズド広告やコンテンツなど、より関連性の高いエクスペリエンスを提供します</string>
+    <string name="applovin_gdpr_learn_more_screen_bullet_3">プロダクトの改善と開発をサポートします</string>
+    <string name="applovin_gdpr_learn_more_screen_bullet_4">アプリ内のプロモーションに参加できるようになります</string>
+    <string name="applovin_gdpr_learn_more_screen_message_1">当社のアプリをダウンロードしていただきありがとうございます！ 当社とパートナーがこのデータを利用できるようにすることで、以下のようなより良い体験を提供することが出来ます。</string>
+    <string name="applovin_gdpr_learn_more_screen_message_2">選択は後からでも変更可能です。お客様がデータを共有しないと選択した場合でもアプリ内で広告は表示されます。 ただし、こちらの広告はお客様との関連性が低い場合があります。</string>
+    <string name="applovin_gdpr_main_screen_analytics_purposes_switch_text">パフォーマンス測定とプロダクト開発</string>
+    <string name="applovin_gdpr_main_screen_learn_more_button_text">さらに詳しく</string>
+    <string name="applovin_gdpr_main_screen_message">プライバシーポリシーで説明されているように、お客様の同意を得て、IPアドレスやデジタル識別子などのデバイスに関する特定の情報を収集させていただいております。 このデータにより、より関連性の高いパーソナライズド広告を提供させていただいております。\n\n以下では、当社または当社のパートナーが利用できるデータをを選択できます。</string>
+    <string name="applovin_gdpr_main_screen_personalized_advertising_purposes_switch_text">パーソナライズド広告とコンテンツ</string>
+    <string name="applovin_gdpr_main_screen_pp_and_tos_switch_text">16歳以上であり、利用規約に同意し、プライバシーポリシーを承認しました。</string>
+    <string name="applovin_gdpr_main_screen_privacy_policy_switch_text">16歳以上であり、プライバシーポリシーを読み、同意します。</string>
+    <string name="applovin_gdpr_main_screen_title">%sをダウンロードしていただきありがとうございます！</string>
+    <string name="applovin_gdpr_understand_and_continue_button_text">理解し、同意します</string>
+    <string name="applovin_learn_more_screen_title">%sを無料で楽しめるよう、サポートをお願い致します！</string>
+    <string name="applovin_pp_and_tos_title">%s を使用するためには利用規約への同意およびプライバシーポリシーの確認が必要です。</string>
+    <string name="applovin_pp_title">%sを使用するためにはプライバシーポリシーを慎重に確認し、承認する必要があります。</string>
+    <string name="applovin_privacy_policy_text">プライバシーポリシー</string>
+    <string name="applovin_terms_of_service_text">利用規約</string>
+    <string name="applovin_terms_of_use_text">利用規約</string>
     <string msgid="881409763997275156" name="call_notification_answer_action">"応答"</string>
     <string msgid="8793775615905189152" name="call_notification_answer_video_action">"ビデオ"</string>
     <string msgid="3229508546291798546" name="call_notification_decline_action">"拒否"</string>
