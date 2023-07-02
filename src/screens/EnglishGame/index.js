@@ -52,31 +52,25 @@ const EnglishGame = () => {
     setActivty(true)
     if(word==null){
         Alert.alert('Please fill the answer,After submit');
-        setActivty(false)
+        setActivty(false);
+        return;
+
     }
  else{   // const data = await JSON.parse(seting)
    const  userdata = await getToken();
    const userdataParsed = await JSON.parse(userdata)
    const body = {
     user_id: userdataParsed.id,
-    word:word
+    word:word,
+    orig_word:gameData?.data?.word
   };
 
    const data = await CallApiJson('claimEnglishQuestion', 'POST',body);
-//    setLoadingStatus(false);
-setActivty(false)
-
-//    setGameData(data);
-
-  showToast(data.msg)
-
-
- navigation.navigate('Home')
-    console.log('English game word Result',data);}
-
+   setActivty(false)
+   Alert.alert(data.msg);
+   navigation.navigate('Home');
   }
-
-
+}
       
     useEffect(() => {
     //   console.log('userprofile',userProfileData)
@@ -124,7 +118,7 @@ useLayoutEffect(() => {
     <View style={{flex:1,backgroundColor: '#0a203e'}}>
      <Loader loadingStatus = {loadingStatus} />
         <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),letterSpacing: responsiveWidth(0.2),
-        marginVertical:responsiveWidth(5),marginLeft:responsiveWidth(4)}}>English Guess Word Game</Text>
+        marginVertical:responsiveWidth(5),marginLeft:responsiveWidth(4)}}> Guess the correct word using given letters   </Text>
      <View style={{flex:0.6,justifyContent:'center',paddingHorizontal:responsiveWidth(10)}}>
       <LinearGradient colors={["#0a203e", "#1f4c86"]}
                    useAngle={true}
@@ -150,7 +144,7 @@ useLayoutEffect(() => {
                borderRadius: 10,
              }}> */}
 
-             <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1)}}>Word Is : {gameData?.data?.word}</Text>
+             <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1)}}> Given Lettter is  : {gameData?.data?.word}</Text>
 
              <View style={{  borderWidth: responsiveFontSize(0.2),
      borderColor: '#0a203e', 
@@ -161,7 +155,7 @@ useLayoutEffect(() => {
        alignSelf: 'center' }}>
               <TextInput
                 onChangeText={text => setWord(text)}
-                placeholder="Enter Your Correct Word"
+                placeholder="Enter Correct Word"
                 placeholderTextColor="#fff"
                 autoCorrect={false}
                 value={word}
