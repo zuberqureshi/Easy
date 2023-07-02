@@ -40,7 +40,7 @@ const BANNER_AD_UNIT_ID = Platform.select({
 //applovin
 
 
-const delay  = 150;
+const delay  = 180;
 const delaySeconds  = delay*1000;
 
 const Youtube = ({ route }) => {
