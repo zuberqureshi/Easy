@@ -45,6 +45,8 @@ const EnglishGame = () => {
     const [word, setWord] = useState()
     const [loadingStatus, setLoadingStatus] = useState(false)
     const [activty, setActivty] = useState(false)
+    const [origWord, setorigWord] = useState()
+
     const [gameData, setGameData] = useState({});
 
     const navigation = useNavigation();
@@ -64,7 +66,25 @@ const EnglishGame = () => {
     
          const data = await CallApiJson('getEnglishQuestion', 'POST',body);
          setLoadingStatus(false);
-    
+
+         if(  data.error == false){
+          let oword = data.data.word;
+           oword   = oword.split('');
+
+          //Remove the first and the last letter
+          let first = oword.shift();
+          let last = oword.pop();
+        
+          //Shuffle the remaining letters
+          for (let i = oword.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [oword[i], oword[j]] = [oword[j], oword[i]];
+          }
+          oword =  first + oword.join("") + last;
+          setorigWord(  oword  );
+
+         }
+
          setGameData(data);
           console.log('English game word data',data);
       }
@@ -265,7 +285,7 @@ useLayoutEffect(() => {
                borderRadius: 10,
              }}> */}
 
-             <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1)}}> Given Lettter is  : {gameData?.data?.word}</Text>
+             <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1)}}> Given Lettter is  : {origWord }</Text>
 
              <View style={{  borderWidth: responsiveFontSize(0.2),
      borderColor: '#0a203e', 
