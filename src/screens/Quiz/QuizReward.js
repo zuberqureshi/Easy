@@ -204,9 +204,7 @@ if (isRewardedAdReady) {
    <BannerAd
       unitId={adUnitId}
       size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      requestOptions={{
-        requestNonPersonalizedAdsOnly: true,
-      }}
+    
     />
     <View style={{}}>
      <LinearGradient colors={["#0a203e", "#1f4c86"]}
@@ -261,9 +259,7 @@ marginTop:responsiveWidth(20)
           <BannerAd
       unitId={adUnitId}
       size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      requestOptions={{
-        requestNonPersonalizedAdsOnly: true,
-      }}
+      
     />
 
     </View>

@@ -313,9 +313,7 @@ if (isRewardedAdReady) {
    <BannerAd
       unitId={adUnitId}
       size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      requestOptions={{
-        requestNonPersonalizedAdsOnly: true,
-      }}
+     
     />
 
 <Loader loadingStatus = {loadingStatus} />
@@ -769,9 +767,7 @@ if (isRewardedAdReady) {
       <BannerAd
       unitId={adUnitId}
       size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      requestOptions={{
-        requestNonPersonalizedAdsOnly: true,
-      }}
+     
     />
   
 

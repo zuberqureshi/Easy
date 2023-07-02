@@ -14,9 +14,11 @@ import IconEntypo from 'react-native-vector-icons/Entypo';
 import LinearGradient from 'react-native-linear-gradient'
 import VersionCheck from 'react-native-version-check';
 import YoutubePlayer from "react-native-youtube-iframe";
+import Loader from '../../components/common/loader/Loader';
 import crashlytics from '@react-native-firebase/crashlytics';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import { BannerAdSize, BannerAd, AppOpenAd, RewardedAd, RewardedAdEventType, TestIds, AdEventType, InterstitialAd } from 'react-native-google-mobile-ads';
+import AppLovinMAX from  "react-native-applovin-max";
 
 const adUnitId = 'ca-app-pub-5493577236373808/8452330072';
 const adUnitIdrewarded = 'ca-app-pub-5493577236373808/2741101726';
@@ -38,6 +40,22 @@ const navigationBarConfig = {
 };
 inbrain.setNavigationBarConfig(navigationBarConfig);
 
+
+//applovin
+AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2WdHqlug5t5IG_ZSo2D6VGE11RWPocUqk").then(configuration => {
+  // SDK is initialized, start loading ads
+}).catch(error => {
+});
+const BANNER_AD_UNIT_ID = Platform.select({
+  android: '2c0d4e4e0e0d9af8'
+ });
+ const REWARDED_AD_UNIT_ID = Platform.select({
+  android: '3365fad27fce67ed',
+ });
+ const INTERSTITIAL_AD_UNIT_ID = Platform.select({
+  android: '8fba0df7d5246704',
+ });
+//applovin
 const Home = () => {
 
 
@@ -52,6 +70,7 @@ const Home = () => {
   const [dailyRewardButton, setDailyRewardButton] = useState()
   const [userSettings, setUserSettings] = useState()
   const [banner, setBanner] = useState()
+  const [loadingStatus, setLoadingStatus] = useState(false)
 
   const [videoId, setVideoId] = useState()
 
@@ -285,9 +304,12 @@ const Home = () => {
 
   //Survey Reward
   const surveyCheck = async () => {
+    setLoadingStatus(true)
+
     if (polfishSurveyAvail == true) {
-      console.log('show survey');
-      RNPollfish.show();
+       RNPollfish.show();
+      setLoadingStatus(false);
+
     }
     else {
 
@@ -307,11 +329,10 @@ const Home = () => {
             console.log('nativeSurveys', nativeSurveys);
             inbrain.showNativeSurvey(nativeSurveys[0].id, nativeSurveys[0].surveyId)
               .then(() => {
-                console.log('success inbrain survey ');
+                setLoadingStatus(false);
               })
               .catch((err) => {
-                console.log('show inbrain survey errro ', err);
-
+                setLoadingStatus(false);
                 Alert.alert('No Survey Available Right,  Please Try After Some Time  ');
                 return;
 
@@ -320,18 +341,15 @@ const Home = () => {
 
           })
           .catch((err) => {
-            console.log('getting inbrain survey list errro ', err);
+            setLoadingStatus(false);
             Alert.alert('No Survey Available Right,  Please Try After Some Time  ');
             return;
           });
 
-
-
-
-
       } else {
+        setLoadingStatus(false);
         Alert.alert('Close The app and Start Again  ');
-
+        return;
       }
     }
 
@@ -385,12 +403,35 @@ const Home = () => {
 
 
 
+//applovin 
+useEffect(() => {
+
+ 
+  // rewarded
+
+    // You may use the utility method `AppLovinMAX.isTablet()` to help with view sizing adjustments
+    AppLovinMAX.createBanner(BANNER_AD_UNIT_ID, AppLovinMAX.AdViewPosition.BOTTOM_CENTER);
+
+    // Set background or background color for banners to be fully functional
+    // In this case we are setting it to black - PLEASE USE HEX STRINGS ONLY
+    AppLovinMAX.setBannerBackgroundColor(BANNER_AD_UNIT_ID, '#000000');
+  //rewarded
+  AppLovinMAX.showBanner(BANNER_AD_UNIT_ID);
+
+
+ 
+ 
+
+}, []);
+//applovin 
+
 
   return (
 
 
 
     <SafeAreaView style={{ flex: 1, backgroundColor: '#0a203e' }}>
+<Loader loadingStatus = {loadingStatus} />
 
       <ScrollView>
         <View style={{ flex: 1, }}>
@@ -1005,9 +1046,7 @@ const Home = () => {
       <BannerAd
         unitId={adUnitId}
         size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-        requestOptions={{
-          requestNonPersonalizedAdsOnly: true,
-        }}
+        
       />
 
 
