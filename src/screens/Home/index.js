@@ -8,6 +8,7 @@ import EncryptedStorage from 'react-native-encrypted-storage';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { sliderData } from '../../components/slider/data'
 import BannerSlider from '../../components/slider/BannerSlider'
+import Loader from '../../components/common/loader/Loader';
 import { windowHeight, windowWidth } from '../../utiles/Dimensions'
 import styles from './style'
 import IconEntypo from 'react-native-vector-icons/Entypo';
@@ -79,6 +80,7 @@ const Home = () => {
   const [userSettings, setUserSettings] = useState()
   const [banner, setBanner] = useState()
   const [videoId, setVideoId] = useState()
+  const [loadingStatus, setLoadingStatus] = useState(false)
 
   const navigation = useNavigation();
   const isFocused = useIsFocused()
@@ -322,8 +324,12 @@ const Home = () => {
 
   //Survey Reward
   const surveyCheck = async () => {
+    setLoadingStatus(true)
+
     if (polfishSurveyAvail == true) {
        RNPollfish.show();
+       setLoadingStatus(false)
+
     } 
     else {
 
@@ -341,10 +347,12 @@ const Home = () => {
         .then((nativeSurveys) => {
                  inbrain.showNativeSurvey(nativeSurveys[0].id, nativeSurveys[0].surveyId )
         .then(() => {
+          setLoadingStatus(false)
+
           console.log('success inbrain survey ');
         })
         .catch((err) => {
- 
+          setLoadingStatus(false)
           Alert.alert('No Survey Available Right,  Please Try After Some Time  '); 
           return;
 
@@ -353,6 +361,7 @@ const Home = () => {
 
         })
         .catch((err) => {
+          setLoadingStatus(false)
            Alert.alert('No Survey Available Right,  Please Try After Some Time  '); 
           return;
         });
@@ -362,6 +371,7 @@ const Home = () => {
 
 
       }else{
+        setLoadingStatus(false)
         Alert.alert('Close The app and Start Again  ');
 
       }
@@ -406,6 +416,8 @@ const Home = () => {
   return (
 
     <SafeAreaView style={{ flex: 1, backgroundColor: '#0a203e' }}>
+
+    <Loader loadingStatus = {loadingStatus} />
 
       <ScrollView>
         <View style={{ flex: 1, }}>
