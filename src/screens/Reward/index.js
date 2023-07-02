@@ -6,14 +6,39 @@ import LinearGradient from 'react-native-linear-gradient'
 import Loader from '../../components/common/loader/Loader';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
+//goggle admob
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType, RewardedInterstitialAd, TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
+//applovin
+import AppLovinMAX from  "react-native-applovin-max";
+
+//goggle admob
 const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
 const adUnitIdrewarded =   'ca-app-pub-5493577236373808/2741101726';
 const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
 const adUnitIdIntrestialRewarded  ='ca-app-pub-5493577236373808/8357047029';
+
 const interstitial = InterstitialAd.createForAdRequest(adUnitIdIntrestial, { });
 const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded,{} );
 const rewardedInterstitial = RewardedInterstitialAd.createForAdRequest(adUnitIdIntrestialRewarded, {});
+//goggle admob
+
+//applovin
+
+AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2WdHqlug5t5IG_ZSo2D6VGE11RWPocUqk").then(configuration => {
+  // SDK is initialized, start loading ads
+}).catch(error => {
+});
+const BANNER_AD_UNIT_ID = Platform.select({
+  android: '2c0d4e4e0e0d9af8'
+ });
+ const REWARDED_AD_UNIT_ID = Platform.select({
+  android: '3365fad27fce67ed',
+ });
+ const INTERSTITIAL_AD_UNIT_ID = Platform.select({
+  android: '8fba0df7d5246704',
+ });
+//applovin
+
 
 const Reward = () => {
 
@@ -72,14 +97,15 @@ const Reward = () => {
 
       const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
            rewarded.show();
-          setLoadingStatus(false)
+           setLoadingStatus(false)
+           setbuttonDisableTrue(false)
+
       });
       const unsubscribeEarned = rewarded.addAdEventListener(
         RewardedAdEventType.EARNED_REWARD,
         reward => {
            setLoadingStatus(false)
            setbuttonDisableTrue(false)
-
         },
       );
   
@@ -90,6 +116,8 @@ const Reward = () => {
 
     const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
       interstitial.show()
+      setbuttonDisableTrue(false)
+
     });
 
     // Start loading the interstitial straight away
@@ -101,8 +129,7 @@ const Reward = () => {
     const unsubscribeLoadedIntrestialRewarded = rewardedInterstitial.addAdEventListener(
       RewardedAdEventType.LOADED,
       () => {
-        setLoaded(true);
-      },
+       },
     );
     const unsubscribeEarnedIntrestialRewarded = rewardedInterstitial.addAdEventListener(
       RewardedAdEventType.EARNED_REWARD,
@@ -126,6 +153,50 @@ const Reward = () => {
       };
     }, []);
 
+
+
+ 
+
+//applovin 
+useEffect(() => {
+
+  //intrestial
+  AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
+  const appLovinIntrestial = AppLovinMAX.addInterstitialLoadedEventListener( async () => {
+    // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
+    const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+    if (isInterstitialReady) {
+    AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+
+     setbuttonDisableTrue(false);
+ 
+    }
+  });
+  // rewarded
+  AppLovinMAX.loadRewardedAd(REWARDED_AD_UNIT_ID);
+  const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
+    const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
+if (isRewardedAdReady) {
+ AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+  setbuttonDisableTrue(false);
+}
+  });
+  //rewarded
+
+
+ 
+   return () => { 
+    appLovinIntrestial();
+    appLovinRewarded();
+
+   }
+
+}, []);
+//applovin 
+
+
+
+//
 
   //  Header start
   useLayoutEffect(() => {

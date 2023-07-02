@@ -11,13 +11,32 @@ import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import moment from 'moment'
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
+import AppLovinMAX from  "react-native-applovin-max";
 
+//admob
 const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
 const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
 const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
 const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
 const interstitial = InterstitialAd.createForAdRequest(adUnitIdIntrestial, { 
 });
+//admob
+
+//applovin
+AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2WdHqlug5t5IG_ZSo2D6VGE11RWPocUqk").then(configuration => {
+  // SDK is initialized, start loading ads
+}).catch(error => {
+});
+const BANNER_AD_UNIT_ID = Platform.select({
+  android: '2c0d4e4e0e0d9af8'
+ });
+ const REWARDED_AD_UNIT_ID = Platform.select({
+  android: '3365fad27fce67ed',
+ });
+ const INTERSTITIAL_AD_UNIT_ID = Platform.select({
+  android: '8fba0df7d5246704',
+ });
+//applovin
 const Wallet = () => {
   
 
@@ -75,7 +94,7 @@ useEffect(() => {
 
    const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
     setLoadingStatus(false)
-      rewarded.show();
+      // rewarded.show();
 
   });
   const unsubscribeEarned = rewarded.addAdEventListener(
@@ -91,7 +110,7 @@ useEffect(() => {
   rewarded.load();
 
   const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
-    interstitial.show()
+      interstitial.show()
   });
  
  // Start loading the interstitial straight away
@@ -130,6 +149,44 @@ useEffect(() => {
 
 
 
+
+ 
+
+ 
+
+//applovin 
+useEffect(() => {
+
+  //intrestial
+  AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
+  const appLovinIntrestial = AppLovinMAX.addInterstitialLoadedEventListener( async () => {
+    // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
+    const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+    if (isInterstitialReady) {
+      setclaimButton(false);
+      setbuttonDisableTrue(false);
+    AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+     
+    }
+  });
+  // rewarded
+  AppLovinMAX.loadRewardedAd(REWARDED_AD_UNIT_ID);
+  const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
+    const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
+if (isRewardedAdReady) {
+ AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+}
+  });
+  //rewarded
+ 
+   return () => { 
+    appLovinIntrestial();
+    appLovinRewarded();
+
+   }
+
+}, []);
+//applovin 
 
 
 
@@ -173,7 +230,7 @@ useEffect(() => {
     }
 
     if( !paytmNo  ){
-      Alert.alert('Enter Your Paytm Number '); return;
+      Alert.alert('Enter Your UPI  '); return;
     }
 
     if( selectedCard > userProfileData?.data?.wallet_coins  ){
@@ -535,7 +592,7 @@ useEffect(() => {
                 placeholder="Enter Your UPI ID  "
                 placeholderTextColor="#fff"
                 autoCorrect={false}
-                keyboardType='number-pad'
+                keyboardType='numeric'
                 onChangeText={text => setPaytmNo(text)}
                 value={paytmNo}
                 color='#fff'
@@ -700,14 +757,8 @@ useEffect(() => {
          
             </View>
             
-
             <Image style={{ width: responsiveWidth(43.7), height: responsiveHeight(14),resizeMode:'contain' }} source={require("../../assets/greentick.gif")} />
             
-
-
-
-
-
           {/* </View> */}
           </LinearGradient>
         

@@ -1,4 +1,4 @@
-import { View, Alert, Text, Button, Pressable, SafeAreaView, ScrollView, Image, TouchableOpacity, Modal, TouchableHighlight, ToastAndroid, BackHandler, Linking } from 'react-native'
+import { View, Alert, Text, Button, Platform, Pressable, SafeAreaView, ScrollView, Image, TouchableOpacity, Modal, TouchableHighlight, ToastAndroid, BackHandler, Linking } from 'react-native'
 import React from 'react'
 import { useLayoutEffect, useState, useEffect, useRef } from "react";
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -15,20 +15,23 @@ import LinearGradient from 'react-native-linear-gradient'
 import VersionCheck from 'react-native-version-check';
 import YoutubePlayer from "react-native-youtube-iframe";
 import crashlytics from '@react-native-firebase/crashlytics';
+import AppLovinMAX from  "react-native-applovin-max";
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
+import inbrain, {InBrainNativeSurvey, InBrainSurveyFilter, InBrainSurveyCategory} from 'inbrain-surveys';
+import RNPollfish from 'react-native-plugin-pollfish';
 
+
+//admob
 const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
 const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
 const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
+// admob
 
-import RNPollfish from 'react-native-plugin-pollfish';
-const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(true);
-RNPollfish.init(builder.build());
 
-import inbrain, {InBrainNativeSurvey, InBrainSurveyFilter, InBrainSurveyCategory} from 'inbrain-surveys';
+
+// ibrain
 const apiSecretInBrain ='Tlz6uQqRLkg5WKGFFGJZqIiReUlwIP+RYbQUOtJzbDNdr1VfLHYlbLMTVf351Q6fZdWfKXQbCRfI73Xf0VEgzw==';
-
 const navigationBarConfig = {
   title: 'Easy Earn Survey',
   backgroundColor: '#00A5ED',
@@ -37,9 +40,32 @@ const navigationBarConfig = {
   hasShadow: false,
 };
 inbrain.setNavigationBarConfig(navigationBarConfig);
+// ibrain
+
+
+//applovin
+AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2WdHqlug5t5IG_ZSo2D6VGE11RWPocUqk").then(configuration => {
+  // SDK is initialized, start loading ads
+}).catch(error => {
+});
+const BANNER_AD_UNIT_ID = Platform.select({
+  android: '2c0d4e4e0e0d9af8'
+ });
+ const REWARDED_AD_UNIT_ID = Platform.select({
+  android: '3365fad27fce67ed',
+ });
+ const INTERSTITIAL_AD_UNIT_ID = Platform.select({
+  android: '8fba0df7d5246704',
+ });
+//applovin
+
+//polfish
+const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(true);
+RNPollfish.init(builder.build());
+//polfish
+
 
 const Home = () => {
-
 
   //  const isInternet = useRef(checkInternet)
   const [polfishSurveyAvail, setpolfishSurveyAvail] = useState(false);
@@ -52,9 +78,7 @@ const Home = () => {
   const [dailyRewardButton, setDailyRewardButton] = useState()
   const [userSettings, setUserSettings] = useState()
   const [banner, setBanner] = useState()
-
   const [videoId, setVideoId] = useState()
-
 
   const navigation = useNavigation();
   const isFocused = useIsFocused()
@@ -102,12 +126,27 @@ const Home = () => {
 
 
 
+  async function initializeBannerAds()
+  {
+      // Banners are automatically sized to 320x50 on phones and 728x90 on tablets
+      // You may use the utility method `AppLovinMAX.isTablet()` to help with view sizing adjustments
+      AppLovinMAX.createBanner(BANNER_AD_UNIT_ID, AppLovinMAX.AdViewPosition.BOTTOM_CENTER);
+
+      // Set background or background color for banners to be fully functional
+      // In this case we are setting it to black - PLEASE USE HEX STRINGS ONLY
+      AppLovinMAX.setBannerBackgroundColor(BANNER_AD_UNIT_ID, '#215295');
+
+      AppLovinMAX.showBanner(BANNER_AD_UNIT_ID);
+      console.log("banner loaded ");
+
+  }
+ 
+ 
   const set = async () => {
     await settings();
     await getUserInfo();
     await banners();
-
-
+    await initializeBannerAds();
 
   }
 
@@ -116,8 +155,7 @@ const Home = () => {
     const latestVersion = await VersionCheck.getLatestVersion();
     const currentVersion = VersionCheck.getCurrentVersion()
     let updateNeeded = await VersionCheck.needUpdate();
-    console.log( 'checkUpdateNeeded-latestVersion',latestVersion , 'userSettings?.data?.version_control_froce',userSettings?.data, 'currentVersion',currentVersion,'updateNeeded',updateNeeded )
-    if (    (updateNeeded.isNeeded )  ) {
+     if (    (updateNeeded.isNeeded )  ) {
         Alert.alert('Update Required ',
         'Download Latest Version From PlayStore',
         [ 
@@ -131,15 +169,16 @@ const Home = () => {
         ],
         { cancelable:false }
         
-        
         );
     }
 }
   useEffect(() => {
-    set();
-     checkUpdateNeeded()
+
+     set();
+     checkUpdateNeeded();
+       
     return () => {
-      console.log('return')
+ 
     }
   }, [])
 
@@ -154,11 +193,9 @@ const Home = () => {
  
   //Get User Info
   const getUserInfo = async () => {
-    console.log("getdata Callling....")
-    const ds = await getToken();
+     const ds = await getToken();
     const data = await JSON.parse(ds)
-    console.log("getdata Callling....recieved by async",data)
-    if( data.id ){
+     if( data.id ){
      const fcmToken =  await EncryptedStorage.getItem('fcmToken');
       const tokenSet = {
         user_id: data.id,
@@ -286,11 +323,9 @@ const Home = () => {
   //Survey Reward
   const surveyCheck = async () => {
     if (polfishSurveyAvail == true) {
-      console.log('show survey');
-      RNPollfish.show();
+       RNPollfish.show();
     } 
     else {
-
 
 
       if( userInfo.email){
@@ -304,14 +339,12 @@ const Home = () => {
         inbrain
         .getNativeSurveys(filter)
         .then((nativeSurveys) => {
-          console.log('nativeSurveys',nativeSurveys);
-                inbrain.showNativeSurvey(nativeSurveys[0].id, nativeSurveys[0].surveyId )
+                 inbrain.showNativeSurvey(nativeSurveys[0].id, nativeSurveys[0].surveyId )
         .then(() => {
           console.log('success inbrain survey ');
         })
         .catch((err) => {
-          console.log('show inbrain survey errro ',err);
-
+ 
           Alert.alert('No Survey Available Right,  Please Try After Some Time  '); 
           return;
 
@@ -320,8 +353,7 @@ const Home = () => {
 
         })
         .catch((err) => {
-          console.log('getting inbrain survey list errro ',err);
-          Alert.alert('No Survey Available Right,  Please Try After Some Time  '); 
+           Alert.alert('No Survey Available Right,  Please Try After Some Time  '); 
           return;
         });
 
@@ -339,56 +371,39 @@ const Home = () => {
 
   //Survey Reward
   const surveyRewardClaim = async () => {
-    // console.log("User data home survey API", userInfo.id)
-    // console.log('dailyreward eligiblaForDailyReward ',dailyRewardButton)
-
+   
     const body = {
       // user_id: userInfo.id,
     };
     const surveyReward = await CallApiJson('surveyrewardclaim', 'POST', body);
-
-    // console.log('surveyReward Claim after api ', surveyReward.msg)
 
   }
 
 
   //youtube video ID Api 
   const youtubeVideoId = async () => {
-    console.log("User data home youtubeVideoId API", userInfo.id)
-    // console.log('dailyreward eligiblaForDailyReward ',dailyRewardButton)
+     // console.log('dailyreward eligiblaForDailyReward ',dailyRewardButton)
 
     // const body = {
     //   user_id: userInfo.id,
     // };
     const youtubeVideo = await CallApiJson('youtubevideolist', 'GET');
     //  const data = await JSON.stringify(youtubeVideo)
-    console.log('youtubeVideoId after api ', youtubeVideo.data.video_url)
-    await setVideoId(youtubeVideo)
+     await setVideoId(youtubeVideo)
   }
 
 
   //youtube video Reward Claim Api 
   const youtubeVideoRewardClaim = async () => {
-    console.log("User data home youtubeVideo Reward API", userInfo.id)
-    // console.log('dailyreward eligiblaForDailyReward ',dailyRewardButton)
-
-    const body = {
+     const body = {
       user_id: userInfo.id,
     };
     const youtubeVideoReward = await CallApiJson('youtubevideorewardclaim', 'POST', body);
     //  const data = await JSON.stringify(youtubeVideo)
-    console.log('youtubeVideo Reward after api ', youtubeVideoReward.msg)
-
+ 
   }
 
-
-
-
-
-
   return (
-
-
 
     <SafeAreaView style={{ flex: 1, backgroundColor: '#0a203e' }}>
 
@@ -978,7 +993,7 @@ const Home = () => {
         requestNonPersonalizedAdsOnly: true,
       }}
     />
-
+ 
 
 
     </SafeAreaView>

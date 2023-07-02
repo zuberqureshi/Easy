@@ -11,19 +11,45 @@ import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import Loader from '../../components/common/loader/Loader';
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
+import AppLovinMAX from  "react-native-applovin-max";
 
+//admob
 const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
 const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
 const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
-
 const interstitial = InterstitialAd.createForAdRequest(adUnitIdIntrestial, { 
 });
 const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded,{} );
+//admob
+
+
+//applovin
+
+AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2WdHqlug5t5IG_ZSo2D6VGE11RWPocUqk").then(configuration => {
+  // SDK is initialized, start loading ads
+}).catch(error => {
+});
+const BANNER_AD_UNIT_ID = Platform.select({
+  android: '2c0d4e4e0e0d9af8'
+ });
+ const REWARDED_AD_UNIT_ID = Platform.select({
+  android: '3365fad27fce67ed',
+ });
+ const INTERSTITIAL_AD_UNIT_ID = Platform.select({
+  android: '8fba0df7d5246704',
+ });
+//applovin
+
 
 import  { AuthContext } from "../../utiles/auth-context";
 const Quiz = ({route}) => {
     // alert(JSON.stringify(quizdata[1].question))
 
+    const navigation = useNavigation();
+    const [currentIndex, setCurrentIndex] = useState(1);
+    const [questions, setQuestions] = useState([]);
+     const listRef = useRef();
+    const [modalVisible, setModalVisible] = useState(false);
     const authCtx = useContext(AuthContext);
     const [loadingStatus, setLoadingStatus] = useState(false)
 
@@ -109,12 +135,46 @@ useEffect(() => {
   };
  }, []);
 
-    const navigation = useNavigation();
-    const [currentIndex, setCurrentIndex] = useState(1);
-   
-    const [questions, setQuestions] = useState([]);
-     const listRef = useRef();
-    const [modalVisible, setModalVisible] = useState(false);
+
+  
+
+//applovin 
+useEffect(() => {
+
+  //intrestial
+  AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
+  const appLovinIntrestial = AppLovinMAX.addInterstitialLoadedEventListener( async () => {
+    // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
+    const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+    if (isInterstitialReady) {
+      setclaimButton(false);
+      setbuttonDisableTrue(false);
+    AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+     
+    }
+  });
+  // rewarded
+  AppLovinMAX.loadRewardedAd(REWARDED_AD_UNIT_ID);
+  const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
+    const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
+if (isRewardedAdReady) {
+ AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+}
+  });
+  //rewarded
+
+
+ 
+   return () => { 
+    appLovinIntrestial();
+    appLovinRewarded();
+
+   }
+
+}, []);
+//applovin 
+
+
     const OnSelectOption = (index, x) => {
       const tempData = questions;
       tempData.map((item, ind) => {

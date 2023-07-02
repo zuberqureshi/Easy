@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="applovin_sdk_consentFlowGdprBackground">#121212</color>
+    <color name="applovin_sdk_consentFlowGdprSwitchTrackDisabled">#818282</color>
+    <color name="applovin_sdk_consentFlowGdprTextColor">#FFFFFF</color>
     <style name="Theme.AppCompat.DayNight" parent="Theme.AppCompat"/>
     <style name="Theme.AppCompat.DayNight.DarkActionBar" parent="Theme.AppCompat"/>
     <style name="Theme.AppCompat.DayNight.Dialog" parent="Theme.AppCompat.Dialog"/>
