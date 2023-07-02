@@ -15,6 +15,7 @@ import Contact from '../screens/Contact/index';
 import VideoReward from '../screens/videoAdReward';
 import Youtube from '../screens/YoutubeVideo/index';
 import QuizReward from '../screens/Quiz/QuizReward';
+import EnglishGame from '../screens/EnglishGame/index';
 
 const HomeStack = createNativeStackNavigator();
 const MainStack = () => {
@@ -35,6 +36,8 @@ const MainStack = () => {
       <HomeStack.Screen name='Wallet' component={Wallet} options={{headerShown:true}} /> 
       <HomeStack.Screen name='Contact' component={Contact} options={{headerShown:true}} />
       <HomeStack.Screen name='QuizReward' component={QuizReward} options={{headerShown:true}} />
+      <HomeStack.Screen name='EnglishGame' component={EnglishGame} options={{headerShown:true}} />
+
       {/* <HomeStack.Screen name='Login' component={Login} /> */}
     </HomeStack.Navigator>
   )
