@@ -8,6 +8,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
+import VersionCheck from 'react-native-version-check';
 
 
 const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
@@ -39,12 +40,15 @@ const QuizReward = ({route}) => {
 
 
        const  userdata = await getToken();
-       const userdataParsed = await JSON.parse(userdata)
+       const userdataParsed = await JSON.parse(userdata);
+       const currentVersion = VersionCheck.getCurrentVersion();
+
        const body = {
         user_id: userdataParsed.id,
         category:route.params.category,
         totalques: route.params.totalques ,
-        correctques:authCtx.quizValue
+        correctques:authCtx.quizValue,
+        currentVersion:currentVersion
       };
   
        const quizReward = await CallApiJson('gkRewardClaim', 'POST',body);

@@ -807,6 +807,7 @@ color antiquewhite
 color aqua
 color aquamarine
 color azure
+color background
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
@@ -832,6 +833,8 @@ color burlywood
 color button_material_dark
 color button_material_light
 color cadetblue
+color call_notification_answer_color
+color call_notification_decline_color
 color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
@@ -964,6 +967,7 @@ color lime
 color limegreen
 color linen
 color magenta
+color main_text
 color maroon
 color material_blue_grey_800
 color material_blue_grey_900
@@ -1207,6 +1211,7 @@ dimen abc_text_size_title_material_toolbar
 dimen action_bar_size
 dimen appcompat_dialog_background_inset
 dimen autofill_inline_suggestion_icon_size
+dimen big_padding
 dimen browser_actions_context_menu_max_width
 dimen browser_actions_context_menu_min_padding
 dimen cardview_compat_inset_shadow
@@ -1268,9 +1273,11 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen elevation
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
+dimen header_text
 dimen highlight_alpha_material_colored
 dimen highlight_alpha_material_dark
 dimen highlight_alpha_material_light
@@ -1574,7 +1581,14 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_back
 drawable ic_calendar_black_24dp
+drawable ic_call_answer
+drawable ic_call_answer_low
+drawable ic_call_answer_video
+drawable ic_call_answer_video_low
+drawable ic_call_decline
+drawable ic_call_decline_low
 drawable ic_clear_black_24dp
 drawable ic_edit_black_24dp
 drawable ic_keyboard_arrow_left_black_24dp
@@ -1698,6 +1712,7 @@ id autofill_inline_suggestion_start_icon
 id autofill_inline_suggestion_subtitle
 id autofill_inline_suggestion_title
 id automatic
+id back_image
 id beginning
 id blocking
 id bottom
@@ -1783,10 +1798,6 @@ id ifRoom
 id image
 id info
 id italic
-id item1
-id item2
-id item3
-id item4
 id item_touch_helper_previous_elevation
 id labeled
 id labelled_by
@@ -1850,6 +1861,7 @@ id pin
 id pointer_events
 id progress_circular
 id progress_horizontal
+id progress_loader
 id radio
 id react_test_id
 id restart
@@ -1942,6 +1954,8 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toolbar
+id toolbar_title_text
 id top
 id topPanel
 id touch_outside
@@ -1963,6 +1977,8 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id web_view
+id web_views_container
 id wide
 id withText
 id wrap_content
@@ -2029,6 +2045,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_surveys
 layout admob_empty_layout
 layout autofill_inline_suggestion
 layout browser_actions_context_menu_page
@@ -2104,8 +2121,6 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
-menu example_menu
-menu example_menu2
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -2137,11 +2152,20 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string abort_survey
 string alert_description
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
+string call_notification_answer_action
+string call_notification_answer_video_action
+string call_notification_decline_action
+string call_notification_hang_up_action
+string call_notification_incoming_text
+string call_notification_ongoing_text
+string call_notification_screening_text
+string cancel
 string catalyst_change_bundle_location
 string catalyst_copy_button
 string catalyst_debug
@@ -2199,7 +2223,11 @@ string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
 string default_web_client_id
+string dont_abandon_the_survey_message
+string dont_abandon_the_survey_title
 string error_icon_content_description
+string error_inbrain_unavailable_message
+string error_inbrain_unavailable_title
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -2208,6 +2236,7 @@ string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
 string fcm_fallback_notification_channel_label
 string gcm_defaultSenderId
+string go_back
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
@@ -2217,6 +2246,7 @@ string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string image_description
 string imagebutton_description
+string inbrain_surveys
 string link_description
 string menu_description
 string menubar_description
@@ -2272,6 +2302,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string progressbar_description
 string project_id
+string quit
 string radiogroup_description
 string rn_tab_description
 string s1
@@ -2524,6 +2555,7 @@ style CardView_Light
 style DialogAnimationFade
 style DialogAnimationSlide
 style EmptyTheme
+style InBrainTheme
 style MaterialAlertDialog_MaterialComponents
 style MaterialAlertDialog_MaterialComponents_Body_Text
 style MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar

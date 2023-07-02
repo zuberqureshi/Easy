@@ -9,6 +9,7 @@ import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import YoutubePlayer from "react-native-youtube-iframe";
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
+import VersionCheck from 'react-native-version-check';
 
 const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
 const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
@@ -68,14 +69,14 @@ const settings = async () => {
 
     setLoadingStatus(true)
     // console.log('dailyreward eligiblaForDailyReward ',dailyRewardButton)
-
+    const currentVersion = VersionCheck.getCurrentVersion()
     const body = {
       user_id: userInfo.id,
+      currentVersion:currentVersion
     };
     const youtubeVideoReward = await CallApiJson('youtubevideorewardclaim', 'POST', body);
     //  const data = await JSON.stringify(youtubeVideo)
     setLoadingStatus(false)
-
     navigation.navigate('Home');
 
  

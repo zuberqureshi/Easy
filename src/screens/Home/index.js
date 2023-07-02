@@ -21,16 +21,22 @@ import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  Test
 const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
 const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
 const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
+
 import RNPollfish from 'react-native-plugin-pollfish';
-
 const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(true);
-
-
 RNPollfish.init(builder.build());
- 
-// const apiSecretInBrain ='Tlz6uQqRLkg5WKGFFGJZqIiReUlwIP+RYbQUOtJzbDNdr1VfLHYlbLMTVf351Q6fZdWfKXQbCRfI73Xf0VEgzw==';
-// inbrain.setInBrain('c9602f14-bb94-445d-b517-952682a71e9c', apiSecretInBrain, 'z123');
 
+import inbrain, {InBrainNativeSurvey, InBrainSurveyFilter, InBrainSurveyCategory} from 'inbrain-surveys';
+const apiSecretInBrain ='Tlz6uQqRLkg5WKGFFGJZqIiReUlwIP+RYbQUOtJzbDNdr1VfLHYlbLMTVf351Q6fZdWfKXQbCRfI73Xf0VEgzw==';
+
+const navigationBarConfig = {
+  title: 'Easy Earn Survey',
+  backgroundColor: '#00A5ED',
+  titleColor: '#FFFFFF',
+  buttonsColor: '#FFFFFF',
+  hasShadow: false,
+};
+inbrain.setNavigationBarConfig(navigationBarConfig);
 
 const Home = () => {
 
@@ -93,10 +99,15 @@ const Home = () => {
   // .catch((err) => {
   //   console.log('inbraincheckSurveysAvailable',err);
   // });
+
+
+
   const set = async () => {
     await settings();
     await getUserInfo();
     await banners();
+
+
 
   }
 
@@ -165,10 +176,8 @@ const Home = () => {
   //Get Banners
 
    const banners = async () => {
-    console.log("banner Callling....")
     const banners = await CallApiJson('banner', 'GET');
     // const data = await JSON.parse(seting)
-    console.log('banner data',banners?.data)
     await setBanner(banners?.data)
 
   }
@@ -279,8 +288,51 @@ const Home = () => {
     if (polfishSurveyAvail == true) {
       console.log('show survey');
       RNPollfish.show();
-    } else {
-      Alert.alert('No Survey Available Right , Please Try After Some Time ');
+    } 
+    else {
+
+
+
+      if( userInfo.email){
+        inbrain.setInBrain('c9602f14-bb94-445d-b517-952682a71e9c', apiSecretInBrain, userInfo.email);
+        inbrain.setUserID(userInfo.email)
+
+        let filter = {
+          placementId: 'b95f3c51-eb88-4f2a-a31b-e9d5e147d456'
+        };
+
+        inbrain
+        .getNativeSurveys(filter)
+        .then((nativeSurveys) => {
+          console.log('nativeSurveys',nativeSurveys);
+                inbrain.showNativeSurvey(nativeSurveys[0].id, nativeSurveys[0].surveyId )
+        .then(() => {
+          console.log('success inbrain survey ');
+        })
+        .catch((err) => {
+          console.log('show inbrain survey errro ',err);
+
+          Alert.alert('No Survey Available Right,  Please Try After Some Time  '); 
+          return;
+
+        });
+
+
+        })
+        .catch((err) => {
+          console.log('getting inbrain survey list errro ',err);
+          Alert.alert('No Survey Available Right,  Please Try After Some Time  '); 
+          return;
+        });
+
+
+       
+
+
+      }else{
+        Alert.alert('Close The app and Start Again  ');
+
+      }
     }
 
   }
@@ -559,7 +611,7 @@ const Home = () => {
                   <TouchableOpacity onPress={()=>{navigation.navigate('Quiz',{category:'IT'})}} >
                   <View style={styles.gameZoneSingleImgView}>
                     <Image style={styles.gameZoneSingleImg} source={require('../../assets/it.png')} />
-                    <Text style={styles.gameZoneImgText}>IT</Text>
+                    <Text style={styles.gameZoneImgText}>Coding</Text>
                   </View>
                   </TouchableOpacity>
 
@@ -603,7 +655,7 @@ const Home = () => {
             {/* //contest Zone DisAble */}
 
             {/* survey container - start */}
-            {/* <TouchableOpacity onPress={() => { surveyCheck() }}>
+            <TouchableOpacity onPress={() => { surveyCheck() }}>
               <View style={{ alignItems: 'center', marginTop: responsiveWidth(2) }}>
 
                 <View style={styles.surveyContainer}>
@@ -628,7 +680,7 @@ const Home = () => {
 
                 </View>
               </View>
-            </TouchableOpacity> */}
+            </TouchableOpacity>
             {/* survey container - end */}
 
             {/*YouTUbe Video-Start*/}

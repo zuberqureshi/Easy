@@ -106,6 +106,7 @@
     <color name="aqua">#00FFFF</color>
     <color name="aquamarine">#7FFFD4</color>
     <color name="azure">#F0FFFF</color>
+    <color name="background">#ffeeeeee</color>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
@@ -131,6 +132,8 @@
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="cadetblue">#5F9EA0</color>
+    <color name="call_notification_answer_color">#1d873b</color>
+    <color name="call_notification_decline_color">#d93025</color>
     <color name="cardview_dark_background">#FF424242</color>
     <color name="cardview_light_background">#FFFFFFFF</color>
     <color name="cardview_shadow_end_color">#03000000</color>
@@ -256,6 +259,7 @@
     <color name="limegreen">#32CD32</color>
     <color name="linen">#FAF0E6</color>
     <color name="magenta">#FF00FF</color>
+    <color name="main_text">@android:color/white</color>
     <color name="maroon">#800000</color>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
@@ -442,6 +446,7 @@
     <dimen name="action_bar_size">16dp</dimen>
     <dimen name="appcompat_dialog_background_inset">16dp</dimen>
     <dimen name="autofill_inline_suggestion_icon_size">20dp</dimen>
+    <dimen name="big_padding">16dp</dimen>
     <dimen name="browser_actions_context_menu_max_width">500dp</dimen>
     <dimen name="browser_actions_context_menu_min_padding">20dp</dimen>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
@@ -503,9 +508,11 @@
     <dimen name="design_textinput_caption_translate_y">5dp</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
+    <dimen name="elevation">3dp</dimen>
     <dimen name="fastscroll_default_thickness">8dp</dimen>
     <dimen name="fastscroll_margin">0dp</dimen>
     <dimen name="fastscroll_minimum_range">50dp</dimen>
+    <dimen name="header_text">18sp</dimen>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
@@ -850,11 +857,20 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="abort_survey">Forfeit Reward</string>
     <string name="alert_description" translatable="false">Alert</string>
     <string name="androidx_startup" translatable="false">androidx.startup</string>
     <string name="app_name">Easy Earn </string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
+    <string name="call_notification_answer_action">Answer</string>
+    <string name="call_notification_answer_video_action">Video</string>
+    <string name="call_notification_decline_action">Decline</string>
+    <string name="call_notification_hang_up_action">Hang Up</string>
+    <string name="call_notification_incoming_text">Incoming call</string>
+    <string name="call_notification_ongoing_text">Ongoing call</string>
+    <string name="call_notification_screening_text">Screening an incoming call</string>
+    <string name="cancel">Continue Survey</string>
     <string name="catalyst_change_bundle_location" project="catalyst" translatable="false">Change Bundle Location</string>
     <string name="catalyst_copy_button" project="catalyst" translatable="false">Copy\n</string>
     <string name="catalyst_debug" project="catalyst" translatable="false">Debug</string>
@@ -912,7 +928,11 @@
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="copy_toast_msg">Link copied to clipboard</string>
     <string name="default_web_client_id" translatable="false">978092792291-q516pofd6upmdlisfkgea3j1rpr6lrsg.apps.googleusercontent.com</string>
+    <string name="dont_abandon_the_survey_message">You will not be able to complete this survey at a later time and you will forfeit your reward.</string>
+    <string name="dont_abandon_the_survey_title">Are you sure you want to Quit?</string>
     <string name="error_icon_content_description">Error</string>
+    <string name="error_inbrain_unavailable_message">Sorry, inBrain is unavailable right now. Please try again later.</string>
+    <string name="error_inbrain_unavailable_title">inBrain is unavailable</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
@@ -921,6 +941,7 @@
     <string name="fallback_menu_item_share_link">Share link</string>
     <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
     <string name="gcm_defaultSenderId" translatable="false">978092792291</string>
+    <string name="go_back">Go back</string>
     <string name="google_api_key" translatable="false">AIzaSyChupaBwTEv6bc0zm1QZYv1Qw515V3Ie9U</string>
     <string name="google_app_id" translatable="false">1:978092792291:android:ea831650a3d60d51afa8d6</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyChupaBwTEv6bc0zm1QZYv1Qw515V3Ie9U</string>
@@ -930,6 +951,7 @@
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="image_description" translatable="false">Image</string>
     <string name="imagebutton_description" translatable="false">Button, Image</string>
+    <string name="inbrain_surveys">inBrain.ai Surveys</string>
     <string name="link_description" translatable="false">Link</string>
     <string name="menu_description" translatable="false">Menu</string>
     <string name="menubar_description" translatable="false">Menu Bar</string>
@@ -998,6 +1020,7 @@
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="progressbar_description" translatable="false">Progress Bar</string>
     <string name="project_id" translatable="false">earn-money-final-apk</string>
+    <string name="quit">Quit</string>
     <string name="radiogroup_description" translatable="false">Radio Group</string>
     <string name="rn_tab_description" translatable="false">Tab</string>
     <string name="s1">Save image</string>
@@ -2915,6 +2938,11 @@
     <item name="android:windowExitAnimation">@anim/catalyst_slide_down</item>
   </style>
     <style name="EmptyTheme"/>
+    <style name="InBrainTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSwipeToDismiss" ns2:targetApi="kitkat_watch">false</item>
+    </style>
     <style name="MaterialAlertDialog.MaterialComponents" parent="AlertDialog.AppCompat">
     <item name="android:layout">@layout/mtrl_alert_dialog</item>
     <item name="listItemLayout">@layout/mtrl_alert_select_dialog_item</item>

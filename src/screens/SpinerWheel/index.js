@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import  { AuthContext } from "../../utiles/auth-context";
 import { ScrollView } from 'react-native-gesture-handler';
+import VersionCheck from 'react-native-version-check';
 
 import Loader from '../../components/common/loader/Loader';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
@@ -65,12 +66,15 @@ const SpinerWheel = () => {
       return;
     }
     setLoadingStatus(true)
+    const currentVersion = VersionCheck.getCurrentVersion()
 
     const body = {
       user_id: userInfo.id,
       statusWin:spinValue,
-      spinPlaceAmount:spinAmount
+      spinPlaceAmount:spinAmount,
+      currentVersion:currentVersion
     };
+
     const dailyRewardCheckClaim = await CallApiJson('spinnerRewardClaim', 'POST', body); 
     console.log(" spinnerRewardClaim", dailyRewardCheckClaim);
     setLoadingStatus(false);
@@ -78,14 +82,12 @@ const SpinerWheel = () => {
     Alert.alert('Congrats You Have Won , ');
     }else{
       Alert.alert('Sorry You Have Lost , Try Next Time ');
-
     }
     //   rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
     //    rewarded.show();
     // });
     //rewarded.show();
     navigation.navigate('Home');
-
   }
 
 

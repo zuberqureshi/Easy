@@ -23,6 +23,7 @@
     "@react-navigation/native-stack": "^6.9.12",
     "deprecated-react-native-prop-types": "^4.1.0",
     "formik": "^2.4.2",
+    "inbrain-surveys": "^2.11.3",
     "lottie-react-native": "^5.1.6",
     "moment": "^2.29.4",
     "react": "18.2.0",

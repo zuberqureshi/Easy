@@ -27,6 +27,8 @@ import io.invertase.firebase.crashlytics.ReactNativeFirebaseCrashlyticsPackage;
 import io.invertase.firebase.messaging.ReactNativeFirebaseMessagingPackage;
 // @react-native-google-signin/google-signin
 import com.reactnativegooglesignin.RNGoogleSigninPackage;
+// inbrain-surveys
+import com.inbrain.InBrainSurveysPackage;
 // lottie-react-native
 import com.airbnb.android.react.lottie.LottiePackage;
 // react-native-device-info
@@ -110,6 +112,7 @@ public class PackageList {
       new ReactNativeFirebaseCrashlyticsPackage(),
       new ReactNativeFirebaseMessagingPackage(),
       new RNGoogleSigninPackage(),
+      new InBrainSurveysPackage(),
       new LottiePackage(),
       new RNDeviceInfo(),
       new RNEncryptedStoragePackage(),
