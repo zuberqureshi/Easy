@@ -111,7 +111,7 @@ const settings = async () => {
         youtubeVideoId();
         getUserInfo();
          const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-            // rewarded.show();
+             rewarded.show();
             setLoadingStatus(false)
 
         });
@@ -127,7 +127,7 @@ const settings = async () => {
         rewarded.load();
 
         const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
-            //  interstitial.show()
+             interstitial.show()
         });
        
        // Start loading the interstitial straight away
@@ -162,41 +162,41 @@ const settings = async () => {
 
  
 
-//applovin 
-// useEffect(() => {
+applovin 
+useEffect(() => {
 
-//   //intrestial
-//   AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
-//   const appLovinIntrestial = AppLovinMAX.addInterstitialLoadedEventListener( async () => {
-//     // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
-//     const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
-//     if (isInterstitialReady) {
-//       setclaimButton(false);
-//       setbuttonDisableTrue(false);
-//     AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+  //intrestial
+  AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
+  const appLovinIntrestial = AppLovinMAX.addInterstitialLoadedEventListener( async () => {
+    // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
+    const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+    if (isInterstitialReady) {
+      setclaimButton(false);
+      setbuttonDisableTrue(false);
+    AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
      
-//     }
-//   });
-//   // rewarded
-//   AppLovinMAX.loadRewardedAd(REWARDED_AD_UNIT_ID);
-//   const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
-//     const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
-// if (isRewardedAdReady) {
-//  AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
-// }
-//   });
-//   //rewarded
+    }
+  });
+  // rewarded
+  AppLovinMAX.loadRewardedAd(REWARDED_AD_UNIT_ID);
+  const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
+    const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
+if (isRewardedAdReady) {
+ AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+}
+  });
+  //rewarded
 
 
  
-//    return () => { 
-//     appLovinIntrestial();
-//     appLovinRewarded();
+   return () => { 
+    appLovinIntrestial();
+    appLovinRewarded();
 
-//    }
+   }
 
-// }, []);
-//applovin 
+}, []);
+applovin 
 
 
 
@@ -248,7 +248,7 @@ const settings = async () => {
     />
 
 
-<Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(30),fontWeight:'bold'}}>  Watch video For 60 seconds   </Text>
+<Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(30),fontWeight:'bold'}}>  Play the Video To Get Coins   </Text>
 
 
             <LinearGradient colors={["#0a203e", "#1f4c86"]}
@@ -281,7 +281,7 @@ const settings = async () => {
 
                 
             {/* <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(4),fontWeight:'bold'}}>  Watch video For 30 seconds   </Text> */}
-                <View style={{ justifyContent: 'center', alignItems: 'center'}} >
+                <View style={{ justifyContent: 'center', alignItems: 'center'}}    >
  
                         <YoutubePlayer
                             style={{}}
