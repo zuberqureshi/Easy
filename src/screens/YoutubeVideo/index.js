@@ -54,6 +54,7 @@ const Youtube = ({ route }) => {
     const [count, setCount] = useState(delay-30);
     const [buttonDisableTrue, setbuttonDisableTrue] = useState(true)
     const [userSettings, setUserSettings] = useState()
+    const [playVideo, setPlayVideo] = useState(false)
 
 
 //     //Get User Info
@@ -110,7 +111,7 @@ const settings = async () => {
         youtubeVideoId();
         getUserInfo();
          const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-            rewarded.show();
+            // rewarded.show();
             setLoadingStatus(false)
 
         });
@@ -126,7 +127,7 @@ const settings = async () => {
         rewarded.load();
 
         const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
-             interstitial.show()
+            //  interstitial.show()
         });
        
        // Start loading the interstitial straight away
@@ -162,39 +163,39 @@ const settings = async () => {
  
 
 //applovin 
-useEffect(() => {
+// useEffect(() => {
 
-  //intrestial
-  AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
-  const appLovinIntrestial = AppLovinMAX.addInterstitialLoadedEventListener( async () => {
-    // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
-    const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
-    if (isInterstitialReady) {
-      setclaimButton(false);
-      setbuttonDisableTrue(false);
-    AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+//   //intrestial
+//   AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
+//   const appLovinIntrestial = AppLovinMAX.addInterstitialLoadedEventListener( async () => {
+//     // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
+//     const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+//     if (isInterstitialReady) {
+//       setclaimButton(false);
+//       setbuttonDisableTrue(false);
+//     AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
      
-    }
-  });
-  // rewarded
-  AppLovinMAX.loadRewardedAd(REWARDED_AD_UNIT_ID);
-  const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
-    const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
-if (isRewardedAdReady) {
- AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
-}
-  });
-  //rewarded
+//     }
+//   });
+//   // rewarded
+//   AppLovinMAX.loadRewardedAd(REWARDED_AD_UNIT_ID);
+//   const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
+//     const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
+// if (isRewardedAdReady) {
+//  AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+// }
+//   });
+//   //rewarded
 
 
  
-   return () => { 
-    appLovinIntrestial();
-    appLovinRewarded();
+//    return () => { 
+//     appLovinIntrestial();
+//     appLovinRewarded();
 
-   }
+//    }
 
-}, []);
+// }, []);
 //applovin 
 
 
@@ -262,31 +263,31 @@ if (isRewardedAdReady) {
                     // borderWidth: responsiveWidth(0.2),
                     // borderColor: '#1f4c86',
                     marginTop: responsiveWidth(5),
-
+                    justifyContent:'center'  
                 
 
                 }}>
 
 
-              <WebView
+              {/* <WebView
               javaScriptEnabled={true}
               domStorageEnabled={true}
               scrollEnabled={false}
               bounces={false}
                source={{uri:`https://www.youtube.com/watch?v=${videoIdApi}`}}
                style={{ width:responsiveWidth(100),alignSelf:'center',}}
-              />
+              /> */}
            
 
                 
             {/* <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(4),fontWeight:'bold'}}>  Watch video For 30 seconds   </Text> */}
-                {/* <View style={{ justifyContent: 'center', alignItems: 'center',marginTop:responsiveWidth(10)}} >
+                <View style={{ justifyContent: 'center', alignItems: 'center'}} >
  
                         <YoutubePlayer
                             style={{}}
                             width={responsiveWidth(85)}
                             height={responsiveHeight(23.5)}
-                            play={true}
+                            play={playVideo}
                             videoId={videoIdApi}
                         // onChangeState={onStateChange}
                         />
@@ -295,7 +296,7 @@ if (isRewardedAdReady) {
             
 
 
-                    <TouchableOpacity
+               {/* <TouchableOpacity
                         style={{
 
                             height: responsiveHeight(7),
@@ -316,11 +317,11 @@ if (isRewardedAdReady) {
                             youtubeVideoRewardClaim()
                         }}>
                         <Text  style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}> { claimButton ? `Wait For ${count} Seconds` :' Click Here Go To Home' } </Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
 
                 
 
-                </View> */}
+                </View>
 
 
 

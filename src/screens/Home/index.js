@@ -196,7 +196,7 @@ const Home = () => {
 
   const banners = async () => {
     const banners = await CallApiJson('banner', 'GET');
-    // const data = await JSON.parse(seting)
+   console.log("Banner data",banners)
     await setBanner(banners?.data)
 
   }
@@ -414,7 +414,7 @@ useEffect(() => {
 
     // Set background or background color for banners to be fully functional
     // In this case we are setting it to black - PLEASE USE HEX STRINGS ONLY
-    AppLovinMAX.setBannerBackgroundColor(BANNER_AD_UNIT_ID, '#000000');
+    AppLovinMAX.setBannerBackgroundColor(BANNER_AD_UNIT_ID, '#0a203e');
   //rewarded
   AppLovinMAX.showBanner(BANNER_AD_UNIT_ID);
 
@@ -434,7 +434,7 @@ useEffect(() => {
 <Loader loadingStatus = {loadingStatus} />
 
       <ScrollView>
-        <View style={{ flex: 1, }}>
+        <View style={{ flex: 1,}}>
 
           {/* Slider */}
           <View style={[styles.slider]}>
@@ -493,7 +493,7 @@ useEffect(() => {
                         <Text style={{ color: '#fff' }}>Get Coins</Text>
 
                         <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
-                          <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}>{userSettings && userSettings.data.daily_coin}</Text>
+                          <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}>{userSettings && userSettings?.data?.daily_coin}</Text>
                           <Image style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
                         </View>
 
@@ -623,7 +623,7 @@ useEffect(() => {
                     <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coins</Text>
 
 
-                    <Text style={{ color: '#fff' }}> {userSettings && userSettings.data.gk_ad_coin} </Text>
+                    <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.gk_ad_coin} </Text>
                     <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(1), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
 
 
@@ -1037,13 +1037,11 @@ useEffect(() => {
           </Modal>
           {/* Model-Home pop-up */}
 
-
+    
         </View>
 
       </ScrollView>
-
-
-      <BannerAd
+      <BannerAd 
         unitId={adUnitId}
         size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
         
