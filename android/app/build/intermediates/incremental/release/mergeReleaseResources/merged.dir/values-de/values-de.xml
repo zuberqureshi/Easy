@@ -27,6 +27,43 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Teilen mit"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Mit <ns1:g id="APPLICATION_NAME">%s</ns1:g> teilen"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Minimieren"</string>
+    <string name="applovin_agree_message">Bitte drücke auf \"Weiter\" um unsere App zu benutzen.</string>
+    <string name="applovin_alt_privacy_policy_text"/>
+    <string name="applovin_continue_button_text">Weiter</string>
+    <string name="applovin_gdpr_advertising_partners_screen_message">Wie in unserer Datenschutzrichtlinien erklärt, können wir diese Daten mit deiner Zustimmung mit folgenden Partnern teilen, damit sie personalisierte Werbungen oder Inhalte anzeigen können:</string>
+    <string name="applovin_gdpr_advertising_partners_screen_title">Personalisierte Werbung und Inhalte</string>
+    <string name="applovin_gdpr_analytics_partners_screen_message">Wie in unserer Datenschutzrichtlinien erklärt, können wir diese Daten mit deiner Zustimmung mit folgenden Partnern teilen, um die Leistung zu messen und unsere Produkte und Dienstleistungen zu verbessern:</string>
+    <string name="applovin_gdpr_analytics_partners_screen_title">Leistungsmessung und Produktentwicklung</string>
+    <string name="applovin_gdpr_are_you_sure_screen_message">Wenn du uns und/oder unseren Partnern erlaubst, diese Daten für personalisierte Werbung und Inhalte und andere Zwecke zu verwenden, wie in unserer Datenschutzerklärung beschrieben:\n\n\u2022 Bietet es dir ein personalisierteres Erlebnis, Werbungen und Inhalte\n\n\u2022 Bietet es dir ein personalisierteres Erlebnis, Werbungen und Inhalte\n\n\u2022 Ermöglicht es dir die Teilnahme an Werbeaktionen</string>
+    <string name="applovin_gdpr_are_you_sure_screen_title">Bist du dir sicher?</string>
+    <string name="applovin_gdpr_back_button_text">Zurück </string>
+    <string name="applovin_gdpr_learn_more_screen_bullet_1">Hilft es uns dabei, dass unsere App kostenlos bleibt!</string>
+    <string name="applovin_gdpr_learn_more_screen_bullet_2">Bietet es dir ein personalisierteres Erlebnis, Werbungen und Inhalte</string>
+    <string name="applovin_gdpr_learn_more_screen_bullet_3">Unterstützt du Produktverbesserungen und -entwicklungen</string>
+    <string name="applovin_gdpr_learn_more_screen_bullet_4">Ermöglicht es dir die Teilnahme an Werbeaktionen</string>
+    <string name="applovin_gdpr_learn_more_screen_message_1">Vielen Dank, dass du unsere App heruntergeladen hast! Wenn du uns und unseren Partnern erlaubst, diese Daten zu verwenden, hilfst du uns dabei ein einzigartiges App-Erlebnis zu schaffen, unter anderem:</string>
+    <string name="applovin_gdpr_learn_more_screen_message_2">Du kannst deine Auswahl jederzeit ändern. Falls du dich entscheidest, deine Daten nicht zu teilen, kannst du weiterhin auf die App zugreifen und wiest weiterhin Werbung erhalten. Diese Anzeigen werden jedoch weniger auf deine Interessen abgestimmt sein.</string>
+    <string name="applovin_gdpr_main_screen_analytics_purposes_switch_text">Leistungsmessung und Produktentwicklung</string>
+    <string name="applovin_gdpr_main_screen_learn_more_button_text">Mehr erfahren</string>
+    <string name="applovin_gdpr_main_screen_message">Wie in unserer Datenschutzrichtlinie erklärt, erfassen wir mit deiner Zustimmung bestimmte Informationen zu deinem Gerät, wie z. B. IP-Adresse und Werbe IDs. Diese Daten ermöglichen es uns und unseren Partnern, personalisierte Werbungen und Inhalte bereitzustellen und Verbesserungen vorzunehmen.\n\nIm folgenden können Sie uns und/oder unseren Partnern erlauben, diese Daten für die folgenden Zwecke zu verwenden:</string>
+    <string name="applovin_gdpr_main_screen_personalized_advertising_purposes_switch_text">Personalisierte Werbung und Inhalte</string>
+    <string name="applovin_gdpr_main_screen_pp_and_tos_switch_text">Ich bin über 16 Jahre alt, akzeptiere die AGB, und erkenne die Datenschutzerklärung an.</string>
+    <string name="applovin_gdpr_main_screen_privacy_policy_switch_text">Ich bestätige, dass ich über sechzehn Jahre alt bin und die Datenschutzerklärung gelesen und verstanden habe.</string>
+    <string name="applovin_gdpr_main_screen_title">Danke, dass du %s heruntergeladen hast! </string>
+    <string name="applovin_gdpr_understand_and_continue_button_text">Ich verstehe und stimme zu</string>
+    <string name="applovin_learn_more_screen_title">Hilf uns, %s kostenlos und für mehr Spaß zu halten!</string>
+    <string name="applovin_pp_and_tos_title">Um %s zu benutzen, musst du den AGB und der Datenschutzerklärung des Entwicklers dieser App zustimmen.</string>
+    <string name="applovin_pp_title">Um %s zu benutzen, musst du bestätigen, dass du unsere Datenschutzerklärung gelesen und akzeptiert hast.</string>
+    <string name="applovin_privacy_policy_text">Datenschutzerklärung</string>
+    <string name="applovin_terms_of_service_text">AGB</string>
+    <string name="applovin_terms_of_use_text">AGB</string>
+    <string msgid="881409763997275156" name="call_notification_answer_action">"Annehmen"</string>
+    <string msgid="8793775615905189152" name="call_notification_answer_video_action">"Video"</string>
+    <string msgid="3229508546291798546" name="call_notification_decline_action">"Ablehnen"</string>
+    <string msgid="2659457946726154263" name="call_notification_hang_up_action">"Auflegen"</string>
+    <string msgid="6107532579223922871" name="call_notification_incoming_text">"Eingehender Anruf"</string>
+    <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Aktueller Anruf"</string>
+    <string msgid="59049573811482460" name="call_notification_screening_text">"Filter für eingehenden Anruf"</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Aktivieren</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$s funktioniert erst nach der Aktivierung der Google Play-Dienste.</string>
     <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play-Dienste aktivieren</string>

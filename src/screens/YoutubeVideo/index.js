@@ -162,7 +162,7 @@ const settings = async () => {
 
  
 
-applovin 
+//applovin 
 useEffect(() => {
 
   //intrestial
@@ -186,9 +186,6 @@ if (isRewardedAdReady) {
 }
   });
   //rewarded
-
-
- 
    return () => { 
     appLovinIntrestial();
     appLovinRewarded();
@@ -196,7 +193,7 @@ if (isRewardedAdReady) {
    }
 
 }, []);
-applovin 
+//applovin 
 
 
 
