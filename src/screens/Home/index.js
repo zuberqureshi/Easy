@@ -760,10 +760,10 @@ useEffect(() => {
             <View style={{ marginTop: responsiveWidth(3.6) }} >
 
               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={styles.videoMainText}> Watch Reels </Text>
+                <Text style={styles.videoMainText}> Reed Artice </Text>
                 <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
                   <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin </Text>
-                  <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.youtube_video_coin} </Text>
+                  <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.youtube_video_coin}</Text>
                   <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2.5), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
                 </View>
               </View>
@@ -773,17 +773,18 @@ useEffect(() => {
                 <TouchableOpacity
                   onPress={() => {
                     // setModalVisibleVideo(true)
-                    youtubeVideoId()
-                    navigation.navigate('Youtube', { videoId: videoId?.data?.video_url })
+                    // youtubeVideoId()
+                    // navigation.navigate('Youtube', { videoId: videoId?.data?.video_url })
                     // setCounter(30)
                     // setTimeout(() => {
                     //   setVideoClose(true)
 
                     // }, 30000)
+                    Linking.openURL('https://reactnative.dev/');
 
                   }} >
                   <View style={styles.videoImgView}>
-                    <Image style={styles.videoImg} source={require('../../assets/youtube.png')} />
+                    <Image style={styles.videoImg} source={require('../../assets/articel.png')} />
                   </View>
                 </TouchableOpacity>
 

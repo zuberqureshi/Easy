@@ -170,7 +170,8 @@ export default styles = StyleSheet.create({
 videoImg:{
     width:responsiveHeight(20),
     height:responsiveHeight(15),
-    resizeMode:'contain'
+    resizeMode:'contain',
+    alignSelf:'center',
   
 }
 
