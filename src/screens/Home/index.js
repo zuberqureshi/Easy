@@ -757,13 +757,16 @@ useEffect(() => {
 
             {/*YouTUbe Video-Start*/}
 
+                  { (userSettings?.data?.blog_status==1) &&
+                  
+                
             <View style={{ marginTop: responsiveWidth(3.6) }} >
 
               <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={styles.videoMainText}> Reed Artice </Text>
+                <Text style={styles.videoMainText}> Earn By Read Artice </Text>
                 <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
                   <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin </Text>
-                  <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.youtube_video_coin}</Text>
+                  <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.blog_coin}</Text>
                   <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2.5), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
                 </View>
               </View>
@@ -780,7 +783,7 @@ useEffect(() => {
                     //   setVideoClose(true)
 
                     // }, 30000)
-                    Linking.openURL('https://reactnative.dev/');
+                    Linking.openURL(userSettings && userSettings?.data?.blog_url);
 
                   }} >
                   <View style={styles.videoImgView}>
@@ -790,7 +793,7 @@ useEffect(() => {
 
               </View>
             </View>
-
+          }
             {/* YouTUbe Video-End*/}
 
           </View>

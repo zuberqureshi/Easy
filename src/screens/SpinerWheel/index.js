@@ -51,27 +51,23 @@ const SpinerWheel = () => {
   const [spinAmount, setSpinAmount] = useState()
  
 
- //Get User Info
- const getUserInfo = async () => {
-  setLoadingStatus(true)
+    //Get User Info
+    const getUserInfo = async () => {
+      setLoadingStatus(true)
 
-  const ds = await getToken();
- const data = await JSON.parse(ds)
- await setUserInfo(data)
+      const ds = await getToken();
+    const data = await JSON.parse(ds)
+    await setUserInfo(data)
 
- let body = {
-  user_id:data.id
-}
- const seting = await CallApiJson('getprofile', 'POST',body);
- // const data = await JSON.parse(seting)
- await setUserWallet(seting.data.wallet_coins);
- setLoadingStatus(false)
+    let body = {
+      user_id:data.id
+    }
+    const seting = await CallApiJson('getprofile', 'POST',body);
+    // const data = await JSON.parse(seting)
+    await setUserWallet(seting.data.wallet_coins);
+    setLoadingStatus(false)
+    }
 
-
-
-}
-
- 
    const load = async () => {
     await getUserInfo();
   
@@ -82,6 +78,8 @@ const SpinerWheel = () => {
   const updateSpinnerWheelWinner = async () => {
 
     console.warn('updateSpinnerWheelWinner',spinValue,spinAmount,'userWallet',userWallet)
+    await showApplovinIntrestial();
+    await showApplovinRewarded();
 
     if( userWallet <spinAmount){
       Alert.alert('Your wallet has not sufficient Coin'); 
@@ -112,21 +110,20 @@ const SpinerWheel = () => {
 useEffect(() => {
  load();
   const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-     // rewarded.show();
+      rewarded.show();
  });
  const unsubscribeEarned = rewarded.addAdEventListener(
    RewardedAdEventType.EARNED_REWARD,
    reward => {
 
-
-   },
+     },
  );
 
  // Start loading the rewarded ad straight away
  rewarded.load();
 
  const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
-    // interstitial.show()
+     interstitial.show()
  });
 
 // Start loading the interstitial straight away
@@ -155,31 +152,58 @@ useEffect(() => {
     // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
     const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
     if (isInterstitialReady) {
-      setclaimButton(false);
-      setbuttonDisableTrue(false);
-    AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
-     
+
+        //  setclaimButton(false);
+        //  setbuttonDisableTrue(false);
+        //  AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+
     }
+
   });
   // rewarded
   AppLovinMAX.loadRewardedAd(REWARDED_AD_UNIT_ID);
   const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
     const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
 if (isRewardedAdReady) {
- AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+  AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
 }
+
+
   });
   //rewarded
 
 
  
    return () => { 
-    appLovinIntrestial();
-    appLovinRewarded();
+   // appLovinIntrestial();
+  //  appLovinRewarded();
 
    }
 
 }, []);
+
+
+const showApplovinIntrestial = async ()=>{
+  const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+  if (isInterstitialReady) {
+        AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+        return true;
+  }else{
+    return false;
+  }
+}
+ 
+
+const showApplovinRewarded =async ()=>{
+
+  console.log('showApplovinRewardedfucntion' );
+    AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+  
+
+}
+ 
+
+
 //applovin 
 
 
@@ -214,6 +238,11 @@ if (isRewardedAdReady) {
     });
   }, []);
 
+
+
+ 
+
+
  console.log("spinner value state",spinValue)
  console.log("spinner Amount state",spinAmount)
 
@@ -228,13 +257,13 @@ if (isRewardedAdReady) {
 
 
     <View style={{flex:1,backgroundColor:'#0a203e'}}>
-    <View style={{justifyContent:'center',alignItems:'center',marginTop:responsiveWidth(7)}}>
+        <View style={{justifyContent:'center',alignItems:'center',marginTop:responsiveWidth(7)}}>
           <Text style={{color:'#fff',fontSize:responsiveFontSize(3.55)}}> PLAY  SPIN GAME </Text>
           <Text style={{color:'#fff',fontSize:responsiveFontSize(1.7),letterSpacing:responsiveWidth(0.37)}}> Double Your Coin By Playing Spinner </Text>
           {/* <Text style={{color:'#fff',fontSize:responsiveFontSize(1.9),marginTop:responsiveWidth(2.5)}}> Congrat's You have Won {spinAmount } </Text> */}
         </View>
 
-       <Spiner setSpinValue={setSpinValue}  updateSpinnerWheelWinner={updateSpinnerWheelWinner} userWallet={userWallet} setSpinAmount={setSpinAmount} spinAmount={spinAmount}  />
+       <Spiner setSpinValue={setSpinValue}  updateSpinnerWheelWinner={updateSpinnerWheelWinner} showApplovinRewarded={showApplovinIntrestial} userWallet={userWallet} setSpinAmount={setSpinAmount} spinAmount={spinAmount}  />
   
     </View>
     <BannerAd

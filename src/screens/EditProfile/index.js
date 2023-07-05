@@ -68,7 +68,7 @@ useEffect(() => {
       if (isInterstitialReady) {
         setclaimButton(false);
         setbuttonDisableTrue(false);
-      AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+     // AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
        
       }
     });
@@ -91,6 +91,24 @@ useEffect(() => {
      }
   
   }, []);
+
+  
+const showApplovinIntrestial = async ()=>{
+    const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+    if (isInterstitialReady) {
+          AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+          return true;
+    }else{
+      return false;
+    }
+  }
+   
+  
+  const showApplovinRewarded =()=>{
+    AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+  }
+   
+
   //applovin 
   
 
@@ -132,6 +150,7 @@ useEffect(() => {
 
     const updateProfile = async(country,address,name,mobile) =>{
 
+        await showApplovinIntrestial();
         const body = {
             user_id: userProfileData?.data?.id,
             country: country,

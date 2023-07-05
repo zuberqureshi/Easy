@@ -18,7 +18,7 @@ const participants = [
   'LOST',
   'WIN',
   'LOST',
-  'WIN',
+  'LOST',
   'LOST',
   'WIN',
 ];
@@ -89,17 +89,17 @@ class Spiner extends Component {
 
 
   <View style={{marginTop:'60%',flexDirection:'row',alignContent:'space-between',}}>
-  <TouchableOpacity onPress={()=>{this.props.setSpinAmount(20)}} >
+  <TouchableOpacity onPress={()=>{this.props.setSpinAmount(20);  this.props.showApplovinRewarded();  }    } >
       <View style={[styles.coinBox,{borderColor:this.props.spinAmount===20?'gold':'#1f4c86',}]}>
 
-      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Place</Text> 
+      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)  } } >20 Place</Text> 
         <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
         <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Get</Text> 
       
       </View>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={()=>{this.props.setSpinAmount(40)}}>
+      <TouchableOpacity onPress={()=>{this.props.setSpinAmount(40);  this.props.showApplovinRewarded();  }}>
       <View style={[styles.coinBox,{borderColor:this.props.spinAmount===40?'gold':'#1f4c86',}]}>
 
       <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >40 Place</Text> 
@@ -109,7 +109,7 @@ class Spiner extends Component {
       </View>
       </TouchableOpacity>
 
-   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(60)}}>
+   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(60);  this.props.showApplovinRewarded();  }}>
       <View style={[styles.coinBox,{borderColor:this.props.spinAmount===60?'gold':'#1f4c86',}]}>
 
       <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >60 Place</Text> 
@@ -119,7 +119,7 @@ class Spiner extends Component {
       </View>
       </TouchableOpacity>
 
-   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(100)}}>
+   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(100);  this.props.showApplovinRewarded();  }}>
       <View style={[styles.coinBox,{borderColor:this.props.spinAmount===100?'gold':'#1f4c86',}]}>
 
       <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >100 Place</Text> 
@@ -139,7 +139,7 @@ class Spiner extends Component {
             <TouchableOpacity
               onPress={() => this.buttonPress() }
               style={styles.startButton}>
-              <Text style={styles.startButtonText}>Spin to win! </Text>
+              <Text style={styles.startButtonText}>  Spin to win! </Text>
               <Image style={{width:responsiveWidth(6.25),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')}/>
             </TouchableOpacity>
           </View>

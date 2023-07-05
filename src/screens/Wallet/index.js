@@ -94,7 +94,7 @@ useEffect(() => {
 
    const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
     setLoadingStatus(false)
-      // rewarded.show();
+       rewarded.show();
 
   });
   const unsubscribeEarned = rewarded.addAdEventListener(
@@ -165,7 +165,7 @@ useEffect(() => {
     if (isInterstitialReady) {
       setclaimButton(false);
       setbuttonDisableTrue(false);
-    AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+    //AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
      
     }
   });
@@ -186,6 +186,23 @@ if (isRewardedAdReady) {
    }
 
 }, []);
+
+const showApplovinIntrestial = async ()=>{
+  const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+  if (isInterstitialReady) {
+        AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+        return true;
+  }else{
+    return false;
+  }
+}
+ 
+const showApplovinRewarded =()=>{
+  AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+}
+
+
+
 //applovin 
 
 
@@ -224,6 +241,8 @@ if (isRewardedAdReady) {
 
   const submitPaytm = async () => {
 
+    await showApplovinIntrestial();
+    await showApplovinRewarded();
 
     if( !selectedCard  ){
       Alert.alert('Select Payout Value '); return;
@@ -261,6 +280,9 @@ if (isRewardedAdReady) {
 
   const openPaytmModal = async() => {
 
+    await showApplovinIntrestial();
+    await showApplovinRewarded();
+
 
     if (! userProfileData.data.mobile ) {
       Alert.alert(' Complete Your Profile First    '); return;
@@ -272,6 +294,10 @@ if (isRewardedAdReady) {
 
   }
   const submitPaypal = async() => {
+
+
+    await showApplovinIntrestial();
+    await showApplovinRewarded();
 
     if (paypalId.length <3) {
       Alert.alert('Enter Paypal VaIdlue '); return;
@@ -369,7 +395,12 @@ if (isRewardedAdReady) {
           style={styles.paypalLinearGradient}>
          
 
-         <TouchableOpacity onPress={() => { setModalPaypal(true) }}>
+         <TouchableOpacity onPress={ async () => { 
+          
+    await showApplovinIntrestial();
+    await showApplovinRewarded();
+          
+          setModalPaypal(true);  }}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
             <Image style={styles.paypalLinearGradientImg} source={require("../../assets/PayPal.png")} />
 
@@ -387,7 +418,7 @@ if (isRewardedAdReady) {
 
         </LinearGradient>
 
-        <Text style={[styles.redeenTxt,{marginTop:responsiveWidth(2)}]} >Withdraw History</Text>
+        <Text style={[styles.redeenTxt,{marginTop:responsiveWidth(2)}]} >Withdraw History ( Widraw takes 48 Hours ) </Text>
       
         <LinearGradient colors={["#0a203e", "#1f4c86"]}
           useAngle={true}

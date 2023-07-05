@@ -39,10 +39,14 @@ const BANNER_AD_UNIT_ID = Platform.select({
 //applovin
 
 
+const delay  = 10;
+const delaySeconds  = delay*1000;
+
 const QuizReward = ({route}) => {
     const navigation = useNavigation();
-    const [buttonDisableTrue, setbuttonDisableTrue] = useState(false)
-
+    const [claimButton, setclaimButton] = useState(true)
+    const [count, setCount] = useState(delay);
+    const [buttonDisableTrue, setbuttonDisableTrue] = useState(true)
 
     const authCtx = useContext(AuthContext);
 
@@ -51,6 +55,8 @@ const QuizReward = ({route}) => {
       };
 
     const  quizRewardClaim = async () =>{
+
+      await showApplovinRewarded()
         // const data = await JSON.parse(seting)
         if(authCtx.quizValue < 5){
           Alert.alert('Sorry ! Your Score is Less than 5 , Try again ' );
@@ -98,6 +104,27 @@ const QuizReward = ({route}) => {
  
 
 useEffect(() => {
+
+                                 
+  setTimeout(() => {
+    setclaimButton(false);
+    setbuttonDisableTrue(false)
+
+}, delaySeconds);
+
+
+  const interval = setInterval(() => {
+    if (count > 0) setCount(count - 1);
+  }, 1000);
+  return () => clearInterval(interval);
+}, [count]);
+
+
+
+
+
+
+useEffect(() => {
  
    const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
       rewarded.show();
@@ -141,7 +168,7 @@ useEffect(() => {
     // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
     const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
     if (isInterstitialReady) {
-      AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+    //  AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
      
     }
   });
@@ -164,6 +191,24 @@ if (isRewardedAdReady) {
    }
 
 }, []);
+
+const showApplovinIntrestial = async ()=>{
+  const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+  if (isInterstitialReady) {
+        AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+        return true;
+  }else{
+    return false;
+  }
+}
+ 
+
+const showApplovinRewarded =()=>{
+  AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+}
+ 
+
+
 //applovin 
 
 
@@ -247,20 +292,21 @@ marginTop:responsiveWidth(20)
               style={styles.closeBUtton}
               disabled={ buttonDisableTrue }
 
-              onPress={() => {
+              onPress={async () => {
                 // setModalVisible(!modalVisible);
+
+               await showApplovinIntrestial()
                 quizRewardClaim();
               }}>
-              <Text style={styles.closeBUttonText}> Claim Reward   </Text>
+              <Text style={styles.closeBUttonText}>  { (claimButton   )  ? `Wait For ${count} Seconds` :' Claim Reward  ' }      </Text>
             </TouchableOpacity>
           {/* </View> */}
           </LinearGradient>
           </View>
           <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      
-    />
+            unitId={adUnitId}
+            size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+          />
 
     </View>
   )

@@ -149,7 +149,7 @@ useEffect(() => {
     if (isInterstitialReady) {
       setclaimButton(false);
       setbuttonDisableTrue(false);
-    AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+      // AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
      
     }
   });
@@ -172,6 +172,25 @@ if (isRewardedAdReady) {
    }
 
 }, []);
+
+
+const showApplovinIntrestial = async ()=>{
+  const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+  if (isInterstitialReady) {
+        AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+        return true;
+  }else{
+    return false;
+  }
+}
+ 
+
+const showApplovinRewarded =()=>{
+  AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+}
+ 
+
+
 //applovin 
 
 
@@ -335,7 +354,9 @@ if (isRewardedAdReady) {
            alignItems:'center'
         }}  
         
-        onPress={() => {
+        onPress={ async () => {
+          await showApplovinRewarded();
+
             // console.log(parseInt(currentIndex) - 1);
             if (currentIndex > 1) {
               listRef.current.scrollToIndex({
@@ -354,7 +375,9 @@ if (isRewardedAdReady) {
 
       {currentIndex==10 ? (
         <TouchableOpacity style={styles.submitButton}  
-        onPress={ ()=>{
+        onPress={ async ()=>{
+
+              await showApplovinRewarded();
               // setModalVisible(true)
               getTextScore()
               navigation.navigate('QuizReward',{category:route.params.category,totalques:apiQues?.questions?.length})
@@ -368,8 +391,9 @@ if (isRewardedAdReady) {
         </TouchableOpacity>
       ): (
         <TouchableOpacity style={styles.nextButton} 
-         onPress={ ()=>{
+         onPress={ async ()=>{
 
+          await showApplovinIntrestial()
           if(questions[currentIndex-1].marked !== -1){
 
             if (currentIndex < questions.length) {
