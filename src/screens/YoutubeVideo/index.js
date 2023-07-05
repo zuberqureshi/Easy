@@ -40,7 +40,7 @@ const BANNER_AD_UNIT_ID = Platform.select({
 //applovin
 
 
-const delay  = 180;
+const delay  = 10;
 const delaySeconds  = delay*1000;
 
 const Youtube = ({ route }) => {
@@ -51,7 +51,7 @@ const Youtube = ({ route }) => {
     const [videoIdApi, setvideoIdApi] = useState()
     const [userInfo, setUserInfo] = useState()
     const [claimButton, setclaimButton] = useState(true)
-    const [count, setCount] = useState(delay-30);
+    const [count, setCount] = useState(delay);
     const [buttonDisableTrue, setbuttonDisableTrue] = useState(true)
     const [userSettings, setUserSettings] = useState()
     const [playVideo, setPlayVideo] = useState(false)
@@ -66,11 +66,9 @@ const Youtube = ({ route }) => {
   }
 // setting api
 const settings = async () => {
-
     const seting = await CallApiJson('settings', 'GET');
     // const data = await JSON.parse(seting)
     await setUserSettings(seting);
-
 
   }
  
@@ -119,8 +117,7 @@ const settings = async () => {
           RewardedAdEventType.EARNED_REWARD,
           reward => {
              setLoadingStatus(false)
-             setbuttonDisableTrue(false)
-          },
+           },
         );
        
         // Start loading the rewarded ad straight away
@@ -137,14 +134,9 @@ const settings = async () => {
 
         setLoadingStatus(false)
 
-        setTimeout(() => {
-            setclaimButton(false);
-            setbuttonDisableTrue(false)
-
-        }, delaySeconds);
         // Unsubscribe from events on unmount
         return () => {
-            setLoadingStatus(false)
+          setLoadingStatus(false)
           unsubscribeLoaded();
           unsubscribe();
           unsubscribeEarned();
@@ -171,8 +163,7 @@ useEffect(() => {
     // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
     const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
     if (isInterstitialReady) {
-      setclaimButton(false);
-      setbuttonDisableTrue(false);
+     // setclaimButton(false);
     AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
      
     }
@@ -182,7 +173,7 @@ useEffect(() => {
   const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
     const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
 if (isRewardedAdReady) {
- AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+ //AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
 }
   });
   //rewarded
@@ -193,6 +184,12 @@ if (isRewardedAdReady) {
    }
 
 }, []);
+
+const showApplovinRewarded =()=>{
+  AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+}
+
+
 //applovin 
 
 
@@ -245,7 +242,7 @@ if (isRewardedAdReady) {
     />
 
 
-<Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(30),fontWeight:'bold'}}>  Play the Video To Get Coins   </Text>
+<Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),marginHorizontal:responsiveWidth(5),marginTop:responsiveWidth(30),fontWeight:'bold'}}>  Play the Video To Claim Coins   </Text>
 
 
             <LinearGradient colors={["#0a203e", "#1f4c86"]}
@@ -286,7 +283,23 @@ if (isRewardedAdReady) {
                             height={responsiveHeight(23.5)}
                             play={playVideo}
                             videoId={videoIdApi}
-                        // onChangeState={onStateChange}
+                            
+                         onChangeState={(state)=>{
+                         
+                                  if (state === "playing") {
+                                    setPlayVideo(true);
+                                    setCount(delay);
+                                                                
+                                    setTimeout(() => {
+                                      setclaimButton(false);
+                                      setbuttonDisableTrue(false)
+
+                                  }, delaySeconds);
+                                  showApplovinRewarded();
+
+                                  }
+                                      }
+                                    }
                         />
                    
 
@@ -345,12 +358,12 @@ if (isRewardedAdReady) {
 
                    
                         }}
-                        disabled={claimButton }
+                        disabled={ buttonDisableTrue }
                         
                         onPress={() => {
                             youtubeVideoRewardClaim()
                         }}>
-                        <Text  style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}> { claimButton ? `Wait For ${count} Seconds` :' Claim Coins Now ' } </Text>
+                        <Text  style={{ color: '#fff', paddingHorizontal: responsiveWidth(4.4), letterSpacing: responsiveFontSize(0.095) }}> { (claimButton   )  ? `Wait For ${count} Seconds` :' Claim Coins Now ' } </Text>
                     </TouchableOpacity>
              
 </View>
