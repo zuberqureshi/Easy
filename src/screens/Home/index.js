@@ -796,6 +796,35 @@ useEffect(() => {
           }
             {/* YouTUbe Video-End*/}
 
+            {/* image game - start */}
+            <TouchableOpacity onPress={() => { navigation.navigate('ImageGame') }}>
+              <View style={{ alignItems: 'center', marginTop: responsiveWidth(6) }}>
+
+                <View style={styles.surveyContainer}>
+                  <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2), justifyContent: 'space-between' }}>
+                    <Text style={styles.surveyText}>Guess Image </Text>
+                    <View style={{ flexDirection: 'column', marginRight: responsiveWidth(5), alignItems: 'center' }}>
+                      <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin</Text>
+
+                      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Text style={{ color: '#fff' }}>  {userSettings && userSettings?.data?.survey_ad_coin} </Text>
+                        <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
+                      </View>
+
+                    </View>
+                  </View>
+
+                  <View >
+                    <Image style={styles.surveyImg} source={require('../../assets/unknown.png')} />
+                    <View style={{ alignItems: 'center' }}>
+                    </View>
+                  </View>
+
+                </View>
+              </View>
+            </TouchableOpacity>
+            {/* image game - end */}
+
           </View>
 
 
