@@ -80,6 +80,7 @@ const SpinerWheel = () => {
           navigation.navigate('Home');
           return;
         }else{
+          await showApplovinIntrestial();
           return ;
         }
 
@@ -88,7 +89,7 @@ const SpinerWheel = () => {
 
 
    const load = async () => {
-    await checkGameEligiblility();
+   // await checkGameEligiblility();
     await getUserInfo();
   
    }
@@ -98,9 +99,7 @@ const SpinerWheel = () => {
   const updateSpinnerWheelWinner = async () => {
 
     console.warn('updateSpinnerWheelWinner',spinValue,spinAmount,'userWallet',userWallet)
-    await showApplovinIntrestial();
-    await showApplovinRewarded();
-
+  
     if( userWallet <spinAmount){
       Alert.alert('Your wallet has not sufficient Coin'); 
       return;
@@ -154,7 +153,7 @@ useEffect(() => {
 
         //  setclaimButton(false);
         //  setbuttonDisableTrue(false);
-        //  AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+         AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
 
     }
 
@@ -194,10 +193,7 @@ const showApplovinIntrestial = async ()=>{
  
 
 const showApplovinRewarded =async ()=>{
-
     AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
-  
-
 }
  
 
@@ -257,7 +253,7 @@ const showApplovinRewarded =async ()=>{
           {/* <Text style={{color:'#fff',fontSize:responsiveFontSize(1.9),marginTop:responsiveWidth(2.5)}}> Congrat's You have Won {spinAmount } </Text> */}
         </View>
 
-       <Spiner   setSpinValue={setSpinValue}  updateSpinnerWheelWinner={updateSpinnerWheelWinner} showApplovinRewarded={showApplovinIntrestial} userWallet={userWallet} setSpinAmount={setSpinAmount} spinAmount={spinAmount}  />
+       <Spiner   setSpinValue={setSpinValue}  updateSpinnerWheelWinner={updateSpinnerWheelWinner} showApplovinRewarded={showApplovinRewarded} userWallet={userWallet} setSpinAmount={setSpinAmount} spinAmount={spinAmount}  />
   
     </View>
  

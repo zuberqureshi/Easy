@@ -246,6 +246,57 @@ const Home = () => {
   //  Header End
 
 
+//applovin 
+useEffect(() => {
+
+  //intrestial
+  AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
+  const appLovinIntrestial = AppLovinMAX.addInterstitialLoadedEventListener( async () => {
+    // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
+    const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+    if (isInterstitialReady) {
+    //AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+    }
+  });
+  // rewarded
+  AppLovinMAX.loadRewardedAd(REWARDED_AD_UNIT_ID);
+  const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
+    const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
+if (isRewardedAdReady) {
+   //AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+ }
+  });
+  //rewarded
+
+
+ 
+   return () => { 
+    appLovinIntrestial();
+    appLovinRewarded();
+
+   }
+
+}, []);
+
+
+const showApplovinIntrestial = async ()=>{
+  const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+  if (isInterstitialReady) {
+        AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+        return true;
+  }else{
+    return false;
+  }
+}
+ 
+
+const showApplovinRewarded =()=>{
+  AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+}
+ 
+
+
+//applovin 
 
 
   const dailyReward = async () => {
@@ -719,6 +770,45 @@ useEffect(() => {
 
             {/* English Word Game-End*/}
 
+            { (userSettings?.data?.blog_status==1) &&
+                  
+                
+                  <View style={{ marginTop: responsiveWidth(3.6) }} >
+      
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                      <Text style={styles.videoMainText}> Earn By Read Artice </Text>
+                      <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
+                        <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin </Text>
+                        <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.blog_coin}</Text>
+                        <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2.5), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
+                      </View>
+                    </View>
+      
+                    <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
+      
+                      <TouchableOpacity
+                        onPress={ async () => {
+                          // setModalVisibleVideo(true)
+                          // youtubeVideoId()
+                          // navigation.navigate('Youtube', { videoId: videoId?.data?.video_url })
+                          // setCounter(30)
+                          // setTimeout(() => {
+                          //   setVideoClose(true)
+      
+                          // }, 30000)
+                          await showApplovinRewarded();
+                          Linking.openURL(userSettings && userSettings?.data?.blog_url);
+      
+                        }} >
+                        <View style={styles.videoImgView}>
+                          <Image style={styles.videoImg} source={require('../../assets/articel.png')} />
+                        </View>
+                      </TouchableOpacity>
+      
+                    </View>
+                  </View>
+                }
+
             {/* survey container - start */}
             <TouchableOpacity onPress={() => { surveyCheck() }}>
               <View style={{ alignItems: 'center', marginTop: responsiveWidth(6) }}>
@@ -750,47 +840,10 @@ useEffect(() => {
 
             {/*YouTUbe Video-Start*/}
 
-                  { (userSettings?.data?.blog_status==1) &&
-                  
-                
-            <View style={{ marginTop: responsiveWidth(3.6) }} >
-
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={styles.videoMainText}> Earn By Read Artice </Text>
-                <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
-                  <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin </Text>
-                  <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.blog_coin}</Text>
-                  <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2.5), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
-                </View>
-              </View>
-
-              <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
-
-                <TouchableOpacity
-                  onPress={() => {
-                    // setModalVisibleVideo(true)
-                    // youtubeVideoId()
-                    // navigation.navigate('Youtube', { videoId: videoId?.data?.video_url })
-                    // setCounter(30)
-                    // setTimeout(() => {
-                    //   setVideoClose(true)
-
-                    // }, 30000)
-                    Linking.openURL(userSettings && userSettings?.data?.blog_url);
-
-                  }} >
-                  <View style={styles.videoImgView}>
-                    <Image style={styles.videoImg} source={require('../../assets/articel.png')} />
-                  </View>
-                </TouchableOpacity>
-
-              </View>
-            </View>
-          }
             {/* YouTUbe Video-End*/}
 
             {/* image game - start */}
-            <TouchableOpacity onPress={() => { navigation.navigate('ImageGame') }}>
+            {/* <TouchableOpacity onPress={() => { navigation.navigate('ImageGame') }}>
               <View style={{ alignItems: 'center', marginTop: responsiveWidth(6) }}>
 
                 <View style={styles.surveyContainer}>
@@ -815,7 +868,7 @@ useEffect(() => {
 
                 </View>
               </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             {/* image game - end */}
 
           </View>

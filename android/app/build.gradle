@@ -100,8 +100,8 @@ android {
         applicationId "com.easyearn.cash"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 34
-        versionName "34"
+        versionCode 35
+        versionName "35"
 
         // image picker
          vectorDrawables.useSupportLibrary = true

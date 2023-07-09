@@ -43,13 +43,21 @@ const Wallet = () => {
   const [modalConfirm, setModalConfim] = useState(false);
   const navigation = useNavigation();
   const [userProfileData, setuserProfileData] = useState({});
+  const [userSettings, setUserSettings] = useState()
 
 
   const [withdrawHistoryData, setWithdrawHistoryData] = useState({});
   const [loadingStatus, setLoadingStatus] = useState(false)
   
 
+  // setting api
+  const settings = async () => {
 
+    const seting = await CallApiJson('settings', 'GET');
+    // const data = await JSON.parse(seting)
+    await setUserSettings(seting)
+
+  }
   const  loadUserInfo = async () =>{
     setLoadingStatus(true);
 
@@ -71,6 +79,7 @@ const Wallet = () => {
   }
   
 useEffect(() => {
+  settings()
    loadUserInfo();
 
   return  ()=>{
@@ -129,7 +138,7 @@ useEffect(() => {
   const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
     const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
 if (isRewardedAdReady) {
- AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+   AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
 }
   });
   //rewarded
@@ -440,7 +449,7 @@ const showApplovinRewarded =()=>{
             <View style={styles.modelPaypalTextInputCintainer}>
               <TextInput
                 onChangeText={text => setPaypalId(text)}
-                placeholder="Enter Your Paypal Id"
+                placeholder="Enter Paypal Id"
                 placeholderTextColor="#fff"
                 autoCorrect={false}
                 value={paypalId}
@@ -450,36 +459,18 @@ const showApplovinRewarded =()=>{
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: responsiveWidth(2.45) }}>
 
-              <TouchableHighlight onPress={() => { setSelectedCard(200) }} style={{ borderRadius: responsiveWidth(2.45) }}>
-                <LinearGradient colors={["#0a203e", "#1f4c86"]}
-                  useAngle={true}
-                  angle={322}
-                  angleCenter={{ x: 0.5, y: 0.5 }}
-                  style={[styles.modelPaypalLinearGradientCard,{borderColor: selectedCard === 200 ? 'gold' : '#1f4c86',}]}>
-                  <Image style={{ width: responsiveWidth(8.1), height: responsiveHeight(4),resizeMode:'contain' }} source={require("../../assets/PayPal.png")} />
-                  <View style={{ width: responsiveWidth(9.5) }}>
-                    <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >200</Text>
-                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                      <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
-                      <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.8) }} >20</Text>
-                    </View>
-                  </View>
-                </LinearGradient>
-              </TouchableHighlight>
-
-
               <TouchableHighlight onPress={() => { setSelectedCard(1000) }} style={{ borderRadius: responsiveWidth(2.45) }}>
                 <LinearGradient colors={["#0a203e", "#1f4c86"]}
                   useAngle={true}
                   angle={322}
                   angleCenter={{ x: 0.5, y: 0.5 }}
-                  style={[styles.modelPaypalLinearGradientCard,{borderColor: selectedCard === 100 ? 'gold' : '#1f4c86',}]}>
-                  <Image style={{ width:responsiveWidth(8.1), height: responsiveHeight(4),resizeMode:'contain' }} source={require("../../assets/PayPal.png")} />
-                  <View style={{ width: responsiveWidth(9.5)  }}>
+                  style={[styles.modelPaypalLinearGradientCard,{borderColor: selectedCard === 1000 ? 'gold' : '#1f4c86',}]}>
+                  <Image style={{ width: responsiveWidth(8.1), height: responsiveHeight(4),resizeMode:'contain' }} source={require("../../assets/PayPal.png")} />
+                  <View style={{ width: responsiveWidth(9.5) }}>
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >1000</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                       <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
-                      <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.8) }} >100</Text>
+                      <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.8) }} >{userSettings && userSettings?.data?.coin_factor}</Text>
                     </View>
                   </View>
                 </LinearGradient>
@@ -492,12 +483,30 @@ const showApplovinRewarded =()=>{
                   angle={322}
                   angleCenter={{ x: 0.5, y: 0.5 }}
                   style={[styles.modelPaypalLinearGradientCard,{borderColor: selectedCard === 2000 ? 'gold' : '#1f4c86',}]}>
-                  <Image style={{  width:responsiveWidth(8.1), height: responsiveHeight(4),resizeMode:'contain'  }} source={require("../../assets/PayPal.png")} />
-                  <View style={{ width: responsiveWidth(9.5) }}>
+                  <Image style={{ width:responsiveWidth(8.1), height: responsiveHeight(4),resizeMode:'contain' }} source={require("../../assets/PayPal.png")} />
+                  <View style={{ width: responsiveWidth(9.5)  }}>
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >2000</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                       <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
-                      <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.8) }} >200</Text>
+                      <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.8) }} >{userSettings && 2*userSettings?.data?.coin_factor}</Text>
+                    </View>
+                  </View>
+                </LinearGradient>
+              </TouchableHighlight>
+
+
+              <TouchableHighlight onPress={() => { setSelectedCard(3000) }} style={{ borderRadius: responsiveWidth(2.45) }}>
+                <LinearGradient colors={["#0a203e", "#1f4c86"]}
+                  useAngle={true}
+                  angle={322}
+                  angleCenter={{ x: 0.5, y: 0.5 }}
+                  style={[styles.modelPaypalLinearGradientCard,{borderColor: selectedCard === 3000 ? 'gold' : '#1f4c86',}]}>
+                  <Image style={{  width:responsiveWidth(8.1), height: responsiveHeight(4),resizeMode:'contain'  }} source={require("../../assets/PayPal.png")} />
+                  <View style={{ width: responsiveWidth(9.5) }}>
+                    <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >3000</Text>
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                      <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
+                      <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.8) }} >{userSettings && 3*userSettings?.data?.coin_factor}</Text>
                     </View>
                   </View>
                 </LinearGradient>
@@ -569,7 +578,7 @@ const showApplovinRewarded =()=>{
 
          <View style={styles.modelPaytmTextInputCintainer}>
               <TextInput
-                placeholder="Enter Your UPI ID  "
+                placeholder="Enter UPI ID  "
                 placeholderTextColor="#fff"
                 autoCorrect={false}
                 keyboardType='numeric'
@@ -580,36 +589,19 @@ const showApplovinRewarded =()=>{
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: responsiveWidth(2.45) }}>
 
-              <TouchableHighlight onPress={() => { setSelectedCard(200) }} style={{ borderRadius: responsiveWidth(2.45) }}>
+              <TouchableHighlight onPress={() => { setSelectedCard(1000) }} style={{ borderRadius: responsiveWidth(2.45) }}>
 
-                <LinearGradient colors={["#0a203e", "#1f4c86"]}
-                  useAngle={true}
-                  angle={322}
-                  angleCenter={{ x: 0.5, y: 0.5 }}
-                  style={[styles.modelPaytmLinearGradientCard,{borderColor: selectedCard === 200 ? 'gold' : '#1f4c86',}]}>
-                  <Image style={{ width: responsiveWidth(8), height: responsiveHeight(4.8),resizeMode:'contain' }} source={require("../../assets/Paytm.png")} />
-                  <View style={{ width: responsiveWidth(9.5) }}>
-                    <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >200</Text>
-                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                      <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
-                      <Text style={{ color: "#fff", fontSize:  responsiveFontSize(1.8) }} >20</Text>
-                    </View>
-                  </View>
-                </LinearGradient>
-              </TouchableHighlight>
-
-              <TouchableHighlight onPress={() => { setSelectedCard(1000) }} style={{ borderRadius: 10 }}>
                 <LinearGradient colors={["#0a203e", "#1f4c86"]}
                   useAngle={true}
                   angle={322}
                   angleCenter={{ x: 0.5, y: 0.5 }}
                   style={[styles.modelPaytmLinearGradientCard,{borderColor: selectedCard === 1000 ? 'gold' : '#1f4c86',}]}>
-                  <Image style={{ width: responsiveWidth(8), height: responsiveHeight(4.8),resizeMode:'contain'  }} source={require("../../assets/Paytm.png")} />
-                  <View style={{  width: responsiveWidth(9.5) }}>
+                  <Image style={{ width: responsiveWidth(8), height: responsiveHeight(4.8),resizeMode:'contain' }} source={require("../../assets/Paytm.png")} />
+                  <View style={{ width: responsiveWidth(9.5) }}>
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >1000</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                       <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
-                      <Text style={{ color: "#fff", fontSize:  responsiveFontSize(1.8) }} >100</Text>
+                      <Text style={{ color: "#fff", fontSize:  responsiveFontSize(1.8) }} >{userSettings && userSettings?.data?.coin_factor}</Text>
                     </View>
                   </View>
                 </LinearGradient>
@@ -621,14 +613,31 @@ const showApplovinRewarded =()=>{
                   angle={322}
                   angleCenter={{ x: 0.5, y: 0.5 }}
                   style={[styles.modelPaytmLinearGradientCard,{borderColor: selectedCard === 2000 ? 'gold' : '#1f4c86',}]}>
+                  <Image style={{ width: responsiveWidth(8), height: responsiveHeight(4.8),resizeMode:'contain'  }} source={require("../../assets/Paytm.png")} />
+                  <View style={{  width: responsiveWidth(9.5) }}>
+                    <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >2000</Text>
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                      <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
+                      <Text style={{ color: "#fff", fontSize:  responsiveFontSize(1.8) }} >{userSettings && 2*userSettings?.data?.coin_factor}</Text>
+                    </View>
+                  </View>
+                </LinearGradient>
+              </TouchableHighlight>
+
+              <TouchableHighlight onPress={() => { setSelectedCard(3000) }} style={{ borderRadius: 10 }}>
+                <LinearGradient colors={["#0a203e", "#1f4c86"]}
+                  useAngle={true}
+                  angle={322}
+                  angleCenter={{ x: 0.5, y: 0.5 }}
+                  style={[styles.modelPaytmLinearGradientCard,{borderColor: selectedCard === 3000 ? 'gold' : '#1f4c86',}]}>
 
                   <Image style={{ width: responsiveWidth(8), height: responsiveHeight(4.8),resizeMode:'contain' }} source={require("../../assets/Paytm.png")} />
 
                   <View style={{  width: responsiveWidth(9.5)}}>
-                    <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >2000</Text>
+                    <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >3000</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                       <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
-                      <Text style={{ color: "#fff",fontSize:  responsiveFontSize(1.8) }} >200</Text>
+                      <Text style={{ color: "#fff",fontSize:  responsiveFontSize(1.8) }} >{userSettings && 3*userSettings?.data?.coin_factor}</Text>
                     </View>
                   </View>
                 </LinearGradient>

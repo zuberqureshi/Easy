@@ -130,6 +130,7 @@ const EnglishGame = () => {
           navigation.navigate('Home');
           return;
         }else{
+          showApplovinRewarded();
           return ;
         }
 
@@ -168,7 +169,7 @@ useEffect(() => {
   const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
     const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
 if (isRewardedAdReady) {
- AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+   //AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
  }
   });
   //rewarded

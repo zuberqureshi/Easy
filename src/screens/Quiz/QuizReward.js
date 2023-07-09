@@ -48,7 +48,7 @@ const QuizReward = ({route}) => {
 
     const  quizRewardClaim = async () =>{
 
-      await showApplovinRewarded()
+      await showApplovinIntrestial()
         // const data = await JSON.parse(seting)
         if(authCtx.quizValue < 5){
           Alert.alert('Sorry ! Your Score is Less than 5 , Try again ' );
@@ -135,7 +135,7 @@ useEffect(() => {
   const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
     const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
 if (isRewardedAdReady) {
- AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+   AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
 }
   });
   //rewarded

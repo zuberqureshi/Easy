@@ -120,7 +120,6 @@ useEffect(() => {
       setclaimButton(false);
       setbuttonDisableTrue(false);
       // AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
-     
     }
   });
   // rewarded
@@ -128,7 +127,7 @@ useEffect(() => {
   const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
     const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
 if (isRewardedAdReady) {
-  // AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+   AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
 }
   });
   //rewarded
@@ -343,7 +342,7 @@ const showApplovinRewarded =()=>{
         <TouchableOpacity style={styles.submitButton}  
         onPress={ async ()=>{
 
-              await showApplovinRewarded();
+            //  await showApplovinRewarded();
               // setModalVisible(true)
               getTextScore()
               navigation.navigate('QuizReward',{category:route.params.category,totalques:apiQues?.questions?.length})
