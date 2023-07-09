@@ -10,11 +10,8 @@ const Questions = ({data,selectedOption}) => {
   return (
     <View style={{width:windowWidth}} >
       <Text style={styles.ques} >
-      <RenderHtml
-      contentWidth={windowWidth}
-      source={data.question}
-    />
-       </Text>
+      { 'Ques:' + data.question}
+      </Text>
     
     <View style={{marginTop:responsiveWidth(5)}} >
     <FlatList
