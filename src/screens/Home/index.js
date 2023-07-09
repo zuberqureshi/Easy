@@ -17,13 +17,7 @@ import YoutubePlayer from "react-native-youtube-iframe";
 import Loader from '../../components/common/loader/Loader';
 import crashlytics from '@react-native-firebase/crashlytics';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
-import { BannerAdSize, BannerAd, AppOpenAd, RewardedAd, RewardedAdEventType, TestIds, AdEventType, InterstitialAd } from 'react-native-google-mobile-ads';
 import AppLovinMAX from  "react-native-applovin-max";
-
-const adUnitId = 'ca-app-pub-5493577236373808/8452330072';
-const adUnitIdrewarded = 'ca-app-pub-5493577236373808/2741101726';
-const adUnitIdIntrestial = 'ca-app-pub-5493577236373808/6488775047';
-
 import RNPollfish from 'react-native-plugin-pollfish';
 const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(true);
 RNPollfish.init(builder.build());
@@ -389,7 +383,6 @@ const Home = () => {
   const youtubeVideoRewardClaim = async () => {
     console.log("User data home youtubeVideo Reward API", userInfo.id)
     // console.log('dailyreward eligiblaForDailyReward ',dailyRewardButton)
-
     const body = {
       user_id: userInfo.id,
     };
@@ -1074,11 +1067,7 @@ useEffect(() => {
         </View>
 
       </ScrollView>
-      <BannerAd 
-        unitId={adUnitId}
-        size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-        
-      />
+     
 
 
 

@@ -10,18 +10,9 @@ import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-nat
 import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import moment from 'moment'
-import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
-import AppLovinMAX from  "react-native-applovin-max";
+ import AppLovinMAX from  "react-native-applovin-max";
 
-//admob
-const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
-const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
-const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
-const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
-const interstitial = InterstitialAd.createForAdRequest(adUnitIdIntrestial, { 
-});
-//admob
-
+ 
 //applovin
 AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2WdHqlug5t5IG_ZSo2D6VGE11RWPocUqk").then(configuration => {
   // SDK is initialized, start loading ads
@@ -87,43 +78,7 @@ useEffect(() => {
   }
 }, [])
   
-
-
-useEffect(() => {
-  setLoadingStatus(true)
-
-   const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-    setLoadingStatus(false)
-       rewarded.show();
-
-  });
-  const unsubscribeEarned = rewarded.addAdEventListener(
-    RewardedAdEventType.EARNED_REWARD,
-    reward => {
-      console.log('User earned reward of ', reward);
-      setLoadingStatus(false)
  
-    },
-  );
- 
-  // Start loading the rewarded ad straight away
-  rewarded.load();
-
-  const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
-      interstitial.show()
-  });
- 
- // Start loading the interstitial straight away
- interstitial.load();
-
- 
-  // Unsubscribe from events on unmount
-  return () => {
-    unsubscribe()
-    unsubscribeLoaded();
-    unsubscribeEarned();
-  };
-}, []);
 
   const Item = ({sno,coins,amount,status,date}) => {
 
@@ -336,11 +291,7 @@ const showApplovinRewarded =()=>{
  
 
     <View style={{ flex: 1, backgroundColor: "#0a203e" }} >
-   <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-     
-    />
+  
 
 <Loader loadingStatus = {loadingStatus} />
 
@@ -795,12 +746,7 @@ const showApplovinRewarded =()=>{
         </View>
         
       </Modal>
-      <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-     
-    />
-  
+    
 
     </View>
 

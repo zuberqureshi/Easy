@@ -15,16 +15,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import Loader from '../../components/common/loader/Loader';
-import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
-import AppLovinMAX from  "react-native-applovin-max";
-
-//admob
-const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
-const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
-const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
-const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded );
-//admob
-
+ import AppLovinMAX from  "react-native-applovin-max";
+ 
 
 //applovin
 
@@ -220,21 +212,7 @@ if (isRewardedAdReady) {
         </TouchableRipple> */}
       </View>
 
-      <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-    
-    />
-       <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-    
-    />
-       <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-     
-    />
+      
     </SafeAreaView>
    
   );

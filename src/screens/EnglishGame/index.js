@@ -8,21 +8,10 @@ import LinearGradient from 'react-native-linear-gradient'
 import Loader from '../../components/common/loader/Loader';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
-//goggle admob
-import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType, RewardedInterstitialAd, TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
-//applovin
+  //applovin
 import AppLovinMAX from  "react-native-applovin-max";
 
-
-//goggle admob
-const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
-const adUnitIdrewarded =   'ca-app-pub-5493577236373808/2741101726';
-const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
-const adUnitIdIntrestialRewarded  ='ca-app-pub-5493577236373808/8357047029';
-const interstitial = InterstitialAd.createForAdRequest(adUnitIdIntrestial, { });
-const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded,{} );
-const rewardedInterstitial = RewardedInterstitialAd.createForAdRequest(adUnitIdIntrestialRewarded, {});
-//goggle admob
+ 
 
 //applovin
 AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2WdHqlug5t5IG_ZSo2D6VGE11RWPocUqk").then(configuration => {
@@ -134,60 +123,7 @@ const EnglishGame = () => {
 
 
 
-    useEffect(() => {
  
-      const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-           rewarded.show();
- 
-      });
-      const unsubscribeEarned = rewarded.addAdEventListener(
-        RewardedAdEventType.EARNED_REWARD,
-        reward => {
-          },
-      );
-  
-      // Start loading the rewarded ad straight away
-      rewarded.load();
-      // Unsubscribe from events on unmount
-
-
-    const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
-      interstitial.show()
- 
-    });
-
-    // Start loading the interstitial straight away
-    interstitial.load();
-
-
-    //intrestial rewarded 
-
-    const unsubscribeLoadedIntrestialRewarded = rewardedInterstitial.addAdEventListener(
-      RewardedAdEventType.LOADED,
-      () => {
-       },
-    );
-    const unsubscribeEarnedIntrestialRewarded = rewardedInterstitial.addAdEventListener(
-      RewardedAdEventType.EARNED_REWARD,
-      reward => {
-       },
-    );
-
-    // Start loading the rewarded interstitial ad straight away
-    rewardedInterstitial.load();
-
-    //intrestial reward
-
-
-      return () => {
-        unsubscribe();
-        unsubscribeLoadedIntrestialRewarded();
-        unsubscribeEarnedIntrestialRewarded()
-        unsubscribeLoaded();
-        unsubscribeEarned();
-      };
-    }, []);
-
 
 //applovin 
 useEffect(() => {
@@ -352,10 +288,7 @@ useLayoutEffect(() => {
            </LinearGradient>
            </View>
  
- 
-           <BannerAd    unitId={adUnitId}  size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-                        
-          />
+  
 
 
      </View>

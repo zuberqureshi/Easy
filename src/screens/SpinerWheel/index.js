@@ -13,14 +13,7 @@ import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
 import AppLovinMAX from  "react-native-applovin-max";
 
-// admob
-const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
-const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
-const adUnitIdIntrestial  =  'ca-app-pub-5493577236373808/6488775047';
-const interstitial = InterstitialAd.createForAdRequest(adUnitIdIntrestial, { 
-});
-const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded,{} );
-// admob
+ 
 
 
 //applovin
@@ -109,32 +102,11 @@ const SpinerWheel = () => {
 
 useEffect(() => {
  load();
-  const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-      rewarded.show();
- });
- const unsubscribeEarned = rewarded.addAdEventListener(
-   RewardedAdEventType.EARNED_REWARD,
-   reward => {
-
-     },
- );
-
- // Start loading the rewarded ad straight away
- rewarded.load();
-
- const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
-     interstitial.show()
- });
-
-// Start loading the interstitial straight away
-interstitial.load();
-
+ 
 
  // Unsubscribe from events on unmount
  return () => {
-   unsubscribe();
-   unsubscribeLoaded();
-   unsubscribeEarned();
+  
  };
 }, []);
 
@@ -248,11 +220,7 @@ const showApplovinRewarded =async ()=>{
 
   return (
 <ScrollView> 
-<BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-       
-    />
+ 
     <Loader loadingStatus = {loadingStatus} />
 
 
@@ -266,11 +234,7 @@ const showApplovinRewarded =async ()=>{
        <Spiner setSpinValue={setSpinValue}  updateSpinnerWheelWinner={updateSpinnerWheelWinner} showApplovinRewarded={showApplovinIntrestial} userWallet={userWallet} setSpinAmount={setSpinAmount} spinAmount={spinAmount}  />
   
     </View>
-    <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-     
-    />
+ 
     </ScrollView>
   )
 }

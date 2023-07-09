@@ -7,19 +7,11 @@ import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-nat
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
-import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
 import VersionCheck from 'react-native-version-check';
 import AppLovinMAX from  "react-native-applovin-max";
 
 
-//admob
-const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
-const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
-const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
-const interstitial = InterstitialAd.createForAdRequest(adUnitIdIntrestial, { 
-});
-const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded,{} );
-//admob
+ 
 
 //applovin
 
@@ -122,41 +114,7 @@ useEffect(() => {
 
 
 
-
-
-useEffect(() => {
  
-   const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-      rewarded.show();
- 
-  });
-  const unsubscribeEarned = rewarded.addAdEventListener(
-    RewardedAdEventType.EARNED_REWARD,
-    reward => {
- 
-
-    },
-  );
-
-  // Start loading the rewarded ad straight away
-  rewarded.load();
-
-  const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
-    interstitial.show()
-  });
-
- // Start loading the interstitial straight away
- interstitial.load();
-
-
-  // Unsubscribe from events on unmount
-  return () => {
-    unsubscribe()
-     unsubscribeLoaded();
-    unsubscribeEarned();
-  };
-}, []);
-
 
 
 //applovin 
@@ -246,11 +204,7 @@ const showApplovinRewarded =()=>{
 
   return (
     <View style={{flex:1,backgroundColor: '#0a203e',justifyContent:'center'}}>
-   <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-    
-    />
+ 
     <View style={{}}>
      <LinearGradient colors={["#0a203e", "#1f4c86"]}
                   useAngle={true}
@@ -303,10 +257,7 @@ marginTop:responsiveWidth(20)
           {/* </View> */}
           </LinearGradient>
           </View>
-          <BannerAd
-            unitId={adUnitId}
-            size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-          />
+       
 
     </View>
   )

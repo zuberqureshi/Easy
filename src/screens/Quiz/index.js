@@ -10,18 +10,9 @@ import LinearGradient from 'react-native-linear-gradient'
 import styles from './style'
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import Loader from '../../components/common/loader/Loader';
-import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
-import AppLovinMAX from  "react-native-applovin-max";
+ import AppLovinMAX from  "react-native-applovin-max";
 
-//admob
-const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
-const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
-const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
-const interstitial = InterstitialAd.createForAdRequest(adUnitIdIntrestial, { 
-});
-const rewarded = RewardedAd.createForAdRequest(adUnitIdrewarded,{} );
-//admob
-
+ 
 
 //applovin
 
@@ -76,20 +67,7 @@ const [apiQues, setApiQues] = useState({})
     //  setuserProfileData(profileData);
        setLoadingStatus(false)
   }
-
-  const showAds = (currentIndex)=>{
-
-    if( currentIndex%5==0)      {
-      interstitial.addAdEventListener(AdEventType.LOADED, () => {
-        console.log('interstitialad Loaded' )
-        interstitial.show();
-    
-       });
-
-    }
-
-
-  }
+ 
   
 useEffect(() => {
   
@@ -103,39 +81,7 @@ useEffect(() => {
 
 
 
-useEffect(() => {
-    const unsubscribeLoaded = rewarded.addAdEventListener(RewardedAdEventType.LOADED, () => {
-      rewarded.show();
  
-  });
-  const unsubscribeEarned = rewarded.addAdEventListener(
-    RewardedAdEventType.EARNED_REWARD,
-    reward => {
- 
- 
-    },
-  );
- 
-  // Start loading the rewarded ad straight away
-  rewarded.load();
- 
-  const unsubscribe = interstitial.addAdEventListener(AdEventType.LOADED, () => {
-    interstitial.show()
-  });
- 
- // Start loading the interstitial straight away
- interstitial.load();
- 
- 
-  // Unsubscribe from events on unmount
-  return () => {
-    unsubscribe();
-    unsubscribeLoaded();
-    unsubscribeEarned();
-  };
- }, []);
-
-
   
 
 //applovin 
@@ -279,11 +225,7 @@ const showApplovinRewarded =()=>{
  
     <View style={{flex:1,backgroundColor: '#0a203e' }} >
     <Loader loadingStatus = {loadingStatus} />
-    <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      
-    />
+   
 
       <View
         style={{
@@ -418,11 +360,7 @@ const showApplovinRewarded =()=>{
 
    
       </View>
-      <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      
-    />
+    
 
       <Modal
         animationType="slide"

@@ -9,10 +9,6 @@ import CallApi, {setToken ,CallApiJson } from '../../utiles/network';
 import EncryptedStorage from 'react-native-encrypted-storage';
 import { useNavigation,useIsFocused } from "@react-navigation/native";
 import Loader from '../../components/common/loader/Loader';
-import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
-const adUnitId =  'ca-app-pub-5493577236373808/8452330072';
-const adUnitIdrewarded =  'ca-app-pub-5493577236373808/2741101726';
-const adUnitIdIntrestial  = 'ca-app-pub-5493577236373808/6488775047';
 import  { AuthContext } from "../../utiles/auth-context";
 
 
@@ -184,12 +180,7 @@ const signIn = async () => {
 
 
     </View>
-
-    <BannerAd
-      unitId={adUnitId}
-      size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-      
-    />
+ 
 
 
   </LinearGradient>
