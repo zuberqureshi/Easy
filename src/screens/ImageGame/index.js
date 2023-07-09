@@ -49,6 +49,30 @@ const ImageGame = () => {
   }
  
 
+    //Get User checkGameEligiblility
+    const checkGameEligiblility = async () => {
+      setLoadingStatus(true)
+
+      const ds = await getToken();
+    const data = await JSON.parse(ds)
+ 
+    let body = {
+      user_id:data.id
+    }
+    const checkGameEligibility = await CallApiJson('checkGameEligibility', 'POST',body);
+    // const data = await JSON.parse(seting)
+        if( checkGameEligibility.error==true  ){
+
+          setLoadingStatus(false)
+          Alert.alert(checkGameEligibility.msg);
+          navigation.navigate('Home');
+          return;
+        }else{
+          return ;
+        }
+
+
+    }
     useEffect(() => {
       //   console.log('userprofile',userProfileData)
       checkGameEligiblility()

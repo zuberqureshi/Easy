@@ -3,14 +3,18 @@ import React,{useState } from 'react'
 import {windowHeight,windowWidth} from '../../utiles/Dimensions'
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import styles from './style'
+import RenderHtml from 'react-native-render-html';
 
 
 const Questions = ({data,selectedOption}) => {
   return (
     <View style={{width:windowWidth}} >
       <Text style={styles.ques} >
-      { 'Ques:' + data.question}
-      </Text>
+      <RenderHtml
+      contentWidth={windowWidth}
+      source={data.question}
+    />
+       </Text>
     
     <View style={{marginTop:responsiveWidth(5)}} >
     <FlatList
