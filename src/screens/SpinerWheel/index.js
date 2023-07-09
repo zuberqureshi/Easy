@@ -245,19 +245,19 @@ const showApplovinRewarded =async ()=>{
  console.log("spinner Amount state",spinAmount)
 
   return (
-<ScrollView> 
+<ScrollView  style={{flex:1,backgroundColor:'#0a203e'}} > 
  
     <Loader loadingStatus = {loadingStatus} />
 
 
-    <View style={{flex:1,backgroundColor:'#0a203e'}}>
-        <View style={{justifyContent:'center',alignItems:'center',marginTop:responsiveWidth(7)}}>
+    <View style={{flex:0.8,backgroundColor:'#0a203e'}}>
+        <View style={{justifyContent:'center',alignItems:'center',marginTop:responsiveWidth(1)}}>
           <Text style={{color:'#fff',fontSize:responsiveFontSize(3.55)}}> PLAY  SPIN GAME </Text>
           <Text style={{color:'#fff',fontSize:responsiveFontSize(1.7),letterSpacing:responsiveWidth(0.37)}}> Double Your Coin By Playing Spinner </Text>
           {/* <Text style={{color:'#fff',fontSize:responsiveFontSize(1.9),marginTop:responsiveWidth(2.5)}}> Congrat's You have Won {spinAmount } </Text> */}
         </View>
 
-       <Spiner setSpinValue={setSpinValue}  updateSpinnerWheelWinner={updateSpinnerWheelWinner} showApplovinRewarded={showApplovinIntrestial} userWallet={userWallet} setSpinAmount={setSpinAmount} spinAmount={spinAmount}  />
+       <Spiner   setSpinValue={setSpinValue}  updateSpinnerWheelWinner={updateSpinnerWheelWinner} showApplovinRewarded={showApplovinIntrestial} userWallet={userWallet} setSpinAmount={setSpinAmount} spinAmount={spinAmount}  />
   
     </View>
  
