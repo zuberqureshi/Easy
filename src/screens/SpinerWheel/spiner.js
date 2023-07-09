@@ -89,43 +89,42 @@ class Spiner extends Component {
 
 
   <View style={{marginTop:'60%',flexDirection:'row',alignContent:'space-between',}}>
-  <TouchableOpacity onPress={()=>{this.props.setSpinAmount(20);  this.props.showApplovinRewarded();  }    } >
-      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===20?'gold':'#1f4c86',}]}>
+  <TouchableOpacity onPress={()=>{this.props.setSpinAmount(2);  this.props.showApplovinRewarded();  }    } >
+      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===2?'gold':'#1f4c86',}]}>
 
-      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)  } } >20 Place</Text> 
+      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)  } } >2 Place</Text> 
+        <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
+        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >4 Get</Text> 
+      
+      </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={()=>{this.props.setSpinAmount(5);  this.props.showApplovinRewarded();  }}>
+      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===5?'gold':'#1f4c86',}]}>
+
+      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >5 Place</Text> 
+        <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
+        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >10 Get</Text> 
+      
+      </View>
+      </TouchableOpacity>
+
+   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(10);  this.props.showApplovinRewarded();  }}>
+      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===10?'gold':'#1f4c86',}]}>
+
+      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >10 Place</Text> 
         <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
         <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Get</Text> 
       
       </View>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={()=>{this.props.setSpinAmount(40);  this.props.showApplovinRewarded();  }}>
-      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===40?'gold':'#1f4c86',}]}>
+   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(20);  this.props.showApplovinRewarded();  }}>
+      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===20?'gold':'#1f4c86',}]}>
 
-      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >40 Place</Text> 
+      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >20 Place</Text> 
         <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
-        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >50 Get</Text> 
-      
-      </View>
-      </TouchableOpacity>
-
-   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(60);  this.props.showApplovinRewarded();  }}>
-      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===60?'gold':'#1f4c86',}]}>
-
-      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >60 Place</Text> 
-        <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
-        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >80 Get</Text> 
-      
-      </View>
-      </TouchableOpacity>
-
-   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(100);  this.props.showApplovinRewarded();  }}>
-      <View style={[styles.coinBox,{borderColor:this.props.spinAmount===100?'gold':'#1f4c86',}]}>
-
-      <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >100 Place</Text> 
-        <Image style={{width:responsiveWidth(6),height:responsiveHeight(2.5),resizeMode:'contain'}} source={require('../../assets/rupee.png')} />
-        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >150 Get</Text> 
-      
+        <Text style={{color:'#fff',fontSize:responsiveFontSize(1.4)}} >40 Get</Text> 
       </View>
       </TouchableOpacity>
   </View>

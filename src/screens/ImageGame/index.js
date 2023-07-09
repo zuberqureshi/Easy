@@ -15,6 +15,7 @@ const ImageGame = () => {
     const [selectedIndex, setSelectedIndex] = useState()
     const [selectedOption, setSelectedOption] = useState()
     const [optionOff, setOptionOff] = useState(false)
+    const [loadingStatus, setLoadingStatus] = useState(false)
 
     const navigation = useNavigation();
 
@@ -25,6 +26,39 @@ const ImageGame = () => {
          'to be lived', 
          'to be living',
     ]
+    const  loadUserInfo = async () =>{
+      // const data = await JSON.parse(seting)
+      setLoadingStatus(true)
+     const  userdata = await getToken();
+     const userdataParsed = await JSON.parse(userdata)
+     const body = {
+      user_id: userdataParsed.id,
+      category:route.params.category
+    };
+
+     const questionData = await CallApiJson('gkquestion', 'POST',body);
+    //  setLoadingStatus(false);
+    if( !questionData.questions ){
+      Alert.alert('No Questions on Server , Please Try Again ');
+      return;
+    }
+       await setApiQues(questionData)
+       await setQuestions(questionData?.questions)
+    //  setuserProfileData(profileData);
+       setLoadingStatus(false)
+  }
+ 
+
+    useEffect(() => {
+      //   console.log('userprofile',userProfileData)
+      checkGameEligiblility()
+        loadUserInfo();
+        return  ()=>{
+          console.log('return')
+        }
+      }, [])
+
+
   //header
 useLayoutEffect(() => {
     navigation.setOptions({

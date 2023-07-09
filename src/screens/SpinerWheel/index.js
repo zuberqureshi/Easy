@@ -61,7 +61,34 @@ const SpinerWheel = () => {
     setLoadingStatus(false)
     }
 
+    //Get User checkGameEligiblility
+    const checkGameEligiblility = async () => {
+      setLoadingStatus(true)
+
+      const ds = await getToken();
+    const data = await JSON.parse(ds)
+ 
+    let body = {
+      user_id:data.id
+    }
+    const checkGameEligibility = await CallApiJson('checkGameEligibility', 'POST',body);
+    // const data = await JSON.parse(seting)
+        if( checkGameEligibility.error==true  ){
+
+          setLoadingStatus(false)
+          Alert.alert(checkGameEligibility.msg);
+          navigation.navigate('Home');
+          return;
+        }else{
+          return ;
+        }
+
+
+    }
+
+
    const load = async () => {
+    await checkGameEligiblility();
     await getUserInfo();
   
    }
@@ -137,7 +164,7 @@ useEffect(() => {
   const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
     const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
 if (isRewardedAdReady) {
-  AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+   // AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
 }
 
 
@@ -168,7 +195,6 @@ const showApplovinIntrestial = async ()=>{
 
 const showApplovinRewarded =async ()=>{
 
-  console.log('showApplovinRewardedfucntion' );
     AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
   
 
