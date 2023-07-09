@@ -426,8 +426,8 @@ useEffect(() => {
     <SafeAreaView style={{ flex: 1, backgroundColor: '#0a203e' }}>
 <Loader loadingStatus = {loadingStatus} />
 
-      <ScrollView>
-        <View style={{ flex: 1,}}>
+      <ScrollView style={{marginBottom:responsiveWidth(7)}}>
+        <View style={{ flex: 1}}>
 
           {/* Slider */}
           <View style={[styles.slider]}>
@@ -623,11 +623,12 @@ useEffect(() => {
                   </View>
                 </View>
 
-                <View style={styles.gameZoneMainImgView}>
-                  <TouchableOpacity onPress={() => { navigation.navigate('Quiz', { category: 'science' }) }} >
+                <View style={[styles.gameZoneMainImgView,{alignSelf:'center'}]}>
+
+                  <TouchableOpacity onPress={() => { navigation.navigate('Quiz', { category: 'sport' }) }} >
                     <View style={styles.gameZoneSingleImgView}>
-                      <Image style={styles.gameZoneSingleImg} source={require('../../assets/q1.png')} />
-                      <Text style={styles.gameZoneImgText}>Science</Text>
+                      <Image style={styles.gameZoneSingleImg} source={require('../../assets/sp.png')} />
+                      <Text style={styles.gameZoneImgText}>Sport</Text>
                     </View>
                   </TouchableOpacity>
                   <TouchableOpacity onPress={() => { navigation.navigate('Quiz', { category: 'math' }) }} >
@@ -648,14 +649,13 @@ useEffect(() => {
                       <Text style={styles.gameZoneImgText}>Coding</Text>
                     </View>
                   </TouchableOpacity>
+                  <TouchableOpacity onPress={() => { navigation.navigate('Quiz', { category: 'movie' }) }} >
+                    <View style={styles.gameZoneSingleImgView}>
+                      <Image style={styles.gameZoneSingleImg} source={require('../../assets/moviequiz.png')} />
+                      <Text style={styles.gameZoneImgText}>Movie</Text>
+                    </View>
+                  </TouchableOpacity>
 
-
-                  {/* <TouchableOpacity onPress={ ()=>{setModalVisible(true)} }>
-                 <View style={styles.gameZoneSingleImgView}>
-                    <Image style={styles.gameZoneSingleImg} source={require('../../assets/q4.png')} />
-                    <Text style={styles.gameZoneImgText}>Daily Reward</Text>
-                  </View>
-                 </TouchableOpacity> */}
                 </View>
               </View>
             </View>

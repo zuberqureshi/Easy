@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     // backgroundColor:  '#0a203e',
-    marginTop:'55%'
+    marginTop:'54%'
     
   },
   startButtonView: {
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
   },
   startButton: {
     backgroundColor: '#1f4c86',
-    marginTop:responsiveWidth(8),
+    marginTop:responsiveWidth(6),
     marginBottom:responsiveWidth(5.1),
     padding: responsiveWidth(2.5),
     borderRadius:responsiveWidth(5),
