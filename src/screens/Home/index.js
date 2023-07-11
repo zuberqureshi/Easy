@@ -21,6 +21,7 @@ import AppLovinMAX from  "react-native-applovin-max";
 import RNPollfish from 'react-native-plugin-pollfish';
 const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(true);
 RNPollfish.init(builder.build());
+AppLovinMAX.setVerboseLogging(true);
 
 import inbrain, { InBrainNativeSurvey, InBrainSurveyFilter, InBrainSurveyCategory } from 'inbrain-surveys';
 const apiSecretInBrain = 'Tlz6uQqRLkg5WKGFFGJZqIiReUlwIP+RYbQUOtJzbDNdr1VfLHYlbLMTVf351Q6fZdWfKXQbCRfI73Xf0VEgzw==';
@@ -38,7 +39,14 @@ inbrain.setNavigationBarConfig(navigationBarConfig);
 //applovin
 AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2WdHqlug5t5IG_ZSo2D6VGE11RWPocUqk").then(configuration => {
   // SDK is initialized, start loading ads
+  AppLovinMAX.setVerboseLogging(true);
+
+  console.log( 'configuration',configuration )
+//  AppLovinMAX.showMediationDebugger();
+
 }).catch(error => {
+  console.log( 'AppLovinMAX configurationerror',error )
+
 });
 const BANNER_AD_UNIT_ID = Platform.select({
   android: '2c0d4e4e0e0d9af8'
@@ -251,11 +259,14 @@ useEffect(() => {
 
   //intrestial
   AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
+  AppLovinMAX.addInterstitialLoadedEventListener((adInfo) => {
+    console.log("AppLovin Exchange DSP Name: " + adInfo.dspName);
+});
   const appLovinIntrestial = AppLovinMAX.addInterstitialLoadedEventListener( async () => {
     // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
     const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
     if (isInterstitialReady) {
-    //AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+    AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
     }
   });
   // rewarded
@@ -263,7 +274,7 @@ useEffect(() => {
   const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
     const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
 if (isRewardedAdReady) {
-   //AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+  // AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
  }
   });
   //rewarded

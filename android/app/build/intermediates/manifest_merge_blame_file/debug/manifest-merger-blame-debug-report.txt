@@ -18,75 +18,77 @@
 13-->/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/src/main/AndroidManifest.xml:8:1-73
 13-->/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/src/main/AndroidManifest.xml:8:18-70
 14    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-14-->[com.facebook.flipper:flipper:0.125.0] /Users/zuberqureshi/.gradle/caches/transforms-3/008cd11c47ea3936e444292f8419ce43/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
-14-->[com.facebook.flipper:flipper:0.125.0] /Users/zuberqureshi/.gradle/caches/transforms-3/008cd11c47ea3936e444292f8419ce43/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
+14-->[com.facebook.flipper:flipper:0.125.0] /Users/zuberqureshi/.gradle/caches/transforms-3/f887f72b8ec69d28ad5c07fa39e0e2f3/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
+14-->[com.facebook.flipper:flipper:0.125.0] /Users/zuberqureshi/.gradle/caches/transforms-3/f887f72b8ec69d28ad5c07fa39e0e2f3/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
 15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 15-->[:react-native-community_netinfo] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-community/netinfo/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-79
 15-->[:react-native-community_netinfo] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-community/netinfo/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-76
-16    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+16    <uses-permission android:name="android.permission.WAKE_LOCK" />
 16-->[:react-native-firebase_auth] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-68
 16-->[:react-native-firebase_auth] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-65
-17    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-17-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/da689f97e293ee9ab6083efb32db4d65/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:28:5-82
-17-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/da689f97e293ee9ab6083efb32db4d65/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:28:22-79
-18    <uses-permission android:name="com.google.android.gms.permission.AD_ID" /> <!-- Android package visibility setting -->
-18-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/79af406b27383361ff6f68020bc11970/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:25:5-79
-18-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/79af406b27383361ff6f68020bc11970/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:25:22-76
-19    <queries>
-19-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:32:5-48:15
-20
-21        <!-- For browser content -->
-22        <intent>
-22-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:35:9-41:18
-23            <action android:name="android.intent.action.VIEW" />
-23-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
-23-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
-24
-25            <category android:name="android.intent.category.BROWSABLE" />
-25-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
-25-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
-26
-27            <data android:scheme="https" />
-27-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
-27-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
-28        </intent>
-29        <!-- End of browser content -->
+17
+18    <queries>
+18-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:11:5-15:15
+19        <intent>
+19-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:12:9-14:18
+20            <action android:name="com.applovin.am.intent.action.APPHUB_SERVICE" />
+20-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:13:13-83
+20-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:13:21-80
+21        </intent>
+22        <!-- For browser content -->
+23        <intent>
+23-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:35:9-41:18
+24            <action android:name="android.intent.action.VIEW" />
+24-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
+24-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
+25
+26            <category android:name="android.intent.category.BROWSABLE" />
+26-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
+26-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
+27
+28            <data android:scheme="https" />
+28-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
+28-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
+29        </intent> <!-- End of browser content -->
 30        <!-- For CustomTabsService -->
 31        <intent>
-31-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:44:9-46:18
+31-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:44:9-46:18
 32            <action android:name="android.support.customtabs.action.CustomTabsService" />
-32-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:45:13-90
-32-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:45:21-87
+32-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:45:13-90
+32-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:45:21-87
 33        </intent>
-34        <!-- End of CustomTabsService -->
-35        <intent>
-35-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:12:9-14:18
-36            <action android:name="com.applovin.am.intent.action.APPHUB_SERVICE" />
-36-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:13:13-83
-36-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:13:21-80
-37        </intent>
-38    </queries>
-39
-40    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-40-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:28:5-77
-40-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:28:22-74
-41    <uses-permission android:name="com.applovin.array.apphub.permission.BIND_APPHUB_SERVICE" />
-41-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:20:5-96
-41-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:20:22-93
+34
+35        <package android:name="com.facebook.katana" />
+35-->[com.facebook.android:audience-network-sdk:6.14.0] /Users/zuberqureshi/.gradle/caches/transforms-3/40115f7ab7326e7a8e48aa020b6351ea/transformed/jetified-audience-network-sdk-6.14.0/AndroidManifest.xml:12:9-55
+35-->[com.facebook.android:audience-network-sdk:6.14.0] /Users/zuberqureshi/.gradle/caches/transforms-3/40115f7ab7326e7a8e48aa020b6351ea/transformed/jetified-audience-network-sdk-6.14.0/AndroidManifest.xml:12:18-52
+36    </queries>
+37
+38    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+38-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:19:5-79
+38-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:19:22-76
+39    <uses-permission android:name="com.applovin.array.apphub.permission.BIND_APPHUB_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+39-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:20:5-96
+39-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:20:22-93
+40    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+40-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/5888f212eb67f4c9ef29c48d6e7dcb4a/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:28:5-82
+40-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/5888f212eb67f4c9ef29c48d6e7dcb4a/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:28:22-79
+41    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+41-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:28:5-77
+41-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:28:22-74
 42    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-42-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:26:5-110
-42-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:26:22-107
+42-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:26:5-110
+42-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:26:22-107
 43
 44    <permission
-44-->[androidx.core:core:1.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/ca6ad78153af3db9da09b21ae991e845/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+44-->[androidx.core:core:1.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/2ac48a5e1b135b98b84b5ac9748a248c/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
 45        android:name="com.easyearn.cash.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-45-->[androidx.core:core:1.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/ca6ad78153af3db9da09b21ae991e845/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+45-->[androidx.core:core:1.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/2ac48a5e1b135b98b84b5ac9748a248c/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
 46        android:protectionLevel="signature" />
-46-->[androidx.core:core:1.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/ca6ad78153af3db9da09b21ae991e845/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+46-->[androidx.core:core:1.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/2ac48a5e1b135b98b84b5ac9748a248c/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
 47
 48    <uses-permission android:name="com.easyearn.cash.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-48-->[androidx.core:core:1.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/ca6ad78153af3db9da09b21ae991e845/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
-48-->[androidx.core:core:1.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/ca6ad78153af3db9da09b21ae991e845/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+48-->[androidx.core:core:1.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/2ac48a5e1b135b98b84b5ac9748a248c/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+48-->[androidx.core:core:1.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/2ac48a5e1b135b98b84b5ac9748a248c/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
 49
 50    <application
 50-->/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/src/main/AndroidManifest.xml:10:5-29:19
@@ -95,7 +97,7 @@
 52        android:allowBackup="false"
 52-->/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/src/main/AndroidManifest.xml:15:7-34
 53        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-53-->[androidx.core:core:1.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/ca6ad78153af3db9da09b21ae991e845/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
+53-->[androidx.core:core:1.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/2ac48a5e1b135b98b84b5ac9748a248c/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
 54        android:debuggable="true"
 55        android:icon="@mipmap/ic_launcher"
 55-->/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/src/main/AndroidManifest.xml:13:7-41
@@ -232,59 +234,59 @@
 125                android:value="com.google.firebase.components.ComponentRegistrar" />
 125-->[:react-native-firebase_app] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:17-82
 126            <meta-data
-126-->[com.google.firebase:firebase-analytics-ktx:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/29de35cde66b68e489763ab4f87fb5d7/transformed/jetified-firebase-analytics-ktx-21.3.0/AndroidManifest.xml:11:13-13:85
+126-->[com.google.firebase:firebase-analytics-ktx:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/ed3e41b7a6b02e10e953a9d95dd42d80/transformed/jetified-firebase-analytics-ktx-21.3.0/AndroidManifest.xml:11:13-13:85
 127                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
-127-->[com.google.firebase:firebase-analytics-ktx:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/29de35cde66b68e489763ab4f87fb5d7/transformed/jetified-firebase-analytics-ktx-21.3.0/AndroidManifest.xml:12:17-126
+127-->[com.google.firebase:firebase-analytics-ktx:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/ed3e41b7a6b02e10e953a9d95dd42d80/transformed/jetified-firebase-analytics-ktx-21.3.0/AndroidManifest.xml:12:17-126
 128                android:value="com.google.firebase.components.ComponentRegistrar" />
-128-->[com.google.firebase:firebase-analytics-ktx:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/29de35cde66b68e489763ab4f87fb5d7/transformed/jetified-firebase-analytics-ktx-21.3.0/AndroidManifest.xml:13:17-82
+128-->[com.google.firebase:firebase-analytics-ktx:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/ed3e41b7a6b02e10e953a9d95dd42d80/transformed/jetified-firebase-analytics-ktx-21.3.0/AndroidManifest.xml:13:17-82
 129            <meta-data
-129-->[com.google.firebase:firebase-crashlytics-ndk:18.3.7] /Users/zuberqureshi/.gradle/caches/transforms-3/1f55435427476c45919741ffe41e0e98/transformed/jetified-firebase-crashlytics-ndk-18.3.7/AndroidManifest.xml:34:13-36:85
+129-->[com.google.firebase:firebase-crashlytics-ndk:18.3.7] /Users/zuberqureshi/.gradle/caches/transforms-3/dc7ce525f0ae527dfa1ef1e5695dce0f/transformed/jetified-firebase-crashlytics-ndk-18.3.7/AndroidManifest.xml:34:13-36:85
 130                android:name="com.google.firebase.components:com.google.firebase.crashlytics.ndk.CrashlyticsNdkRegistrar"
-130-->[com.google.firebase:firebase-crashlytics-ndk:18.3.7] /Users/zuberqureshi/.gradle/caches/transforms-3/1f55435427476c45919741ffe41e0e98/transformed/jetified-firebase-crashlytics-ndk-18.3.7/AndroidManifest.xml:35:17-122
+130-->[com.google.firebase:firebase-crashlytics-ndk:18.3.7] /Users/zuberqureshi/.gradle/caches/transforms-3/dc7ce525f0ae527dfa1ef1e5695dce0f/transformed/jetified-firebase-crashlytics-ndk-18.3.7/AndroidManifest.xml:35:17-122
 131                android:value="com.google.firebase.components.ComponentRegistrar" />
-131-->[com.google.firebase:firebase-crashlytics-ndk:18.3.7] /Users/zuberqureshi/.gradle/caches/transforms-3/1f55435427476c45919741ffe41e0e98/transformed/jetified-firebase-crashlytics-ndk-18.3.7/AndroidManifest.xml:36:17-82
+131-->[com.google.firebase:firebase-crashlytics-ndk:18.3.7] /Users/zuberqureshi/.gradle/caches/transforms-3/dc7ce525f0ae527dfa1ef1e5695dce0f/transformed/jetified-firebase-crashlytics-ndk-18.3.7/AndroidManifest.xml:36:17-82
 132            <meta-data
-132-->[com.google.firebase:firebase-crashlytics:18.3.7] /Users/zuberqureshi/.gradle/caches/transforms-3/9f417e5c0cb30679271f7ede53099c41/transformed/jetified-firebase-crashlytics-18.3.7/AndroidManifest.xml:17:13-19:85
+132-->[com.google.firebase:firebase-crashlytics:18.3.7] /Users/zuberqureshi/.gradle/caches/transforms-3/5239a62a2b868f76d77ea744f98a14a5/transformed/jetified-firebase-crashlytics-18.3.7/AndroidManifest.xml:17:13-19:85
 133                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
-133-->[com.google.firebase:firebase-crashlytics:18.3.7] /Users/zuberqureshi/.gradle/caches/transforms-3/9f417e5c0cb30679271f7ede53099c41/transformed/jetified-firebase-crashlytics-18.3.7/AndroidManifest.xml:18:17-115
+133-->[com.google.firebase:firebase-crashlytics:18.3.7] /Users/zuberqureshi/.gradle/caches/transforms-3/5239a62a2b868f76d77ea744f98a14a5/transformed/jetified-firebase-crashlytics-18.3.7/AndroidManifest.xml:18:17-115
 134                android:value="com.google.firebase.components.ComponentRegistrar" />
-134-->[com.google.firebase:firebase-crashlytics:18.3.7] /Users/zuberqureshi/.gradle/caches/transforms-3/9f417e5c0cb30679271f7ede53099c41/transformed/jetified-firebase-crashlytics-18.3.7/AndroidManifest.xml:19:17-82
+134-->[com.google.firebase:firebase-crashlytics:18.3.7] /Users/zuberqureshi/.gradle/caches/transforms-3/5239a62a2b868f76d77ea744f98a14a5/transformed/jetified-firebase-crashlytics-18.3.7/AndroidManifest.xml:19:17-82
 135            <meta-data
-135-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/da689f97e293ee9ab6083efb32db4d65/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:55:13-57:85
+135-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/5888f212eb67f4c9ef29c48d6e7dcb4a/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:55:13-57:85
 136                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-136-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/da689f97e293ee9ab6083efb32db4d65/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:56:17-119
+136-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/5888f212eb67f4c9ef29c48d6e7dcb4a/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:56:17-119
 137                android:value="com.google.firebase.components.ComponentRegistrar" />
-137-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/da689f97e293ee9ab6083efb32db4d65/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:57:17-82
+137-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/5888f212eb67f4c9ef29c48d6e7dcb4a/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:57:17-82
 138            <meta-data
-138-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/zuberqureshi/.gradle/caches/transforms-3/443cad12043a7e1481290e5a2bb19ae5/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:27:13-29:85
+138-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/zuberqureshi/.gradle/caches/transforms-3/144d06dac49ef3208cad944e08c4e260/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:27:13-29:85
 139                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-139-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/zuberqureshi/.gradle/caches/transforms-3/443cad12043a7e1481290e5a2bb19ae5/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:28:17-115
+139-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/zuberqureshi/.gradle/caches/transforms-3/144d06dac49ef3208cad944e08c4e260/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:28:17-115
 140                android:value="com.google.firebase.components.ComponentRegistrar" />
-140-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/zuberqureshi/.gradle/caches/transforms-3/443cad12043a7e1481290e5a2bb19ae5/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:29:17-82
+140-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/zuberqureshi/.gradle/caches/transforms-3/144d06dac49ef3208cad944e08c4e260/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:29:17-82
 141            <meta-data
-141-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:69:13-71:85
+141-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:69:13-71:85
 142                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-142-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:70:17-109
+142-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:70:17-109
 143                android:value="com.google.firebase.components.ComponentRegistrar" />
-143-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:71:17-82
+143-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:71:17-82
 144            <meta-data
-144-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/d63f806d17a1b9712c613c1f8b7b2a7b/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:14:13-16:85
+144-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/738982f7a25ec6e54ad4bbe694eb34a6/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:14:13-16:85
 145                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-145-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/d63f806d17a1b9712c613c1f8b7b2a7b/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:15:17-113
+145-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/738982f7a25ec6e54ad4bbe694eb34a6/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:15:17-113
 146                android:value="com.google.firebase.components.ComponentRegistrar" />
-146-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/d63f806d17a1b9712c613c1f8b7b2a7b/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:16:17-82
+146-->[com.google.firebase:firebase-common-ktx:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/738982f7a25ec6e54ad4bbe694eb34a6/transformed/jetified-firebase-common-ktx-20.3.2/AndroidManifest.xml:16:17-82
 147            <meta-data
-147-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/79af406b27383361ff6f68020bc11970/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:31:13-33:85
+147-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/726f4fc8e2601ac573396c01b6f860bf/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:31:13-33:85
 148                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-148-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/79af406b27383361ff6f68020bc11970/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:32:17-139
+148-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/726f4fc8e2601ac573396c01b6f860bf/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:32:17-139
 149                android:value="com.google.firebase.components.ComponentRegistrar" />
-149-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/79af406b27383361ff6f68020bc11970/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:33:17-82
+149-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/726f4fc8e2601ac573396c01b6f860bf/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:33:17-82
 150            <meta-data
-150-->[com.google.firebase:firebase-installations:17.1.3] /Users/zuberqureshi/.gradle/caches/transforms-3/59978fd38e87a856975fb56c46c7cbdc/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:17:13-19:85
+150-->[com.google.firebase:firebase-installations:17.1.3] /Users/zuberqureshi/.gradle/caches/transforms-3/14129acf2e21dc279f5e8465c63b86e3/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:17:13-19:85
 151                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-151-->[com.google.firebase:firebase-installations:17.1.3] /Users/zuberqureshi/.gradle/caches/transforms-3/59978fd38e87a856975fb56c46c7cbdc/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:18:17-127
+151-->[com.google.firebase:firebase-installations:17.1.3] /Users/zuberqureshi/.gradle/caches/transforms-3/14129acf2e21dc279f5e8465c63b86e3/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:18:17-127
 152                android:value="com.google.firebase.components.ComponentRegistrar" />
-152-->[com.google.firebase:firebase-installations:17.1.3] /Users/zuberqureshi/.gradle/caches/transforms-3/59978fd38e87a856975fb56c46c7cbdc/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:19:17-82
+152-->[com.google.firebase:firebase-installations:17.1.3] /Users/zuberqureshi/.gradle/caches/transforms-3/14129acf2e21dc279f5e8465c63b86e3/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:19:17-82
 153        </service>
 154
 155        <provider
@@ -357,643 +359,715 @@
 190                android:resource="@xml/file_provider_paths" />
 190-->[:react-native-share] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-61
 191        </provider>
-192
-193        <receiver
-193-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/da689f97e293ee9ab6083efb32db4d65/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:31:9-38:20
-194            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-194-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/da689f97e293ee9ab6083efb32db4d65/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:32:13-78
-195            android:exported="true"
-195-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/da689f97e293ee9ab6083efb32db4d65/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:33:13-36
-196            android:permission="com.google.android.c2dm.permission.SEND" >
-196-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/da689f97e293ee9ab6083efb32db4d65/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:34:13-73
-197            <intent-filter>
-197-->[:react-native-firebase_messaging] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-31:29
-198                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-198-->[:react-native-firebase_messaging] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:17-81
-198-->[:react-native-firebase_messaging] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:25-78
-199            </intent-filter>
-200        </receiver>
-201        <!--
-202             FirebaseMessagingService performs security checks at runtime,
-203             but set to not exported to explicitly avoid allowing another app to call it.
-204        -->
-205        <service
-205-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/da689f97e293ee9ab6083efb32db4d65/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:44:9-51:19
-206            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-206-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/da689f97e293ee9ab6083efb32db4d65/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:45:13-82
-207            android:directBootAware="true"
-207-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/da689f97e293ee9ab6083efb32db4d65/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:46:13-43
-208            android:exported="false" >
-208-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/da689f97e293ee9ab6083efb32db4d65/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:47:13-37
-209            <intent-filter android:priority="-500" >
-209-->[:react-native-firebase_messaging] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-22:29
-210                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-210-->[:react-native-firebase_messaging] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:17-78
-210-->[:react-native-firebase_messaging] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:25-75
-211            </intent-filter>
-212        </service>
-213        <service
-213-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/8c6b5b8e6992e3460d5577b663b2c18b/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:28:9-34:19
-214            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-214-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/8c6b5b8e6992e3460d5577b663b2c18b/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:29:13-103
-215            android:exported="false" >
-215-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/8c6b5b8e6992e3460d5577b663b2c18b/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:30:13-37
-216            <meta-data
-216-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/8c6b5b8e6992e3460d5577b663b2c18b/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:31:13-33:39
-217                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-217-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/8c6b5b8e6992e3460d5577b663b2c18b/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:32:17-94
-218                android:value="cct" />
-218-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/8c6b5b8e6992e3460d5577b663b2c18b/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:33:17-36
-219        </service>
-220        <service
-220-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/e9801378b4eb3280f898c6a34fa35714/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:26:9-30:19
-221            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-221-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/e9801378b4eb3280f898c6a34fa35714/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:27:13-117
-222            android:exported="false"
-222-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/e9801378b4eb3280f898c6a34fa35714/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:28:13-37
-223            android:permission="android.permission.BIND_JOB_SERVICE" >
-223-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/e9801378b4eb3280f898c6a34fa35714/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:29:13-69
-224        </service>
-225
-226        <receiver
-226-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/e9801378b4eb3280f898c6a34fa35714/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:32:9-34:40
-227            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-227-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/e9801378b4eb3280f898c6a34fa35714/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:33:13-132
-228            android:exported="false" />
-228-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/e9801378b4eb3280f898c6a34fa35714/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:34:13-37
-229
-230        <activity
-230-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:29:9-46:20
-231            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-231-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:30:13-80
-232            android:excludeFromRecents="true"
-232-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:31:13-46
-233            android:exported="true"
-233-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:32:13-36
-234            android:launchMode="singleTask"
-234-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:33:13-44
-235            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-235-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:34:13-72
-236            <intent-filter>
-236-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:35:13-45:29
-237                <action android:name="android.intent.action.VIEW" />
-237-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
-237-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
-238
-239                <category android:name="android.intent.category.DEFAULT" />
-239-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
-239-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
-240                <category android:name="android.intent.category.BROWSABLE" />
-240-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
-240-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
-241
-242                <data
-242-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
-243                    android:host="firebase.auth"
-243-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
-244                    android:path="/"
-244-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
-245                    android:scheme="genericidp" />
-245-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
-246            </intent-filter>
-247        </activity>
-248        <activity
-248-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:47:9-64:20
-249            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-249-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:48:13-79
-250            android:excludeFromRecents="true"
-250-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:49:13-46
-251            android:exported="true"
-251-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:50:13-36
-252            android:launchMode="singleTask"
-252-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:51:13-44
-253            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-253-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:52:13-72
-254            <intent-filter>
-254-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:53:13-63:29
-255                <action android:name="android.intent.action.VIEW" />
-255-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
-255-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
-256
-257                <category android:name="android.intent.category.DEFAULT" />
-257-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
-257-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
-258                <category android:name="android.intent.category.BROWSABLE" />
-258-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
-258-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
-259
-260                <data
-260-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
-261                    android:host="firebase.auth"
-261-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
-262                    android:path="/"
-262-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
-263                    android:scheme="recaptcha" />
-263-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/78befd4d68000ea13f94375e64fbc965/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
-264            </intent-filter>
-265        </activity>
-266
-267        <provider
-267-->[com.google.firebase:firebase-common:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/b5567263aa4bf0b0514e8cd132734221/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
-268            android:name="com.google.firebase.provider.FirebaseInitProvider"
-268-->[com.google.firebase:firebase-common:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/b5567263aa4bf0b0514e8cd132734221/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:26:13-77
-269            android:authorities="com.easyearn.cash.firebaseinitprovider"
-269-->[com.google.firebase:firebase-common:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/b5567263aa4bf0b0514e8cd132734221/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:27:13-72
-270            android:directBootAware="true"
-270-->[com.google.firebase:firebase-common:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/b5567263aa4bf0b0514e8cd132734221/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:28:13-43
-271            android:exported="false"
-271-->[com.google.firebase:firebase-common:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/b5567263aa4bf0b0514e8cd132734221/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:29:13-37
-272            android:initOrder="100" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
-272-->[com.google.firebase:firebase-common:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/b5567263aa4bf0b0514e8cd132734221/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:30:13-36
-273        <activity
-273-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:53:9-58:43
-274            android:name="com.google.android.gms.ads.AdActivity"
-274-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:54:13-65
-275            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-275-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:55:13-122
-276            android:exported="false"
-276-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:56:13-37
-277            android:theme="@android:style/Theme.Translucent" />
-277-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:57:13-61
-278
-279        <provider
-279-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:60:9-65:43
-280            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
-280-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:61:13-76
-281            android:authorities="com.easyearn.cash.mobileadsinitprovider"
-281-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:62:13-73
-282            android:exported="false"
-282-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:63:13-37
-283            android:initOrder="100" />
-283-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:64:13-36
-284
-285        <service
-285-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:67:9-71:43
-286            android:name="com.google.android.gms.ads.AdService"
-286-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:68:13-64
-287            android:enabled="true"
-287-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:69:13-35
-288            android:exported="false" />
-288-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:70:13-37
-289
-290        <activity
-290-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:73:9-77:43
-291            android:name="com.google.android.gms.ads.OutOfContextTestingActivity"
-291-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:74:13-82
-292            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-292-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:75:13-122
-293            android:exported="false" />
-293-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/3f2d889044578b8dc58a8b8232f20392/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:76:13-37
+192        <provider
+192-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:26:9-30:39
+193            android:name="com.applovin.sdk.AppLovinInitProvider"
+193-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:27:13-65
+194            android:authorities="com.easyearn.cash.applovininitprovider"
+194-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:28:13-72
+195            android:exported="false"
+195-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:29:13-37
+196            android:initOrder="101" /> <!-- Init order is 101 so we're before Firebase/Google which uses 100 -->
+196-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:30:13-36
+197        <activity
+197-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:32:9-38:50
+198            android:name="com.applovin.adview.AppLovinFullscreenActivity"
+198-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:33:13-74
+199            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+199-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:34:13-139
+200            android:exported="false"
+200-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:35:13-37
+201            android:hardwareAccelerated="true"
+201-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:36:13-47
+202            android:launchMode="singleTop"
+202-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:37:13-43
+203            android:screenOrientation="behind" />
+203-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:38:13-47
+204        <activity
+204-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:39:9-41:142
+205            android:name="com.applovin.sdk.AppLovinWebViewActivity"
+205-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:40:13-68
+206            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" /> <!-- Hybrid Ad Activities -->
+206-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:41:13-139
+207        <activity
+207-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:44:9-46:142
+208            android:name="com.applovin.mediation.hybridAds.MaxHybridMRecAdActivity"
+208-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:45:13-84
+209            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" />
+209-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:46:13-139
+210        <activity
+210-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:47:9-49:142
+211            android:name="com.applovin.mediation.hybridAds.MaxHybridNativeAdActivity"
+211-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:48:13-86
+212            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" /> <!-- Mediation Debugger Activities -->
+212-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:49:13-139
+213        <activity
+213-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:52:9-55:87
+214            android:name="com.applovin.mediation.MaxDebuggerActivity"
+214-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:53:13-70
+215            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+215-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:54:13-139
+216            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+216-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:55:13-84
+217        <activity
+217-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:56:9-59:87
+218            android:name="com.applovin.mediation.MaxDebuggerDetailActivity"
+218-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:57:13-76
+219            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+219-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:58:13-139
+220            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+220-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:59:13-84
+221        <activity
+221-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:60:9-63:87
+222            android:name="com.applovin.mediation.MaxDebuggerMultiAdActivity"
+222-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:61:13-77
+223            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+223-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:62:13-139
+224            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+224-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:63:13-84
+225        <activity
+225-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:64:9-67:87
+226            android:name="com.applovin.mediation.MaxDebuggerAdUnitsListActivity"
+226-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:65:13-81
+227            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+227-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:66:13-139
+228            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+228-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:67:13-84
+229        <activity
+229-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:68:9-71:87
+230            android:name="com.applovin.mediation.MaxDebuggerAdUnitWaterfallsListActivity"
+230-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:69:13-90
+231            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+231-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:70:13-139
+232            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+232-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:71:13-84
+233        <activity
+233-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:72:9-75:87
+234            android:name="com.applovin.mediation.MaxDebuggerAdUnitDetailActivity"
+234-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:73:13-82
+235            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+235-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:74:13-139
+236            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+236-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:75:13-84
+237        <activity
+237-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:76:9-79:87
+238            android:name="com.applovin.mediation.MaxDebuggerTestLiveNetworkActivity"
+238-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:77:13-85
+239            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+239-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:78:13-139
+240            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+240-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:79:13-84
+241        <activity
+241-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:80:9-83:87
+242            android:name="com.applovin.mediation.MaxDebuggerTestModeNetworkActivity"
+242-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:81:13-85
+243            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+243-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:82:13-139
+244            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+244-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:83:13-84
+245        <activity
+245-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:84:9-87:87
+246            android:name="com.applovin.mediation.MaxDebuggerWaterfallKeywordsActivity"
+246-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:85:13-87
+247            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+247-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:86:13-139
+248            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+248-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:87:13-84
+249        <activity
+249-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:88:9-91:91
+250            android:name="com.applovin.creative.MaxCreativeDebuggerActivity"
+250-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:89:13-77
+251            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+251-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:90:13-139
+252            android:theme="@style/com.applovin.creative.CreativeDebuggerActivity.Theme" />
+252-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:91:13-88
+253        <activity
+253-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:92:9-95:91
+254            android:name="com.applovin.creative.MaxCreativeDebuggerDisplayedAdActivity"
+254-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:93:13-88
+255            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+255-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:94:13-139
+256            android:theme="@style/com.applovin.creative.CreativeDebuggerActivity.Theme" /> <!-- Services -->
+256-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:95:13-88
+257        <service
+257-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:98:9-101:44
+258            android:name="com.applovin.impl.adview.activity.FullscreenAdService"
+258-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:99:13-81
+259            android:exported="false"
+259-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:100:13-37
+260            android:stopWithTask="false" />
+260-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/3a8b14d85ae107f72a1018396db10b2f/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:101:13-41
+261
+262        <receiver
+262-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/5888f212eb67f4c9ef29c48d6e7dcb4a/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:31:9-38:20
+263            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+263-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/5888f212eb67f4c9ef29c48d6e7dcb4a/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:32:13-78
+264            android:exported="true"
+264-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/5888f212eb67f4c9ef29c48d6e7dcb4a/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:33:13-36
+265            android:permission="com.google.android.c2dm.permission.SEND" >
+265-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/5888f212eb67f4c9ef29c48d6e7dcb4a/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:34:13-73
+266            <intent-filter>
+266-->[:react-native-firebase_messaging] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-31:29
+267                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+267-->[:react-native-firebase_messaging] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:17-81
+267-->[:react-native-firebase_messaging] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:25-78
+268            </intent-filter>
+269        </receiver>
+270        <!--
+271             FirebaseMessagingService performs security checks at runtime,
+272             but set to not exported to explicitly avoid allowing another app to call it.
+273        -->
+274        <service
+274-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/5888f212eb67f4c9ef29c48d6e7dcb4a/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:44:9-51:19
+275            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+275-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/5888f212eb67f4c9ef29c48d6e7dcb4a/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:45:13-82
+276            android:directBootAware="true"
+276-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/5888f212eb67f4c9ef29c48d6e7dcb4a/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:46:13-43
+277            android:exported="false" >
+277-->[com.google.firebase:firebase-messaging:23.1.2] /Users/zuberqureshi/.gradle/caches/transforms-3/5888f212eb67f4c9ef29c48d6e7dcb4a/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:47:13-37
+278            <intent-filter android:priority="-500" >
+278-->[:react-native-firebase_messaging] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-22:29
+279                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+279-->[:react-native-firebase_messaging] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:17-78
+279-->[:react-native-firebase_messaging] /Users/zuberqureshi/Desktop/reactnativeapp/Easy/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:25-75
+280            </intent-filter>
+281        </service>
+282        <service
+282-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/1868d0dabb9cdcd8d3c593beca2dedbe/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:28:9-34:19
+283            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+283-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/1868d0dabb9cdcd8d3c593beca2dedbe/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:29:13-103
+284            android:exported="false" >
+284-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/1868d0dabb9cdcd8d3c593beca2dedbe/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:30:13-37
+285            <meta-data
+285-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/1868d0dabb9cdcd8d3c593beca2dedbe/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:31:13-33:39
+286                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+286-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/1868d0dabb9cdcd8d3c593beca2dedbe/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:32:17-94
+287                android:value="cct" />
+287-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/1868d0dabb9cdcd8d3c593beca2dedbe/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:33:17-36
+288        </service>
+289        <service
+289-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/ae4c03a297c1280053f4df029dbd3708/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:26:9-30:19
+290            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+290-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/ae4c03a297c1280053f4df029dbd3708/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:27:13-117
+291            android:exported="false"
+291-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/ae4c03a297c1280053f4df029dbd3708/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:28:13-37
+292            android:permission="android.permission.BIND_JOB_SERVICE" >
+292-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/ae4c03a297c1280053f4df029dbd3708/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:29:13-69
+293        </service>
 294
-295        <provider
-295-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:31:9-39:20
-296            android:name="androidx.startup.InitializationProvider"
-296-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:32:13-67
-297            android:authorities="com.easyearn.cash.androidx-startup"
-297-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:33:13-68
-298            android:exported="false" >
-298-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:34:13-37
-299            <meta-data
-299-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:36:13-38:52
-300                android:name="androidx.work.WorkManagerInitializer"
-300-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:37:17-68
-301                android:value="androidx.startup" />
-301-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:38:17-49
-302            <meta-data
-302-->[androidx.emoji2:emoji2:1.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7d44abc3005b3e01dd65c5a47258cb24/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-303                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-303-->[androidx.emoji2:emoji2:1.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7d44abc3005b3e01dd65c5a47258cb24/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
-304                android:value="androidx.startup" />
-304-->[androidx.emoji2:emoji2:1.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7d44abc3005b3e01dd65c5a47258cb24/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
-305            <meta-data
-305-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4c918d06af45c813243ec637504b6a7b/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-306                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-306-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4c918d06af45c813243ec637504b6a7b/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-307                android:value="androidx.startup" />
-307-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4c918d06af45c813243ec637504b6a7b/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-308        </provider>
-309
-310        <service
-310-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:41:9-46:35
-311            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
-311-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:42:13-88
-312            android:directBootAware="false"
-312-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:43:13-44
-313            android:enabled="@bool/enable_system_alarm_service_default"
-313-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:44:13-72
-314            android:exported="false" />
-314-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:45:13-37
-315        <service
-315-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:47:9-53:35
-316            android:name="androidx.work.impl.background.systemjob.SystemJobService"
-316-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:48:13-84
-317            android:directBootAware="false"
-317-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:49:13-44
-318            android:enabled="@bool/enable_system_job_service_default"
-318-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:50:13-70
-319            android:exported="true"
-319-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:51:13-36
-320            android:permission="android.permission.BIND_JOB_SERVICE" />
-320-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:52:13-69
-321        <service
-321-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:54:9-59:35
-322            android:name="androidx.work.impl.foreground.SystemForegroundService"
-322-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:55:13-81
-323            android:directBootAware="false"
-323-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:56:13-44
-324            android:enabled="@bool/enable_system_foreground_service_default"
-324-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:57:13-77
-325            android:exported="false" />
-325-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:58:13-37
-326
-327        <receiver
-327-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:61:9-66:35
-328            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
-328-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:62:13-88
-329            android:directBootAware="false"
-329-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:63:13-44
-330            android:enabled="true"
-330-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:64:13-35
-331            android:exported="false" />
-331-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:65:13-37
-332        <receiver
-332-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:67:9-77:20
-333            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
-333-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:68:13-106
-334            android:directBootAware="false"
-334-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:69:13-44
-335            android:enabled="false"
-335-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:70:13-36
-336            android:exported="false" >
-336-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:71:13-37
-337            <intent-filter>
-337-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:73:13-76:29
-338                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-338-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:74:17-87
-338-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:74:25-84
-339                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-339-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:75:17-90
-339-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:75:25-87
-340            </intent-filter>
-341        </receiver>
-342        <receiver
-342-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:78:9-88:20
-343            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
-343-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:79:13-104
-344            android:directBootAware="false"
-344-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:80:13-44
-345            android:enabled="false"
-345-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:81:13-36
-346            android:exported="false" >
-346-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:82:13-37
-347            <intent-filter>
-347-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:84:13-87:29
-348                <action android:name="android.intent.action.BATTERY_OKAY" />
-348-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:85:17-77
-348-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:85:25-74
-349                <action android:name="android.intent.action.BATTERY_LOW" />
-349-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:86:17-76
-349-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:86:25-73
-350            </intent-filter>
-351        </receiver>
-352        <receiver
-352-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:89:9-99:20
-353            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
-353-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:90:13-104
-354            android:directBootAware="false"
-354-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:91:13-44
-355            android:enabled="false"
-355-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:92:13-36
-356            android:exported="false" >
-356-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:93:13-37
-357            <intent-filter>
-357-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:95:13-98:29
-358                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
-358-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:96:17-83
-358-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:96:25-80
-359                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
-359-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:97:17-82
-359-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:97:25-79
-360            </intent-filter>
-361        </receiver>
-362        <receiver
-362-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:100:9-109:20
-363            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
-363-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:101:13-103
-364            android:directBootAware="false"
-364-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:102:13-44
-365            android:enabled="false"
-365-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:103:13-36
-366            android:exported="false" >
-366-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:104:13-37
-367            <intent-filter>
-367-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:106:13-108:29
-368                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-368-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:107:17-79
-368-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:107:25-76
-369            </intent-filter>
-370        </receiver>
-371        <receiver
-371-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:110:9-121:20
-372            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
-372-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:111:13-88
-373            android:directBootAware="false"
-373-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:112:13-44
-374            android:enabled="false"
-374-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:113:13-36
-375            android:exported="false" >
-375-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:114:13-37
-376            <intent-filter>
-376-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:116:13-120:29
-377                <action android:name="android.intent.action.BOOT_COMPLETED" />
-377-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:117:17-79
-377-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:117:25-76
-378                <action android:name="android.intent.action.TIME_SET" />
-378-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:118:17-73
-378-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:118:25-70
-379                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-379-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:119:17-81
-379-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:119:25-78
-380            </intent-filter>
-381        </receiver>
-382        <receiver
-382-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:122:9-131:20
-383            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
-383-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:123:13-99
+295        <receiver
+295-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/ae4c03a297c1280053f4df029dbd3708/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:32:9-34:40
+296            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+296-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/ae4c03a297c1280053f4df029dbd3708/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:33:13-132
+297            android:exported="false" />
+297-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/zuberqureshi/.gradle/caches/transforms-3/ae4c03a297c1280053f4df029dbd3708/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:34:13-37
+298
+299        <activity
+299-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:29:9-46:20
+300            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+300-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:30:13-80
+301            android:excludeFromRecents="true"
+301-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:31:13-46
+302            android:exported="true"
+302-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:32:13-36
+303            android:launchMode="singleTask"
+303-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:33:13-44
+304            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+304-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:34:13-72
+305            <intent-filter>
+305-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:35:13-45:29
+306                <action android:name="android.intent.action.VIEW" />
+306-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
+306-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
+307
+308                <category android:name="android.intent.category.DEFAULT" />
+308-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
+308-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
+309                <category android:name="android.intent.category.BROWSABLE" />
+309-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
+309-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
+310
+311                <data
+311-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
+312                    android:host="firebase.auth"
+312-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
+313                    android:path="/"
+313-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
+314                    android:scheme="genericidp" />
+314-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
+315            </intent-filter>
+316        </activity>
+317        <activity
+317-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:47:9-64:20
+318            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+318-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:48:13-79
+319            android:excludeFromRecents="true"
+319-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:49:13-46
+320            android:exported="true"
+320-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:50:13-36
+321            android:launchMode="singleTask"
+321-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:51:13-44
+322            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+322-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:52:13-72
+323            <intent-filter>
+323-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:53:13-63:29
+324                <action android:name="android.intent.action.VIEW" />
+324-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
+324-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
+325
+326                <category android:name="android.intent.category.DEFAULT" />
+326-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
+326-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
+327                <category android:name="android.intent.category.BROWSABLE" />
+327-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
+327-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
+328
+329                <data
+329-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
+330                    android:host="firebase.auth"
+330-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
+331                    android:path="/"
+331-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
+332                    android:scheme="recaptcha" />
+332-->[com.google.firebase:firebase-auth:22.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/63cd75d2554a21ab2716255f99818a7b/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
+333            </intent-filter>
+334        </activity>
+335
+336        <provider
+336-->[com.google.firebase:firebase-common:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/cc9c62371ab21316517e865531cc1b98/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
+337            android:name="com.google.firebase.provider.FirebaseInitProvider"
+337-->[com.google.firebase:firebase-common:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/cc9c62371ab21316517e865531cc1b98/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:26:13-77
+338            android:authorities="com.easyearn.cash.firebaseinitprovider"
+338-->[com.google.firebase:firebase-common:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/cc9c62371ab21316517e865531cc1b98/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:27:13-72
+339            android:directBootAware="true"
+339-->[com.google.firebase:firebase-common:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/cc9c62371ab21316517e865531cc1b98/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:28:13-43
+340            android:exported="false"
+340-->[com.google.firebase:firebase-common:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/cc9c62371ab21316517e865531cc1b98/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:29:13-37
+341            android:initOrder="100" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+341-->[com.google.firebase:firebase-common:20.3.2] /Users/zuberqureshi/.gradle/caches/transforms-3/cc9c62371ab21316517e865531cc1b98/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:30:13-36
+342        <activity
+342-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:53:9-58:43
+343            android:name="com.google.android.gms.ads.AdActivity"
+343-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:54:13-65
+344            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+344-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:55:13-122
+345            android:exported="false"
+345-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:56:13-37
+346            android:theme="@android:style/Theme.Translucent" />
+346-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:57:13-61
+347
+348        <provider
+348-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:60:9-65:43
+349            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+349-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:61:13-76
+350            android:authorities="com.easyearn.cash.mobileadsinitprovider"
+350-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:62:13-73
+351            android:exported="false"
+351-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:63:13-37
+352            android:initOrder="100" />
+352-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:64:13-36
+353
+354        <service
+354-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:67:9-71:43
+355            android:name="com.google.android.gms.ads.AdService"
+355-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:68:13-64
+356            android:enabled="true"
+356-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:69:13-35
+357            android:exported="false" />
+357-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:70:13-37
+358
+359        <activity
+359-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:73:9-77:43
+360            android:name="com.google.android.gms.ads.OutOfContextTestingActivity"
+360-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:74:13-82
+361            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+361-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:75:13-122
+362            android:exported="false" />
+362-->[com.google.android.gms:play-services-ads-lite:22.1.0] /Users/zuberqureshi/.gradle/caches/transforms-3/99ded50b7432ee3ce2ae152f4b9f9866/transformed/jetified-play-services-ads-lite-22.1.0/AndroidManifest.xml:76:13-37
+363
+364        <provider
+364-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:31:9-39:20
+365            android:name="androidx.startup.InitializationProvider"
+365-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:32:13-67
+366            android:authorities="com.easyearn.cash.androidx-startup"
+366-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:33:13-68
+367            android:exported="false" >
+367-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:34:13-37
+368            <meta-data
+368-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:36:13-38:52
+369                android:name="androidx.work.WorkManagerInitializer"
+369-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:37:17-68
+370                android:value="androidx.startup" />
+370-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:38:17-49
+371            <meta-data
+371-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:42:13-44:52
+372                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+372-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:43:17-78
+373                android:value="androidx.startup" />
+373-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:44:17-49
+374            <meta-data
+374-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:45:13-47:52
+375                android:name="com.unity3d.services.core.configuration.AdsSdkInitializer"
+375-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:46:17-89
+376                android:value="androidx.startup" />
+376-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:47:17-49
+377            <meta-data
+377-->[androidx.emoji2:emoji2:1.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7666e1a8399b45c3de523d70e1a003dd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+378                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+378-->[androidx.emoji2:emoji2:1.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7666e1a8399b45c3de523d70e1a003dd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+379                android:value="androidx.startup" />
+379-->[androidx.emoji2:emoji2:1.0.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7666e1a8399b45c3de523d70e1a003dd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+380        </provider>
+381
+382        <service
+382-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:41:9-46:35
+383            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+383-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:42:13-88
 384            android:directBootAware="false"
-384-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:124:13-44
+384-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:43:13-44
 385            android:enabled="@bool/enable_system_alarm_service_default"
-385-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:125:13-72
-386            android:exported="false" >
-386-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:126:13-37
-387            <intent-filter>
-387-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:128:13-130:29
-388                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
-388-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:129:17-98
-388-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:129:25-95
-389            </intent-filter>
-390        </receiver>
-391        <receiver
-391-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:132:9-142:20
-392            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
-392-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:133:13-78
-393            android:directBootAware="false"
-393-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:134:13-44
-394            android:enabled="true"
-394-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:135:13-35
-395            android:exported="true"
-395-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:136:13-36
-396            android:permission="android.permission.DUMP" >
-396-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:137:13-57
-397            <intent-filter>
-397-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:139:13-141:29
-398                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
-398-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:140:17-88
-398-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/456d809b5a4a0dc70ca72f43ed845278/transformed/work-runtime-2.7.0/AndroidManifest.xml:140:25-85
-399            </intent-filter>
-400        </receiver>
-401
-402        <service
-402-->[androidx.room:room-runtime:2.2.5] /Users/zuberqureshi/.gradle/caches/transforms-3/1962907cad21da92a26e4149ddf2206e/transformed/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
-403            android:name="androidx.room.MultiInstanceInvalidationService"
-403-->[androidx.room:room-runtime:2.2.5] /Users/zuberqureshi/.gradle/caches/transforms-3/1962907cad21da92a26e4149ddf2206e/transformed/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
-404            android:directBootAware="true"
-404-->[androidx.room:room-runtime:2.2.5] /Users/zuberqureshi/.gradle/caches/transforms-3/1962907cad21da92a26e4149ddf2206e/transformed/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
-405            android:exported="false" />
-405-->[androidx.room:room-runtime:2.2.5] /Users/zuberqureshi/.gradle/caches/transforms-3/1962907cad21da92a26e4149ddf2206e/transformed/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
-406
-407        <activity
-407-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7189f045fd8ce4afca6879e9ec330404/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:23:9-27:75
-408            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-408-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7189f045fd8ce4afca6879e9ec330404/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:24:13-93
-409            android:excludeFromRecents="true"
-409-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7189f045fd8ce4afca6879e9ec330404/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:25:13-46
-410            android:exported="false"
-410-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7189f045fd8ce4afca6879e9ec330404/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:26:13-37
-411            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-411-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7189f045fd8ce4afca6879e9ec330404/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:27:13-72
-412        <!--
-413            Service handling Google Sign-In user revocation. For apps that do not integrate with
-414            Google Sign-In, this service will never be started.
-415        -->
-416        <service
-416-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7189f045fd8ce4afca6879e9ec330404/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:33:9-37:51
-417            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-417-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7189f045fd8ce4afca6879e9ec330404/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:34:13-89
-418            android:exported="true"
-418-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7189f045fd8ce4afca6879e9ec330404/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:35:13-36
-419            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-419-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7189f045fd8ce4afca6879e9ec330404/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:36:13-107
-420            android:visibleToInstantApps="true" />
-420-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/7189f045fd8ce4afca6879e9ec330404/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:37:13-48
-421
-422        <provider
-422-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:26:9-30:39
-423            android:name="com.applovin.sdk.AppLovinInitProvider"
-423-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:27:13-65
-424            android:authorities="com.easyearn.cash.applovininitprovider"
-424-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:28:13-72
-425            android:exported="false"
-425-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:29:13-37
-426            android:initOrder="101" /> <!-- Init order is 101 so we're before Firebase/Google which uses 100 -->
-426-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:30:13-36
-427        <activity
-427-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:32:9-38:50
-428            android:name="com.applovin.adview.AppLovinFullscreenActivity"
-428-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:33:13-74
-429            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-429-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:34:13-139
-430            android:exported="false"
-430-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:35:13-37
-431            android:hardwareAccelerated="true"
-431-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:36:13-47
-432            android:launchMode="singleTop"
-432-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:37:13-43
-433            android:screenOrientation="behind" />
-433-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:38:13-47
-434        <activity
-434-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:39:9-41:142
-435            android:name="com.applovin.sdk.AppLovinWebViewActivity"
-435-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:40:13-68
-436            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" /> <!-- Hybrid Ad Activities -->
-436-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:41:13-139
-437        <activity
-437-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:44:9-46:142
-438            android:name="com.applovin.mediation.hybridAds.MaxHybridMRecAdActivity"
-438-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:45:13-84
-439            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" />
-439-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:46:13-139
-440        <activity
-440-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:47:9-49:142
-441            android:name="com.applovin.mediation.hybridAds.MaxHybridNativeAdActivity"
-441-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:48:13-86
-442            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" /> <!-- Mediation Debugger Activities -->
-442-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:49:13-139
-443        <activity
-443-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:52:9-55:87
-444            android:name="com.applovin.mediation.MaxDebuggerActivity"
-444-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:53:13-70
-445            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-445-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:54:13-139
-446            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-446-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:55:13-84
-447        <activity
-447-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:56:9-59:87
-448            android:name="com.applovin.mediation.MaxDebuggerDetailActivity"
-448-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:57:13-76
-449            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-449-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:58:13-139
-450            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-450-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:59:13-84
-451        <activity
-451-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:60:9-63:87
-452            android:name="com.applovin.mediation.MaxDebuggerMultiAdActivity"
-452-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:61:13-77
-453            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-453-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:62:13-139
-454            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-454-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:63:13-84
-455        <activity
-455-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:64:9-67:87
-456            android:name="com.applovin.mediation.MaxDebuggerAdUnitsListActivity"
-456-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:65:13-81
-457            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-457-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:66:13-139
-458            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-458-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:67:13-84
-459        <activity
-459-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:68:9-71:87
-460            android:name="com.applovin.mediation.MaxDebuggerAdUnitWaterfallsListActivity"
-460-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:69:13-90
-461            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-461-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:70:13-139
-462            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-462-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:71:13-84
-463        <activity
-463-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:72:9-75:87
-464            android:name="com.applovin.mediation.MaxDebuggerAdUnitDetailActivity"
-464-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:73:13-82
-465            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-465-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:74:13-139
-466            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-466-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:75:13-84
-467        <activity
-467-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:76:9-79:87
-468            android:name="com.applovin.mediation.MaxDebuggerTestLiveNetworkActivity"
-468-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:77:13-85
-469            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-469-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:78:13-139
-470            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-470-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:79:13-84
-471        <activity
-471-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:80:9-83:87
-472            android:name="com.applovin.mediation.MaxDebuggerTestModeNetworkActivity"
-472-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:81:13-85
-473            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-473-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:82:13-139
-474            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-474-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:83:13-84
-475        <activity
-475-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:84:9-87:87
-476            android:name="com.applovin.mediation.MaxDebuggerWaterfallKeywordsActivity"
-476-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:85:13-87
-477            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-477-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:86:13-139
-478            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
-478-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:87:13-84
+385-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:44:13-72
+386            android:exported="false" />
+386-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:45:13-37
+387        <service
+387-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:47:9-53:35
+388            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+388-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:48:13-84
+389            android:directBootAware="false"
+389-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:49:13-44
+390            android:enabled="@bool/enable_system_job_service_default"
+390-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:50:13-70
+391            android:exported="true"
+391-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:51:13-36
+392            android:permission="android.permission.BIND_JOB_SERVICE" />
+392-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:52:13-69
+393        <service
+393-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:54:9-59:35
+394            android:name="androidx.work.impl.foreground.SystemForegroundService"
+394-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:55:13-81
+395            android:directBootAware="false"
+395-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:56:13-44
+396            android:enabled="@bool/enable_system_foreground_service_default"
+396-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:57:13-77
+397            android:exported="false" />
+397-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:58:13-37
+398
+399        <receiver
+399-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:61:9-66:35
+400            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+400-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:62:13-88
+401            android:directBootAware="false"
+401-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:63:13-44
+402            android:enabled="true"
+402-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:64:13-35
+403            android:exported="false" />
+403-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:65:13-37
+404        <receiver
+404-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:67:9-77:20
+405            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+405-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:68:13-106
+406            android:directBootAware="false"
+406-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:69:13-44
+407            android:enabled="false"
+407-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:70:13-36
+408            android:exported="false" >
+408-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:71:13-37
+409            <intent-filter>
+409-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:73:13-76:29
+410                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+410-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:74:17-87
+410-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:74:25-84
+411                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+411-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:75:17-90
+411-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:75:25-87
+412            </intent-filter>
+413        </receiver>
+414        <receiver
+414-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:78:9-88:20
+415            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+415-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:79:13-104
+416            android:directBootAware="false"
+416-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:80:13-44
+417            android:enabled="false"
+417-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:81:13-36
+418            android:exported="false" >
+418-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:82:13-37
+419            <intent-filter>
+419-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:84:13-87:29
+420                <action android:name="android.intent.action.BATTERY_OKAY" />
+420-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:85:17-77
+420-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:85:25-74
+421                <action android:name="android.intent.action.BATTERY_LOW" />
+421-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:86:17-76
+421-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:86:25-73
+422            </intent-filter>
+423        </receiver>
+424        <receiver
+424-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:89:9-99:20
+425            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+425-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:90:13-104
+426            android:directBootAware="false"
+426-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:91:13-44
+427            android:enabled="false"
+427-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:92:13-36
+428            android:exported="false" >
+428-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:93:13-37
+429            <intent-filter>
+429-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:95:13-98:29
+430                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+430-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:96:17-83
+430-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:96:25-80
+431                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+431-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:97:17-82
+431-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:97:25-79
+432            </intent-filter>
+433        </receiver>
+434        <receiver
+434-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:100:9-109:20
+435            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+435-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:101:13-103
+436            android:directBootAware="false"
+436-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:102:13-44
+437            android:enabled="false"
+437-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:103:13-36
+438            android:exported="false" >
+438-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:104:13-37
+439            <intent-filter>
+439-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:106:13-108:29
+440                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+440-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:107:17-79
+440-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:107:25-76
+441            </intent-filter>
+442        </receiver>
+443        <receiver
+443-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:110:9-121:20
+444            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+444-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:111:13-88
+445            android:directBootAware="false"
+445-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:112:13-44
+446            android:enabled="false"
+446-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:113:13-36
+447            android:exported="false" >
+447-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:114:13-37
+448            <intent-filter>
+448-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:116:13-120:29
+449                <action android:name="android.intent.action.BOOT_COMPLETED" />
+449-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:117:17-79
+449-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:117:25-76
+450                <action android:name="android.intent.action.TIME_SET" />
+450-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:118:17-73
+450-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:118:25-70
+451                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+451-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:119:17-81
+451-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:119:25-78
+452            </intent-filter>
+453        </receiver>
+454        <receiver
+454-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:122:9-131:20
+455            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+455-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:123:13-99
+456            android:directBootAware="false"
+456-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:124:13-44
+457            android:enabled="@bool/enable_system_alarm_service_default"
+457-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:125:13-72
+458            android:exported="false" >
+458-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:126:13-37
+459            <intent-filter>
+459-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:128:13-130:29
+460                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+460-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:129:17-98
+460-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:129:25-95
+461            </intent-filter>
+462        </receiver>
+463        <receiver
+463-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:132:9-142:20
+464            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+464-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:133:13-78
+465            android:directBootAware="false"
+465-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:134:13-44
+466            android:enabled="true"
+466-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:135:13-35
+467            android:exported="true"
+467-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:136:13-36
+468            android:permission="android.permission.DUMP" >
+468-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:137:13-57
+469            <intent-filter>
+469-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:139:13-141:29
+470                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+470-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:140:17-88
+470-->[androidx.work:work-runtime:2.7.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4406ed6988f736695d2bd85262c4e96b/transformed/work-runtime-2.7.0/AndroidManifest.xml:140:25-85
+471            </intent-filter>
+472        </receiver>
+473
+474        <service
+474-->[androidx.room:room-runtime:2.2.5] /Users/zuberqureshi/.gradle/caches/transforms-3/4bd2a58012265464916e07819beb61c2/transformed/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
+475            android:name="androidx.room.MultiInstanceInvalidationService"
+475-->[androidx.room:room-runtime:2.2.5] /Users/zuberqureshi/.gradle/caches/transforms-3/4bd2a58012265464916e07819beb61c2/transformed/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
+476            android:directBootAware="true"
+476-->[androidx.room:room-runtime:2.2.5] /Users/zuberqureshi/.gradle/caches/transforms-3/4bd2a58012265464916e07819beb61c2/transformed/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
+477            android:exported="false" />
+477-->[androidx.room:room-runtime:2.2.5] /Users/zuberqureshi/.gradle/caches/transforms-3/4bd2a58012265464916e07819beb61c2/transformed/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
+478
 479        <activity
-479-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:88:9-91:91
-480            android:name="com.applovin.creative.MaxCreativeDebuggerActivity"
-480-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:89:13-77
-481            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-481-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:90:13-139
-482            android:theme="@style/com.applovin.creative.CreativeDebuggerActivity.Theme" />
-482-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:91:13-88
-483        <activity
-483-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:92:9-95:91
-484            android:name="com.applovin.creative.MaxCreativeDebuggerDisplayedAdActivity"
-484-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:93:13-88
-485            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-485-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:94:13-139
-486            android:theme="@style/com.applovin.creative.CreativeDebuggerActivity.Theme" /> <!-- Services -->
-486-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:95:13-88
-487        <service
-487-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:98:9-101:44
-488            android:name="com.applovin.impl.adview.activity.FullscreenAdService"
-488-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:99:13-81
-489            android:exported="false"
-489-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:100:13-37
-490            android:stopWithTask="false" />
-490-->[com.applovin:applovin-sdk:11.10.1] /Users/zuberqureshi/.gradle/caches/transforms-3/fbca0449e8da33a5ec7c9a7b1737c6bb/transformed/jetified-applovin-sdk-11.10.1/AndroidManifest.xml:101:13-41
-491
-492        <activity
-492-->[com.google.android.gms:play-services-base:18.0.1] /Users/zuberqureshi/.gradle/caches/transforms-3/a20e50db97ef436d644f6bf208c0710f/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-493            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-493-->[com.google.android.gms:play-services-base:18.0.1] /Users/zuberqureshi/.gradle/caches/transforms-3/a20e50db97ef436d644f6bf208c0710f/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-494            android:exported="false"
-494-->[com.google.android.gms:play-services-base:18.0.1] /Users/zuberqureshi/.gradle/caches/transforms-3/a20e50db97ef436d644f6bf208c0710f/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-495            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-495-->[com.google.android.gms:play-services-base:18.0.1] /Users/zuberqureshi/.gradle/caches/transforms-3/a20e50db97ef436d644f6bf208c0710f/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-496
-497        <receiver
-497-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:29:9-33:20
-498            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-498-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:30:13-85
-499            android:enabled="true"
-499-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:31:13-35
-500            android:exported="false" >
-500-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:32:13-37
-501        </receiver>
-502
-503        <service
-503-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:35:9-38:40
-504            android:name="com.google.android.gms.measurement.AppMeasurementService"
-504-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:36:13-84
-505            android:enabled="true"
-505-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:37:13-35
-506            android:exported="false" />
-506-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:38:13-37
-507        <service
-507-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:39:9-43:72
-508            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-508-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:40:13-87
-509            android:enabled="true"
-509-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:41:13-35
-510            android:exported="false"
-510-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:42:13-37
-511            android:permission="android.permission.BIND_JOB_SERVICE" />
-511-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/faadaa52513b7e756d610dccb75ba743/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:43:13-69
-512
-513        <activity
-513-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:13:9-20:55
-514            android:name="com.pollfish.internal.PollfishOverlayActivity"
-514-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:14:13-73
-515            android:configChanges="orientation|screenSize"
-515-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:15:13-59
-516            android:exported="false"
-516-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:16:13-37
-517            android:hardwareAccelerated="true"
-517-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:17:13-47
-518            android:label="Pollfish"
-518-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:18:13-37
-519            android:theme="@style/Theme.Transparent"
-519-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:19:13-53
-520            android:windowSoftInputMode="adjustPan" />
-520-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/e7c14f7dd95f6a3e9ead2ce80350b6ae/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:20:13-52
-521
-522        <meta-data
-522-->[com.google.android.gms:play-services-basement:18.2.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4f6e4068d556129f06526574ba53559d/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
-523            android:name="com.google.android.gms.version"
-523-->[com.google.android.gms:play-services-basement:18.2.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4f6e4068d556129f06526574ba53559d/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
-524            android:value="@integer/google_play_services_version" />
-524-->[com.google.android.gms:play-services-basement:18.2.0] /Users/zuberqureshi/.gradle/caches/transforms-3/4f6e4068d556129f06526574ba53559d/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
-525
-526        <activity
-526-->[com.github.inbrainai:sdk-android:2.1.16] /Users/zuberqureshi/.gradle/caches/transforms-3/f9b0c4728771bb4fc07bb13a8982e278/transformed/jetified-sdk-android-2.1.16/AndroidManifest.xml:11:9-13:62
-527            android:name="com.inbrain.sdk.SurveysActivity"
-527-->[com.github.inbrainai:sdk-android:2.1.16] /Users/zuberqureshi/.gradle/caches/transforms-3/f9b0c4728771bb4fc07bb13a8982e278/transformed/jetified-sdk-android-2.1.16/AndroidManifest.xml:12:13-59
-528            android:configChanges="orientation|screenSize" />
-528-->[com.github.inbrainai:sdk-android:2.1.16] /Users/zuberqureshi/.gradle/caches/transforms-3/f9b0c4728771bb4fc07bb13a8982e278/transformed/jetified-sdk-android-2.1.16/AndroidManifest.xml:13:13-59
-529    </application>
-530
-531</manifest>
+479-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/dc424206b1ad9eb7383f99692466032f/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:23:9-27:75
+480            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+480-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/dc424206b1ad9eb7383f99692466032f/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:24:13-93
+481            android:excludeFromRecents="true"
+481-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/dc424206b1ad9eb7383f99692466032f/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:25:13-46
+482            android:exported="false"
+482-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/dc424206b1ad9eb7383f99692466032f/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:26:13-37
+483            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+483-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/dc424206b1ad9eb7383f99692466032f/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:27:13-72
+484        <!--
+485            Service handling Google Sign-In user revocation. For apps that do not integrate with
+486            Google Sign-In, this service will never be started.
+487        -->
+488        <service
+488-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/dc424206b1ad9eb7383f99692466032f/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:33:9-37:51
+489            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+489-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/dc424206b1ad9eb7383f99692466032f/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:34:13-89
+490            android:exported="true"
+490-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/dc424206b1ad9eb7383f99692466032f/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:35:13-36
+491            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+491-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/dc424206b1ad9eb7383f99692466032f/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:36:13-107
+492            android:visibleToInstantApps="true" />
+492-->[com.google.android.gms:play-services-auth:20.5.0] /Users/zuberqureshi/.gradle/caches/transforms-3/dc424206b1ad9eb7383f99692466032f/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:37:13-48
+493
+494        <activity
+494-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:13:9-18:74
+495            android:name="com.unity3d.services.ads.adunit.AdUnitActivity"
+495-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:14:13-74
+496            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+496-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:15:13-170
+497            android:exported="false"
+497-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:16:13-37
+498            android:hardwareAccelerated="true"
+498-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:17:13-47
+499            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+499-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:18:13-71
+500        <activity
+500-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:19:9-24:86
+501            android:name="com.unity3d.services.ads.adunit.AdUnitTransparentActivity"
+501-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:20:13-85
+502            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+502-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:21:13-170
+503            android:exported="false"
+503-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:22:13-37
+504            android:hardwareAccelerated="true"
+504-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:23:13-47
+505            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+505-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:24:13-83
+506        <activity
+506-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:25:9-30:86
+507            android:name="com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity"
+507-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:26:13-93
+508            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+508-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:27:13-170
+509            android:exported="false"
+509-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:28:13-37
+510            android:hardwareAccelerated="false"
+510-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:29:13-48
+511            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+511-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:30:13-83
+512        <activity
+512-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:31:9-36:74
+513            android:name="com.unity3d.services.ads.adunit.AdUnitSoftwareActivity"
+513-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:32:13-82
+514            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+514-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:33:13-170
+515            android:exported="false"
+515-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:34:13-37
+516            android:hardwareAccelerated="false"
+516-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:35:13-48
+517            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+517-->[com.unity3d.ads:unity-ads:4.8.0] /Users/zuberqureshi/.gradle/caches/transforms-3/30aefa65886412a4ca72aef76844ddfa/transformed/jetified-unity-ads-4.8.0/AndroidManifest.xml:36:13-71
+518        <activity
+518-->[com.google.android.gms:play-services-base:18.0.1] /Users/zuberqureshi/.gradle/caches/transforms-3/8643f6ab7a3f17926670d4455d001150/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+519            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+519-->[com.google.android.gms:play-services-base:18.0.1] /Users/zuberqureshi/.gradle/caches/transforms-3/8643f6ab7a3f17926670d4455d001150/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+520            android:exported="false"
+520-->[com.google.android.gms:play-services-base:18.0.1] /Users/zuberqureshi/.gradle/caches/transforms-3/8643f6ab7a3f17926670d4455d001150/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+521            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+521-->[com.google.android.gms:play-services-base:18.0.1] /Users/zuberqureshi/.gradle/caches/transforms-3/8643f6ab7a3f17926670d4455d001150/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+522        <activity
+522-->[com.facebook.android:audience-network-sdk:6.14.0] /Users/zuberqureshi/.gradle/caches/transforms-3/40115f7ab7326e7a8e48aa020b6351ea/transformed/jetified-audience-network-sdk-6.14.0/AndroidManifest.xml:20:9-24:75
+523            android:name="com.facebook.ads.AudienceNetworkActivity"
+523-->[com.facebook.android:audience-network-sdk:6.14.0] /Users/zuberqureshi/.gradle/caches/transforms-3/40115f7ab7326e7a8e48aa020b6351ea/transformed/jetified-audience-network-sdk-6.14.0/AndroidManifest.xml:21:13-68
+524            android:configChanges="keyboardHidden|orientation|screenSize"
+524-->[com.facebook.android:audience-network-sdk:6.14.0] /Users/zuberqureshi/.gradle/caches/transforms-3/40115f7ab7326e7a8e48aa020b6351ea/transformed/jetified-audience-network-sdk-6.14.0/AndroidManifest.xml:22:13-74
+525            android:exported="false"
+525-->[com.facebook.android:audience-network-sdk:6.14.0] /Users/zuberqureshi/.gradle/caches/transforms-3/40115f7ab7326e7a8e48aa020b6351ea/transformed/jetified-audience-network-sdk-6.14.0/AndroidManifest.xml:23:13-37
+526            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+526-->[com.facebook.android:audience-network-sdk:6.14.0] /Users/zuberqureshi/.gradle/caches/transforms-3/40115f7ab7326e7a8e48aa020b6351ea/transformed/jetified-audience-network-sdk-6.14.0/AndroidManifest.xml:24:13-72
+527
+528        <provider
+528-->[com.facebook.android:audience-network-sdk:6.14.0] /Users/zuberqureshi/.gradle/caches/transforms-3/40115f7ab7326e7a8e48aa020b6351ea/transformed/jetified-audience-network-sdk-6.14.0/AndroidManifest.xml:26:9-29:40
+529            android:name="com.facebook.ads.AudienceNetworkContentProvider"
+529-->[com.facebook.android:audience-network-sdk:6.14.0] /Users/zuberqureshi/.gradle/caches/transforms-3/40115f7ab7326e7a8e48aa020b6351ea/transformed/jetified-audience-network-sdk-6.14.0/AndroidManifest.xml:27:13-75
+530            android:authorities="com.easyearn.cash.AudienceNetworkContentProvider"
+530-->[com.facebook.android:audience-network-sdk:6.14.0] /Users/zuberqureshi/.gradle/caches/transforms-3/40115f7ab7326e7a8e48aa020b6351ea/transformed/jetified-audience-network-sdk-6.14.0/AndroidManifest.xml:28:13-82
+531            android:exported="false" />
+531-->[com.facebook.android:audience-network-sdk:6.14.0] /Users/zuberqureshi/.gradle/caches/transforms-3/40115f7ab7326e7a8e48aa020b6351ea/transformed/jetified-audience-network-sdk-6.14.0/AndroidManifest.xml:29:13-37
+532
+533        <receiver
+533-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:29:9-33:20
+534            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+534-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:30:13-85
+535            android:enabled="true"
+535-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:31:13-35
+536            android:exported="false" >
+536-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:32:13-37
+537        </receiver>
+538
+539        <service
+539-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:35:9-38:40
+540            android:name="com.google.android.gms.measurement.AppMeasurementService"
+540-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:36:13-84
+541            android:enabled="true"
+541-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:37:13-35
+542            android:exported="false" />
+542-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:38:13-37
+543        <service
+543-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:39:9-43:72
+544            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+544-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:40:13-87
+545            android:enabled="true"
+545-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:41:13-35
+546            android:exported="false"
+546-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:42:13-37
+547            android:permission="android.permission.BIND_JOB_SERVICE" />
+547-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/zuberqureshi/.gradle/caches/transforms-3/fe3c8dc954bfba36e0c61b0213d9eb45/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:43:13-69
+548
+549        <activity
+549-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/9b23622c33db76f9ffb7cd83396f37be/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:13:9-20:55
+550            android:name="com.pollfish.internal.PollfishOverlayActivity"
+550-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/9b23622c33db76f9ffb7cd83396f37be/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:14:13-73
+551            android:configChanges="orientation|screenSize"
+551-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/9b23622c33db76f9ffb7cd83396f37be/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:15:13-59
+552            android:exported="false"
+552-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/9b23622c33db76f9ffb7cd83396f37be/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:16:13-37
+553            android:hardwareAccelerated="true"
+553-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/9b23622c33db76f9ffb7cd83396f37be/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:17:13-47
+554            android:label="Pollfish"
+554-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/9b23622c33db76f9ffb7cd83396f37be/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:18:13-37
+555            android:theme="@style/Theme.Transparent"
+555-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/9b23622c33db76f9ffb7cd83396f37be/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:19:13-53
+556            android:windowSoftInputMode="adjustPan" />
+556-->[com.pollfish:pollfish-googleplay:6.4.0] /Users/zuberqureshi/.gradle/caches/transforms-3/9b23622c33db76f9ffb7cd83396f37be/transformed/jetified-pollfish-googleplay-6.4.0/AndroidManifest.xml:20:13-52
+557
+558        <meta-data
+558-->[com.google.android.gms:play-services-basement:18.2.0] /Users/zuberqureshi/.gradle/caches/transforms-3/049ca638833ce54da38327412c11c27d/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
+559            android:name="com.google.android.gms.version"
+559-->[com.google.android.gms:play-services-basement:18.2.0] /Users/zuberqureshi/.gradle/caches/transforms-3/049ca638833ce54da38327412c11c27d/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
+560            android:value="@integer/google_play_services_version" />
+560-->[com.google.android.gms:play-services-basement:18.2.0] /Users/zuberqureshi/.gradle/caches/transforms-3/049ca638833ce54da38327412c11c27d/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+561
+562        <activity
+562-->[com.github.inbrainai:sdk-android:2.1.16] /Users/zuberqureshi/.gradle/caches/transforms-3/0ed3a5d4dbf508f1a77e2feca44ceff7/transformed/jetified-sdk-android-2.1.16/AndroidManifest.xml:11:9-13:62
+563            android:name="com.inbrain.sdk.SurveysActivity"
+563-->[com.github.inbrainai:sdk-android:2.1.16] /Users/zuberqureshi/.gradle/caches/transforms-3/0ed3a5d4dbf508f1a77e2feca44ceff7/transformed/jetified-sdk-android-2.1.16/AndroidManifest.xml:12:13-59
+564            android:configChanges="orientation|screenSize" />
+564-->[com.github.inbrainai:sdk-android:2.1.16] /Users/zuberqureshi/.gradle/caches/transforms-3/0ed3a5d4dbf508f1a77e2feca44ceff7/transformed/jetified-sdk-android-2.1.16/AndroidManifest.xml:13:13-59
+565    </application>
+566
+567</manifest>

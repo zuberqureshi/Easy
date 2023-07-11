@@ -168,6 +168,10 @@ dependencies {
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
 
+    implementation 'com.applovin:applovin-sdk:+'
+    implementation 'com.applovin.mediation:facebook-adapter:+'
+    implementation 'com.applovin.mediation:unityads-adapter:+'
+
 
 //Firebase
    implementation platform('com.google.firebase:firebase-bom:32.1.0')
@@ -199,3 +203,7 @@ implementation project(':react-native-svg')
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+apply plugin: 'applovin-quality-service'
+applovin {
+    apiKey "3MnaZiiP8h4k1AgJyJHqpO_yM1Q7wKnAk6N7M91nhuzAvbpa84RiH_8LIBTPdlp8nKLQoZzvWo1HPicuFv9fwV"    
+}

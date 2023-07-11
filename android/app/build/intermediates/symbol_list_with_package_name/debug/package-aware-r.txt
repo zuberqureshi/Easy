@@ -2551,7 +2551,9 @@ raw applovin_consent_flow_gdpr
 raw applovin_consent_flow_privacy_policy
 raw applovin_consent_flow_terms_of_service_and_privacy_policy
 raw firebase_common_keep
+raw keep_cronet_api
 raw omsdk_v_1_0
+string CronetProviderClassName
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
