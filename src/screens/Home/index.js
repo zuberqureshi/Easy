@@ -21,8 +21,7 @@ import AppLovinMAX from  "react-native-applovin-max";
 import RNPollfish from 'react-native-plugin-pollfish';
 const builder = new RNPollfish.Builder('950a50c8-f2c5-43d7-afdc-61d0499f7aef', null).rewardMode(true).releaseMode(true);
 RNPollfish.init(builder.build());
-AppLovinMAX.setVerboseLogging(true);
-
+ 
 import inbrain, { InBrainNativeSurvey, InBrainSurveyFilter, InBrainSurveyCategory } from 'inbrain-surveys';
 const apiSecretInBrain = 'Tlz6uQqRLkg5WKGFFGJZqIiReUlwIP+RYbQUOtJzbDNdr1VfLHYlbLMTVf351Q6fZdWfKXQbCRfI73Xf0VEgzw==';
 
@@ -133,6 +132,47 @@ const Home = () => {
   }
 
 
+  
+    //Get User checkGameEligiblility
+    const checkGameEligiblility = async ( gameName) => {
+      setLoadingStatus(true)
+
+      const ds = await getToken();
+    const data = await JSON.parse(ds)
+ 
+    let body = {
+      user_id:data.id,
+      gameName:gameName
+    }
+    const checkGameEligibility = await CallApiJson('checkGameEligibility', 'POST',body);
+    // const data = await JSON.parse(seting)
+    setLoadingStatus(false)
+        if( checkGameEligibility.error==true  ){
+
+          Alert.alert(checkGameEligibility.msg);
+        //  navigation.navigate('Home');
+          return;
+        }else{
+          await showApplovinRewarded();
+          Alert.alert(
+            ' Opening Short Task Page  ',
+            'Answer Questions And Come Back On App , You Will Get Reward ',
+            [
+              {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
+              {text: 'Yes', onPress: async()=>{ 
+
+                Linking.openURL(userSettings && userSettings?.data?.blog_url);
+
+              
+              }  },
+            ],
+            { cancelable: false }
+          )
+
+          return ;
+        }
+
+    }
   const checkUpdateNeeded = async () => {
     const latestVersion = await VersionCheck.getLatestVersion();
     const currentVersion = VersionCheck.getCurrentVersion()
@@ -259,14 +299,14 @@ useEffect(() => {
 
   //intrestial
   AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
-  AppLovinMAX.addInterstitialLoadedEventListener((adInfo) => {
-    console.log("AppLovin Exchange DSP Name: " + adInfo.dspName);
-});
+//   AppLovinMAX.addInterstitialLoadedEventListener((adInfo) => {
+//     console.log("AppLovin Exchange DSP Name: " + adInfo.dspName);
+// });
   const appLovinIntrestial = AppLovinMAX.addInterstitialLoadedEventListener( async () => {
     // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
     const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
     if (isInterstitialReady) {
-    AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+   // AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
     }
   });
   // rewarded
@@ -750,44 +790,15 @@ useEffect(() => {
 
             {/* //contest Zone DisAble */}
 
-            {/*English Word Game-Start*/}
 
-            <View style={{ marginTop: responsiveWidth(1) }} >
-
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={styles.videoMainText}> Guess Word Game </Text>
-                <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
-                  <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin </Text>
-                  <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.english_ques} </Text>
-                  <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2.5), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
-                </View>
-              </View>
-
-              <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
-
-                <TouchableOpacity
-                  onPress={() => {
-                  
-                    navigation.navigate('EnglishGame')
-                
-                  }} >
-                  <View style={styles.videoImgView}>
-                    <Image style={{ width:responsiveHeight(25), height:responsiveHeight(22),resizeMode:'contain'}} source={require('../../assets/word.png')} />
-                  </View>
-                </TouchableOpacity>
-
-              </View>
-            </View>
-
-            {/* English Word Game-End*/}
-
+            {/* blog */}
             { (userSettings?.data?.blog_status==1) &&
                   
                 
                   <View style={{ marginTop: responsiveWidth(3.6) }} >
       
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                      <Text style={styles.videoMainText}> Earn By Read Artice </Text>
+                      <Text style={styles.videoMainText}> Earn By Short Task   </Text>
                       <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
                         <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin </Text>
                         <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.blog_coin}</Text>
@@ -807,8 +818,8 @@ useEffect(() => {
                           //   setVideoClose(true)
       
                           // }, 30000)
-                          await showApplovinRewarded();
-                          Linking.openURL(userSettings && userSettings?.data?.blog_url);
+                         await checkGameEligiblility('blog')
+                         
       
                         }} >
                         <View style={styles.videoImgView}>
@@ -819,6 +830,41 @@ useEffect(() => {
                     </View>
                   </View>
                 }
+
+
+
+            {/*English Word Game-Start*/}
+
+            <View style={{ marginTop: responsiveWidth(1) }} >
+
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text style={styles.videoMainText}> Guess Word Game </Text>
+                <View style={{ flexDirection: 'row', marginRight: responsiveWidth(7.5), alignItems: 'center' }}>
+                  <Text style={{ color: '#fff', fontWeight: '500' }}>Get Coin </Text>
+                  <Text style={{ color: '#fff' }}> {userSettings && userSettings?.data?.english_ques} </Text>
+                  <Image style={{ width: responsiveWidth(4.1), height: responsiveHeight(2), marginLeft: responsiveWidth(2.5), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
+                </View>
+              </View>
+
+              <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5) }}>
+
+                <TouchableOpacity
+                  onPress={async () => {
+                  
+
+                    navigation.navigate('EnglishGame')
+                
+                  }} >
+                  <View style={styles.videoImgView}>
+                    <Image style={{ width:responsiveHeight(25), height:responsiveHeight(22),resizeMode:'contain'}} source={require('../../assets/word.png')} />
+                  </View>
+                </TouchableOpacity>
+
+              </View>
+            </View>
+
+            {/* English Word Game-End*/}
+
 
             {/* survey container - start */}
             <TouchableOpacity onPress={() => { surveyCheck() }}>

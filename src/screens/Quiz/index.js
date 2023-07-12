@@ -18,6 +18,8 @@ import Loader from '../../components/common/loader/Loader';
 
 AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2WdHqlug5t5IG_ZSo2D6VGE11RWPocUqk").then(configuration => {
   // SDK is initialized, start loading ads
+  AppLovinMAX.setVerboseLogging(true);
+
 }).catch(error => {
 });
 const BANNER_AD_UNIT_ID = Platform.select({
@@ -88,9 +90,9 @@ const [apiQues, setApiQues] = useState({})
           navigation.navigate('Home');
           return;
         }else{
+        await  showApplovinRewarded();
           return ;
         }
-
 
     }
 useEffect(() => {
@@ -297,19 +299,22 @@ const showApplovinRewarded =()=>{
             return (
               <Questions
                 data={item}
+
                 selectedOption={x =>{
                   
                   OnSelectOption(index,x)
                 }}
+                quesNo={currentIndex}
+
               />
             );
           }}
         />
       </View>
 
-      <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',position:'absolute',bottom:responsiveWidth(12),width:'100%'}}>
+      <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',position:'absolute',bottom:responsiveWidth(25),width:'100%'}}>
           
-        <TouchableOpacity style={{
+        {/* <TouchableOpacity style={{
            backgroundColor: currentIndex > 1 ?'#1f4c86':'gray',
            height:responsiveHeight(5.95),
            width:responsiveWidth(24.5),
@@ -335,14 +340,14 @@ const showApplovinRewarded =()=>{
               Previous
            </Text>
 
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
 
       {currentIndex==10 ? (
         <TouchableOpacity style={styles.submitButton}  
         onPress={ async ()=>{
 
-            //  await showApplovinRewarded();
+              //  await showApplovinRewarded();
               // setModalVisible(true)
               getTextScore()
               navigation.navigate('QuizReward',{category:route.params.category,totalques:apiQues?.questions?.length})
@@ -358,7 +363,12 @@ const showApplovinRewarded =()=>{
         <TouchableOpacity style={styles.nextButton} 
          onPress={ async ()=>{
 
-          await showApplovinIntrestial()
+
+          // if( currentIndex%3==0){
+          //   await showApplovinRewarded()
+
+          // }
+
           if(questions[currentIndex-1].marked !== -1){
 
             if (currentIndex < questions.length) {

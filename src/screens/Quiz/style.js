@@ -86,7 +86,7 @@ export default styles = StyleSheet.create({
     height:responsiveHeight(5.95),
     width:responsiveWidth(24.5),
     borderRadius:responsiveWidth(2.45),
-    marginRight:responsiveWidth(5),
+    marginRight:responsiveWidth(0),
     justifyContent:'center',
     alignItems:'center'
  },

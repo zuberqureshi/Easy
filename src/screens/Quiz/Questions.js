@@ -24,7 +24,7 @@ const INTERSTITIAL_AD_UNIT_ID = Platform.select({
 });
 //applovin
 
-const Questions = ({data,selectedOption}) => {
+const Questions = ({data,selectedOption,quesNo}) => {
 
 //applovin 
 useEffect(() => {
@@ -60,6 +60,22 @@ if (isRewardedAdReady) {
 }, []);
 
 
+const showApplovinIntrestial = async ()=>{
+  const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+  if (isInterstitialReady) {
+        AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+        return true;
+  }else{
+    return false;
+  }
+}
+ 
+
+const showApplovinRewarded =()=>{
+  AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+}
+ 
+
   return (
     <View style={{width:windowWidth}} >
       <Text style={styles.ques} >
@@ -72,7 +88,14 @@ if (isRewardedAdReady) {
       renderItem={({item,index})=>{
         return(
           <TouchableOpacity style={[styles.quesOption,{ backgroundColor: data.marked==index+1 ? '#1f4c86' :'#fff',}]} 
-          onPress={()=>{
+          onPress={ async ()=>{
+            if( quesNo==4){
+             await showApplovinRewarded()
+            }
+
+            if( quesNo==9){
+              await showApplovinIntrestial()
+            }
             // console.warn(index)
             selectedOption(index + 1);
           }}>
