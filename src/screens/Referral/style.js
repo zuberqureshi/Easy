@@ -1,0 +1,138 @@
+import { StyleSheet } from 'react-native';
+import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
+
+
+export default styles = StyleSheet.create({
+
+referFriendContainer:{
+    marginLeft:responsiveWidth(7.45),
+    marginTop:responsiveWidth(2.45)
+},
+referFriendText:{
+    color:'#fff',
+    fontSize:responsiveFontSize(2.4),
+    fontWeight:600,
+    marginBottom:responsiveWidth(1.25)
+},
+perReferText:{
+    color:'#fff',
+    fontSize:responsiveFontSize(1.9)
+},
+container1:{
+    width:responsiveWidth(12.15),
+    height:responsiveHeight(5.9),
+    borderRadius:responsiveWidth(7.45),
+    backgroundColor:'#1f4c86',
+    alignItems:'center',justifyContent:'center',
+    marginTop:responsiveWidth(9.8),
+    marginHorizontal:responsiveWidth(5)
+},
+containerText:{
+    fontSize:responsiveFontSize(2.4),
+    fontWeight:400,
+    color:'#fff'
+},
+containerMainText:{
+    fontSize:responsiveFontSize(1.9),
+    fontWeight:400,
+    color:'#fff'
+},
+dashLine1:{
+    marginLeft:responsiveWidth(11),
+         height:responsiveHeight(3.5),
+          flexDirection:'column'
+},
+container2:{
+    width:responsiveWidth(12.15),
+    height:responsiveHeight(5.9),
+    borderRadius:responsiveWidth(7.45),
+    backgroundColor:'#1f4c86',
+    alignItems:'center',
+    justifyContent:'center',
+    marginHorizontal:responsiveWidth(5)
+},
+container2SubMainText:{
+    width:responsiveWidth(43.7),
+    height:responsiveHeight(4),
+    backgroundColor:'#ecf3f3',
+    borderRadius:responsiveWidth(7.3),
+    justifyContent:'center',
+    marginTop:responsiveWidth(2.45),
+    marginRight:responsiveWidth(2.45)
+},
+dashLine2:{
+    marginLeft:responsiveWidth(11),
+    height:responsiveHeight(6), 
+    flexDirection:'column',
+    marginTop:responsiveWidth(-4.7)
+},
+container3:{
+    width:responsiveWidth(12.15),
+    height:responsiveHeight(5.9),
+    borderRadius:responsiveWidth(7.45),
+    backgroundColor:'#1f4c86',
+    alignItems:'center',
+    justifyContent:'center',
+    marginHorizontal:responsiveWidth(5)
+},
+container3SubMainText:{
+    width:responsiveWidth(43.7),
+    height:responsiveHeight(4),
+    backgroundColor:'#ecf3f3',
+    borderRadius:responsiveWidth(7.3),
+    justifyContent:'center',
+    marginTop:responsiveWidth(2.45)
+},
+viewReferralContainer:{
+    justifyContent:'center',
+    alignItems:'center',
+    flexDirection:'row',
+    marginTop:responsiveWidth(9.8)
+},
+dividerLine:{
+    borderBottomWidth:responsiveWidth(0.4),
+    borderBottomColor:'#f4f4f4',
+    marginHorizontal:responsiveWidth(6),
+    marginTop:responsiveWidth(9.8)
+},
+shareYourTxt:{
+    fontSize:responsiveFontSize(2.15),
+    fontWeight:600,
+    color:'#fff',
+    alignSelf:'center',
+    marginTop:responsiveWidth(2.45)
+},
+referCodeBox:{
+    borderWidth:responsiveWidth(0.25),
+    backgroundColor:'#1f4c86',
+    borderColor:'#fff',
+    width:responsiveWidth(73),
+    height:responsiveHeight(5.9),
+    alignSelf:'center',
+    alignItems:'center',
+     borderStyle:  'dashed',
+     justifyContent:'center',
+     marginTop:responsiveWidth(6.2),
+     borderRadius:responsiveWidth(2.45)
+},
+referCode:{
+    fontSize:responsiveFontSize(1.9),
+    color:'#fff',
+    marginLeft:responsiveWidth(0.7),
+    fontWeight:600
+},
+referButtonBox:{
+    width:responsiveWidth(48.5),
+    height:responsiveHeight(5.9),
+    marginTop:responsiveWidth(5),
+    borderRadius:responsiveWidth(1.25),
+    borderColor:'#d6d6d6',
+    borderWidth:responsiveWidth(0.2),
+    backgroundColor:'#1f4c86',
+    elevation:responsiveWidth(3),
+    justifyContent:'center'
+},
+
+
+
+})

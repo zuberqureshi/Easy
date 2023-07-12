@@ -17,6 +17,8 @@ import Youtube from '../screens/YoutubeVideo/index';
 import QuizReward from '../screens/Quiz/QuizReward';
 import EnglishGame from '../screens/EnglishGame/index';
 import ImageGame from '../screens/ImageGame/index';
+import Referral from '../screens/Referral/index';
+import ReferralCode from '../screens/ReferralCodeEnter/index';
 
 const HomeStack = createNativeStackNavigator();
 const MainStack = () => {
@@ -39,6 +41,8 @@ const MainStack = () => {
       <HomeStack.Screen name='QuizReward' component={QuizReward} options={{headerShown:true}} />
       <HomeStack.Screen name='EnglishGame' component={EnglishGame} options={{headerShown:true}} />
       <HomeStack.Screen name='ImageGame' component={ImageGame} options={{headerShown:true}} />
+      <HomeStack.Screen name='Referral' component={Referral} options={{headerShown:true}} />
+      <HomeStack.Screen name='ReferralCode' component={ReferralCode} options={{headerShown:true}} />
       {/* <HomeStack.Screen name='Login' component={Login} /> */}
     </HomeStack.Navigator>
   )
