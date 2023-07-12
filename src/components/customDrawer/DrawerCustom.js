@@ -88,6 +88,8 @@ const CustomDrawer = () => {
     // { icon: 'cloud-download', title: 'Offer' },
     { icon: 'headset', title: 'Contact' },
     { icon: 'logo-whatsapp', title: 'Whatsapp Support' },
+    { icon: 'share', title: 'Referral' },
+    { icon: 'share-social', title: 'ReferralCode' },
 
   ];
 
