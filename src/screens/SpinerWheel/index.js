@@ -12,6 +12,7 @@ import Loader from '../../components/common/loader/Loader';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import { BannerAdSize,BannerAd,AppOpenAd, RewardedAd, RewardedAdEventType,  TestIds, AdEventType,InterstitialAd } from 'react-native-google-mobile-ads';
 import AppLovinMAX from  "react-native-applovin-max";
+import { windowHeight } from '../../utiles/Dimensions';
 
  
 
@@ -246,15 +247,15 @@ const showApplovinRewarded =async ()=>{
     <Loader loadingStatus = {loadingStatus} />
 
 
-    <View style={{flex:0.8,backgroundColor:'#0a203e'}}>
+    <View style={{flex:0.8,backgroundColor:'#0a203e',height:windowHeight-responsiveHeight(5)}}>
         <View style={{justifyContent:'center',alignItems:'center',marginTop:responsiveWidth(1)}}>
           <Text style={{color:'#fff',fontSize:responsiveFontSize(3.55)}}> PLAY  SPIN GAME </Text>
           <Text style={{color:'#fff',fontSize:responsiveFontSize(1.7),letterSpacing:responsiveWidth(0.37)}}> Double Your Coin By Playing Spinner </Text>
           {/* <Text style={{color:'#fff',fontSize:responsiveFontSize(1.9),marginTop:responsiveWidth(2.5)}}> Congrat's You have Won {spinAmount } </Text> */}
         </View>
-
+     <View style={{flex:0.6,marginTop:responsiveWidth(14)}}>
        <Spiner   setSpinValue={setSpinValue}  updateSpinnerWheelWinner={updateSpinnerWheelWinner} showApplovinRewarded={showApplovinRewarded} userWallet={userWallet} setSpinAmount={setSpinAmount} spinAmount={spinAmount}  />
-  
+       </View>
     </View>
  
     </ScrollView>
