@@ -154,7 +154,7 @@ useEffect(() => {
 
         //  setclaimButton(false);
         //  setbuttonDisableTrue(false);
-         AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+        //  AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
 
     }
 
@@ -247,13 +247,13 @@ const showApplovinRewarded =async ()=>{
     <Loader loadingStatus = {loadingStatus} />
 
 
-    <View style={{flex:0.8,backgroundColor:'#0a203e',height:windowHeight-responsiveHeight(5)}}>
+    <View style={{flex:0.8,backgroundColor:'#0a203e',height:windowHeight}}>
         <View style={{justifyContent:'center',alignItems:'center',marginTop:responsiveWidth(1)}}>
-          <Text style={{color:'#fff',fontSize:responsiveFontSize(3.55)}}> PLAY  SPIN GAME </Text>
-          <Text style={{color:'#fff',fontSize:responsiveFontSize(1.7),letterSpacing:responsiveWidth(0.37)}}> Double Your Coin By Playing Spinner </Text>
+          <Text style={{color:'#fff',fontSize:responsiveFontSize(3.55)}}> DOUBLE YOUR COINS</Text>
+          {/* <Text style={{color:'#fff',fontSize:responsiveFontSize(1.7),letterSpacing:responsiveWidth(0.37)}}> Double Your Coin By Playing Spinner </Text> */}
           {/* <Text style={{color:'#fff',fontSize:responsiveFontSize(1.9),marginTop:responsiveWidth(2.5)}}> Congrat's You have Won {spinAmount } </Text> */}
         </View>
-     <View style={{flex:0.6,marginTop:responsiveWidth(14)}}>
+     <View style={{flex:0.6,marginTop:responsiveWidth(8)}}>
        <Spiner   setSpinValue={setSpinValue}  updateSpinnerWheelWinner={updateSpinnerWheelWinner} showApplovinRewarded={showApplovinRewarded} userWallet={userWallet} setSpinAmount={setSpinAmount} spinAmount={spinAmount}  />
        </View>
     </View>

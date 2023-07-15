@@ -90,7 +90,7 @@ class Spiner extends Component {
 
 
 
-  <View style={{marginTop:'58%',flexDirection:'row',alignContent:'space-between',}}>
+  <View style={{marginTop:'55%',flexDirection:'row',alignContent:'space-between',}}>
   <TouchableOpacity onPress={()=>{this.props.setSpinAmount(2);  this.props.showApplovinRewarded();  }    } >
       <View style={[styles.coinBox,{borderColor:this.props.spinAmount===2?'gold':'#1f4c86',}]}>
 
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
   },
   startButton: {
     backgroundColor: '#1f4c86',
-    marginTop:responsiveWidth(3),
+    marginTop:responsiveWidth(1),
     marginBottom:responsiveWidth(5.1),
     padding: responsiveWidth(2.5),
     borderRadius:responsiveWidth(5),
