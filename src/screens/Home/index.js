@@ -15,6 +15,13 @@ import LinearGradient from 'react-native-linear-gradient'
 import VersionCheck from 'react-native-version-check';
 import YoutubePlayer from "react-native-youtube-iframe";
 import Loader from '../../components/common/loader/Loader';
+import DeviceCountry, {
+  TYPE_TELEPHONY,
+  TYPE_CONFIGURATION,
+  TYPE_ANY,
+} from 'react-native-device-country';
+
+
 import crashlytics from '@react-native-firebase/crashlytics';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import AppLovinMAX from  "react-native-applovin-max";
@@ -160,7 +167,6 @@ const Home = () => {
             [
               {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
               {text: 'Yes', onPress: async()=>{ 
-
                 Linking.openURL(userSettings && userSettings?.data?.blog_url);
 
               
@@ -215,6 +221,16 @@ const Home = () => {
 
   //Get User Info
   const getUserInfo = async () => {
+
+   /// const countryDetails = await DeviceCountry.getCountryCode(TYPE_TELEPHONY);
+   // console.log(countryDetails);
+  // .then((result) => {
+  //   console.log(result);
+  //   // {"code": "PT", "type": "telephony"}
+  // })
+  // .catch((e) => {
+  //   console.log(e);
+  // });
     console.log("getdata Callling....")
     const ds = await getToken();
     const data = await JSON.parse(ds)

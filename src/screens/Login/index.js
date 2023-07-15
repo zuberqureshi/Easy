@@ -11,7 +11,8 @@ import { useNavigation,useIsFocused } from "@react-navigation/native";
 import Loader from '../../components/common/loader/Loader';
 import  { AuthContext } from "../../utiles/auth-context";
 import AppLovinMAX from  "react-native-applovin-max";
-
+import VersionCheck from 'react-native-version-check';
+import DeviceCountry, { TYPE_TELEPHONY} from 'react-native-device-country';
 //applovin
 AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2WdHqlug5t5IG_ZSo2D6VGE11RWPocUqk").then(configuration => {
   // SDK is initialized, start loading ads
@@ -49,6 +50,9 @@ const showToast = (msg) => {
 // console.log('login info',userInfo)
 
 const signIn = async () => {
+
+  
+
  
   setLoadingStatus(true);
   setLoginButton(true)
@@ -56,11 +60,18 @@ const signIn = async () => {
     await GoogleSignin.hasPlayServices();
     GoogleSignin.signOut()
     const usrInfo = await GoogleSignin.signIn();
-        setUserInfo(usrInfo)
+        setUserInfo(usrInfo);
+        let DeviceCountryInfo =  await  DeviceCountry.getCountryCode(TYPE_TELEPHONY);
+        const currentVersion = VersionCheck.getCurrentVersion()
+
         const body = {
             email: usrInfo.user.email,
             name: usrInfo.user.name,
+            currentVersion:currentVersion,
+            user_country: DeviceCountryInfo.code.toUpperCase()
           };
+
+          
         const userLogin =  await CallApiJson('login', 'POST', body);
    
      if(userLogin.error === true){
@@ -105,7 +116,7 @@ const signIn = async () => {
 //applovin 
 useEffect(() => {
 
- 
+  
   // rewarded
 
     // You may use the utility method `AppLovinMAX.isTablet()` to help with view sizing adjustments

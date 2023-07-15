@@ -20,7 +20,9 @@ const Referral = () => {
 
  const share=()=>{
    const options={
-    message:'📣 Share the App with Your Friends! 📱💫 Spread the word about our app 💪💰',
+    message:
+    `📣 hey hey hey!!😍😍😍 i'm earning real money in this app By Watching Video and Playing Games For Free !! 📱💫 🌹🌹🌹 Most popular money making app in World💪💰!!!💛🤍💚 Download app, You and Me will get 100 Bonus Coin !!!😻😻😻 it's 100% true! 
+    😹  Use My Referal Code inside app After Login !  👉 ->  Download Now 👉 `,
     url:'https://play.google.com/store/apps/details?id=com.easyearn.cash',
    
    }
