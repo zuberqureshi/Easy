@@ -1,8 +1,10 @@
-#Wed Jul 12 01:51:40 IST 2023
+#Sat Jul 15 20:57:01 IST 2023
+path.4=classes5.dex
 path.3=classes4.dex
 path.2=classes3.dex
 path.1=classes2.dex
 path.0=classes.dex
+base.4=/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/build/intermediates/safedk/dex/debug/classes5.dex
 base.3=/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/build/intermediates/safedk/dex/debug/classes4.dex
 base.2=/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/build/intermediates/safedk/dex/debug/classes3.dex
 base.1=/Users/zuberqureshi/Desktop/reactnativeapp/Easy/android/app/build/intermediates/safedk/dex/debug/classes2.dex
@@ -11,3 +13,4 @@ renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
+renamed.4=classes5.dex

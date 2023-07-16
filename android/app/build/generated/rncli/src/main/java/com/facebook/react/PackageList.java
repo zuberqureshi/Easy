@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 // @react-native-async-storage/async-storage
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
+// @react-native-clipboard/clipboard
+import com.reactnativecommunity.clipboard.ClipboardPackage;
 // @react-native-community/geolocation
 import com.reactnativecommunity.geolocation.GeolocationPackage;
 // @react-native-community/netinfo
@@ -33,6 +35,8 @@ import com.inbrain.InBrainSurveysPackage;
 import com.airbnb.android.react.lottie.LottiePackage;
 // react-native-applovin-max
 import com.applovin.reactnative.AppLovinMAXPackage;
+// react-native-device-country
+import com.reactnativedevicecountry.DeviceCountryPackage;
 // react-native-device-info
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 // react-native-encrypted-storage
@@ -107,6 +111,7 @@ public class PackageList {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
       new AsyncStoragePackage(),
+      new ClipboardPackage(),
       new GeolocationPackage(),
       new NetInfoPackage(),
       new ReactNativeFirebaseAppPackage(),
@@ -117,6 +122,7 @@ public class PackageList {
       new InBrainSurveysPackage(),
       new LottiePackage(),
       new AppLovinMAXPackage(),
+      new DeviceCountryPackage(),
       new RNDeviceInfo(),
       new RNEncryptedStoragePackage(),
       new RNGestureHandlerPackage(),
