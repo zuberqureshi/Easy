@@ -40,7 +40,7 @@ const ReferCode = () => {
        // referalCodeSubmit api
        const referalCodeSubmit = async () => {
         setLoadingStatus(true);
-        showApplovinIntrestial();
+        await showApplovinIntrestial();
         const  userdata = await getToken();
         const userdataParsed = await JSON.parse(userdata)
         const body = {
@@ -49,6 +49,7 @@ const ReferCode = () => {
        };
         const Apiresponse = await CallApiJson('referalCodeSubmit', 'POST',body);
         // const data = await JSON.parse(seting)
+        console.log( 'referalCodeSubmit', Apiresponse )
         setLoadingStatus(false);
         if(Apiresponse.error==true ){
           Alert.alert(Apiresponse.msg); 
