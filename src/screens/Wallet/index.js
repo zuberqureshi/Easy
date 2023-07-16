@@ -27,6 +27,9 @@ const BANNER_AD_UNIT_ID = Platform.select({
  const INTERSTITIAL_AD_UNIT_ID = Platform.select({
   android: '8fba0df7d5246704',
  });
+ const MREC_AD_UNIT_ID = Platform.select({
+  android: '01d673b7684c023e'
+});
 //applovin
 const Wallet = () => {
   
@@ -144,8 +147,7 @@ if (isRewardedAdReady) {
   //rewarded
  
    return () => { 
-    appLovinIntrestial();
-    appLovinRewarded();
+ 
 
    }
 
@@ -318,59 +320,58 @@ const showApplovinRewarded =()=>{
       <View style={{ flex: 0.7, marginHorizontal: responsiveWidth(5) }}>
         <Text style={styles.redeenTxt} >Redeem Reward Via</Text>
       
-        
-        <LinearGradient colors={["#0a203e", "#1f4c86"]}
-          useAngle={true}
-          angle={322}
-          angleCenter={{ x: 0.5, y: 0.5 }}
-          style={styles.paytmLinearGradient}
-        
-           >
-        <TouchableOpacity onPress={ async () => {       openPaytmModal() }} >
-          <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
-            <Image style={styles.paytmLinearGradientImg} source={require("../../assets/Paytm.png")} />
-
-            <View>
-              <Text style={styles.paytmLinearGradientMainTxt}>Paytm</Text>
-              <Text style={styles.paytmLinearGradientSubTxt} >Redeem Money By Paytm</Text>
-            </View>
-
-           
-              <Icon name="arrow-forward-circle" size={responsiveWidth(10)} color="#1f4c86" style={{ marginRight: responsiveWidth(3) }} />
+        { (userProfileData.data.device_country=='IN') && 
+      
+            <LinearGradient colors={["#0a203e", "#1f4c86"]}
+              useAngle={true}
+              angle={322}
+              angleCenter={{ x: 0.5, y: 0.5 }}
+              style={styles.paytmLinearGradient}
             
+              >
+            <TouchableOpacity onPress={ async () => {       openPaytmModal() }} >
+              <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
+                <Image style={styles.paytmLinearGradientImg} source={require("../../assets/Paytm.png")} />
+                <View>
+                  <Text style={styles.paytmLinearGradientMainTxt}>Paytm</Text>
+                  <Text style={styles.paytmLinearGradientSubTxt} >Redeem Money By Paytm</Text>
+                </View>
+                  <Icon name="arrow-forward-circle" size={responsiveWidth(10)} color="#1f4c86" style={{ marginRight: responsiveWidth(3) }} />
+                </View>
+              </TouchableOpacity>
+            </LinearGradient>
+        }
 
-          </View>
-          </TouchableOpacity>
-        </LinearGradient>
-  
 
-        <LinearGradient colors={["#0a203e", "#1f4c86"]}
-          useAngle={true}
-          angle={322}
-          angleCenter={{ x: 0.5, y: 0.5 }}
-          style={styles.paypalLinearGradient}>
-         
+          { (userProfileData.data.device_country !='IN') && 
+                  <LinearGradient colors={["#0a203e", "#1f4c86"]}
+                    useAngle={true}
+                    angle={322}
+                    angleCenter={{ x: 0.5, y: 0.5 }}
+                    style={styles.paypalLinearGradient}>
+                  
 
-         <TouchableOpacity onPress={ async () => { 
-          
-          
-          setModalPaypal(true);  }}>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
-            <Image style={styles.paypalLinearGradientImg} source={require("../../assets/PayPal.png")} />
+                  <TouchableOpacity onPress={ async () => { 
+                    
+                    
+                    setModalPaypal(true);  }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
+                      <Image style={styles.paypalLinearGradientImg} source={require("../../assets/PayPal.png")} />
 
-            <View>
-              <Text style={styles.paypalLinearGradientMainTxt}>PayPal</Text>
-              <Text style={styles.paypalLinearGradientSubTxt} >Redeem Money By Paypal</Text>
-            </View>
+                      <View>
+                        <Text style={styles.paypalLinearGradientMainTxt}>PayPal</Text>
+                        <Text style={styles.paypalLinearGradientSubTxt} >Redeem Money By Paypal</Text>
+                      </View>
 
-            
-              <Icon name="arrow-forward-circle" size={responsiveWidth(10)} color="#1f4c86" style={{ marginRight: responsiveWidth(3) }} />
-           
+                      
+                        <Icon name="arrow-forward-circle" size={responsiveWidth(10)} color="#1f4c86" style={{ marginRight: responsiveWidth(3) }} />
+                    
 
-          </View>
-          </TouchableOpacity>
+                    </View>
+                    </TouchableOpacity>
 
-        </LinearGradient>
+                  </LinearGradient>
+          }
 
         <Text style={[styles.redeenTxt,{marginTop:responsiveWidth(2)}]} >Withdraw History ( Widraw takes 48 Hours ) </Text>
       
@@ -453,6 +454,26 @@ const showApplovinRewarded =()=>{
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: responsiveWidth(2.45) }}>
 
+            { (userProfileData.data.first_widraw==0) && 
+              <TouchableHighlight onPress={() => { setSelectedCard(200) }} style={{ borderRadius: responsiveWidth(2.45) }}>
+                <LinearGradient colors={["#0a203e", "#1f4c86"]}
+                  useAngle={true}
+                  angle={322}
+                  angleCenter={{ x: 0.5, y: 0.5 }}
+                  style={[styles.modelPaypalLinearGradientCard,{borderColor: selectedCard === 200 ? 'gold' : '#1f4c86',}]}>
+                  <Image style={{ width: responsiveWidth(8.1), height: responsiveHeight(4),resizeMode:'contain' }} source={require("../../assets/PayPal.png")} />
+                  <View style={{ width: responsiveWidth(9.5) }}>
+                    <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >200</Text>
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                      <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
+                      <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.8) }} >{userSettings && 200*userSettings?.data?.coin_factor}</Text>
+                    </View>
+                  </View>
+                </LinearGradient>
+              </TouchableHighlight>
+              }
+
+          { (userProfileData.data.first_widraw==1) && 
               <TouchableHighlight onPress={() => { setSelectedCard(500) }} style={{ borderRadius: responsiveWidth(2.45) }}>
                 <LinearGradient colors={["#0a203e", "#1f4c86"]}
                   useAngle={true}
@@ -464,13 +485,12 @@ const showApplovinRewarded =()=>{
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >500</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                       <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
-                      <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.8) }} >{userSettings && userSettings?.data?.coin_factor}</Text>
+                      <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.8) }} >{userSettings && 500*userSettings?.data?.coin_factor}</Text>
                     </View>
                   </View>
                 </LinearGradient>
               </TouchableHighlight>
-
-
+          }
               <TouchableHighlight onPress={() => { setSelectedCard(1000) }} style={{ borderRadius: responsiveWidth(2.45) }}>
                 <LinearGradient colors={["#0a203e", "#1f4c86"]}
                   useAngle={true}
@@ -482,7 +502,7 @@ const showApplovinRewarded =()=>{
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >1000</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                       <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
-                      <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.8) }} >{userSettings && 2*userSettings?.data?.coin_factor}</Text>
+                      <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.8) }} >{userSettings && 1000*userSettings?.data?.coin_factor}</Text>
                     </View>
                   </View>
                 </LinearGradient>
@@ -500,7 +520,7 @@ const showApplovinRewarded =()=>{
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >1500</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                       <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
-                      <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.8) }} >{userSettings && 3*userSettings?.data?.coin_factor}</Text>
+                      <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.8) }} >{userSettings && 1500*userSettings?.data?.coin_factor}</Text>
                     </View>
                   </View>
                 </LinearGradient>
@@ -584,7 +604,6 @@ const showApplovinRewarded =()=>{
             <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: responsiveWidth(2.45) }}>
 
               <TouchableHighlight onPress={() => { setSelectedCard(500) }} style={{ borderRadius: responsiveWidth(2.45) }}>
-
                 <LinearGradient colors={["#0a203e", "#1f4c86"]}
                   useAngle={true}
                   angle={322}
@@ -748,6 +767,33 @@ const showApplovinRewarded =()=>{
         
       </Modal>
     
+
+
+ 
+        {/* applovin mrec  */}
+        <AppLovinMAX.AdView adUnitId={MREC_AD_UNIT_ID}
+                    adFormat={AppLovinMAX.AdFormat.MREC}
+                    style={styles.mrec}
+                    autoRefresh={true}
+                    onAdLoaded={(adInfo) => {
+                      console.log('MREC ad loaded from ' + adInfo.networkName);
+                    }}
+                    onAdLoadFailed={(errorInfo) => {
+                      console.log('MREC ad failed to load with error code ' + errorInfo.code + ' and message: ' + errorInfo.message);
+                    }}
+                    onAdClicked={(adInfo) => {
+                      console.log('MREC ad clicked');
+                    }}
+                    onAdExpanded={(adInfo) => {
+                      console.log('MREC ad expanded')
+                    }}
+                    onAdCollapsed={(adInfo) => {
+                      console.log('MREC ad collapsed')
+                    }}
+                    onAdRevenuePaid={(adInfo) => {
+                      console.log('MREC ad revenue paid: ' + adInfo.revenue);
+                    }}/>
+            {/* applovin mrec  */}
 
     </View>
 

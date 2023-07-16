@@ -1,20 +1,66 @@
-import { View, Text ,TouchableOpacity,Image,StyleSheet,TextInput} from 'react-native'
-import React,{ useLayoutEffect,useState } from 'react'
+import { View, Text ,TouchableOpacity,Image,StyleSheet,TextInput, Alert} from 'react-native'
+import React,{ useEffect, useLayoutEffect,useState } from 'react'
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from "@react-navigation/native";
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 import Loader from '../../components/common/loader/Loader';
 import LinearGradient from 'react-native-linear-gradient'
+import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
+import AppLovinMAX from  "react-native-applovin-max";
 
+ 
+//applovin
+AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2WdHqlug5t5IG_ZSo2D6VGE11RWPocUqk").then(configuration => {
+  // SDK is initialized, start loading ads
+}).catch(error => {
+});
+const BANNER_AD_UNIT_ID = Platform.select({
+  android: '2c0d4e4e0e0d9af8'
+ });
+ const REWARDED_AD_UNIT_ID = Platform.select({
+  android: '3365fad27fce67ed',
+ });
+ const INTERSTITIAL_AD_UNIT_ID = Platform.select({
+  android: '8fba0df7d5246704',
+ });
+ const MREC_AD_UNIT_ID = Platform.select({
+  android: '01d673b7684c023e'
+});
+//applovin
 const ReferCode = () => {
 
 
     const navigation = useNavigation();
     const [activty, setActivty] = useState(false)
     const [refferCode, setRefferCode] = useState()
+    const [loadingStatus, setLoadingStatus] = useState(false)
 
+    
+       // referalCodeSubmit api
+       const referalCodeSubmit = async () => {
+        setLoadingStatus(true);
+        showApplovinIntrestial();
+        const  userdata = await getToken();
+        const userdataParsed = await JSON.parse(userdata)
+        const body = {
+         user_id: userdataParsed.id,
+         referal_code:refferCode
+       };
+        const Apiresponse = await CallApiJson('referalCodeSubmit', 'POST',body);
+        // const data = await JSON.parse(seting)
+        setLoadingStatus(false);
+        if(Apiresponse.error==true ){
+          Alert.alert(Apiresponse.msg); 
+          return;
+        }else{
+          Alert.alert(Apiresponse.msg); 
+          return;
+        }
 
+      }
+
+      
     useLayoutEffect(() => {
         navigation.setOptions({
           headerLeft: () => (
@@ -44,14 +90,66 @@ const ReferCode = () => {
         });
       }, []);
 
+
+//applovin 
+useEffect(() => {
+
+  //intrestial
+  AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);
+  const appLovinIntrestial = AppLovinMAX.addInterstitialLoadedEventListener( async () => {
+    // Interstitial ad is ready to show. AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID) now returns 'true'
+    const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+    if (isInterstitialReady) {
+      setclaimButton(false);
+      setbuttonDisableTrue(false);
+    //AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+     
+    }
+  });
+  // rewarded
+  AppLovinMAX.loadRewardedAd(REWARDED_AD_UNIT_ID);
+  const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
+    const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
+if (isRewardedAdReady) {
+   AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+}
+  });
+  //rewarded
+ 
+   return () => { 
+  
+
+   }
+
+}, []);
+
+const showApplovinIntrestial = async ()=>{
+  const isInterstitialReady =  await AppLovinMAX.isInterstitialReady(INTERSTITIAL_AD_UNIT_ID);
+  if (isInterstitialReady) {
+        AppLovinMAX.showInterstitial(INTERSTITIAL_AD_UNIT_ID);
+        return true;
+  }else{
+    return false;
+  }
+}
+ 
+const showApplovinRewarded =()=>{
+  AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+}
+
+
+
+//applovin 
+
+
   return (
 
     <View style={{flex:1,backgroundColor: '#0a203e'}}>
-    {/* <Loader loadingStatus = {loadingStatus} /> */}
+    <Loader loadingStatus = {loadingStatus} />
 
        <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1),letterSpacing: responsiveWidth(0.2),
        marginVertical:responsiveWidth(5),marginLeft:responsiveWidth(4)}}>
-        Enter your friend refer code & Get Rewards
+        To receive bonus coins, please enter your Referral code.
          </Text>
 
 
@@ -80,7 +178,7 @@ const ReferCode = () => {
               borderRadius: 10,
             }}> */}
 
-            <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1)}}> Enter Code Here</Text>
+            <Text style={{color:'#fff',fontSize:responsiveFontSize(2.1)}}> Enter Referral Code Here</Text>
 
             <View style={{  borderWidth: responsiveFontSize(0.2),
     borderColor: '#0a203e', 
@@ -114,8 +212,10 @@ const ReferCode = () => {
    elevation:responsiveWidth(1.5),
    flexDirection:'row'}}
               onPress={() => {
-               console.log("refer code enter by user",refferCode)
-              }}>
+
+                referalCodeSubmit()
+
+                }}>
 
 
               <Text style={{color: '#fff',
@@ -128,7 +228,30 @@ const ReferCode = () => {
           </View>
 
  
-
+        {/* applovin mrec  */}
+        <AppLovinMAX.AdView adUnitId={MREC_AD_UNIT_ID}
+                    adFormat={AppLovinMAX.AdFormat.MREC}
+                    style={styles.mrec}
+                    autoRefresh={true}
+                    onAdLoaded={(adInfo) => {
+                      console.log('MREC ad loaded from ' + adInfo.networkName);
+                    }}
+                    onAdLoadFailed={(errorInfo) => {
+                      console.log('MREC ad failed to load with error code ' + errorInfo.code + ' and message: ' + errorInfo.message);
+                    }}
+                    onAdClicked={(adInfo) => {
+                      console.log('MREC ad clicked');
+                    }}
+                    onAdExpanded={(adInfo) => {
+                      console.log('MREC ad expanded')
+                    }}
+                    onAdCollapsed={(adInfo) => {
+                      console.log('MREC ad collapsed')
+                    }}
+                    onAdRevenuePaid={(adInfo) => {
+                      console.log('MREC ad revenue paid: ' + adInfo.revenue);
+                    }}/>
+            {/* applovin mrec  */}
 
     </View>
   )

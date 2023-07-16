@@ -27,6 +27,9 @@ const BANNER_AD_UNIT_ID = Platform.select({
  const INTERSTITIAL_AD_UNIT_ID = Platform.select({
   android: '8fba0df7d5246704',
  });
+ const MREC_AD_UNIT_ID = Platform.select({
+  android: '01d673b7684c023e'
+});
 //applovin
 
 const EnglishGame = () => {
@@ -177,8 +180,7 @@ if (isRewardedAdReady) {
 
  
    return () => { 
-    appLovinIntrestial();
-    appLovinRewarded();
+   
 
    }
 
@@ -316,6 +318,31 @@ useLayoutEffect(() => {
            </View>
  
   
+
+        {/* applovin mrec  */}
+        <AppLovinMAX.AdView adUnitId={MREC_AD_UNIT_ID}
+                    adFormat={AppLovinMAX.AdFormat.MREC}
+                    style={styles.mrec}
+                    autoRefresh={true}
+                    onAdLoaded={(adInfo) => {
+                      console.log('MREC ad loaded from ' + adInfo.networkName);
+                    }}
+                    onAdLoadFailed={(errorInfo) => {
+                      console.log('MREC ad failed to load with error code ' + errorInfo.code + ' and message: ' + errorInfo.message);
+                    }}
+                    onAdClicked={(adInfo) => {
+                      console.log('MREC ad clicked');
+                    }}
+                    onAdExpanded={(adInfo) => {
+                      console.log('MREC ad expanded')
+                    }}
+                    onAdCollapsed={(adInfo) => {
+                      console.log('MREC ad collapsed')
+                    }}
+                    onAdRevenuePaid={(adInfo) => {
+                      console.log('MREC ad revenue paid: ' + adInfo.revenue);
+                    }}/>
+            {/* applovin mrec  */}
 
 
      </View>

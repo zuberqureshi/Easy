@@ -21,6 +21,9 @@ const BANNER_AD_UNIT_ID = Platform.select({
  const REWARDED_AD_UNIT_ID = Platform.select({
   android: '3365fad27fce67ed',
  });
+ const MREC_AD_UNIT_ID = Platform.select({
+  android: '01d673b7684c023e'
+});
  const INTERSTITIAL_AD_UNIT_ID = Platform.select({
   android: '8fba0df7d5246704',
  });
@@ -41,14 +44,23 @@ const Reward = () => {
   const data = await JSON.parse(ds)
   await setUserInfo(data)
 
+  let body = {
+    user_id:data.id
+   }
+  const seting = await CallApiJson('settings', 'POST',body);
+  // const data = await JSON.parse(seting)
+  await setUserSettings(seting);
+
+
+
 }
 
   // setting api
   const settings = async () => {
 
-    const seting = await CallApiJson('settings', 'GET');
+   // const seting = await CallApiJson('settings', 'GET');
     // const data = await JSON.parse(seting)
-    await setUserSettings(seting)
+   // await setUserSettings(seting)
 
   }
     const load = async () => {
@@ -71,10 +83,13 @@ const Reward = () => {
     setLoadingStatus(false)
     if( dailyRewardCheckClaim.error == false){
     Alert.alert('You Have claimed Reward');
+    navigation.navigate('Home');
+    return;
     }else{
       Alert.alert( `Failed${dailyRewardCheckClaim.msg} `);
+      navigation.navigate('Home');
+      return;
     }
-    navigation.navigate('Home');
 
   }
 
@@ -114,7 +129,7 @@ useEffect(() => {
   const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
     const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
 if (isRewardedAdReady) {
- AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+     AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
   setbuttonDisableTrue(false);
 }
   });
@@ -297,10 +312,33 @@ const showApplovinRewarded =()=>{
 
       <View style={{        marginTop:responsiveWidth(15)  }}  >
 
+        {/* applovin mrec  */}
+        <AppLovinMAX.AdView adUnitId={MREC_AD_UNIT_ID}
+                    adFormat={AppLovinMAX.AdFormat.MREC}
+                    style={styles.mrec}
+                    autoRefresh={true}
+                    onAdLoaded={(adInfo) => {
+                      console.log('MREC ad loaded from ' + adInfo.networkName);
+                    }}
+                    onAdLoadFailed={(errorInfo) => {
+                      console.log('MREC ad failed to load with error code ' + errorInfo.code + ' and message: ' + errorInfo.message);
+                    }}
+                    onAdClicked={(adInfo) => {
+                      console.log('MREC ad clicked');
+                    }}
+                    onAdExpanded={(adInfo) => {
+                      console.log('MREC ad expanded')
+                    }}
+                    onAdCollapsed={(adInfo) => {
+                      console.log('MREC ad collapsed')
+                    }}
+                    onAdRevenuePaid={(adInfo) => {
+                      console.log('MREC ad revenue paid: ' + adInfo.revenue);
+                    }}/>
+            {/* applovin mrec  */}
     
       </View>
     </LinearGradient>
-
 
 
       

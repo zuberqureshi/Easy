@@ -57,6 +57,10 @@ AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2Wd
 const BANNER_AD_UNIT_ID = Platform.select({
   android: '2c0d4e4e0e0d9af8'
  });
+ const MREC_AD_UNIT_ID = Platform.select({
+  android: '01d673b7684c023e'
+});
+
  const REWARDED_AD_UNIT_ID = Platform.select({
   android: '3365fad27fce67ed',
  });
@@ -213,9 +217,18 @@ const Home = () => {
   // setting api
   const settings = async () => {
 
-    const seting = await CallApiJson('settings', 'GET');
+    const ds = await getToken();
+    const data = await JSON.parse(ds)
+ 
+    let body = {
+      user_id:data.id
+     }
+    const seting = await CallApiJson('settings', 'POST',body);
     // const data = await JSON.parse(seting)
-    await setUserSettings(seting)
+    await setUserSettings(seting);
+
+    const banners = await CallApiJson('banner', 'POST',body);
+     await setBanner(banners?.data)
 
   }
 
@@ -244,8 +257,22 @@ const Home = () => {
       }
       const seting = await CallApiJson('fcmupdate', 'POST', tokenSet);
 
+      const userLogin =  await CallApiJson('getprofile', 'POST', tokenSet);
+   
+      if(userLogin.error === false){
+          
+        await setToken(  userLogin.data );
+        const ds = await getToken();
+        const data = await JSON.parse(ds);
+        await setUserInfo(data);
+
+      }
+         
+  
+
+
     }
-    await setUserInfo(data)
+
 
   }
   // console.log("getdata after Callling.... APi", userInfo)
@@ -253,9 +280,9 @@ const Home = () => {
   //Get Banners
 
   const banners = async () => {
-    const banners = await CallApiJson('banner', 'GET');
-   console.log("Banner data",banners)
-    await setBanner(banners?.data)
+   // const banners = await CallApiJson('banner', 'GET');
+  // console.log("Banner data",banners)
+   // await setBanner(banners?.data)
 
   }
 
@@ -338,8 +365,7 @@ if (isRewardedAdReady) {
 
  
    return () => { 
-    appLovinIntrestial();
-    appLovinRewarded();
+
 
    }
 
@@ -593,10 +619,9 @@ useEffect(() => {
                   <View style={styles.getFreeMainContainer}>
                     <Image style={styles.getFreeCoin} source={require('../../assets/rupee.png')} />
 
-
                     <View style={{ height: responsiveHeight(5.8), flexDirection: 'row' }}>
                       <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5), height: responsiveWidth(7) }}>
-                        <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Click Here </Text>
+                        <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Click Here {userInfo?.mobile}</Text>
                         <Text style={{ color: '#fff' }}>To Get Daily Login Bonus!</Text>
                       </View>
 
@@ -605,6 +630,39 @@ useEffect(() => {
 
                         <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
                           <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}>{userSettings && userSettings?.data?.daily_coin}</Text>
+                          <Image style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
+                        </View>
+                      </View>
+                    </View>
+
+
+                  </View>
+                </View>
+              </View>
+            </TouchableOpacity>
+            {/* Get Free Coins -End */}
+             {/* Get Profile Complete  Coins  */}
+            { (userInfo?.profile_completed==0) &&
+            <TouchableOpacity onPress={() => { navigation.navigate('Profile') }}>
+              <View style={{ flex: 0.10,marginTop: responsiveWidth(2.5) }}>
+                <Text style={styles.getFreeMainText}> Profile Bonus  Reward </Text>
+                <View style={{ alignItems: 'center', marginTop: responsiveWidth(2.5), }}>
+
+                  <View style={styles.getFreeMainContainer}>
+                    <Image style={styles.getFreeCoin} source={require('../../assets/rupee.png')} />
+
+
+                    <View style={{ height: responsiveHeight(5.8), flexDirection: 'row' }}>
+                      <View style={{ flexDirection: 'column', width: responsiveWidth(48), marginLeft: responsiveWidth(4.5), height: responsiveWidth(7) }}>
+                        <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.25), fontWeight: 600 }}>Click Here </Text>
+                        <Text style={{ color: '#fff' }}> Profile Complete Bonus!</Text>
+                      </View>
+
+                      <View style={{ flexDirection: 'column', marginHorizontal: responsiveWidth(3), width: responsiveWidth(20), height: responsiveWidth(5), marginTop: responsiveWidth(-2) }}>
+                        <Text style={{ color: '#fff' }}>Get Coins</Text>
+
+                        <View style={{ flexDirection: 'row', marginTop: responsiveWidth(2.5), width: responsiveWidth(6) }}>
+                          <Text style={{ color: '#fff', fontSize: responsiveFontSize(2.15) }}>{userSettings && userSettings?.data?.profile_complete_bonus}</Text>
                           <Image style={{ width: responsiveWidth(5.65), height: responsiveHeight(2.75), marginLeft: responsiveWidth(2.5), resizeMode: 'contain' }} source={require('../../assets/rupee.png')} />
                         </View>
 
@@ -617,7 +675,9 @@ useEffect(() => {
                 </View>
               </View>
             </TouchableOpacity>
-            {/* Get Free Coins -End */}
+            }
+            {/* Get Free Profile Coins -End */}
+            
 
             {/* Get Free Coins Video -Start */}
             {/* <TouchableOpacity onPress={() => { navigation.navigate('VideoReward') }} >
@@ -782,6 +842,31 @@ useEffect(() => {
 
 
 
+            {/* applovin mrec  */}
+            <AppLovinMAX.AdView adUnitId={MREC_AD_UNIT_ID}
+                    adFormat={AppLovinMAX.AdFormat.MREC}
+                    style={styles.mrec}
+                    autoRefresh={true}
+                    onAdLoaded={(adInfo) => {
+                      console.log('MREC ad loaded from ' + adInfo.networkName);
+                    }}
+                    onAdLoadFailed={(errorInfo) => {
+                      console.log('MREC ad failed to load with error code ' + errorInfo.code + ' and message: ' + errorInfo.message);
+                    }}
+                    onAdClicked={(adInfo) => {
+                      console.log('MREC ad clicked');
+                    }}
+                    onAdExpanded={(adInfo) => {
+                      console.log('MREC ad expanded')
+                    }}
+                    onAdCollapsed={(adInfo) => {
+                      console.log('MREC ad collapsed')
+                    }}
+                    onAdRevenuePaid={(adInfo) => {
+                      console.log('MREC ad revenue paid: ' + adInfo.revenue);
+                    }}/>
+            {/* applovin mrec  */}
+
           {/* Game Zone-End*/}
 
           {/* Contest Zone-Start*/}
@@ -882,6 +967,30 @@ useEffect(() => {
             {/* English Word Game-End*/}
 
 
+            {/* applovin mrec  */}
+            <AppLovinMAX.AdView adUnitId={MREC_AD_UNIT_ID}
+                    adFormat={AppLovinMAX.AdFormat.MREC}
+                    style={styles.mrec}
+                    onAdLoaded={(adInfo) => {
+                      console.log('MREC ad loaded from ' + adInfo.networkName);
+                    }}
+                    onAdLoadFailed={(errorInfo) => {
+                      console.log('MREC ad failed to load with error code ' + errorInfo.code + ' and message: ' + errorInfo.message);
+                    }}
+                    onAdClicked={(adInfo) => {
+                      console.log('MREC ad clicked');
+                    }}
+                    onAdExpanded={(adInfo) => {
+                      console.log('MREC ad expanded')
+                    }}
+                    onAdCollapsed={(adInfo) => {
+                      console.log('MREC ad collapsed')
+                    }}
+                    onAdRevenuePaid={(adInfo) => {
+                      console.log('MREC ad revenue paid: ' + adInfo.revenue);
+                    }}/>
+            {/* applovin mrec  */}
+
             {/* survey container - start */}
             <TouchableOpacity onPress={() => { surveyCheck() }}>
               <View style={{ alignItems: 'center', marginTop: responsiveWidth(6) }}>
@@ -910,6 +1019,31 @@ useEffect(() => {
               </View>
             </TouchableOpacity>
             {/* survey container - end */}
+
+
+            {/* applovin mrec  */}
+            <AppLovinMAX.AdView adUnitId={MREC_AD_UNIT_ID}
+                    adFormat={AppLovinMAX.AdFormat.MREC}
+                    style={styles.mrec}
+                    onAdLoaded={(adInfo) => {
+                      console.log('MREC ad loaded from ' + adInfo.networkName);
+                    }}
+                    onAdLoadFailed={(errorInfo) => {
+                      console.log('MREC ad failed to load with error code ' + errorInfo.code + ' and message: ' + errorInfo.message);
+                    }}
+                    onAdClicked={(adInfo) => {
+                      console.log('MREC ad clicked');
+                    }}
+                    onAdExpanded={(adInfo) => {
+                      console.log('MREC ad expanded')
+                    }}
+                    onAdCollapsed={(adInfo) => {
+                      console.log('MREC ad collapsed')
+                    }}
+                    onAdRevenuePaid={(adInfo) => {
+                      console.log('MREC ad revenue paid: ' + adInfo.revenue);
+                    }}/>
+            {/* applovin mrec  */}
 
             {/*YouTUbe Video-Start*/}
 

@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
   },
   startButton: {
     backgroundColor: '#1f4c86',
-    marginTop:responsiveWidth(1),
+    marginTop:responsiveWidth(5),
     marginBottom:responsiveWidth(5.1),
     padding: responsiveWidth(2.5),
     borderRadius:responsiveWidth(5),

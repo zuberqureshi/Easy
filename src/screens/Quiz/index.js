@@ -137,8 +137,7 @@ if (isRewardedAdReady) {
 
  
    return () => { 
-    appLovinIntrestial();
-    appLovinRewarded();
+  
 
    }
 

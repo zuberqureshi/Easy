@@ -32,6 +32,9 @@ const BANNER_AD_UNIT_ID = Platform.select({
  const INTERSTITIAL_AD_UNIT_ID = Platform.select({
   android: '8fba0df7d5246704',
  });
+ const MREC_AD_UNIT_ID = Platform.select({
+  android: '01d673b7684c023e'
+});
 //applovin
 
 const SpinerWheel = () => {
@@ -164,7 +167,7 @@ useEffect(() => {
   const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
     const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
 if (isRewardedAdReady) {
-   // AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+     AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
 }
 
 
@@ -249,15 +252,44 @@ const showApplovinRewarded =async ()=>{
 
     <View style={{flex:0.8,backgroundColor:'#0a203e',height:windowHeight}}>
         <View style={{justifyContent:'center',alignItems:'center',marginTop:responsiveWidth(1)}}>
-          <Text style={{color:'#fff',fontSize:responsiveFontSize(3.55)}}> DOUBLE YOUR COINS</Text>
+          <Text style={{color:'#fff',fontSize:responsiveFontSize(3.1)}}> DOUBLE YOUR COIN</Text>
           {/* <Text style={{color:'#fff',fontSize:responsiveFontSize(1.7),letterSpacing:responsiveWidth(0.37)}}> Double Your Coin By Playing Spinner </Text> */}
           {/* <Text style={{color:'#fff',fontSize:responsiveFontSize(1.9),marginTop:responsiveWidth(2.5)}}> Congrat's You have Won {spinAmount } </Text> */}
         </View>
-     <View style={{flex:0.6,marginTop:responsiveWidth(8)}}>
-       <Spiner   setSpinValue={setSpinValue}  updateSpinnerWheelWinner={updateSpinnerWheelWinner} showApplovinRewarded={showApplovinRewarded} userWallet={userWallet} setSpinAmount={setSpinAmount} spinAmount={spinAmount}  />
+       <View style={{flex:0.6,marginTop:responsiveWidth(12)}}>
+          <Spiner   setSpinValue={setSpinValue}  updateSpinnerWheelWinner={updateSpinnerWheelWinner} showApplovinRewarded={showApplovinRewarded} userWallet={userWallet} setSpinAmount={setSpinAmount} spinAmount={spinAmount}  />
        </View>
+
+
+
+
     </View>
  
+        {/* applovin mrec  */}
+        <AppLovinMAX.AdView adUnitId={MREC_AD_UNIT_ID}
+                    adFormat={AppLovinMAX.AdFormat.MREC}
+                    style={styles.mrec}
+                    autoRefresh={true}
+                    onAdLoaded={(adInfo) => {
+                      console.log('MREC ad loaded from ' + adInfo.networkName);
+                    }}
+                    onAdLoadFailed={(errorInfo) => {
+                      console.log('MREC ad failed to load with error code ' + errorInfo.code + ' and message: ' + errorInfo.message);
+                    }}
+                    onAdClicked={(adInfo) => {
+                      console.log('MREC ad clicked');
+                    }}
+                    onAdExpanded={(adInfo) => {
+                      console.log('MREC ad expanded')
+                    }}
+                    onAdCollapsed={(adInfo) => {
+                      console.log('MREC ad collapsed')
+                    }}
+                    onAdRevenuePaid={(adInfo) => {
+                      console.log('MREC ad revenue paid: ' + adInfo.revenue);
+                    }}/>
+            {/* applovin mrec  */}
+
     </ScrollView>
   )
 }

@@ -88,14 +88,14 @@ const CustomDrawer = () => {
     // { icon: 'cloud-download', title: 'Offer' },
     { icon: 'headset', title: 'Contact' },
     { icon: 'logo-whatsapp', title: 'Whatsapp Support' },
-    { icon: 'share', title: 'Referral' },
-    { icon: 'share-social', title: 'ReferralCode' },
+    { icon: 'share-social', title: 'Refer And Win' },
+    { icon: 'share', title: 'Apply Refer Code' },
 
   ];
 
   const bottomList = [
     
-    { icon: 'person-add', title: 'Tell a friend' },
+    // { icon: 'person-add', title: 'Tell a friend' },
     { icon: 'exit', title: 'Sign out' },
 
   ];
@@ -131,7 +131,7 @@ const CustomDrawer = () => {
         else if(item.title==='Tell a friend' ){ share()}
         else if(item.title==='Whatsapp Support' ){
             let url = "whatsapp://send?text=" +
-       'Welcome to Easy Earn Customer Support !' +
+       'Hi !' +
           "&phone=91" +
           7566950472;
         Linking.openURL(url)

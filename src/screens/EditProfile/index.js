@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
-import { View, Text, TouchableOpacity, ImageBackground, TextInput, Pressable, KeyboardAvoidingView, ScrollView, SafeAreaView ,ToastAndroid,Keyboard } from 'react-native';
+import { View, Text, TouchableOpacity, ImageBackground, TextInput, Pressable, KeyboardAvoidingView, ScrollView, SafeAreaView ,ToastAndroid,Keyboard, Alert } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from "react-native-responsive-dimensions";
 
@@ -15,7 +15,26 @@ import styles from './style'
 
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
 import Loader from '../../components/common/loader/Loader';
+import AppLovinMAX from  "react-native-applovin-max";
 
+//applovin
+AppLovinMAX.initialize("WbvV2RHHbEGVC_s0Od_B0cZoG97sxIom919586O4G_eOin_W3n6ef2WdHqlug5t5IG_ZSo2D6VGE11RWPocUqk").then(configuration => {
+    // SDK is initialized, start loading ads
+  }).catch(error => {
+  });
+  const BANNER_AD_UNIT_ID = Platform.select({
+    android: '2c0d4e4e0e0d9af8'
+   });
+   const REWARDED_AD_UNIT_ID = Platform.select({
+    android: '3365fad27fce67ed',
+   });
+   const INTERSTITIAL_AD_UNIT_ID = Platform.select({
+    android: '8fba0df7d5246704',
+   });
+   const MREC_AD_UNIT_ID = Platform.select({
+    android: '01d673b7684c023e'
+  });
+  //applovin
 
 
 const EditProfileScreen = () => {
@@ -85,8 +104,7 @@ useEffect(() => {
   
    
      return () => { 
-      appLovinIntrestial();
-      appLovinRewarded();
+    
   
      }
   
@@ -163,6 +181,7 @@ const showApplovinIntrestial = async ()=>{
 
         console.log("updae Profile Success",profileData.msg)
 
+        Alert.alert(profileData.msg)
         showToast(profileData.msg)
         
 
@@ -220,7 +239,7 @@ const showApplovinIntrestial = async ()=>{
                                  
                                     updateProfile(values.country,values.address,values.name,values.mobile)
 
-                                    console.warn(values);
+                                    console.warn('updateProfile',values);
                                     action.resetForm()
                                     loadUserInfo();
                                     
@@ -361,6 +380,34 @@ const showApplovinIntrestial = async ()=>{
 
 
                         </View>
+
+                        {/* applovin mrec  */}
+                        <AppLovinMAX.AdView adUnitId={MREC_AD_UNIT_ID}
+                                    adFormat={AppLovinMAX.AdFormat.MREC}
+                                    style={styles.mrec}
+                                    autoRefresh={true}
+                                    onAdLoaded={(adInfo) => {
+                                    console.log('MREC ad loaded from ' + adInfo.networkName);
+                                    }}
+                                    onAdLoadFailed={(errorInfo) => {
+                                    console.log('MREC ad failed to load with error code ' + errorInfo.code + ' and message: ' + errorInfo.message);
+                                    }}
+                                    onAdClicked={(adInfo) => {
+                                    console.log('MREC ad clicked');
+                                    }}
+                                    onAdExpanded={(adInfo) => {
+                                    console.log('MREC ad expanded')
+                                    }}
+                                    onAdCollapsed={(adInfo) => {
+                                    console.log('MREC ad collapsed')
+                                    }}
+                                    onAdRevenuePaid={(adInfo) => {
+                                    console.log('MREC ad revenue paid: ' + adInfo.revenue);
+                                    }}/>
+                            {/* applovin mrec  */}
+
+
+
                     </View>
                 </ScrollView>
             </KeyboardAvoidingView>

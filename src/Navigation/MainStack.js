@@ -41,8 +41,8 @@ const MainStack = () => {
       <HomeStack.Screen name='QuizReward' component={QuizReward} options={{headerShown:true}} />
       <HomeStack.Screen name='EnglishGame' component={EnglishGame} options={{headerShown:true}} />
       <HomeStack.Screen name='ImageGame' component={ImageGame} options={{headerShown:true}} />
-      <HomeStack.Screen name='Referral' component={Referral} options={{headerShown:true}} />
-      <HomeStack.Screen name='ReferralCode' component={ReferralCode} options={{headerShown:true}} />
+      <HomeStack.Screen name='Refer And Win' component={Referral} options={{headerShown:true}} />
+      <HomeStack.Screen name='Apply Refer Code' component={ReferralCode} options={{headerShown:true}} />
       {/* <HomeStack.Screen name='Login' component={Login} /> */}
     </HomeStack.Navigator>
   )
