@@ -78,7 +78,7 @@ const Wallet = () => {
      setWithdrawHistoryData(historyData);
       setLoadingStatus(false);
 
-      console.log('Wallet data',!!userProfileData.data.mobile);
+      console.log('Wallet data', userProfileData.data);
   }
   
 useEffect(() => {
@@ -141,7 +141,7 @@ useEffect(() => {
   const appLovinRewarded =   AppLovinMAX.addRewardedAdLoadedEventListener( async () => {
     const isRewardedAdReady = await AppLovinMAX.isRewardedAdReady(REWARDED_AD_UNIT_ID);
 if (isRewardedAdReady) {
-   AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
+    AppLovinMAX.showRewardedAd(REWARDED_AD_UNIT_ID);
 }
   });
   //rewarded
@@ -294,7 +294,7 @@ const showApplovinRewarded =()=>{
 
   return (
 
-   
+    <>
  
 
     <View style={{ flex: 1, backgroundColor: "#0a203e" }} >
@@ -320,14 +320,14 @@ const showApplovinRewarded =()=>{
       <View style={{ flex: 0.7, marginHorizontal: responsiveWidth(5) }}>
         <Text style={styles.redeenTxt} >Redeem Reward Via</Text>
       
-        { (userProfileData.data.device_country=='IN') && 
+        { (userProfileData?.data?.device_country=='IN') && 
       
             <LinearGradient colors={["#0a203e", "#1f4c86"]}
               useAngle={true}
               angle={322}
               angleCenter={{ x: 0.5, y: 0.5 }}
               style={styles.paytmLinearGradient}
-            
+
               >
             <TouchableOpacity onPress={ async () => {       openPaytmModal() }} >
               <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
@@ -343,7 +343,7 @@ const showApplovinRewarded =()=>{
         }
 
 
-          { (userProfileData.data.device_country !='IN') && 
+          { (userProfileData?.data?.device_country !='IN') && 
                   <LinearGradient colors={["#0a203e", "#1f4c86"]}
                     useAngle={true}
                     angle={322}
@@ -409,6 +409,7 @@ const showApplovinRewarded =()=>{
 
       </LinearGradient>
 
+
       </View>
 
       
@@ -454,7 +455,7 @@ const showApplovinRewarded =()=>{
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: responsiveWidth(2.45) }}>
 
-            { (userProfileData.data.first_widraw==0) && 
+            { (userProfileData?.data?.first_widraw==0) && 
               <TouchableHighlight onPress={() => { setSelectedCard(200) }} style={{ borderRadius: responsiveWidth(2.45) }}>
                 <LinearGradient colors={["#0a203e", "#1f4c86"]}
                   useAngle={true}
@@ -473,7 +474,7 @@ const showApplovinRewarded =()=>{
               </TouchableHighlight>
               }
 
-          { (userProfileData.data.first_widraw==1) && 
+          { (userProfileData?.data?.first_widraw==1) && 
               <TouchableHighlight onPress={() => { setSelectedCard(500) }} style={{ borderRadius: responsiveWidth(2.45) }}>
                 <LinearGradient colors={["#0a203e", "#1f4c86"]}
                   useAngle={true}
@@ -614,7 +615,7 @@ const showApplovinRewarded =()=>{
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >500</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                       <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
-                      <Text style={{ color: "#fff", fontSize:  responsiveFontSize(1.8) }} >{userSettings && userSettings?.data?.coin_factor}</Text>
+                      <Text style={{ color: "#fff", fontSize:  responsiveFontSize(1.8) }} >{userSettings && 500*userSettings?.data?.coin_factor}</Text>
                     </View>
                   </View>
                 </LinearGradient>
@@ -631,7 +632,7 @@ const showApplovinRewarded =()=>{
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >1000</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                       <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
-                      <Text style={{ color: "#fff", fontSize:  responsiveFontSize(1.8) }} >{userSettings && 2*userSettings?.data?.coin_factor}</Text>
+                      <Text style={{ color: "#fff", fontSize:  responsiveFontSize(1.8) }} >{userSettings && 1000*userSettings?.data?.coin_factor}</Text>
                     </View>
                   </View>
                 </LinearGradient>
@@ -650,7 +651,7 @@ const showApplovinRewarded =()=>{
                     <Text style={{ color: "#fff", fontSize: responsiveFontSize(1.9), fontWeight: 500 }} >1500</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                       <IconFontAwesome name="rupee" size={responsiveWidth(3.5)} color="#fff" style={{ marginRight: responsiveWidth(1) }} />
-                      <Text style={{ color: "#fff",fontSize:  responsiveFontSize(1.8) }} >{userSettings && 3*userSettings?.data?.coin_factor}</Text>
+                      <Text style={{ color: "#fff",fontSize:  responsiveFontSize(1.8) }} >{userSettings && 1500*userSettings?.data?.coin_factor}</Text>
                     </View>
                   </View>
                 </LinearGradient>
@@ -713,6 +714,30 @@ const showApplovinRewarded =()=>{
             
             </LinearGradient>
           {/* </View> */}
+            <AppLovinMAX.AdView adUnitId={MREC_AD_UNIT_ID}
+        adFormat={AppLovinMAX.AdFormat.MREC}
+        style={styles.mrec}
+        autoRefresh={true}
+        onAdLoaded={(adInfo) => {
+          console.log('MREC ad loaded from ' + adInfo.networkName);
+        }}
+        onAdLoadFailed={(errorInfo) => {
+          console.log('MREC ad failed to load with error code ' + errorInfo.code + ' and message: ' + errorInfo.message);
+        }}
+        onAdClicked={(adInfo) => {
+          console.log('MREC ad clicked');
+        }}
+        onAdExpanded={(adInfo) => {
+          console.log('MREC ad expanded')
+        }}
+        onAdCollapsed={(adInfo) => {
+          console.log('MREC ad collapsed')
+        }}
+        onAdRevenuePaid={(adInfo) => {
+          console.log('MREC ad revenue paid: ' + adInfo.revenue);
+        }}/>
+
+
         </View>
       </Modal>
 
@@ -762,6 +787,28 @@ const showApplovinRewarded =()=>{
           {/* </View> */}
           </LinearGradient>
         
+          <AppLovinMAX.AdView adUnitId={MREC_AD_UNIT_ID}
+      adFormat={AppLovinMAX.AdFormat.MREC}
+      style={styles.mrec}
+      autoRefresh={true}
+      onAdLoaded={(adInfo) => {
+        console.log('MREC ad loaded from ' + adInfo.networkName);
+      }}
+      onAdLoadFailed={(errorInfo) => {
+        console.log('MREC ad failed to load with error code ' + errorInfo.code + ' and message: ' + errorInfo.message);
+      }}
+      onAdClicked={(adInfo) => {
+        console.log('MREC ad clicked');
+      }}
+      onAdExpanded={(adInfo) => {
+        console.log('MREC ad expanded')
+      }}
+      onAdCollapsed={(adInfo) => {
+        console.log('MREC ad collapsed')
+      }}
+      onAdRevenuePaid={(adInfo) => {
+        console.log('MREC ad revenue paid: ' + adInfo.revenue);
+      }}/>
 
         </View>
         
@@ -769,36 +816,13 @@ const showApplovinRewarded =()=>{
     
 
 
- 
-        {/* applovin mrec  */}
-        <AppLovinMAX.AdView adUnitId={MREC_AD_UNIT_ID}
-                    adFormat={AppLovinMAX.AdFormat.MREC}
-                    style={styles.mrec}
-                    autoRefresh={true}
-                    onAdLoaded={(adInfo) => {
-                      console.log('MREC ad loaded from ' + adInfo.networkName);
-                    }}
-                    onAdLoadFailed={(errorInfo) => {
-                      console.log('MREC ad failed to load with error code ' + errorInfo.code + ' and message: ' + errorInfo.message);
-                    }}
-                    onAdClicked={(adInfo) => {
-                      console.log('MREC ad clicked');
-                    }}
-                    onAdExpanded={(adInfo) => {
-                      console.log('MREC ad expanded')
-                    }}
-                    onAdCollapsed={(adInfo) => {
-                      console.log('MREC ad collapsed')
-                    }}
-                    onAdRevenuePaid={(adInfo) => {
-                      console.log('MREC ad revenue paid: ' + adInfo.revenue);
-                    }}/>
-            {/* applovin mrec  */}
 
     </View>
 
-    
-
+          
+  
+ 
+ </>
  
   )
 }

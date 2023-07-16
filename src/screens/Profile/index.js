@@ -193,10 +193,10 @@ if (isRewardedAdReady) {
 
       <View style={styles.menuWrapper}>
       
-        <TouchableRipple onPress={() => {navigation.navigate('Wallet')}}>
+        <TouchableRipple onPress={() => {navigation.navigate('EditProfile')}}>
           <View style={styles.menuItem}>
             <Icon name="credit-card" color="#1f4c86" size={responsiveWidth(6.1)}/>
-            <Text style={styles.menuItemText}>Wallet</Text>
+            <Text style={styles.menuItemText}>Update Profile</Text>
           </View>
         </TouchableRipple>
        
