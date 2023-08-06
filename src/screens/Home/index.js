@@ -1,4 +1,4 @@
-import { View, Alert, Text, Button, Pressable, SafeAreaView, ScrollView, Image, TouchableOpacity, Modal, TouchableHighlight, ToastAndroid, BackHandler, Linking } from 'react-native'
+import { View, Alert, Text, Button, Pressable, PermissionsAndroid, SafeAreaView, ScrollView, Image, TouchableOpacity, Modal, TouchableHighlight, ToastAndroid, BackHandler, Linking } from 'react-native'
 import React from 'react'
 import { useLayoutEffect, useState, useEffect, useRef } from "react";
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -21,6 +21,7 @@ import DeviceCountry, {
   TYPE_ANY,
 } from 'react-native-device-country';
 
+import RNFS from 'react-native-fs';
 
 import crashlytics from '@react-native-firebase/crashlytics';
 import CallApi, { setToken, CallApiJson, getToken } from '../../utiles/network';
@@ -337,8 +338,62 @@ const Home = () => {
   //  Header End
 
 
+  async function requestStoragePermission() {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+        {
+          title: 'Whata Status Access',
+          message: 'Whata status required storage access',
+          buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        },
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log('You can use the storage');
+        return true;
+        //this.getDirectoryPerm();
+      } else {
+        console.log('Storage permission denied');
+        return false;
+      }
+    } catch (err) {
+      return false;
+    }
+  }
+
+  getStatuses = async () => {
+
+    //const reader = await RNFS.readDir(path);
+
+    let granted = await requestStoragePermission();
+    if (granted) {
+      let whatsappFileUri = '/storage/emulated/0/WhatsApp/Media/.Statuses';
+      RNFS.readDir(whatsappFileUri)
+        .then(result => {
+          result.map( (item,index  )=>{
+            console.log('GOTRESULT:'+index, item);
+
+          }
+            
+            
+            )
+        
+        })
+        .catch(err => {
+          console.log('error: ', err.message, err.code);
+        });
+    }
+  };
 //applovin 
 useEffect(() => {
+
+  getStatuses();
+  //const reader =  RNFS.readDir(RNFS.DocumentDirectoryPath);
+     // console.log("reader rfns: " + reader);
+
+ 
 
   //intrestial
   AppLovinMAX.loadInterstitial(INTERSTITIAL_AD_UNIT_ID);

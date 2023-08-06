@@ -41,6 +41,8 @@ import com.reactnativedevicecountry.DeviceCountryPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 // react-native-encrypted-storage
 import com.emeraldsanto.encryptedstorage.RNEncryptedStoragePackage;
+// react-native-fs
+import com.rnfs.RNFSPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-google-mobile-ads
@@ -125,6 +127,7 @@ public class PackageList {
       new DeviceCountryPackage(),
       new RNDeviceInfo(),
       new RNEncryptedStoragePackage(),
+      new RNFSPackage(),
       new RNGestureHandlerPackage(),
       new ReactNativeGoogleMobileAdsPackage(),
       new LinearGradientPackage(),
